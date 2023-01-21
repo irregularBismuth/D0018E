@@ -7,8 +7,8 @@
 
     <body>
         <h1> Product Page (shopping cart) </h1>
-        hejahdusudash123
-    </body>
+        123456
+     </body>
 
 </html>
 
