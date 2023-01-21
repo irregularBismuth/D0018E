@@ -10,7 +10,8 @@
         <h1> Product Page (shopping cart) </h1>
         123456asdadadasd
         test 123 
-    </body>
+    <div> peepo peepo</div> 
+   </body>
 
 </html>
 
