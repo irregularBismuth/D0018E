@@ -8,8 +8,12 @@
 
     <body>
         <h1> Product Page (shopping cart) </h1>
-        123456aadadasdadasdsdadadasd
-        test 1234444444444 adadasd
+        
+        <?php
+            require_once("db/db.php")
+            $query_sql = "SELECT ´animal_name´ FROM animals";
+            $fetch_result = $dbc->query($query_sql)
+        ?>
     </body>
 
 </html>
