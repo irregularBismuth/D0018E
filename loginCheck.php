@@ -7,7 +7,12 @@ $passw=$_POST['passw'];
 //echo $uname;
 //echo $passw;
 loginFunc($uname,$passw);
-header("Location: index.php");
+if(isset($_SESSION['username']))
+
+  header("Location: index.php");
+  exit(0);
+}
+header("Location: login.php?bad=1");
 exit(0);
 
 
