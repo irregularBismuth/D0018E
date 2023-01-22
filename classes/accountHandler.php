@@ -68,6 +68,8 @@ function loginFunc($name,$password)
   $sql="select * from users where binary name=:username and binary password=:password";
   echo $name;
   $s=$dbc->prepare($sql);
+  $s->bindValue(":username",$name);
+  $s->bindValue(":password",$password);
   $s->execute();
   $result=$s->fetchAll();
   echo $s->rowCount($result);
