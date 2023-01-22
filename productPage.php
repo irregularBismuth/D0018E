@@ -19,7 +19,7 @@ session_start();
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
             print_r($query_output[0]["animal_name"]);
-            print_r($query_output[0]["animal_value"])
+            print_r($query_output[0]["animal_price"])
         ?>
     </body>
 
