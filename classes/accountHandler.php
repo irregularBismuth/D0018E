@@ -80,7 +80,7 @@ function loginFunc($name,$password)
   
   if($s->rowCount($result) > 0)
   {
-    echo $name."after rowcount";
+    echo "after rowcount";
     session_start();
     $_SESSION['username']=$name;
     echo $_SESSION['username'];
