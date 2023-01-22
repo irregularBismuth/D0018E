@@ -6,7 +6,7 @@ session_start();
 
     <head>
        
-     <title> 12344  pepo ProductPage </title>
+     <title> 123445  pepo ProductPage </title>
     </head>
 
     <body>
