@@ -10,9 +10,10 @@
         <h1> Product Page (shopping cart) </h1>
         
         <?php
-            require_once("db/db.php")
-            $query_sql = "SELECT ´animal_name´ FROM animals";
-            $fetch_result = $dbc->query($query_sql)
+            require_once("db/db.php");
+            $connection_obj = new mysqli();
+            $querySql = "SELECT ´animal_name´ FROM animals";
+            $fetch_result = $dbc->query($querySql);
         ?>
     </body>
 
