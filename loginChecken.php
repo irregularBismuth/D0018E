@@ -10,11 +10,15 @@ $s->bindValue(':name',$username);
 $s->bindValue(':password',$password);
 $s->execute();
 $result=$s->fetchAll();
-foreach ($result as $result){
-    echo $result['id'];
-    echo "debug 44445";
-    echo "</br>peeepo";
+if($s->rowCount() > 0)
+{
+  echo $s->rowCount();
 }
-print_r($result);
+//foreach ($result as $result){
+//    echo $result['id'];
+//    echo "debug 44445";
+//    echo "</br>peeepo";
+//}
+//print_r($result);
 ?>
 
