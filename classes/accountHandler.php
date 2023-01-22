@@ -74,7 +74,7 @@ function loginFunc($name,$password)
   $result=$s->fetchAll();
   foreach($result as $result)
   {
-    echo $result;
+    echo $result['id'];
   }
 // echo $name." before";
 //  $name=filter($name);
