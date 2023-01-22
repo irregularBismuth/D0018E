@@ -2,12 +2,12 @@
 session_start();
 //abc
 require_once "db/db.php";
-$sql="select id from users where binary name=:t and binary password=:u";
+$sql="select id from users where binary name=:name and binary password=:password";
 $s=$dbc->prepare($sql);
 $username=$_POST['name'];
 $password=$_POST['pass'];
-$s->bindValue(':t',$username);
-$s->bindValue(':u',$password);
+$s->bindValue(':name',$username);
+$s->bindValue(':password',$password);
 $s->execute();
 $result=$s->fetchAll();
 foreach ($result as $result){
