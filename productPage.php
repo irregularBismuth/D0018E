@@ -18,7 +18,7 @@ session_start();
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             $fetch_result->fetchAll();
-            echo $fetch_result;
+            print_r($fetch_result);
         ?>
     </body>
 
