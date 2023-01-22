@@ -76,7 +76,8 @@ function login($name,$password)
   {
     session_start();
     $_SESSION['username']=$name;
-    header("Location: index.php");
+    echo $_SESSION['username'];
+     header("Location: index.php");
     exit(0);
   }
   header("Location: login.php?");
