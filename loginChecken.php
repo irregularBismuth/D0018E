@@ -13,6 +13,7 @@ $result=$s->fetchAll();
 if($s->rowCount() > 0)
 {
   echo $s->rowCount();
+  echo "peeepo";
 }
 //foreach ($result as $result){
 //    echo $result['id'];
