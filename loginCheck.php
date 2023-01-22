@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("functions.php");
+require_once("function.php");
 //require_once "classes/db.php"; 
 $username=$_POST['name'];
  $password=$_POST['pass'];
