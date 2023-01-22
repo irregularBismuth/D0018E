@@ -2,9 +2,9 @@
 session_start();
 require_once "db/db.php";
 //require_once("classes/accountHandler.php");
-$uname=$_POST['uname'];
+$uname=$_POST['username'];
 echo $uname;
-$passw=$_POST['passw'];
+$passw=$_POST['password'];
 $sql="select * from users where binary name=:username and binary password=:password";
 $s->bindValue(':username',$uname);
 $s->bindValue(':password',$passw);
