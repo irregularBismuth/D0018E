@@ -18,8 +18,8 @@ session_start();
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
-            print_r($query_output[0]["animal_name"]."\r\n");
-            print_r($query_output[0]["animal_price"]."\r\n")
+            print_r($query_output[0]["animal_name"]."\r\n".$query_output[0]["animal_price"]);
+            
         ?>
     </body>
 
