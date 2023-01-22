@@ -3,8 +3,18 @@ session_start();
 require_once "checkSession.php";
 checkSession();
 
-echo "hello world";
+//echo "hello world";
 //abc
+
 
 ?>
 
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+                
+        </div> 
+    </body>
+</html>
