@@ -13,6 +13,7 @@ $result=$s->fetchAll();
 foreach ($result as $result){
     echo $result['id'];
     echo "debug 44444";
+    echo "</br>peeepo";
 }
 ?>
 
