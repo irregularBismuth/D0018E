@@ -10,6 +10,7 @@ $s->execute();
 $result=$s->fetchAll();
 foreach ($result as $result){
     echo $result['id'];
+    echo "debug 44444";
 }
 ?>
 
