@@ -11,6 +11,13 @@ session_start();
 
     <body>
         <h1> Product Page (shopping cart) </h1>
+
+        <div class="row">
+            <div class="column">
+            </div>
+
+        </div>
+        
         
         <?php
             require_once("db/db.php");
