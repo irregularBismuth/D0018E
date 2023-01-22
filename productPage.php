@@ -8,6 +8,7 @@
 
     <body>
         <h1> Product Page (shopping cart) </h1>
+<<<<<<< HEAD
         
         <?php
             require_once("db/db.php");
@@ -17,6 +18,12 @@
             echo $fetch_result;
         ?>
     </body>
+=======
+        123456asdadadasd
+        test 123 
+    <div> peepo peepo</div> 
+   </body>
+>>>>>>> f47f7f4be4934f6b904226105c8fa5f5d1d4ac7a
 
 </html>
 
