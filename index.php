@@ -14,7 +14,9 @@ checkSession();
     </head>
     <body>
         <div>
-                
+            <?php
+             echo "logged in as: ".$_SESSION['username'];
+            ?>        
         </div> 
     </body>
 </html>
