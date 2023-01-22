@@ -4,8 +4,10 @@ session_start();
 require_once "db/db.php";
 $sql="select id from users where binary name=:t and password=:u";
 $s=$dbc->prepare($sql);
-$s->bindValue(':t',"C.lay");
-$s->bindValue(':u',"lin alg");
+$username="C.lay";
+$password="lin alg";
+$s->bindValue(':t',$username);
+$s->bindValue(':u',$password);
 $s->execute();
 $result=$s->fetchAll();
 foreach ($result as $result){
