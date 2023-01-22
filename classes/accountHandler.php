@@ -68,16 +68,18 @@ function loginFunc($name,$password)
   $sql="select * from users where binary name=:username and binary password=:password";
   echo $name;
   $s=$dbc->prepare($sql);
-  
-  echo $name." before";
-  $name=filter($name);
-  echo $name." after";
-  $password=filter($password);
-  $s->bindValue(":username",$name);
-  $s->bindValue(":password",$password);
   $s->execute();
-  $result = $s->fetchAll();
-  
+  $result=$s->fetchAll();
+  echo $s->rowCount($result);
+ // echo $name." before";
+//  $name=filter($name);
+ // echo $name." after";
+ // $password=filter($password);
+  //$s->bindValue(":username",$name);
+  //$s->bindValue(":password",$password);
+  //$s->execute();
+  //$result = $s->fetchAll();
+ /* 
   if($s->rowCount($result) > 0)
   {
     echo "after rowcount";
@@ -89,7 +91,8 @@ function loginFunc($name,$password)
   }
   header("Location: login.php?");
   exit(0);  
-  } 
+  */  
+} 
 }
 
 
