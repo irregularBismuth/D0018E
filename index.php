@@ -15,5 +15,6 @@ foreach ($result as $result){
     echo "debug 44445";
     echo "</br>peeepo";
 }
+print_r($result);
 ?>
 
