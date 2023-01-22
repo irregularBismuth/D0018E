@@ -11,11 +11,7 @@ echo "</br>".$passw;
 $s->bindValue(":password",$passw);
 $s->execute();
 $result=$s->fetchAll();
-if($s->rowCount() > 0)
-{
-  echo "testet";
-}
-
+print_r($result);
 
 
 //echo $uname;
