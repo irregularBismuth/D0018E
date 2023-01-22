@@ -65,8 +65,8 @@ function loginFunc($name,$password)
  // echo "debug test entering function";
   if(isset($_POST['submit'])){
   echo "enetering if statement";
-  $sql="select * from users where binary name=':username' and binary password=':password';";
-  echo $name;
+  $sql="select * from users where binary name=:username and binary password=:password";
+ // echo $name;
   $s=$dbc->prepare($sql);
   $s->bindValue(":username",$name);
   $s->bindValue(":password",$password);
