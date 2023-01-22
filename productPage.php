@@ -14,6 +14,7 @@
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
+            //$fetch_result->execute()
             echo $fetch_result;
         ?>
     </body>
