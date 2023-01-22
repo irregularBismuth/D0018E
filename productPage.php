@@ -12,7 +12,7 @@
         <?php
             require_once("db/db.php");
             $connection_obj = $dbc;
-
+            $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             echo $fetch_result;
         ?>
