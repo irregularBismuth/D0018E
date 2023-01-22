@@ -13,7 +13,7 @@ $s->execute();
 $result=$s->fetchAll();
 if($s->rowCount($result) > 0 )
 {
- echo "test";
+ echo "test ";
 }
 
 
