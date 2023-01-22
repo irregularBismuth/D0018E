@@ -1,9 +1,9 @@
 <?php
 session_start();
-//require_once "db/db.php"; 
+require_once "classes/accountHandler.php"; 
 $username=$_POST['name'];
  $password=$_POST['pass'];
-function login($name,$pass){
+/*function login($name,$pass){
     require_once "db/db.php"; 
     if(isset($_POST['submit'])){
     $sql="select * from users where binary name=:name and binary password=:password";
@@ -23,7 +23,7 @@ function login($name,$pass){
     header("Location: login.php?bad=1");
     exit(0);
     }
-}
+}*/
 login($username,$password);
 ?>
 
