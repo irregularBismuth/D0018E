@@ -10,9 +10,9 @@ session_start();
         </title>
     </head>
     <body>
-        <form method="post" action="loginCheck.php">
-            <label>Username </label><input type="text" name=username /> </br>
-            <label>Password </label><input type="password" name=password /> </br>
+        <form method="post" action="loginChecken.php">
+            <label>Username </label><input type="text" name=name /> </br>
+            <label>Password </label><input type="text" name=pass /> </br>
             <input type="submit" name=submit /> </br>
         </form>
     </body>

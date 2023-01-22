@@ -1,31 +1,25 @@
 <?php
 session_start();
+//abc
 require_once "db/db.php";
-//require_once("classes/accountHandler.php");
-$uname=$_POST['username'];
-//echo $uname;
-$passw=$_POST['password'];
-$sql="select * from users where binary name=:u and binary password=:t";
-$s->bindValue(':u',$uname);
-$s->bindValue(':t',$passw);
+$sql="select * from users where binary name=:name and binary password=:password";
+$s=$dbc->prepare($sql);
+$username=$_POST['name'];
+$password=$_POST['pass'];
+$s->bindValue(':name',$username);
+$s->bindValue(':password',$password);
 $s->execute();
 $result=$s->fetchAll();
-print_r($result);
+if($s->rowCount() > 0)
+{
+  echo $s->rowCount();
 
-
-//echo $uname;
-//echo $passw;
-
-
-
-//loginFunc($uname,$passw);
-//if(isset($_SESSION['username']))
-
- // header("Location: index.php");
- // exit(0);
+}
+//foreach ($result as $result){
+//    echo $result['id'];
+//    echo "debug 44445";
+//    echo "</br>peeepo";
 //}
-//header("Location: login.php?bad=1");
-//exit(0);
-
-
+//print_r($result);
 ?>
+
