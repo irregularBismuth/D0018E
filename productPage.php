@@ -17,7 +17,7 @@ session_start();
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
-            //$fetch_result->execute()
+            $fetch_result->fetchAll();
             echo $fetch_result;
         ?>
     </body>
