@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once "db/db.php";
+//require_once "db/db.php";
     
 $username=$_POST['name'];
  $password=$_POST['pass'];
 function login($name,$pass){
-    
+    require_once "db/db.php"; 
     $sql="select * from users where binary name=:name and binary password=:password";
     $s=$dbc->prepare($sql);
     $s->bindValue(':name',$name);
