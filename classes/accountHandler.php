@@ -67,7 +67,9 @@ function loginFunc($name,$password)
   echo "enetering if statement";
   $sql="select * from users where binary name=:username and binary password=:password";
   $s=$dbc->prepare($sql);
+  echo $name." before";
   $name=filter($name);
+  echo $name." after";
   $password=filter($password);
   $s->bindValue(":username",$name);
   $s->bindValue(":password",$password);
