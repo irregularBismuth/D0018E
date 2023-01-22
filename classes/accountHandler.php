@@ -60,8 +60,9 @@ function filter($var)
  return $var;
 }
 
-function login($name,$password)
+function loginFunc($name,$password)
 {
+  echo "debug test entering function";
   if(isset($_POST['submit'])){
   $sql="select * from users where binary name=:username and binary password=:password";
   $s=$dbc->prepare($sql);

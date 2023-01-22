@@ -6,7 +6,7 @@ $uname=$_POST['uname'];
 $passw=$_POST['passw'];
 //echo $uname;
 //echo $passw;
-login($uname,$passw);
+loginFunc($uname,$passw);
 header("Location: index.php");
 exit(0);
 
