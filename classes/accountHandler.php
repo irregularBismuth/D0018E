@@ -72,8 +72,11 @@ function loginFunc($name,$password)
   $s->bindValue(":password",$password);
   $s->execute();
   $result=$s->fetchAll();
-  echo $s->rowCount($result);
- // echo $name." before";
+  foreach($result as $result)
+  {
+    echo $result;
+  }
+// echo $name." before";
 //  $name=filter($name);
  // echo $name." after";
  // $password=filter($password);
@@ -94,7 +97,7 @@ function loginFunc($name,$password)
   header("Location: login.php?");
   exit(0);  
   */  
-} 
+  } 
 }
 
 
