@@ -2,7 +2,7 @@
 session_start();
 //abc
 require_once "db/db.php";
-$sql="select id from users where binary name=:name and binary password=:password";
+$sql="select * from users where binary name=:name and binary password=:password";
 $s=$dbc->prepare($sql);
 $username=$_POST['name'];
 $password=$_POST['pass'];
