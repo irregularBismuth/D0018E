@@ -15,6 +15,7 @@ checkSession();
     <body>
         <div>
             <?php
+            session_start();
              echo "logged in as: ";
              echo $_SESSION['username'];
             ?>        
