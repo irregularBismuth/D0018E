@@ -11,9 +11,10 @@
         
         <?php
             require_once("db/db.php");
-            $connection_obj = new mysqli();
+            $connection_obj = $dbc;
             $querySql = "SELECT ´animal_name´ FROM animals";
-            $fetch_result = $dbc->query($querySql);
+            $fetch_result = $connection_obj->query($querySql);
+            echo $fetch_result;
         ?>
     </body>
 
