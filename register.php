@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
 
-<div class="header">     
+<header>     
  <a href="site.php"><img src="logo.png" width="400"></a> 
     <form role="search" id="form">
         <input type="search" id="query" name="q"
@@ -22,7 +22,7 @@ session_start();
 </form>
     
 <a href="login.php"> Login </a>
-</div>
+</header>
 
 register form here
 
