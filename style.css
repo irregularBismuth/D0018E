@@ -1,0 +1,53 @@
+table, th,td{
+    border:1px solid black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+
+    /* Remove the next line if you want the span to appear next to the h1 */
+    justify-content: space-between;
+
+    border-bottom: 1px solid #000;
+    padding: 1px 5px;
+    background-color: rgb(160, 101, 101);
+}
+
+
+
+
+
+form {
+    background-color: #4654e1;
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  input {
+    all: unset;
+    font: 16px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+  }
+  
+  svg {
+    color: #fff;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+  }
