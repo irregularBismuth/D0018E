@@ -15,6 +15,7 @@ session_start();
             <label>Password </label><input type="text" name=pass /> </br>
             <input type="submit" name=submit /> </br>
         </form>
+        <a href="register.php">Don't have a account register here</a>
     </body>
 
 
