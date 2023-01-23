@@ -25,7 +25,10 @@ session_start();
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
-            print_r($query_output[0]["animal_name"]."<br>".$query_output[0]["animal_price"]."<br>".$query_output[0]              ["animal_category"]);
+                foreach ($query_output as $query_output) {
+                # code...
+               echo $query_output["animal_name"]."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
+            }
             
         ?>
     </body>
