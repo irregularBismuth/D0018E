@@ -13,10 +13,25 @@ session_start();
         <h1> Product Page (shopping cart) </h1>
 
         <div class="row">
+
             <div class="column">
+                <div class="boxFrame">...</div>
             </div>
 
+            <div class="column">
+                <div class="boxFrame">...</div>
+            </div>
+
+            <div class="column">
+                <div class="boxFrame">...</div>
+            </div> 
+
+            <div class="column">
+                <div class="boxFrame">...</div>
+            </div>
+        
         </div>
+
         
         
         <?php
