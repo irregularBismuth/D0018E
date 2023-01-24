@@ -14,19 +14,19 @@ session_start();
 
         <div class="row">
 
-            <div class="column">
+            <div class="columnCart">
                 <div class="boxFrame">...</div>
             </div>
 
-            <div class="column">
+            <div class="columnCart">
                 <div class="boxFrame">...</div>
             </div>
 
-            <div class="column">
+            <div class="columnCart">
                 <div class="boxFrame">...</div>
             </div> 
 
-            <div class="column">
+            <div class="columnCart">
                 <div class="boxFrame">...</div>
             </div>
         
