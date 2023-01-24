@@ -23,6 +23,7 @@ session_start();
                        <div class="boxFrame">
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
+                            <button> remove </button> <br>
                             <button> info </button> 
                         </div>  
                     </div>
@@ -31,6 +32,7 @@ session_start();
                        <div class="boxFrame">
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
+                            <button> remove </button> <br>
                             <button> info </button> 
                         </div> 
                     </div>
@@ -39,6 +41,7 @@ session_start();
                         <div class="boxFrame">
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
+                            <buttton> remove </buttton> <br>
                             <button> info </button> 
                         </div>
                     </div> 
@@ -47,6 +50,7 @@ session_start();
                        <div class="boxFrame">
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
+                            <button> remove </button> <br>
                             <button> info </button> 
                         </div> 
                     </div>
