@@ -28,7 +28,8 @@ session_start();
                     </div>
 
                     <div class="columnCart">
-                        <div class="boxFrame">add, checkout, info</div>
+                        <div class="boxFrame">
+                            add <br> checkout <br> info</div>
                     </div> 
 
                     <div class="columnCart">
@@ -37,7 +38,9 @@ session_start();
         
                 </div>';
 
-               
+            echo "<br>";  
+
+            // Will add better logic to this:
             require_once("db/db.php");
             $width="100";
             $height="100";
