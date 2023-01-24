@@ -20,20 +20,35 @@ session_start();
                 <div class="row">
 
                     <div class="columnCart">
-                        <div class="boxFrame">add, checkout, info</div>
+                       <div class="boxFrame">
+                            <button> add </button> <br> 
+                            <button> checkout </button> <br> 
+                            <button> info </button> 
+                        </div>  
                     </div>
 
                     <div class="columnCart">
-                        <div class="boxFrame">add, checkout, info</div>
+                       <div class="boxFrame">
+                            <button> add </button> <br> 
+                            <button> checkout </button> <br> 
+                            <button> info </button> 
+                        </div> 
                     </div>
 
                     <div class="columnCart">
                         <div class="boxFrame">
-                            <button> add </button> <br> checkout <br> info</div>
+                            <button> add </button> <br> 
+                            <button> checkout </button> <br> 
+                            <button> info </button> 
+                        </div>
                     </div> 
 
                     <div class="columnCart">
-                        <div class="boxFrame">add, checkout, info</div>
+                       <div class="boxFrame">
+                            <button> add </button> <br> 
+                            <button> checkout </button> <br> 
+                            <button> info </button> 
+                        </div> 
                     </div>
         
                 </div>';
