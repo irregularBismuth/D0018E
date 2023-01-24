@@ -41,8 +41,10 @@ session_start();
             $height="100";
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
+            $queryRowCount = "SELECT COUNT(*) FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
+
                 foreach ($query_output as $query_output) {
                 # code...
                echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
