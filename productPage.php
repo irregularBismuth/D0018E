@@ -32,8 +32,7 @@ session_start();
         
         </div>
 
-        
-        
+               
         <?php
             require_once("db/db.php");
             $width="80";
@@ -44,7 +43,7 @@ session_start();
             $query_output = $fetch_result->fetchAll();
                 foreach ($query_output as $query_output) {
                 # code...
-               echo $query_output["animal_name"]."<br>"."<img src=".$query_output['animal_image']."' width='".$width."' height='".$height."'/>"."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
+               echo $query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
                $images = $query_output["animal_image"];
 
             } 
