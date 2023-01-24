@@ -43,7 +43,8 @@ session_start();
             $query_output = $fetch_result->fetchAll();
                 foreach ($query_output as $query_output) {
                 # code...
-               echo $query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
+               echo "Animal Name: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Animal Category: ".$query_output["animal_category"]."<br>";
+
                $images = $query_output["animal_image"];
 
             } 
