@@ -20,19 +20,19 @@ session_start();
                 <div class="row">
 
                     <div class="columnCart">
-                        <div class="boxFrame">...</div>
+                        <div class="boxFrame">add, checkout, info</div>
                     </div>
 
                     <div class="columnCart">
-                        <div class="boxFrame">...</div>
+                        <div class="boxFrame">add, checkout, info</div>
                     </div>
 
                     <div class="columnCart">
-                        <div class="boxFrame">...</div>
+                        <div class="boxFrame">add, checkout, info</div>
                     </div> 
 
                     <div class="columnCart">
-                        <div class="boxFrame">...</div>
+                        <div class="boxFrame">add, checkout, info</div>
                     </div>
         
                 </div>';
