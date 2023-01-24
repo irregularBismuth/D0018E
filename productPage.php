@@ -29,7 +29,7 @@ session_start();
 
                     <div class="columnCart">
                         <div class="boxFrame">
-                            add <br> checkout <br> info</div>
+                            <button> add </button> <br> checkout <br> info</div>
                     </div> 
 
                     <div class="columnCart">
