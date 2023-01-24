@@ -8,6 +8,7 @@
 }
 
 .columnCart{
+    display: grid;
     float: bottom;
     padding: 0 15px;
     width: 30%;
