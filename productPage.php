@@ -7,7 +7,7 @@ session_start();
     <head>
        
      <title> 1234455  pepo ProductPage </title>
-    <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="shoppingCartStyle.css">
+    <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css">
     </head>
 
     <body>
