@@ -21,6 +21,13 @@ session_start();
 
                     <div class="columnCart">
                        <div class="boxFrame">
+                            <div class: "columnImage">
+                                IMAGE HERE
+                            </div>
+                            <div class: "columnData">
+                                DATA HERE
+                            </div>
+    
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
                             <button> remove </button> <br>
