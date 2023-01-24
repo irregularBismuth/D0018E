@@ -35,8 +35,8 @@ session_start();
                
         <?php
             require_once("db/db.php");
-            $width="80";
-            $height="80";
+            $width="100";
+            $height="100";
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
