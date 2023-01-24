@@ -41,7 +41,7 @@ session_start();
                         <div class="boxFrame">
                             <button> add </button> <br> 
                             <button> checkout </button> <br> 
-                            <button> remove </buttton> <br>
+                            <button> remove </button> <br>
                             <button> info </button> 
                         </div>
                     </div> 
