@@ -7,9 +7,11 @@ session_start();
     <head>
        
      <title> 1234455  pepo ProductPage </title>
+    <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="shoppingCartStyle.css">
     </head>
 
     <body>
+
         <h1> Product Page (shopping cart) </h1>
         
         <?php
