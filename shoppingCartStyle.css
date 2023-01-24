@@ -7,9 +7,8 @@
   background-color: #edcaca;
 }
 
-.columnCart{
-    display: grid;
-    float: bottom;
+.columnCart {
+    float: left;
     padding: 0 15px;
     width: 30%;
 }
