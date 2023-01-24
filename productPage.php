@@ -36,13 +36,15 @@ session_start();
         
         <?php
             require_once("db/db.php");
+            $width="80";
+            $height="80";
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
                 foreach ($query_output as $query_output) {
                 # code...
-               echo $query_output["animal_name"]."<br>"."<img src=".$query_output['animal_image'] ."width="."80"."height="."80>"."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
+               echo $query_output["animal_name"]."<br>"."<img src=".$query_output['animal_image'].">"."<br>".$query_output["animal_price"]."<br>".$query_output["animal_category"];
                $images = $query_output["animal_image"];
 
             } 
