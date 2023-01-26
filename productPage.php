@@ -6,7 +6,7 @@ session_start();
 
     <head>
        
-     <title> 123445555555555  pepo ProductPage </title>
+     <title> 123445555  pepo ProductPage </title>
     <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css">
     </head>
 
