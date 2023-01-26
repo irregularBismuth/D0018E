@@ -26,10 +26,10 @@ session_start();
                                 <br>
                                 <div class="infoStyle">'.$info[$i].'</div>            
                                 <br>
-                                <button> add </button>  
-                                <button> checkout </button> 
-                                <button> remove </button>
-                                <button> info </button> 
+                                <button class="button"> add </button>  
+                                <button class="button"> checkout </button> 
+                                <button class="button"> remove </button>
+                                <button class="button"> info </button> 
                             </div> 
                         </div>
                     </div>
