@@ -20,12 +20,12 @@ session_start();
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
+                        <h2>Current shopping cart:</h2>
                         <div class="columnCart">
                             <div class="boxFrame">
                                 <br>
                                 <div class="imageEffect">'.$image[$i].'</div> 
-                                <br>
-                                <br>
+                                <br> <br>
                                 <div class="infoStyle">'.$info[$i].'</div>            
                                 <br> <br>
                                 <button class="button"> add </button>  
