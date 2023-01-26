@@ -30,7 +30,7 @@
 .imageEffect:hover{
     visibility: visible;
     top: 0;
-    &img{
+    img{
         width: 150px;
         height: 150px;
     }
