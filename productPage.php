@@ -24,7 +24,7 @@ session_start();
                             <div class="boxFrame">
                                 <div class="">'.$image[$i].'</div> 
                                 <br>
-                                <div class="infoSection">'.$info[$i].'</div>            
+                                <div class="infoStyle">'.$info[$i].'</div>            
                                 <br>
                                 <button> add </button>  
                                 <button> checkout </button> 
