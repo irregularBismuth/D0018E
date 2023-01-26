@@ -22,9 +22,9 @@
     display: table;
     clear: both;
 }
-}
+
 .infoSection{
-    border: 2px solid #ff000d;
+    border: 2px solid black;
     border-radius: 5px;
 
 }
