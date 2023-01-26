@@ -5,7 +5,7 @@ body {
  padding: 0;
  margin: 0;
 }
-header {
+header.headern {
 
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@ header {
 
 
 
-form {
+form.headern {
     background-color: #4654e1;
     width: 300px;
     height: 44px;
@@ -32,7 +32,7 @@ form {
     align-items: center;
   }
 
-  input {
+  input.headern {
     all: unset;
     font: 16px system-ui;
     color: #fff;
@@ -41,14 +41,14 @@ form {
     padding: 6px 10px;
   }
 
-  button {
+  button.headern {
     all: unset;
     cursor: pointer;
     width: 44px;
     height: 44px;
   }
   
-  svg {
+  svg.headern {
     color: #fff;
     fill: currentColor;
     width: 24px;
