@@ -4,14 +4,13 @@ session_start();
 <html>
 
 <head>
-<link rel="styleddsheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 <title>
 </title>
 </head>
 <body>
-
+<div class="headern">
 <header>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" /> 
     <a href="site.php"><img src="logo.png" width="400"></a>
     <form role="search" id="form">
   <input type="search" id="query" name="q"
@@ -23,7 +22,7 @@ session_start();
 </form>
 <a href="login.php"> Login </a>
 </header>
-
+</div>
 register form here
 <div class="reg">
     <form action="registerCheck.php" method="post">
