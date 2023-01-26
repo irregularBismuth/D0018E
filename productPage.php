@@ -69,6 +69,7 @@ session_start();
 
 
             }
+            echo $images_array[0];
             
         ?>
 
