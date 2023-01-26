@@ -63,7 +63,7 @@ session_start();
 
                 array_push($images_array, '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
 
-                array_push($info_array,'<Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"].'">');
+                array_push($info_array,'<Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"]);
                 generateBoxFrames($count, $images_array, $info_array);
 
 
