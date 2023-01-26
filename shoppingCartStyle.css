@@ -29,10 +29,10 @@
 
 .imageEffect:hover {
     visibility: visible;
-    top: -10;
+    top: 0;
     transform: scale(2.0);
 
-    z-index: 1;
+    
 }
 
 
