@@ -25,7 +25,6 @@
 
 .imageEffect{
     position: relative;
-    visibility: hidden;
 }
 
 .imageEffect:hover{
