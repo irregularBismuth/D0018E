@@ -24,11 +24,19 @@
 }
 
 .infoStyle {
-   font-size: 1rem; 
+    display: inline-block;
+    cursor: pointer;
+
+    font-size: 1rem; 
     border: 3px solid black;
     border-radius: 7px;
-    
+    border-opacity: 0.7;
 }
+
+.infoStyle:hover{
+    background-color: #fce808;
+}
+
 
 .button {
     display: inline-block;
