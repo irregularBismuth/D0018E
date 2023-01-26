@@ -16,8 +16,8 @@ session_start();
         
         <?php
             
-            function generateBoxFrames($countRow){
-                for ($i = 0; $i< $countRow;$i++){
+            function generateBoxFrames($countRow, $image="", $info=""){
+                for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
                         <div class="columnCart">
