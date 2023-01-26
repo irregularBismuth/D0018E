@@ -47,9 +47,11 @@ session_start();
             $count=$fetch_result->rowCount();
                 foreach ($query_output as $query_output) {
                 # code...
-               echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
+                echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
+                
+                generateBoxFrames();
 
-               $images = $query_output["animal_image"];
+                $images = $query_output["animal_image"];
 
             } 
         ?>
