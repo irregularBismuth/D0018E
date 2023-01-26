@@ -37,15 +37,17 @@
     padding: 15px 25px
     box-shadow: 0 10px #999;
     opacity: 0.7;
+    transition-duration: 0.5s;
     text-align: center;
 
 }
 
 
-.button:hover, .button:focus{
+.button:hover {
     box-shadow: 0 0.5em -0.4em var(--hover);
     transform: translateY(0.25em);
-    background-color: #108a0e;
+    background-color: #4CAF50;
+    color: gray;
     opacity: 1;
     
     
