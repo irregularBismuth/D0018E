@@ -30,7 +30,8 @@
 .imageEffect:hover{
     visibility: visible;
     top: 0;
-    left: 100px;
+    width: 150px;
+    height: 1550px;
     z-index: 1;
 }
 
