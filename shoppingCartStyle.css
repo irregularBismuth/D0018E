@@ -37,9 +37,8 @@
     padding: 15px 25px
     box-shadow: 0 10px #999;
     opacity: 0.6;
-}
-    color: #fff;
-    transition-duration: 0.5s;
+    background-color: #fff;
+    transition-duration: 0.3s;
     text-align: center;
 
 }
