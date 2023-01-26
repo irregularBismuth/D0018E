@@ -11,7 +11,7 @@ if($pass!=$spass)
     exit(0);
 }
 
-$sql="select from users name where name=:u";
+$sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
 
 //$sql="insert into users (name,password) values (:u,:p)";
@@ -24,6 +24,9 @@ if(s->rowCount() > 0)
 {
     header("Location: register.php?badUsername=1");
     exit(0);
+}
+else {
+    $sSql="insert into users (name,password,)"
 }
 
 
