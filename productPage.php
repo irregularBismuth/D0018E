@@ -73,6 +73,7 @@ session_start();
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $queryRowCount = "SELECT COUNT(*) FROM animals";
+            $queryItemId = "SELECT * FROM animals WHERE item_id = animal_id";
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
 
