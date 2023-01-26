@@ -22,7 +22,7 @@ session_start();
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
-                                '$image' <br>
+                                '$image[i]' <br>
                                 <button> add </button> <br> 
                                 <button> checkout </button> <br> 
                                 <button> remove </button> <br>
@@ -39,27 +39,37 @@ session_start();
             require_once("db/db.php");
             $width="100";
             $height="100";
-            $images = [];
-            $images = array();
+
+            $images_array = [];
+            $images_array = array();
+            $images_array = (array) null;
+            
+            $info_array = [];
+            $info_array = array();
+            $info_array = (array) null;
+
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $queryRowCount = "SELECT COUNT(*) FROM animals";
             $queryItemId = "SELECT * FROM animals WHERE item_id = animal_id";
+
             $fetch_result = $connection_obj->query($querySql);
             $query_output = $fetch_result->fetchAll();
             $count=$fetch_result->rowCount();
+
                 foreach ($query_output as $query_output) {
                 # code...
                 echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
 
 
-                $images[] = '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">';
-                $info_data = 'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"];
-                generateBoxFrames($count, $images, $info_data);
+                array_push($images_array,'<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
+
+                array_push($info_array,'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"]);
+                generateBoxFrames($count, $images_array, $info_array);
 
 
             }
-            echo images; 
+            
         ?>
 
     </body>
