@@ -6,7 +6,7 @@ session_start();
 
     <head>
        
-     <title> 12344555555  pepo ProductPage </title>
+     <title> 123445555555  pepo ProductPage </title>
     <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css">
     </head>
 
@@ -16,13 +16,14 @@ session_start();
         
         <?php
             
-            function generateBoxFrames($countRow, $image="", $info=""){
+            function generateBoxFrames($countRow, $image, $info){
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
-                                .'$image'"."'$info'".
+                                .'echo $image.'.<br>'
+                                .'echo $info.'.'
                                 <button> add </button> <br> 
                                 <button> checkout </button> <br> 
                                 <button> remove </button> <br>
@@ -52,7 +53,7 @@ session_start();
 
 
                 $images = '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.'">';
-                $info_data = "Animal type: ".$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"];
+                $info_data = 'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"];
                 generateBoxFrames($count, $images, $info_data);
 
 
