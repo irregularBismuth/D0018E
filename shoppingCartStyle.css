@@ -23,7 +23,7 @@
     clear: both;
 }
 
-.row:after:after > .infoStyle {
+.row:after > .infoStyle {
     &.infoStyle{
 
     border: 3px solid red;
