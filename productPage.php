@@ -39,7 +39,8 @@ session_start();
             require_once("db/db.php");
             $width="100";
             $height="100";
-            $images;
+            $images = [];
+            $images = array();
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $queryRowCount = "SELECT COUNT(*) FROM animals";
@@ -52,12 +53,13 @@ session_start();
                 echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
 
 
-                $images = '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">';
+                $images[] = '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">';
                 $info_data = 'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"];
                 generateBoxFrames($count, $images, $info_data);
 
 
-            } 
+            }
+            echo images; 
         ?>
 
     </body>
