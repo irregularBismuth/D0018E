@@ -20,7 +20,7 @@ session_start();
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
-                        <h2>Current shopping cart:</h2>
+                        <h2> Current shopping cart: </h2>
                         <div class="columnCart">
                             <div class="boxFrame">
                                 <br>
