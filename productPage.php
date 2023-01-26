@@ -24,6 +24,7 @@ session_start();
                             <div class="boxFrame">
                         
                                 '.$image[$i].'<br>
+                                <br>
                                 '.$info[$i].'<br>
                                 <br>
                                 <button> add </button>  
