@@ -9,7 +9,8 @@
 
 </style>
 <body>
-<header class="headern">
+<div class="headern">
+<header>
  
     <a href="site.php"><img src="logo.png" width="400"></a>
  
@@ -23,7 +24,7 @@
 </form>
     <a href="login.php"> Login </a>
 </header>
-
+</div>
     <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:50%;">
         <tr>
             <th><a href="cats.php">Cats</a></th>
