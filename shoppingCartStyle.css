@@ -29,11 +29,7 @@
 
 .imageEffect:hover {
     visibility: visible;
-    top: 40px;
-    left: 250px;
-    transform: scale(2.0);
-    
-
+    transform: scale(1.5); 
     
 }
 
