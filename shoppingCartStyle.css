@@ -27,14 +27,12 @@
     position: relative;
 }
 
-.imageEffect:hover{
+.imageEffect:hover .img{
     visibility: visible;
     top: 0;
-    img{
-        width: 150px;
-        height: 150px;
-    }
-}
+    width: 150px;
+    height: 150px;
+
     z-index: 1;
 }
 
