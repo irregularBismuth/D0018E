@@ -23,7 +23,7 @@
     clear: both;
 }
 
-.row .infoStyle {
+.columnCart > .infoStyle {
     &.infoStyle{
 
     border: 3px solid red;
