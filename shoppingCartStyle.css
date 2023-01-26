@@ -28,7 +28,6 @@
 }
 
 .imageEffect:hover {
-    position: absolute;
     visibility: visible;
     top: 0;
     right: 15px;
