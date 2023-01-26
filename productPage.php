@@ -68,7 +68,9 @@ session_start();
 
 
             }
+            echo "###############TEST###############";
             echo $images_array[0];
+            echo $info_array[0];
             
         ?>
 
