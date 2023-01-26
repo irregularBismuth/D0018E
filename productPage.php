@@ -25,7 +25,7 @@ session_start();
                                 <div class="">'.$image[$i].'</div> 
                                 <br>
                                 <div class="infoStyle">'.$info[$i].'</div>            
-                                <br>
+                                <br> <br>
                                 <button class="button"> add </button>  
                                 <button class="button"> checkout </button> 
                                 <button class="button"> remove </button>
