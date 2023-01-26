@@ -5,6 +5,9 @@ body {
  padding: 0;
  margin: 0;
 }
+
+.headern * {
+
 header {
 
     display: flex;
@@ -17,10 +20,6 @@ header {
     padding: 1px 5px;
     background-color: rgb(160, 101, 101);
 }
-
-
-
-
 
 form {
     background-color: #4654e1;
@@ -35,7 +34,7 @@ form {
   input {
     all: unset;
     font: 16px system-ui;
-    color: #fff;
+    color: #f0f;
     height: 100%;
     width: 100%;
     padding: 6px 10px;
@@ -54,4 +53,5 @@ form {
     width: 24px;
     height: 24px;
     padding: 10px;
+  }
   }
