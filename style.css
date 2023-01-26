@@ -5,7 +5,10 @@ body {
  padding: 0;
  margin: 0;
 }
-header.headern {
+
+.headern * {
+
+header {
 
     display: flex;
     align-items: center;
@@ -18,11 +21,7 @@ header.headern {
     background-color: rgb(160, 101, 101);
 }
 
-
-
-
-
-form.headern {
+form {
     background-color: #4654e1;
     width: 300px;
     height: 44px;
@@ -32,7 +31,7 @@ form.headern {
     align-items: center;
   }
 
-  input.headern {
+  input {
     all: unset;
     font: 16px system-ui;
     color: #fff;
@@ -41,17 +40,18 @@ form.headern {
     padding: 6px 10px;
   }
 
-  button.headern {
+  button {
     all: unset;
     cursor: pointer;
     width: 44px;
     height: 44px;
   }
   
-  svg.headern {
+  svg {
     color: #fff;
     fill: currentColor;
     width: 24px;
     height: 24px;
     padding: 10px;
+  }
   }
