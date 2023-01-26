@@ -22,8 +22,7 @@ session_start();
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
-                                .'echo $image.'.<br>'
-                                .'echo $info.'.'
+                                '$image' <br>
                                 <button> add </button> <br> 
                                 <button> checkout </button> <br> 
                                 <button> remove </button> <br>
