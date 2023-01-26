@@ -22,16 +22,10 @@ session_start();
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
-                        
-                                '.$image[$i].'<br>
+                                <div class="">'.$image[$i].'</div> 
                                 <br>
-                                <div class="">
-                                    '.$info[$i].'
-                                </div>
-                                
+                                <div class="">'.$info[$i].'</div>            
                                 <br>
-                                <br>
-
                                 <button> add </button>  
                                 <button> checkout </button> 
                                 <button> remove </button>
