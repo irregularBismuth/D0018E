@@ -11,7 +11,7 @@ if($pass!=$spass)
     exit(0);
 }
 
-$sql="select from users username where name=:u";
+$sql="select from users name where name=:u";
 $s=$dbc->prepare($sql);
 
 //$sql="insert into users (name,password) values (:u,:p)";
