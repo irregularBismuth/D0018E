@@ -24,9 +24,9 @@ session_start();
                             <div class="boxFrame">
                                 '.$image[$i].'<br>
                                 '.$info[$i].'<br>
-                                <button> add </button> <br> 
-                                <button> checkout </button> <br> 
-                                <button> remove </button> <br>
+                                <button> add </button>  
+                                <button> checkout </button> 
+                                <button> remove </button>
                                 <button> info </button> 
                             </div> 
                         </div>
