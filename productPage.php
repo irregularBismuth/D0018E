@@ -69,7 +69,7 @@ session_start();
 
 
             }
-            echo $images_array[0];
+            echo $images_array[1];
             
         ?>
 
