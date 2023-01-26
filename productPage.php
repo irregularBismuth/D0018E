@@ -60,13 +60,12 @@ session_start();
 
                 foreach ($query_output as $query_output) {
                 # code...
-                echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
 
+                    array_push($images_array, '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
 
-                array_push($images_array, '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
-
-                array_push($info_array,'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]);
-                generateBoxFrames($count, $images_array, $info_array);
+                    array_push($info_array,'Animal type: '.$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]);
+                
+                    generateBoxFrames($count, $images_array, $info_array);
 
 
             }
