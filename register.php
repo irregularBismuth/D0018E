@@ -9,7 +9,7 @@ session_start();
 </title>
 </head>
 <body>
-
+<div class="headern">
 <header>
     <a href="site.php"><img src="logo.png" width="400"></a>
     <form role="search" id="form">
@@ -22,7 +22,7 @@ session_start();
 </form>
 <a href="login.php"> Login </a>
 </header>
-
+</div>
 register form here
 <div class="reg">
     <form action="registerCheck.php" method="post">
