@@ -25,6 +25,7 @@ session_start();
                                 <br>
                                 <div class="imageEffect">'.$image[$i].'</div> 
                                 <br>
+                                <br>
                                 <div class="infoStyle">'.$info[$i].'</div>            
                                 <br> <br>
                                 <button class="button"> add </button>  
