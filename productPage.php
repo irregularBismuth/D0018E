@@ -22,6 +22,7 @@ session_start();
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
+                                <br>
                                 <div class="imageEffect">'.$image[$i].'</div> 
                                 <br>
                                 <div class="infoStyle">'.$info[$i].'</div>            
