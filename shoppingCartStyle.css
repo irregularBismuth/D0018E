@@ -8,7 +8,7 @@
 }
 
 .columnCart {
-    float: left;
+    float: center;
     padding: 0 15px;
     width: 20%;
 }
@@ -22,6 +22,11 @@
     display: table;
     clear: both;
 }
+}
+.infoSection{
+    border: 2px solid #ff000d;
+    border-radius: 5px;
+
 }
 
 
