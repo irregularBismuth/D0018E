@@ -22,6 +22,7 @@ session_start();
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
+                                .'$image'"."'$info'".
                                 <button> add </button> <br> 
                                 <button> checkout </button> <br> 
                                 <button> remove </button> <br>
@@ -48,10 +49,12 @@ session_start();
                 foreach ($query_output as $query_output) {
                 # code...
                 echo "Animal type: ".$query_output["animal_name"]."<br>".'<img src="'.$query_output['animal_image'].'" alt="image" width="'.$width.'" height="'.$height.'">'."<br>"."Price: ".$query_output["animal_price"]."<br>"."Description: ".$query_output["animal_category"]."<br>";
-                
-                generateBoxFrames($count);
 
-                $images = $query_output["animal_image"];
+
+                $images = '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.'">';
+                $info_data = "Animal type: ".$query_output["animal_name"]."<br>"."Price: ".$query_output["animal_price"]."<br"."Description: ".$query_output["animal_category"];
+                generateBoxFrames($count, $images, $info_data);
+
 
             } 
         ?>
