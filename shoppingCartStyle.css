@@ -35,7 +35,7 @@
 
 .infoStyle:hover{
     background-color: #fce808;
-    opacity: 0.5;
+    background-color: opacity 0.5;
 }
 
 
