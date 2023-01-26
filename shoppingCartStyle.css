@@ -23,13 +23,11 @@
     clear: both;
 }
 
-.row:after > .infoStyle {
-    &.infoStyle{
-
+.row:after .infoStyle {
+    
     border: 3px solid red;
     border-radius: 5px;
-    }
-}
+    
 }
 
 
