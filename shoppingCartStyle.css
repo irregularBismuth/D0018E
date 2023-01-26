@@ -23,7 +23,7 @@
     clear: both;
 }
 
-.row:after .infoStyle {
+.boxFrame:after .infoStyle {
     
     border: 3px solid red;
     border-radius: 5px;
