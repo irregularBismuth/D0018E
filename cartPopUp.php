@@ -7,6 +7,8 @@ session_start();
 
     <head>
         <title>...</title>
+
+        <style>button{background-image: "";}</style>
     </head>
     
     
