@@ -21,7 +21,7 @@ session_start();
             //button tag should also have a class
             //}
            echo '
-                <div id="productCart">
+                <div class="productCart">
                     <button onclick='.doSomething().'>
                         <img src="shoppingcart.jpg" alt ="Image" width=80, height=80>
                     </button>
