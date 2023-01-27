@@ -30,12 +30,12 @@ session_start();
                                 <br> <br>
                                 <div class="infoStyle">
                                     <ul id="infoSection">                             
-                                        <li>Animal type: '.$animalArray['name'][$i].'</li>
+                                        <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
                                         <br>
-                                        <li>Description: '.$animalArray['category'][$i].'</li>
+                                        <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
                                         <br>
                                         <hr>
-                                        <li>Subtotal: '.$animalArray['price'][$i].'</li>
+                                        <li><b>Subtotal:</b> '.$animalArray['price'][$i].'</li>
                                     </ul>
                                 </div>            
                                 
