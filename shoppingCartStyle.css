@@ -4,8 +4,8 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-align: left;
-  background: rgb(237,202,202);
-  background: linear-gradient(90deg, rgba(237,202,202,0.9) 35%, rgba(237,234,225,1) 100%);
+  background: rgb(148,187,233);
+  background: radial-gradient(circle, rgba(148,187,233,1) 37%, rgba(238,174,202,1) 98%);
   border-radius: 10px;
 
 }
