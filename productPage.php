@@ -20,7 +20,6 @@ session_start();
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
-                        <h2>&nbsp Current shopping cart: </h2>
                         <div class="columnCart">
                             <div class="boxFrame">
                                 <br>
@@ -69,10 +68,8 @@ session_start();
 
                     array_push($info_array,'<b>Animal type:</b> '.$query_output["animal_name"]."<br>"."<b>Price: </b> ".$query_output["animal_price"]."<br>"."<b> Description:</b> ".$query_output["animal_category"]);
                 
-                    generateBoxFrames($count, $images_array, $info_array);
-
-
-            }
+                }
+                generateBoxFrames($count, $images_array, $info_array);         
             
         ?>
 
