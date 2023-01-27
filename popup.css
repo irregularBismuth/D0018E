@@ -1,0 +1,17 @@
+#productCart {
+    display: inline-block;
+}
+
+#productCart button{
+    background-color: white;
+}
+
+#productCart img{
+    display: inline-block;    
+}
+
+#productCart:hover{
+    background-color: #fce808;
+    background-color: opacity 0.55;
+}
+
