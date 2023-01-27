@@ -3,15 +3,11 @@
     cursor: pointer;
 }
 
-.productCart[type="button"]{
+.button{
     background-color: white;
 }
 
-.productCart[type="img"]{
-    display: inline-block;    
-}
-
-.productCart.button:hover{
+.button:hover{
     background-color: #fce808;
     background-color: opacity 0.55;
 }
