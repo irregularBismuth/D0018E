@@ -21,7 +21,7 @@ session_start();
             //}
            echo '
                 <div id="productCart">
-                    <button onclick'.doSomething().'</button>
+                    <button onclick='.doSomething().'</button>
                 </div>
                 '  
         
