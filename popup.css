@@ -4,11 +4,14 @@
 }
 
 .button{
-    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: background-color 0.3s;
 }
 
 .button:hover{
-    background-color: #fce808;
+    background-color: #4CAF50;
     background-color: opacity 0.55;
 }
 
