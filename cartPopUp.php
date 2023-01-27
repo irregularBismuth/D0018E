@@ -15,7 +15,7 @@ session_start();
 
         <?php
             function doSomething(){
-                    echo '<a href=productPage.php">';
+                    echo '<a href=productPage.php>';
                 }
             //div productCart should be the layout section
             //button tag should also have a class
