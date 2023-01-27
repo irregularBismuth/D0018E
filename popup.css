@@ -3,11 +3,11 @@
     cursor: pointer;
 }
 
-.productCart .button{
+.productCart:button{
     background-color: white;
 }
 
-.productCart .img{
+.productCart:img{
     display: inline-block;    
 }
 
