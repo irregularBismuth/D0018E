@@ -5,7 +5,7 @@
   padding: 10px;
   text-align: left;
   background: rgb(237,202,202);
-  background-image: linear-gradient(rgba(237,202,202,90), rgba(237,234,225,100));
+  background: linear-gradient(90deg, rgba(237,202,202,0.9) 35%, rgba(237,234,225,1) 100%);
   border-radius: 10px;
 
 }
