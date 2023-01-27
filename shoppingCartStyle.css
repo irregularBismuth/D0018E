@@ -3,8 +3,8 @@
 .boxFrame {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
-  text-align: center;
-  background-color: #edcaca;
+  text-align: left;
+  background-image: linear-gradient(#edcaca, #edeae1);
   border-radius: 10px;
 
 }
