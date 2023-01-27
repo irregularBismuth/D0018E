@@ -29,13 +29,16 @@ session_start();
                                 <div class="imageEffect">'.$animalArray['image'][$i].'</div>
                                 <br> <br>
                                 <div class="infoStyle">
-                                    Animal type: '.$animalArray['name'][$i].'
-                                    <br>
-                                    Description: '.$animalArray['category'][$i].'
-                                    <br>
-                                    <hr>
-                                    Subtotal: '.$animalArray['price'][$i].'
+                                    <ul id="infoSection">                             
+                                        <li>Animal type: '.$animalArray['name'][$i].'</li>
+                                        <br>
+                                        <li>Description: '.$animalArray['category'][$i].'</li>
+                                        <br>
+                                        <hr>
+                                        <li>Subtotal: '.$animalArray['price'][$i].'</li>
+                                    </ul>
                                 </div>            
+                                
                                 <br> <br>
                                 
                                 <button class="button"> add </button>  
