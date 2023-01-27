@@ -78,7 +78,7 @@
 
 }
 
-#buttonRemove:.button{
+.button #buttonRemove{
     background-color: red;
 }
 
