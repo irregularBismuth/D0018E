@@ -14,7 +14,7 @@ session_start();
     <body>
 
         <?php
-            function doSomething(){
+            function changeToProductPage(){
                     echo '<a href=productPage.php>';
                 }
             //div productCart should be the layout section
@@ -22,7 +22,7 @@ session_start();
             //}
            echo '
                 <div class="productCart">
-                    <button class="button" onclick='.doSomething().'>
+                    <button class="button" onclick='.changeToProductPage().'>
                         <img src="shoppingcart.jpg" alt ="Image" width=80, height=80>
                     </button>
                 </div>
