@@ -16,17 +16,28 @@ session_start();
         
         <?php
             
-            function generateBoxFrames($countRow, $image, $info){
+            function generateBoxFrames($countRow, $animalArray){
+                //adding some local variable reference:
+                $info_name;
+                $info_price;
+                $info_description;
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
                         <div class="columnCart">
                             <div class="boxFrame">
                                 <br>
-                                <div class="imageEffect">'.$image[$i].'</div> 
+                                <div class="imageEffect">'.$animalArray['image'][$i].'</div>
                                 <br> <br>
-                                <div class="infoStyle">'.$info[$i].'</div>            
+                                <div class="infoStyle">
+                                    Animal type: '.$animalArray['name'][$i].'
+                                    <br>
+                                    Description: '.$animalArray['category'][$i].'
+                                    <br>
+                                    Total: '.$animalArray['price'][$i].'
+                                </div>            
                                 <br> <br>
+                                
                                 <button class="button"> add </button>  
                                 <button class="button"> checkout </button> 
                                 <button class="button"> remove </button>
@@ -44,14 +55,8 @@ session_start();
             $width="100";
             $height="100";
 
-            $images_array = [];
-            $images_array = array();
-            $images_array = (array) null;
-            
-            $info_array = [];
-            $info_array = array();
-            $info_array = (array) null;
-
+            $animal_array = array("name"=>[], "price"=>[], "image"=>[], "category"=>[]);
+              
             $connection_obj = $dbc;
             $querySql = "SELECT * FROM animals";
             $queryRowCount = "SELECT COUNT(*) FROM animals";
@@ -64,10 +69,12 @@ session_start();
                 foreach ($query_output as $query_output) {
                 # code...
 
-                    array_push($images_array, '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
+                    array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
 
-                    array_push($info_array,'<b>Animal type:</b> '.$query_output["animal_name"]."<br>"."<b>Price: </b> ".$query_output["animal_price"]."<br>"."<b> Description:</b> ".$query_output["animal_category"]);
-                
+                    array_push($animal_array['name'],$query_output["animal_name"]);         
+                    array_push($animal_array['price'],$query_output["animal_price"]);
+                    array_push($animal_array['category'],$query_output["animal_category"]);
+               
                 }
                 generateBoxFrames($count, $images_array, $info_array);         
             
