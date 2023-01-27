@@ -23,7 +23,7 @@ session_start();
            echo '
                 <div id="productCart">
                     <button onclick='.doSomething().'>
-                        <img src="shoppingcart.jpg" alt ="Image" width=100, height=100>
+                        <img src="shoppingcart.jpg" alt ="Image" width=80, height=80>
                     </button>
                 </div>
                 '  
