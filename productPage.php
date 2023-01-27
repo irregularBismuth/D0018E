@@ -18,9 +18,8 @@ session_start();
             
             function generateBoxFrames($countRow, $animalArray){
                 //adding some local variable reference:
-                $info_name;
-                $info_price;
-                $info_description;
+                $additional_data = 0;
+                
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                     <div class="row">
@@ -34,7 +33,8 @@ session_start();
                                     <br>
                                     Description: '.$animalArray['category'][$i].'
                                     <br>
-                                    Total: '.$animalArray['price'][$i].'
+                                    <hr>
+                                    Subtotal: '.$animalArray['price'][$i].'
                                 </div>            
                                 <br> <br>
                                 
