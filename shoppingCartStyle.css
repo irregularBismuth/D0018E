@@ -4,13 +4,10 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-align: left;
-  
-  &.simple-linear{
-
-  }
-  background: linear-gradient(rgba(148,187,233,1) 37%, rgba(238,174,202,1) 98%);
+      
+  background: linear-gradient(rgba(148,187,233,1), rgba(238,174,202,1));
   border-radius: 10px;
-  }
+  
 
 }
 
@@ -39,6 +36,19 @@
     transform: scale(1.3); 
     
 }
+
+#infoSection {
+    display: inline-block;
+    padding-left: 5px;
+    resize: none;
+    list-style-type: square;
+}
+
+#infoSection li {
+    display: inline-block;
+}
+
+
 
 
 .infoStyle {
