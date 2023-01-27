@@ -6,7 +6,7 @@ session_start();
 <html>
 
     <head>
-        <title>...</title>
+        <title>....</title>
 
     </head>
     
@@ -23,7 +23,7 @@ session_start();
            echo '
                 <div id="productCart">
                     <button onclick='.doSomething().'>
-                        <img src="shoppingcart.jpg" alt ="Image">
+                        <img src="shoppingcart.jpg" alt ="Image" width=100, height=100>
                     </button>
                 </div>
                 '  
