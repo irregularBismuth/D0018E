@@ -15,7 +15,7 @@ session_start();
 
         <?php
             function doSomething(){
-                    header("Location: http://130.240.200.85/d0018e/D0018E/productPage.php");
+                    header("Location: productPage.php");
                 }
             //div productCart should be the layout section
             //button tag should also have a class
