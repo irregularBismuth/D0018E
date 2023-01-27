@@ -15,8 +15,7 @@ session_start();
 
         <?php
             function doSomething(){
-                    echo '<form method="POST action="cartPopup.php">
-                    <input type="submit"/> </form>';
+                    echo '<a href=cartPopup.php">';
                 }
             //div productCart should be the layout section
             //button tag should also have a class
