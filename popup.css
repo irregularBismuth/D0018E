@@ -3,15 +3,15 @@
     cursor: pointer;
 }
 
-.productCart:button{
+.productCart[type="button"]{
     background-color: white;
 }
 
-.productCart:img{
+.productCart[type="img"]{
     display: inline-block;    
 }
 
-.productCart:hover{
+.productCart.button:hover{
     background-color: #fce808;
     background-color: opacity 0.55;
 }
