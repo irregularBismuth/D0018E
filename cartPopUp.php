@@ -22,8 +22,8 @@ session_start();
             //}
            echo '
                 <div class="productCart">
-                    <button type="button" onclick='.doSomething().'>
-                        <img type="img" src="shoppingcart.jpg" alt ="Image" width=80, height=80>
+                    <button class="button" onclick='.doSomething().'>
+                        <img src="shoppingcart.jpg" alt ="Image" width=80, height=80>
                     </button>
                 </div>
                 '  
