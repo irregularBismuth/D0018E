@@ -8,7 +8,6 @@ session_start();
     <head>
         <title>...</title>
 
-        <style>button{background-image: "shoppingcart.jpg";}</style>
     </head>
     
     
@@ -23,7 +22,9 @@ session_start();
             //}
            echo '
                 <div id="productCart">
-                    <button onclick='.doSomething().'</button>
+                    <button onclick='.doSomething().'>
+                        <img src="shoppingcart.jpg" alt ="Image">
+                    </button>
                 </div>
                 '  
         
