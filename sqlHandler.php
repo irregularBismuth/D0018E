@@ -48,7 +48,7 @@ session_start();
         }
     }
     $obj = new SQLHandler($dbc);
-    echo $obj->get_product_data()['name'];
+    echo $obj->get_product_data();
     
     ?>
     
