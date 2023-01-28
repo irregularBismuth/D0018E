@@ -12,6 +12,7 @@ session_start();
     <h1>hi</h1>
 
     <?php
+    echo "HELLO????";
 
     class SQLHandler {
         public $sql;
