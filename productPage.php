@@ -88,7 +88,7 @@ session_start();
                 $sql_obj = new SQLHandler($dbc);
                 $animals = $sql_obj->get_product_data();
                 $row_count = count($animals['image']);
-                //generateBoxFrames($row_count, $animals);         
+                generateBoxFrames($row_count, $animals);         
                 //generateBoxFrames($count, $animal_array);
         ?>
 
