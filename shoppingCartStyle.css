@@ -16,6 +16,8 @@
 .boxFrame > div {
 
     padding: 30px 0;
+    border: 1px dotted red;
+    z-index: 999;
 }
 .section1{
     grid-column: 1/span3;
