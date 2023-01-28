@@ -13,8 +13,6 @@ session_start();
 
     <?php
     require_once("db/db.php");
-    $obj = new SQLHandler($dbc);
-    echo $obj->get_query();
 
     class SQLHandler {
         public $db_connector;
@@ -39,6 +37,7 @@ session_start();
 
         }
     }
+    $obj = new SQLHandler($dbc);
     echo $obj->get_query();
     
     ?>
