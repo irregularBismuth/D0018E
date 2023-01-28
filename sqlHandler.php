@@ -13,6 +13,8 @@ session_start();
 
     <?php
     echo "HELLO????";
+    $obj = new SQLHandler();
+    echo $obj->get_query();
 
     class SQLHandler {
         public $sql;
