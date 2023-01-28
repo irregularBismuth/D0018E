@@ -98,7 +98,7 @@
 
 .buttonRemove {
     border-radius: 50%;
-    background-image: url("/home/wigge1/D0018E/deleteIcon.png");
+    background-image: url("deleteIcon.png");
 }
 
 }
