@@ -48,7 +48,7 @@ session_start();
                                 <div class="section3">
                                     <button class="button"> add </button>  
                                     <button class="button"> checkout </button> 
-                                    <button class="button"> remove </button>
+                                    <button class="button"> href="deleteIcon.png" </button>
                                     <button class="button"> info </button> 
                                 </div>
                                 
