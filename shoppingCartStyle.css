@@ -22,6 +22,8 @@
 
 
 .section1{
+    width: 50%;
+    height: 50%;
     grid-column: 1/span3;
     grid-row: 1/span3;
 }
