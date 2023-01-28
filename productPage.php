@@ -74,7 +74,10 @@ session_start();
                 foreach ($query_output as $query_output) {
                 # code...
 
-                    array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
+                    //array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
+
+
+                    array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'">');
 
                     array_push($animal_array['name'],$query_output["animal_name"]);         
                     array_push($animal_array['price'],$query_output["animal_price"]);
