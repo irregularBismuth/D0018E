@@ -31,7 +31,6 @@ session_start();
                                         <img class="fit_image" src='.$animalArray['image'][$i].'>
                                 </div>
 
-}
                                 <div class="section2">
                                     <div class="infoStyle">
                                         <ul id="infoSection">                             
