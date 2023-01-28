@@ -30,7 +30,6 @@ session_start();
             /*
             This metod should request query from our database that show product/item data on our site
             */
-            $animal_array = array("name"=>[],"price"=>[],"image"=>[], "category"=>[]);
             $query = "SELECT * FROM animals";
             $queryUser = "SELECT * FROM animals WHERE item_id = animal_id";
         
