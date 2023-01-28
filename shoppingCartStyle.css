@@ -23,7 +23,7 @@
 
 .section1{
     grid-column: 1/span3;
-    grid-row: 1/span3;
+    grid-row: 1;
 }
 
 .fit_image {
