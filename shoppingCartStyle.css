@@ -96,8 +96,8 @@
 
 }
 
-.buttonRemove > .button {
-    background-image: url("deleteIcon.png");
+.buttonRemove {
+    background: url("deleteIcon.png");
 }
 
 
