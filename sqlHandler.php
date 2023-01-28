@@ -1,5 +1,7 @@
 <?php
     session_start();
+?>
+<?php
     require("db/db.php");
 
     class SQLHandler {
@@ -40,6 +42,6 @@
     //$row_count = count($animals['image']);
     //echo $animals['name'][1];
     
-    ?>
+?>
     
 
