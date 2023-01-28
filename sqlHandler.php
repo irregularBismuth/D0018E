@@ -39,7 +39,7 @@ session_start();
     }
     
     $obj = new SQLHandler();
-    echo "adadaudduahuahaduhd"; 
+    echo "TEST!!!"; 
     ?>
     
 </body>
