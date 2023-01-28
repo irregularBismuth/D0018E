@@ -39,7 +39,7 @@
 }
 
 .imageEffect{
-    position: relative;
+    position: absolute;
 }
 
 .imageEffect:hover {
