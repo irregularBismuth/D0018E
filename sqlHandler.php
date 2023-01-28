@@ -12,7 +12,7 @@ session_start();
     <h1>hi</h1>
 
     <?php
-    require_once("db/db.php");
+    require("db/db.php");
 
     class SQLHandler {
         public $db_connector;
