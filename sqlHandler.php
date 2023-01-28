@@ -41,7 +41,7 @@ session_start();
     }
     
     $obj = new SQLHandler();
-    echo 'hej'; 
+    echo "hej"; 
     ?>
     
 </body>
