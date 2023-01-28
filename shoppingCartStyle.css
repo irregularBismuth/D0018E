@@ -19,6 +19,11 @@
     border: 1px dotted red;
     z-index: 999;
 }
+
+.boxFrame > img {
+    object-fit: fill;
+}
+
 .section1{
     grid-column: 1/span3;
     grid-row: 1/span3;
@@ -38,14 +43,11 @@
     grid-row: 5;
 }
 
-img {
-    object-fit: fill;
-}
 
 
-.imageEffect > img{
+
+.imageEffect {
     position: absolute;
-    object-fit: fill;
 }
 
 .imageEffect:hover {
