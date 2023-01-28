@@ -49,7 +49,7 @@ session_start();
     }
     $obj = new SQLHandler($dbc);
     $animals = $obj->get_product_data();
-    echo "".$animals['name']."";
+    echo $animals['name'][1];
     
     ?>
     
