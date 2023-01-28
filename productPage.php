@@ -16,6 +16,10 @@ session_start();
         
         <?php
             
+            if(!isset($_SESSION["cart"])){
+                $_SESSION["cart"] = array();
+            }
+            
             function generateBoxFrames($countRow, $animalArray){
                 //adding some local variable reference:
                 $additional_data = 0;
@@ -27,6 +31,7 @@ session_start();
                                         <img class="fit_image" src='.$animalArray['image'][$i].'>
                                 </div>
 
+}
                                 <div class="section2">
                                     <div class="infoStyle">
                                         <ul id="infoSection">                             
