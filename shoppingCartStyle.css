@@ -40,6 +40,7 @@
 
 .imageEffect{
     position: absolute;
+    object-fit: cover;
 }
 
 .imageEffect:hover {
