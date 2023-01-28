@@ -42,7 +42,7 @@ session_start();
     $obj = new SQLHandler();
     echo 'hej'; 
     ?>
-
+    hej
 </body>
 
 </html>
