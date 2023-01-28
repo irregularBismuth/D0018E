@@ -23,27 +23,30 @@ session_start();
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
                         <div class="boxFrame">
-                                <br>
-                                <div class="imageEffect">'.$animalArray['image'][$i].'</div>
-                                <br> <br>
-                                <div class="infoStyle">
-                                    <ul id="infoSection">                             
-                                        <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
-                                        <br>
-                                        <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
-                                        <br>
-                                        <hr>
-                                        <li><b>Subtotal:</b> '.$animalArray['price'][$i].'</li>
-                                    </ul>
-                                </div>            
+                                <div class="section1">
+                                    <div class="imageEffect">'.$animalArray['image'][$i].'</div>
+                                </div>
+
+                                <div class="section2">
+                                    <div class="infoStyle">
+                                        <ul id="infoSection">                             
+                                            <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
+                                            <br>
+                                            <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
+                                            <br>
+                                            <hr>
+                                            <li><b>Subtotal:</b> '.$animalArray['price'][$i].'</li>
+                                        </ul>
+                                    </div>            
+                                </div>
+</div>
                                 
-                                <br> <br>
-                                
-                                <button class="button"> add </button>  
-                                <button class="button"> checkout </button> 
-                                <button class="button"> remove </button>
-                                <button class="button"> info </button> 
-                        
+                                <div class="section3">
+                                    <button class="button"> add </button>  
+                                    <button class="button"> checkout </button> 
+                                    <button class="button"> remove </button>
+                                    <button class="button"> info </button> 
+                                </div>
                         </div>
                         <br>';
                 }
