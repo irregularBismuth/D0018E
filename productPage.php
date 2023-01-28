@@ -43,7 +43,6 @@ session_start();
                                         </ul>
                                     </div>            
                                 </div>
-</div>
                                 
                                 <div class="section3">
                                     <button class="button"> add </button>  
