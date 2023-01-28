@@ -49,14 +49,7 @@
 }
 
 
-
-
-.imageEffect {
-    
-    position: absolute;
-}
-
-.imageEffect:hover {
+.fit_image:hover {
     visibility: visible;
     transform: scale(1.3); 
     
