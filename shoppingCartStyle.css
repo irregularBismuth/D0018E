@@ -22,7 +22,7 @@
 
 
 .section1{
-    grid-column: 1/span1;
+    grid-column: 1;
     grid-row: 1;
 }
 
