@@ -22,9 +22,7 @@ session_start();
                 
                 for ($i = 0; $i<$countRow;$i++){
                     echo '
-                    <div class="row">
-                        <div class="columnCart">
-                            <div class="boxFrame">
+                        <div class="boxFrame">
                                 <br>
                                 <div class="imageEffect">'.$animalArray['image'][$i].'</div>
                                 <br> <br>
@@ -45,10 +43,9 @@ session_start();
                                 <button class="button"> checkout </button> 
                                 <button class="button"> remove </button>
                                 <button class="button"> info </button> 
-                            </div> 
+                        
                         </div>
-                    </div>
-                    <br>';
+                        <br>';
                 }
             };
                
