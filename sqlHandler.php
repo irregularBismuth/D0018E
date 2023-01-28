@@ -40,7 +40,7 @@ class SQLHandler {
 
 
 $obj = new SQLHandler();
-echo $obj->get_query(); 
+echo ''.$obj->get_query().''; 
 
 ?>
 
