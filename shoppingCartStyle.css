@@ -2,7 +2,7 @@
 
 .boxFrame {
   display: grid;
-  grid-template-columns: auto auto 100px;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -16,7 +16,6 @@
 .boxFrame > div {
 
     padding: 30px 0;
-    grid-gap: 10px;
     border: 1px dotted red;
     z-index: 999;
 }
