@@ -51,7 +51,7 @@
 
 .imageEffect {
     object-fit: contain;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 .imageEffect:hover {
