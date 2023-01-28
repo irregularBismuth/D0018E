@@ -96,10 +96,12 @@
 
 }
 
-.buttonRemove .button{
-    background-color: red;
+.buttonRemove {
+    border-radius: 50%;
+    background-image: url("/home/d0018e/");
 }
 
+}
 
 .button:hover {
     
