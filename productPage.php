@@ -84,6 +84,7 @@ session_start();
                
                 }
                 require_once("db/db.php");
+                require_once("SQLHandler.php");
                 $sql_obj = new SQLHandler($dbc);
                 $animals = $sql_obj->get_product_data();
                 $row_count = count($animals);
