@@ -24,7 +24,9 @@ session_start();
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
-                                    <div class="imageEffect">'.$animalArray['image'][$i].'</div>
+                                    <div class="imageEffect">
+                                        <img src='.$animalArray['image'][$i].'>
+                                    </div>
                                 </div>
 
                                 <div class="section2">
@@ -77,7 +79,7 @@ session_start();
                     //array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'" alt=image" width="'.$width.'" height"'.$height.'">');
 
 
-                    array_push($animal_array['image'], '<img src="'.$query_output['animal_image'].'">');
+                    array_push($animal_array['image'],$query_output['animal_image']);
 
                     array_push($animal_array['name'],$query_output["animal_name"]);         
                     array_push($animal_array['price'],$query_output["animal_price"]);
