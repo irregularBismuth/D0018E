@@ -4,6 +4,12 @@
 session_start();
 ?>
 
+<html>
+
+<head>...
+    <title>...</title>
+</head>
+<body>
 
 <?php
 
@@ -32,8 +38,11 @@ class SQLHandler {
     }
 }
 
+
 $obj = new SQLHandler();
 echo $obj->get_query(); 
 
-
 ?>
+
+</body>
+</html>
