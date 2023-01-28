@@ -96,7 +96,7 @@
 
 }
 
-.buttonRemove {
+.buttonRemove > .button {
     background-image: "deleteIcon.png";
 }
 
