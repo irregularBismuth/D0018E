@@ -2,6 +2,7 @@
 
 .boxFrame {
   display: grid;
+  grid-template-columns: auto auto auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-align: center;  
@@ -11,20 +12,27 @@
 
 }
 
-.columnCart {
-    float: center;
-    padding: 0 15px;
-    width: 28%;
+.boxFrame > div {
+
+    padding: 30px 0;
+}
+.section1{
+    grid-column: 1/span2;
+    grid-row: 1/span3;
+}
+.section2{
+    grid-column: 3/span2;
+    grid-row: 1/span3;
 }
 
-.row{
-    margin: 0 -10px;
+.section3{
+    grid-column: 1/span4;
+    grid-row: 4;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.section4{
+    grid-column: 1/span4;
+    grid-row: 5;
 }
 
 .imageEffect{
