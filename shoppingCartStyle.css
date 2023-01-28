@@ -38,6 +38,11 @@
     grid-row: 5;
 }
 
+img {
+    object-fit: fill;
+}
+
+
 .imageEffect{
     position: absolute;
 }
