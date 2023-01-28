@@ -50,7 +50,7 @@ img {
 
 
 .imageEffect {
-    object-fit: contain;
+    object-fit: fill;
     /*position: absolute;*/
 }
 
