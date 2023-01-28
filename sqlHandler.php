@@ -13,23 +13,24 @@ session_start();
 
     <?php
     echo "HELLO????";
-    $obj = new SQLHandler();
+    require_once("db/db.php");
+    $obj = new SQLHandler($dbc);
     echo $obj->get_query();
 
     class SQLHandler {
-        public $sql;
+        public $db_connector;
         public $query;
 
-        function __construct()
+        function __construct($db_connector)
         {
-            $this->sql = require($dbc); 
-
+            $this->db_connector = $db_connector;
         }
     
-        public function get_query(){
+        function get_query(){
             $query = "SELECT * FROM animals";
+            $queryUser = "SELECT * FROM animals WHERE item_id = animal_id";
         
-            $fetch_result = $this->sql->query($query);
+            $fetch_result = $this->db_connector->query($query);
             //$row_count = $fetch_result->rowCount();
             $output = $fetch_result->fetchAll();
 
@@ -40,8 +41,6 @@ session_start();
         }
     }
     
-    $obj = new SQLHandler();
-    echo "TEST!!!"; 
     ?>
     
 </body>
