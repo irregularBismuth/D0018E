@@ -43,8 +43,9 @@ img {
 }
 
 
-.imageEffect{
+.imageEffect > img{
     position: absolute;
+    object-fit: fill;
 }
 
 .imageEffect:hover {
