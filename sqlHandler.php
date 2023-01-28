@@ -16,14 +16,19 @@ session_start();
 
     class SQLHandler {
         public $db_connector;
-        public $query;
+        public $query_array;
 
         function __construct($db_connector)
         {
             $this->db_connector = $db_connector;
+            $this->query_array = []; //initilize an empty array that should store unique users queries.
         }
     
-        function get_query(){
+        function get_product_data(){
+            /*
+            This metod should request query from our database that show product/item data on our site
+            */
+            
             $query = "SELECT * FROM animals";
             $queryUser = "SELECT * FROM animals WHERE item_id = animal_id";
         
@@ -38,7 +43,7 @@ session_start();
         }
     }
     $obj = new SQLHandler($dbc);
-    echo $obj->get_query();
+    echo $obj->get_product_data();
     
     ?>
     
