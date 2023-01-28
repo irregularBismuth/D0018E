@@ -47,6 +47,8 @@ session_start();
                                     <button class="button"> remove </button>
                                     <button class="button"> info </button> 
                                 </div>
+                                
+                                <div class="section4">...</div>
                         </div>
                         <br>';
                 }
