@@ -4,13 +4,6 @@
 session_start();
 ?>
 
-<html>
-
-<head>...
-    <title>...</title>
-</head>
-<body>
-
 <?php
 
 class SQLHandler {
@@ -37,12 +30,25 @@ class SQLHandler {
 
     }
 }
-
-
-$obj = new SQLHandler();
-echo 'hej'; 
-
 ?>
 
+<html>
+
+<head>
+    <title>...</title>
+
+</head>
+
+<body>
 </body>
+
+
+    <?php
+    $obj = new SQLHandler();
+    echo 'hej'; 
+    ?>
+
+</body>
+
 </html>
+
