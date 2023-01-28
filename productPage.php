@@ -24,9 +24,7 @@ session_start();
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
-                                    <div class="imageEffect">
                                         <img class="fit_image" src='.$animalArray['image'][$i].'>
-                                    </div>
                                 </div>
 
                                 <div class="section2">
