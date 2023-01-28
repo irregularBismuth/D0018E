@@ -26,7 +26,7 @@
     grid-row: 1/span3;
 }
 
-.section1 > img {
+img {
     object-fit: contain;
 }
 
