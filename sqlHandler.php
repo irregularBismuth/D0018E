@@ -1,17 +1,5 @@
 <?php
-session_start();
-?>
-<html>
-
-<head>
-    <title>...</title>
-
-</head>
-
-<body>
-    <h1>hi</h1>
-
-    <?php
+    session_start();
     require("db/db.php");
 
     class SQLHandler {
@@ -47,14 +35,11 @@ session_start();
 
         }
     }
-    $obj = new SQLHandler($dbc);
-    $animals = $obj->get_product_data();
-    $row_count = count($animals['image']);
-    echo $animals['name'][1];
+    //$obj = new SQLHandler($dbc);
+    //$animals = $obj->get_product_data();
+    //$row_count = count($animals['image']);
+    //echo $animals['name'][1];
     
     ?>
     
-</body>
-
-</html>
 
