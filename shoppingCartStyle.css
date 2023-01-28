@@ -39,7 +39,6 @@
 }
 
 .imageEffect{
-    position: absolute;
     object-fit: fill;
 }
 
