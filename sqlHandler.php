@@ -12,7 +12,6 @@ session_start();
     <h1>hi</h1>
 
     <?php
-    echo "HELLO????";
     require_once("db/db.php");
     $obj = new SQLHandler($dbc);
     echo $obj->get_query();
@@ -40,6 +39,7 @@ session_start();
 
         }
     }
+    echo $obj->get_query();
     
     ?>
     
