@@ -29,7 +29,7 @@ session_start();
             $query = "SELECT * FROM animals";
         
             $fetch_result = $this->sql->query($query);
-            $row_count = $fetch_result->rowCount();
+            //$row_count = $fetch_result->rowCount();
             $output = $fetch_result->fetchAll();
 
             foreach($output as $output){
