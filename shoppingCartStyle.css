@@ -2,7 +2,7 @@
 
 .boxFrame {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 100px auto auto;
   grid-gap: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
