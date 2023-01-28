@@ -11,6 +11,7 @@ session_start();
 </head>
 
 <body>
+    <h1>hi</h1>
 
     <?php
 
@@ -42,7 +43,7 @@ session_start();
     $obj = new SQLHandler();
     echo 'hej'; 
     ?>
-    hej
+    
 </body>
 
 </html>
