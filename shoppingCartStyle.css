@@ -97,10 +97,9 @@
 }
 
 .buttonRemove > .button {
-    background-image: "deleteIcon.png";
+    background-image: url("deleteIcon.png");
 }
 
-}
 
 .button:hover {
     
