@@ -47,8 +47,7 @@ session_start();
         }
     }
     $obj = new SQLHandler($dbc);
-    $animal_data = $obj->get_product_data();
-    echo $animal_data['name'];
+    echo $obj->get_product_data();
     
     ?>
     
