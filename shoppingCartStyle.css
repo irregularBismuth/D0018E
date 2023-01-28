@@ -20,11 +20,9 @@
     z-index: 999;
 }
 
-.boxFrame > img {
-    object-fit: cover;
-}
 
 .section1{
+    object-fit:cover;
     grid-column: 1/span3;
     grid-row: 1/span3;
 }
