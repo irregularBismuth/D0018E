@@ -17,7 +17,7 @@ if($pass!=$spass)
     exit(0);
 }
 
-$sql="select name from users where binary name=:u";
+/* $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
 //$sql="insert into users (name,password) values (:u,:p)";
 //$s=$dbc->prepare($sql);
@@ -25,7 +25,6 @@ $s->bindValue(":u",$name);
 //$s->bindValue(":p",$pass);
 $s->execute();
 $res=$s->fetchAll();
-echo "1";
 if(s->rowCount() > 0)
 {
     echo "2";
@@ -40,6 +39,7 @@ $s->bindValue(":z",$pass);
 $s->bindValue(":q",$email);
 $s->execute();
 echo "4";
+*/
 header("Location: login.php?succ=1");
 exit(0);
 

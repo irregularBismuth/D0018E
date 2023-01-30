@@ -34,7 +34,7 @@
 
         }
     }
-    //$obj = new SQLHandler($dbc);
+    $obj = new SQLHandler($dbc);
     //$animals = $obj->get_product_data();
     //$row_count = count($animals['image']);
     //echo $animals['name'][1];
