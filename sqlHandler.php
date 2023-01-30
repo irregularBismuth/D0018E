@@ -1,8 +1,5 @@
 <?php
     session_start();
-?>
-<?php
-    require("db/db.php");
 
     class SQLHandler {
         public $db_connector;
@@ -11,6 +8,7 @@
 
         function __construct($db_connector)
         {
+            require_once "db/db.php";
             $this->db_connector = $db_connector;
             $this->query_array = []; //initilize an empty array that should store unique users queries.
             $this->animal_array = array("name"=>[],"price"=>[],"image"=>[], "category"=>[]);
