@@ -1,5 +1,12 @@
 <?php
 
+function filter($var)
+{
+    $var=htmlspecialchars($var);
+    $var=addslashes($var);
+    return $var;
+}
+
 function logout()
 {
     session_start();

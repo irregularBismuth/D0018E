@@ -27,6 +27,7 @@ register form here
 <div class="reg">
     <form action="registerCheck.php" method="post">
     <label>Enter username</label></br><input type="text" name="name" /> </br> 
+    <label>Enter Email</label></br><input type="text" name="email" /> </br>
     <label>Enter password</label><input type="password" name="pass" /> </br>
     <label>Enter the same password</label><input type="password" name="samePass" /> </br>
     <input type="submit" name="sub" />
