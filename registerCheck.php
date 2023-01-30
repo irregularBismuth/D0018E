@@ -16,7 +16,6 @@ if($pass!=$spass)
     header("Location: register.php?bad=1");
     exit(0);
 }
-echo $name;
 $sql="select * from users where binary name=:e";
 $s=$dbc->prepare($sql);
 $s->bindValue(':e',$name);
@@ -24,10 +23,8 @@ $s->execute();
 $res=$s->fetchAll();
 if($s->rowCount() > 0)
 {
-
-    foreach ($res as $res) {
-        echo $res['id']." ";
-    }
+    header("Location: register.php?bad=2");
+    exit(0);
 }
 $sql="select * from animals";
 $s=$dbc->prepare($sql);
