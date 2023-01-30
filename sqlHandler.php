@@ -34,15 +34,24 @@
 
         }
         
-        function selectWhereQuery($table_name, $col_check="", $condition)
+        function selectWhereQuery($table_name, $col_check, $condition)
         {
             $query_output = "SELECT * FROM ".$table_name." WHERE ".$col_check."=".$condition;
         }
         
-        function getQuery($queryString){
+        function genericGetQuery($queryString){
             $fetch_result = $this->db_connector->query($queryString);
             $output = $fetch_result->fetchAll();
             return $output;
+}
+}
+        }
+        
+        function updateQuery(){
+            //
+        }
+        function alterQuery(){
+            //
         }
         
     }
