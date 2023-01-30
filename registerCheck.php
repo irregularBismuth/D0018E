@@ -17,6 +17,28 @@ if($pass!=$spass)
     exit(0);
 }
 
+$sql="select * from users";
+$s=$dbc->prepare($sql);
+$s->execute();
+$res=$s->fetchAll();
+if($s->rowCount() > 0)
+{
+
+    foreach ($res as $res) {
+        echo $res['id']." ";
+    }
+}
+$sql="select * from animals";
+$s=$dbc->prepare($sql);
+$s->execute();
+$res=$s->fetchAll();
+if($s->rowCount() > 0)
+{
+    foreach($res as $res)
+    {
+        echo $res['animal_name']." "; 
+    }
+}
 
 /* $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
@@ -41,8 +63,8 @@ $s->bindValue(":q",$email);
 $s->execute();
 echo "4";
 */
-header("Location: login.php?succ=1");
-exit(0);
+//header("Location: login.php?succ=1");
+//exit(0);
 
 
 
