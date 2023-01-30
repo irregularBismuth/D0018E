@@ -59,37 +59,18 @@ session_start();
             };
                
 
-            // Will add better logic to this:
-            require_once("db/db.php");
-
-            $animal_array = array("name"=>[], "price"=>[], "image"=>[], "category"=>[]);
-              
-            $connection_obj = $dbc;
-            $querySql = "SELECT * FROM animals";
             $queryRowCount = "SELECT COUNT(*) FROM animals";
             $queryItemId = "SELECT * FROM animals WHERE item_id = animal_id";
 
-            $fetch_result = $connection_obj->query($querySql);
-            $query_output = $fetch_result->fetchAll();
-            $count=$fetch_result->rowCount();
+            //$count=$fetch_result->rowCount();
 
-                foreach ($query_output as $query_output) {
-                # code...
-
-                    array_push($animal_array['image'],$query_output['animal_image']);
-
-                    array_push($animal_array['name'],$query_output["animal_name"]);         
-                    array_push($animal_array['price'],$query_output["animal_price"]);
-                    array_push($animal_array['category'],$query_output["animal_category"]);
-               
-                }
-               // require_once("db/db.php");
-                require_once("SQLHandler.php");
-                
-              //  $animals = $sql_obj->get_product_data();
-               // $row_count = count($animals['image']);
-               //p generateBoxFrames($row_count, $animals);         
-                generateBoxFrames($count, $animal_array);
+            
+            //require_once("db/db.php");
+            require_once("SQLHandler.php");
+            $animals = $sqlHandler->get_product_data(); 
+            $row_count = count($animals['image']);
+            generateBoxFrames($row_count, $animals);         
+                //generateBoxFrames($count, $animal_array);
         ?>
 
     </body>
