@@ -33,8 +33,13 @@
             return $this->animal_array;
 
         }
+        
+        function setQuery($sql)
+        {
+            
+        }
     }
-    $obj = new SQLHandler($dbc);
+    $sqlHandler = new SQLHandler($dbc);
     //$animals = $obj->get_product_data();
     //$row_count = count($animals['image']);
     //echo $animals['name'][1];

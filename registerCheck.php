@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once  "db/db.php";
+//require_once  "db/db.php";
 require_once "function.php";
-
+require_once "sqlHandler.php";
 $name=$_POST['name'];
 $email=$_POST['email'];
 $pass=$_POST['pass'];
@@ -16,6 +16,7 @@ if($pass!=$spass)
     header("Location: register.php?bad=1");
     exit(0);
 }
+
 
 /* $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
