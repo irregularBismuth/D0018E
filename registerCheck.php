@@ -31,12 +31,12 @@ if(s->rowCount() > 0)
     exit(0);
 }
 else {
-    $sql="insert into users (name,password,email) values (:t,:z,:q)";
-    $s=$dbc->prepare($sql);
-    $s->bindValue(":t",$name);
-    $s->bindValue(":z",$pass);
-    $s->bindValue(":q",$email);
-    $s->execute();
+    $ssql="insert into users (name,password,email) values (:t,:z,:q)";
+    $p=$dbc->prepare($sql);
+    $p->bindValue(":t",$name);
+    $p->bindValue(":z",$pass);
+    $p->bindValue(":q",$email);
+    $p->execute();
     header("Location: login.php?succ=1");
     exit(0);
 }
