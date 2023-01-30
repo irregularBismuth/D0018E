@@ -17,8 +17,9 @@ if($pass!=$spass)
     exit(0);
 }
 echo $name;
-$sql="select * from users";
+$sql="select * from users where binary name=:e";
 $s=$dbc->prepare($sql);
+$s->bindValue(':e',$name);
 $s->execute();
 $res=$s->fetchAll();
 if($s->rowCount() > 0)
