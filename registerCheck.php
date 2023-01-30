@@ -16,7 +16,7 @@ if($pass!=$spass)
     header("Location: register.php?bad=1");
     exit(0);
 }
-
+echo $name;
 $sql="select * from users";
 $s=$dbc->prepare($sql);
 $s->execute();
