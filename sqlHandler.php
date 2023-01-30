@@ -38,11 +38,36 @@
         {
             $query_output = "SELECT * FROM ".$table_name." WHERE ".$col_check."=".$condition;
         }
-        
-        function genericGetQuery($queryString){
-            $fetch_result = $this->db_connector->query($queryString);
-            $output = $fetch_result->fetchAll();
-            return $output;
+     //   $sql="select * from peepo wher name=:u and password=:t"
+      //  prepare($sql)
+       // bindvalue(":u",$name);
+        //execute(); 
+        //:x :y :z :w
+        //convention använd bara 4 st max för denna function
+        function half_genericQuery($queryString,$var,$arr){
+            require_once "function.php";
+            $s=$this->db_connector->prepare($queryString);
+            if($var==1) { $s->bindValue(':x',$arr[0])};
+
+            if($var==2) { $s->bindValue(':x',$arr[0]);
+                          $s->bindValue(':y',$arr[1])};
+                                  
+            if($var==3) { $s->bindValue(':x',$arr[0]);
+                          $s->bindValue(':y',$arr[1])
+                          $s->bindValue(':z',$arr[2])};
+
+            if($var==4) { $s->bindValue(':x',$arr[0]);
+                          $s->bindValue(':y',$arr[1]);
+                          $s->bindValue(':z',$arr[2]) 
+                          $s->bindValue(':w',$arr[3])};
+            $s->execute();
+           
+//   {
+  //      echo $res['animal_name']." "; 
+            
+            // $fetch_result = $this->db_connector->query($queryString);
+           // $output = $fetch_result->fetchAll();
+            return $s;
         }
 
         

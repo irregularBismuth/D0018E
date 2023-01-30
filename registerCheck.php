@@ -33,13 +33,11 @@ $s->bindValue(':z',$pass);
 $s->bindValue(':p',$email);
 $s->execute();
 header("Location: login.php?succ=1");
-exit(0);
+exit(0);//http://130.240.200.85/d0018e/D0018E/registerCheck.php
 //$res=$s->fetchAll();
 //if($s->rowCount() > 0)
 //{
 //    foreach($res as $res)
- //   {
-  //      echo $res['animal_name']." "; 
    // }
 //}
 
