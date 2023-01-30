@@ -19,7 +19,6 @@ if($pass!=$spass)
 
 $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
-
 //$sql="insert into users (name,password) values (:u,:p)";
 //$s=$dbc->prepare($sql);
 $s->bindValue(":u",$name);
@@ -32,6 +31,7 @@ if(s->rowCount() > 0)
     exit(0);
 }
 else {
+    echo "peepo";
     $sql="insert into users (name,password,email) values (:t,:z,:q)";
     $s=$dbc->prepeare($sql);
     $s->bindValue(":t",$name);
