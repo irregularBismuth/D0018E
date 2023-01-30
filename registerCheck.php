@@ -16,11 +16,14 @@ if($pass!=$spass)
     header("Location: register.php?bad=1");
     exit(0);
 }
-$sql="select * from users where binary name=:e";
-$s=$dbc->prepare($sql);
-$s->bindValue(':e',$name);
-$s->execute();
+$arr=array($name);
+$sql="select * from users where binary name=:x";
+$s=$sqlHandler->half_genricQuery($sql,1,$arr);
 $res=$s->fetchAll();
+//$s=$dbc->prepare($sql);
+//$s->bindValue(':e',$name);
+//$s->execute();
+//$res=$s->fetchAll();
 if($s->rowCount() > 0)
 {
     header("Location: register.php?bad=2");
