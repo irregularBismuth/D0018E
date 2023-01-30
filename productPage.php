@@ -85,11 +85,10 @@ session_start();
                 }
                // require_once("db/db.php");
                 require_once("SQLHandler.php");
-                
-              //  $animals = $sql_obj->get_product_data();
-               // $row_count = count($animals['image']);
-               //p generateBoxFrames($row_count, $animals);         
-                generateBoxFrames($count, $animal_array);
+                $animals = $sqlHandler->get_product_data(); 
+                $row_count = count($animals['image']);
+                generateBoxFrames($row_count, $animals);         
+                //generateBoxFrames($count, $animal_array);
         ?>
 
     </body>
