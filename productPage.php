@@ -61,13 +61,6 @@ $row_count = count($animals['image']);
                 }
             };
                
-
-            $queryRowCount = "SELECT COUNT(*) FROM animals";
-            $queryItemId = "SELECT * FROM animals WHERE item_id = animal_id";
-
-            //$count=$fetch_result->rowCount();
-
-            
             generateBoxFrames($row_count, $animals);         
         ?>
 
