@@ -43,9 +43,9 @@
             $fetch_result = $this->db_connector->query($queryString);
             $output = $fetch_result->fetchAll();
             return $output;
-}
-}
         }
+
+        
         
         function updateQuery(){
             //
