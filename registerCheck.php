@@ -32,7 +32,7 @@ if(s->rowCount() > 0)
 }
 else {
     $ssql="insert into users (name,password,email) values (:t,:z,:q)";
-    $p=$dbc->prepare($sql);
+    $p=$dbc->prepare($ssql);
     $p->bindValue(":t",$name);
     $p->bindValue(":z",$pass);
     $p->bindValue(":q",$email);
