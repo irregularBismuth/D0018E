@@ -69,6 +69,7 @@ session_start();
             require_once("SQLHandler.php");
             $animals = $sqlHandler->get_product_data(); 
             $row_count = count($animals['image']);
+            echo $row_count;
             generateBoxFrames($row_count, $animals);         
                 //generateBoxFrames($count, $animal_array);
         ?>
