@@ -34,15 +34,20 @@
 
         }
         
-        function setQuery($sql)
+        function selectWhereQuery($table_name, $col_check="", $condition)
         {
-            
+            $query_output = "SELECT * FROM ".$table_name." WHERE ".$col_check."=".$condition;
         }
+        
+        function getQuery($queryString){
+            $fetch_result = $this->db_connector->query($queryString);
+            $output = $fetch_result->fetchAll();
+            return $output;
+        }
+        
     }
     $sqlHandler = new SQLHandler($dbc);
-    //$animals = $obj->get_product_data();
-    //$row_count = count($animals['image']);
-    //echo $animals['name'][1];
+    
     
 ?>
     
