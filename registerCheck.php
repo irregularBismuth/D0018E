@@ -31,9 +31,8 @@ if(s->rowCount() > 0)
     exit(0);
 }
 else {
-    echo "peepo";
     $sql="insert into users (name,password,email) values (:t,:z,:q)";
-    $s=$dbc->prepeare($sql);
+    $s=$dbc->prepare($sql);
     $s->bindValue(":t",$name);
     $s->bindValue(":z",$pass);
     $s->bindValue(":q",$email);
