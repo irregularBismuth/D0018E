@@ -26,6 +26,10 @@ $res=$s->fetchAll();
 //$res=$s->fetchAll();
 if($s->rowCount() > 0)
 {
+    foreach($res as $res){
+
+    echo $res['id'];
+    }
     header("Location: register.php?bad=2");
     exit(0);
 }
