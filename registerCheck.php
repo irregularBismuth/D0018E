@@ -26,17 +26,22 @@ if($s->rowCount() > 0)
     header("Location: register.php?bad=2");
     exit(0);
 }
-$sql="select * from animals";
+$sql="insert into users (name,password,email) values (:t,:z,:p)";
 $s=$dbc->prepare($sql);
+$s->bindValue(':t',$name);
+$s->bindValue(':z',$pass);
+$s->bindValue(':p',$email);
 $s->execute();
-$res=$s->fetchAll();
-if($s->rowCount() > 0)
-{
-    foreach($res as $res)
-    {
-        echo $res['animal_name']." "; 
-    }
-}
+header("Location: login.php?succ=1");
+exit(0);
+//$res=$s->fetchAll();
+//if($s->rowCount() > 0)
+//{
+//    foreach($res as $res)
+ //   {
+  //      echo $res['animal_name']." "; 
+   // }
+//}
 
 /* $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
