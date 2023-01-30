@@ -25,21 +25,22 @@ $s->bindValue(":u",$name);
 //$s->bindValue(":p",$pass);
 $s->execute();
 $res=$s->fetchAll();
+
 if(s->rowCount() > 0)
 {
     header("Location: register.php?bad=2");
     exit(0);
 }
-else {
-    $ssql="insert into users (name,password,email) values (:t,:z,:q)";
-    $p=$dbc->prepare($ssql);
-    $p->bindValue(":t",$name);
-    $p->bindValue(":z",$pass);
-    $p->bindValue(":q",$email);
-    $p->execute();
-    header("Location: login.php?succ=1");
-    exit(0);
-}
+
+$sql="insert into users (name,password,email) values (:t,:z,:q)";
+$s=$dbc->prepare($sql);
+$s->bindValue(":t",$name);
+$s->bindValue(":z",$pass);
+$s->bindValue(":q",$email);
+$s->execute();
+header("Location: login.php?succ=1");
+exit(0);
+
 
 
 
