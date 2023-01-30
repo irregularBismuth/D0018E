@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
+require_once("sqlHandler.php");
+$animals = $sqlHandler->get_product_data();
+$row_count = count($animals['image']);
 ?>
 <html>
 
@@ -65,13 +68,7 @@ session_start();
             //$count=$fetch_result->rowCount();
 
             
-            //require_once("db/db.php");
-            require_once("SQLHandler.php");
-            $animals = $sqlHandler->get_product_data(); 
-            $row_count = count($animals['image']);
-            echo $row_count;
             generateBoxFrames($row_count, $animals);         
-                //generateBoxFrames($count, $animal_array);
         ?>
 
     </body>
