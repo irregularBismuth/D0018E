@@ -5,7 +5,7 @@
         public $db_connector;
         public $query_array;
         public $animal_array;
-
+        public $s;
         function __construct($db_connector)
         {
             $this->db_connector = $db_connector;
@@ -61,13 +61,12 @@
                           $s->bindValue(':z',$arr[2]); 
                           $s->bindValue(':w',$arr[3]); }
             $s->execute();
-           
+            $this->s=$s; 
 //   {
   //      echo $res['animal_name']." "; 
             
             // $fetch_result = $this->db_connector->query($queryString);
-           // $output = $fetch_result->fetchAll();
-            return $s;
+           // $output = $fetch_result->fetchAll();    
         }
 
         
