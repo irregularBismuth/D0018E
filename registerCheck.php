@@ -26,6 +26,8 @@ if($sqlHandler->s->rowCount() > 0)
     exit(0);
 }
 
+echo "peeeepo";
+
 
 //$sql="select * from users where binary name=:x";
 //$s=$sqlHandler->half_genricQuery($sql,1,$arr);
