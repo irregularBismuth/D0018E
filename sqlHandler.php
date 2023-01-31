@@ -86,7 +86,7 @@
     $sqlHandler->half_genericQuery($sql,1,$arr); 
     $sqlHandler->s->fetchAll();
    echo $sqlHandler->s->rowCount();
-    if($sqlHandler->s->rowCount() > 1) { 
+    if($sqlHandler->s->rowCount() > 0) { 
         echo "peepo";
     } 
 ?>
