@@ -18,8 +18,8 @@ if($pass!=$spass)
 }
 $arr=array($name);
 $sql="select * from users where binary name=:x";
-$s=$sqlHandler->half_genricQuery($sql,1,$arr);
-$res=$s->fetchAll();
+$sqlHandler->half_genricQuery($sql,1,$arr);
+$res=$sqlHandler->s->fetchAll();
 if($s->rowCount() > 0)
 {
     header("Location: register.php?bad=2");
