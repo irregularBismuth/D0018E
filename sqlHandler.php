@@ -80,8 +80,12 @@
         
     }
     $sqlHandler = new SQLHandler($dbc);
-    
-    
+    $sql="select * from users where name=:x";
+    $name="a";
+    $arr=array($name);
+    $sqlHandler->half_genericQuery($sql,1,$arr); 
+    $sqlHandler->s->fetchAll();
+   echo $sqlHandler->s->rowCount(); 
 ?>
     
 
