@@ -17,16 +17,24 @@ if($pass!=$spass)
     exit(0);
 }
 $arr=array($name);
-$sql="select * from users where binary name=:x";
-$sqlHandler->half_genricQuesy($sql,1,$arr);
-$res=$sqlHandler->s->fetchAll();
+
+
+$sql="select * from users where name=:x";
+//$name="a";
+//$arr=array($name);
+$sqlHandler->half_genericQuery($sql,1,$arr); 
+$sqlHandler->s->fetchAll();
+//echo $sqlHandler->s->rowCount();
+//$sql="select * from users where binary name=:x";
+//$sqlHandler->half_genricQuesy($sql,1,$arr);
+//$res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
     header("Location: register.php?bad=2");
     exit(0);
 }
 
-echo "peeeepo";
+//echo "peeeepo";
 
 
 //$sql="select * from users where binary name=:x";
