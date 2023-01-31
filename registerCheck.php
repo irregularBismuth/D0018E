@@ -34,23 +34,19 @@ if($sqlHandler->s->rowCount() > 0)
     exit(0);
 }
 
-//echo "peeeepo";
-
-
-//$sql="select * from users where binary name=:x";
-//$s=$sqlHandler->half_genricQuery($sql,1,$arr);
-//$res=$s->fetchAll();
-/*if($s->rowCount() > 0)
+$sql="select * from users where email=:x";
+$arr=array($email);
+$sqlHandler->half_genericQuery($sql,1,$arr);
+$sqlHandler->s->fetchAll();
+if($sqlHandler->s->rowCount() > 0)
 {
-    foreach($res as $res){
-
-    echo $res['id'];
-    }
-    header("Location: register.php?bad=2");
+    header("Location: register.php?bad=3");
     exit(0);
 }
-$sql="insert into users (name,password,email) values (:t,:z,:p)";
-$s=$dbc->prepare($sql);
+
+$arr=array($name,$pass,$email);
+$sql="insert into users (name,password,email) values (:x,:y,:z)";
+$sqlHandler->half_genericQuery($sql,3,$arr);
 $s->bindValue(':t',$name);
 $s->bindValue(':z',$pass);
 $s->bindValue(':p',$email);
@@ -63,7 +59,6 @@ exit(0);//http://130.240.200.85/d0018e/D0018E/registerCheck.php
 //    foreach($res as $res)
    // }
 //}
-*/ 
 
 
 
