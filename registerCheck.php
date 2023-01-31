@@ -20,11 +20,15 @@ $arr=array($name);
 $sql="select * from users where binary name=:x";
 $s=$sqlHandler->half_genricQuery($sql,1,$arr);
 $res=$s->fetchAll();
-//$s=$dbc->prepare($sql);
-//$s->bindValue(':e',$name);
-//$s->execute();
-//$res=$s->fetchAll();
 if($s->rowCount() > 0)
+{
+    header("Location: register.php?bad=2");
+    exit(0);
+}
+//$sql="select * from users where binary name=:x";
+//$s=$sqlHandler->half_genricQuery($sql,1,$arr);
+//$res=$s->fetchAll();
+/*if($s->rowCount() > 0)
 {
     foreach($res as $res){
 
@@ -47,6 +51,9 @@ exit(0);//http://130.240.200.85/d0018e/D0018E/registerCheck.php
 //    foreach($res as $res)
    // }
 //}
+*/ 
+
+
 
 /* $sql="select name from users where binary name=:u";
 $s=$dbc->prepare($sql);
