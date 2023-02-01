@@ -7,7 +7,7 @@ session_start();
 
     <head>
         <title></title>
-        <link rel="stylesheet" type="text/css" target="cartMenu" href="popup.css">
+        <link rel="stylesheet" type="text/css" target="cartMenuSwitch" href="popup.css">
     </head>
     
     
