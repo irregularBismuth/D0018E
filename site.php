@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+require_once("cartPopUp.php");
+?>
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" class="" href="style.css" media="screen" />
@@ -13,7 +17,7 @@
 <header>
  
     <a href="site.php"><img src="logo.png" width="400"></a>
- 
+    <?php generateCartButton()?>
     <form role="search" id="form">
   <input type="search" id="query" name="q"
    placeholder="Search..."
