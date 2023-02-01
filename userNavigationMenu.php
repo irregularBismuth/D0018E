@@ -16,7 +16,6 @@ require_once("userProfile.php");
         <div class="headern">
             <a href="site.php">
                 <img src="logo.png" width="400">
-</a>
             </a>
         </div>
 

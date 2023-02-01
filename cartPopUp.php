@@ -17,18 +17,16 @@ session_start();
             function changeToProductPage(){
                     echo '<a href=productPage.php>';
                 }
-            //div productCart should be the layout section
-            //button tag should also have a class
-            //}
-           echo '
-                <div class="productCart">
-                    <button class="button" onclick='.changeToProductPage().'>
+            function generateCartButton(){
+                echo '
+                    <div class="productCart">
+                        <button class="button" onclick='.changeToProductPage().'>
                         <img src="shoppingcart.jpg" alt ="Image" width=80, height=80>
-                    </button>
-                </div>
-                '  
-        
+                        </button>
+                    </div>'; 
+            }
         ?>
+        
 
     </body>
 
