@@ -18,14 +18,16 @@ $row_count = count($animals['image']);
 
 
         <div class="headern">
+        <header>
+
             <a href="site.php">
                 <img src="logo.png" width="400">
             </a>
             <form role="search" id="form">
                 <input type="search" id="query" name="q" placeholder="Search...">
             </form>
+        </header>
         </div>
-        <br>
         
         <?php
             
