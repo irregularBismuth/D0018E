@@ -19,7 +19,10 @@ require_once("sqlHandler.php");
         
         function getUserData(){
             require_once("sqlHandler.php");
-            //$userData = $sqlHandler->half_genericQuery();
+            $sql_query = "SELECT * FROM users where name=:x";
+            $temp_array = array($this->username);
+            $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
+            echo $sqlHandler->s->fetchAll();
         }
 
 
