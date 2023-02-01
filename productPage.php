@@ -10,12 +10,23 @@ $row_count = count($animals['image']);
     <head>
        
      <title> 1234455555555  pepo ProductPage </title>
-    <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css">
+    <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
     <body>
 
         <h1> Product Page (shopping cart) </h1>
+
+        <div class="headern">
+            <a href="site.php">
+                <img src="logo.png" width="400">
+            </a>
+            <form role="search" id="form">
+                <input type="search" id="query" name="q" placeholder="Search...">
+            </form>
+        </div>
+
         
         <?php
             
