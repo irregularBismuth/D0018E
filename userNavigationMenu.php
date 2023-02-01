@@ -18,6 +18,16 @@ require_once("userProfile.php");
                 <img src="logo.png" width="400">
             </a>
         </div>
+    <div id="CustomSidePanel" class="UserSidePanel">
+
+        <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
+        <br>
+        Hello: QUERY FOR USER NAME HERE! 
+        <br>
+        <img src="balanceIcon.png" width="50" height="50"> 
+        Balance: MAKE QUERY HERE!     
+        
+    </div>
 
     
         <?php
