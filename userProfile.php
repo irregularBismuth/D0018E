@@ -4,7 +4,7 @@ require_once("sqlHandler.php");
 ?> 
 
 <?php
-    class userProfile{
+    class UserProfile{
         private $balance;
         private $profileImage;
         private $username;
@@ -39,5 +39,6 @@ require_once("sqlHandler.php");
             
         }
     }
+    $userProfile = new UserProfile();
 ?>
 
