@@ -27,6 +27,7 @@ $row_count = count($animals['image']);
                 <input type="search" id="query" name="q" placeholder="Search...">
             </form>
         </header>
+        <br>
         </div>
         
         <?php
