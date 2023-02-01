@@ -28,3 +28,19 @@ require_once("sqlHandler.php");
         }
     }
 ?>
+
+<html>
+
+    <body>
+        <form>action="userProfile.php" method="post">
+        <img class="" src="">
+        <?php echo $_GET["profileImage"] ?>
+        <br>
+        Welcome: <?php echo $_GET["name"]?>
+        <br>
+        Balance: <?php echo $_GET["balance"]?>
+        <hr>
+        Add balance: <input type="text" name="balance">
+        </form>
+    </body>
+</html>
