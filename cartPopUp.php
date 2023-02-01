@@ -18,7 +18,7 @@ session_start();
                 echo '
                     <div class="productCart">
                         <a href="productPage.php">
-                        <img src="shoppingcart.jpg" alt ="Image" width=70, height=70>
+                        <img src="cartIcon.png" alt ="Image" width=70, height=70>
                         </a>
                     </div>'; 
             }
