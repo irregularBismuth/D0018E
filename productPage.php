@@ -9,7 +9,7 @@ $row_count = count($animals['image']);
 
     <head>
        
-     <title> 1234455555555  pepo ProductPage </title>
+     <title> ProductPage </title>
     <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     </head>
