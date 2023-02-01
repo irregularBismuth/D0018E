@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once("cartPopUp.php");
+require_once("cartMenuSwitch.php");
 ?>
 
 <html>
