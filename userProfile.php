@@ -7,13 +7,22 @@ require_once("sqlHandler.php");
     class userProfile{
         private $balance;
         private $profileImage;
+        private $username;
+        private $cart_items_added;
         
         function __construct()
         {
+            $this->username = $_SESSION['username'];
             $this->balance = 0;
             $this->profileImage = "";   
         }
         
+        function getUserData(){
+            require_once("sqlHandler.php");
+            //$userData = $sqlHandler->half_genericQuery();
+        }
+
+
         function setProfileImage(){
             //For setting the profile image need to access the sqlHandler class for INSERT query. 
         }
@@ -29,18 +38,3 @@ require_once("sqlHandler.php");
     }
 ?>
 
-<html>
-
-    <body>
-        <form>action="userProfile.php" method="post">
-        <img class="" src="">
-        <?php echo $_GET["profileImage"] ?>
-        <br>
-        Welcome: <?php echo $_GET["name"]?>
-        <br>
-        Balance: <?php echo $_GET["balance"]?>
-        <hr>
-        Add balance: <input type="text" name="balance">
-        </form>
-    </body>
-</html>
