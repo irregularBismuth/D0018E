@@ -7,7 +7,9 @@ require_once("userProfile.php");
 <html>
 
     <head>
-    <link
+        <link rel="stylesheet" type="text/css", href="shoppingCartStyle.css"/>
+        <link rel="stylesheet" type="text/css", href="style.css" media="screen"/>
+
      <title> User navigation menu </title>
     
     </head>
@@ -18,21 +20,17 @@ require_once("userProfile.php");
                 <img src="logo.png" width="400">
             </a>
         </div>
-    <div id="CustomSidePanel" class="UserSidePanel">
+        <div id="CustomSidePanel" class="UserSidePanel">
 
-        <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-        <br>
-        Hello: <?php echo $userProfile->getSessionData("name");?>
-        <br>
-        <img src="balanceIcon.png" width="50" height="50"> 
-        Balance: MAKE QUERY HERE!     
-        
-    </div>
+            <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
+            <br>
+            <ul id="infoSection">
 
-    
-        <?php
-            //code heresadasdas
-        ?>
+                <li> Hello: <?php echo $userProfile->getSessionData("name");?> </li>
+            </ul>
+            <br>
+            Balance: <img src="balanceIcon.png" width="50" height="50"/>                
+        </div>
 
     </body>
 </html>
