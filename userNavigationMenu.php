@@ -31,7 +31,7 @@ require_once("userProfile.php");
                     <br>
 
                     <li>  
-                        Balance: <img src="balanceIcon.png" width="50" height="50"> 
+                        Balance: 
                     </li>  
 
                     </ul>
