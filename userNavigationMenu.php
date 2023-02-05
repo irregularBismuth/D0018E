@@ -4,6 +4,7 @@ session_start();
 require_once("sqlHandler.php");
 require_once("userProfile.php");
 ?>
+
 <html>
 
     <head>
@@ -20,25 +21,22 @@ require_once("userProfile.php");
                 <img src="logo.png" width="400">
             </a>
         </div>
-        <div id="CustomSidePanel" class="UserSidePanel">
+
 
             <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-                <div class="infoStyle">
-                    <ul id="infoSection">
+            <div class="infoStyle">
+                <ul id="infoSection">
                     <li>
-                        Name: <?php echo ($userProfile->getSessionData("name")) ?>           
+                        Name: <?php echo ($userProfile->getSessionData("name")); ?>           
                     </li>
-                    <br>
 
                     <li>  
                         Balance: 
                     </li>  
 
-                    </ul>
-                </div>
-                               
-        </div>
-
+                </ul>
+            </div>
+                                
     </body>
 </html>
 
