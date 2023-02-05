@@ -14,12 +14,12 @@ require_once("sqlHandler.php");
         function __construct()
         {
             $this->user_id = $_SESSION['user_id'];
-            $this->username = $this->getUserData('name');
-            $this->balance = $this->getUserData('balance');
-            $this->profileImage = $this->getUserData('profile_image');   
+            $this->username = $this->fetchUserData('name');
+            $this->balance = $this->fetchUserData('balance');
+            $this->profileImage = $this->fetchUserData('profile_image');   
         }
         
-        function getUserData($col_name){
+        function fetchUserData($col_name){
             require_once("sqlHandler.php");
             
             $sql_query = "SELECT * FROM users where id=".$this->user_id;
@@ -27,6 +27,10 @@ require_once("sqlHandler.php");
             $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
             $output = $sqlHandler->s->fetchAll();
             return $output[$col_name];
+        }
+
+        function getSessionUserData($nameOfAttribute){
+            return $this->$nameOfAttribute;
         }
 
 
