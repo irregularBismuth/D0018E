@@ -7,8 +7,8 @@ require_once("userProfile.php");
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css", href="shoppingCartStyle.css"/>
-        <link rel="stylesheet" type="text/css", href="style.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="shoppingCartStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
 
      <title> User navigation menu </title>
     
