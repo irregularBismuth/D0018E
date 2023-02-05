@@ -23,13 +23,20 @@ require_once("userProfile.php");
         <div id="CustomSidePanel" class="UserSidePanel">
 
             <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-            <br>
-            <ul id="infoSection">
+                <div class="infoStyle">
+                    <ul id="infoSection">
+                    <li>
+                        Name: <?php echo ($userProfile->getSessionData("name")) ?>           
+                    </li>
+                    <br>
 
-                <li> Hello: <?php echo $userProfile->getSessionData("name");?> </li>
-            </ul>
-            <br>
-            Balance: <img src="balanceIcon.png" width="50" height="50"/>                
+                    <li>  
+                        Balance: <img src="balanceIcon.png" width="50" height="50"> 
+                    </li>  
+
+                    </ul>
+                </div>
+                               
         </div>
 
     </body>
