@@ -27,7 +27,7 @@ require_once("userProfile.php");
             <div class="infoStyle">
                 <ul id="infoSection">
                     <li>
-                        Name: <?php echo ($userProfile->getSessionData("name")); ?>           
+                        Name: <?php echo $userProfile->getSessionData("name"); ?>           
                     </li>
 
                     <li>  
