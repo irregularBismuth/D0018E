@@ -8,21 +8,25 @@ require_once("sqlHandler.php");
         private $balance;
         private $profileImage;
         private $username;
+        private $user_id;
         private $cart_items_added;
         
         function __construct()
         {
-            $this->username = $_SESSION['username'];
-            $this->balance = 0;
-            $this->profileImage = "";   
+            $this->user_id = $_SESSION['user_id'];
+            $this->username = $this->getUserData('name');
+            $this->balance = $this->getUserData('balance');
+            $this->profileImage = $this->getUserData('profile_image');   
         }
         
-        function getUserData(){
+        function getUserData($col_name){
             require_once("sqlHandler.php");
-            $sql_query = "SELECT * FROM users where name=:x";
-            $temp_array = array($this->username);
+            
+            $sql_query = "SELECT * FROM users where id=".$this->user_id;
+            $temp_array = array($this->user_id);
             $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
-            echo $sqlHandler->s->fetchAll();
+            $output = $sqlHandler->s->fetchAll();
+            return $output[$col_name];
         }
 
 
