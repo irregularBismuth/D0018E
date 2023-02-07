@@ -20,7 +20,7 @@ checkSession();
             <?php
             session_start();
              echo "logged in as: ";
-             echo $_SESSION['username'];
+             echo $_SESSION['username']."</br>";
              echo $_SESSION['user_id'];
             ?>        
         </div> 
