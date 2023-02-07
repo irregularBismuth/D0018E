@@ -28,8 +28,8 @@ function login($name,$pass){
     $sqlHandler->half_genericQuery($sql,2,$arr);
     //$s->execute();
     $result=$sqlHandler->s->fetchAll();
-    #print_r($result);
-    echo ($sqlHandler->s>rowCount() >0);
+    //print_r($result);
+    //echo $sqlHandler->s>rowCount() > 0;
     if($sqlHandler->s->rowCount() > 0)
     {
         session_start();
