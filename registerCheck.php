@@ -23,11 +23,12 @@ $sql="select * from users where name=:x";
 //$name="a";
 //$arr=array($name);
 $sqlHandler->half_genericQuery($sql,1,$arr); 
-$res=$sqlHandler->s->fetchAll();
+$sqlHandler->s->fetchAll();
 //echo $sqlHandler->s->rowCount();
 //$sql="select * from users where binary name=:x";
 //$sqlHandler->half_genricQuesy($sql,1,$arr);
 //$res=$sqlHandler->s->fetchAll();
+echo $res['id'];
 if($sqlHandler->s->rowCount() > 0)
 {
     header("Location: register.php?bad=2");

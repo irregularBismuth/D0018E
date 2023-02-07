@@ -30,9 +30,12 @@ function login($name,$pass){
     $result=$sqlHandler->s->fetchAll();
  //   print_r($result);
     //echo $result[0];
-    echo $result['id'];
-    echo $result['name'];
-    echo $result['email'];
+    foreach ($result as $result) {
+        echo $result['id'];
+    }
+   // echo $result['id'];
+    //echo $result['name'];
+    //echo $result['email'];
 
     //echo $sqlHandler->s>rowCount() > 0;
     if($sqlHandler->s->rowCount() > 0)
