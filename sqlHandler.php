@@ -45,7 +45,7 @@
         //:x :y :z :w
         //convention använd bara 4 st max för denna function
         function half_genericQuery($queryString,$var,$arr){
-            require_once "function.php";
+            #require_once "function.php";
             $s=$this->db_connector->prepare($queryString);
             if($var==1) { $s->bindValue(':x',$arr[0]); } 
 
