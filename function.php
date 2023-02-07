@@ -34,7 +34,7 @@ function login($name,$pass){
     {
         session_start();
         $_SESSION['username']=$name;
-        $_SESSION['user_id']=$result['id']; //adding session variable for id
+        $_SESSION['id']=$result['id']; //adding session variable for id
         header("Location: index.php?success=1");
         exit(0);
     }

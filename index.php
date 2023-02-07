@@ -21,7 +21,7 @@ checkSession();
             session_start();
              echo "logged in as: ";
              echo $_SESSION['username']."</br>";
-             echo $_SESSION['user_id'];
+             echo $_SESSION['id']."</br> 123";
             ?>        
         </div> 
     </body>
