@@ -39,8 +39,8 @@ function login($name,$pass){
 
     }
     ////echo $_SESSION['user_id'];
-    //header("Location: login.php?bad=1");
-    //exit(0);
+    header("Location: login.php?bad=1");
+    exit(0);
     }
 }
 ?>
