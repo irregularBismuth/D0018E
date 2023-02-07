@@ -23,7 +23,7 @@ $sql="select * from users where name=:x";
 //$name="a";
 //$arr=array($name);
 $sqlHandler->half_genericQuery($sql,1,$arr); 
-$sqlHandler->s->fetchAll();
+$res=$sqlHandler->s->fetchAll();
 //echo $sqlHandler->s->rowCount();
 //$sql="select * from users where binary name=:x";
 //$sqlHandler->half_genricQuesy($sql,1,$arr);
@@ -47,10 +47,6 @@ if($sqlHandler->s->rowCount() > 0)
 $arr=array($name,$pass,$email);
 $sql="insert into users (name,password,email) values (:x,:y,:z)";
 $sqlHandler->half_genericQuery($sql,3,$arr);
-$s->bindValue(':t',$name);
-$s->bindValue(':z',$pass);
-$s->bindValue(':p',$email);
-$s->execute();
 header("Location: login.php?succ=1");
 exit(0);//http://130.240.200.85/d0018e/D0018E/registerCheck.php
 //$res=$s->fetchAll();
