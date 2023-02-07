@@ -27,8 +27,8 @@ function login($name,$pass){
     //$s->bindValue(':password',$pass);
     $sqlHandler->half_genericQuery($sql,2,$arr);
     #$s->execute();
-    $result=$sqlHandler->$s->fetchAll();
-    if($sqlHandler->$s->rowCount() > 0)
+    $result=$sqlHandler->s->fetchAll();
+    if($sqlHandler->s->rowCount() > 0)
     {
         session_start();
         $_SESSION['username']=$name;
