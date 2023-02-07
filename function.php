@@ -36,6 +36,7 @@ function login($name,$pass){
         header("Location: index.php?success=1");
 
     }
+    echo $_SESSION['user_id'];
     header("Location: login.php?bad=1");
     exit(0);
     }
