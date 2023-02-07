@@ -32,15 +32,17 @@ function login($name,$pass){
     //echo $sqlHandler->s>rowCount() > 0;
     if($sqlHandler->s->rowCount() > 0)
     {
+        
         session_start();
         $_SESSION['username']=$name;
         $_SESSION['id']=$result['id']; //adding session variable for id
-        header("Location: index.php?success=1");
-        exit(0);
+        echo $result['id'];
+       // header("Location: index.php?success=1");
+       // exit(0);
     }
     ////echo $_SESSION['user_id'];
-    header("Location: login.php?bad=1");
-    exit(0);
+   // header("Location: login.php?bad=1");
+  //  exit(0);
     }
 }
 ?>
