@@ -17,8 +17,9 @@ checkSession();
     </head>
     <body>
         <div>
+
             <?php
-            session_start();
+            //session_start();
              echo "logged in as: ";
              echo $_SESSION['username']."</br>";
              echo $_SESSION['id']."</br> 123";
