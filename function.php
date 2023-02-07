@@ -43,15 +43,15 @@ function login($name,$pass){
         
         session_start();
         $_SESSION['username']=$name;
-        //$_SESSION['id']=$result['id']; //adding session variable for id
-        echo $result['email']; 
-        echo $result['id'];
-       // header("Location: index.php?success=1");
-       // exit(0);
+        $_SESSION['id']=$result['id']; //adding session variable for id
+      //  echo $result['email']; 
+       // echo $result['id'];
+       header("Location: index.php?success=1");
+       exit(0);
     }
     ////echo $_SESSION['user_id'];
-   // header("Location: login.php?bad=1");
-  //  exit(0);
+      header("Location: login.php?bad=1");
+      exit(0);
     }
 }
 ?>
