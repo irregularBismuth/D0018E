@@ -1,5 +1,4 @@
 <?php
-
 function filter($var)
 {
     $var=htmlspecialchars($var);
@@ -17,16 +16,19 @@ function logout()
 }
 
 function login($name,$pass){
-    require_once "db/db.php"; 
+    require_once "sqlHandler.php"; 
     if(isset($_POST['submit'])){
-    $sql="select * from users where binary name=:name and binary password=:password";
-    $s=$dbc->prepare($sql);
-    $s->bindValue(':name',$name);
-    $s->bindValue(':password',$pass);
-    $s->execute();
-    $result=$s->fetchAll();
-    
-    if($s->rowCount() > 0)
+    $sql="select * from users where binary name=:x and binary password=:y";
+    #$s=$dbc->prepare($sql);
+    $name=filter($name);
+    $pass=filter($pass);
+    $arr=array($name,$pass);
+    //$s->bindValue(':name',$name);
+    //$s->bindValue(':password',$pass);
+    $sqlHandler->half_genericQuery($sql,2,$arr);
+    #$s->execute();
+    $result=$sqlHandler->$s->fetchAll();
+    if($sqlHandler->$s->rowCount() > 0)
     {
         session_start();
         $_SESSION['username']=$name;

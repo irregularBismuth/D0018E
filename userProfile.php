@@ -22,7 +22,7 @@ require_once("sqlHandler.php");
         function fetchUserData($col_name){
             require_once("sqlHandler.php");
             
-            $sql_query = "SELECT * FROM users where id=".$this->user_id;
+            $sql_query = "SELECT * FROM users where id=:x";
             $temp_array = array($this->user_id);
             $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
             $output = $sqlHandler->s->fetchAll();
