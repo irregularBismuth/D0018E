@@ -28,14 +28,15 @@ function login($name,$pass){
     $sqlHandler->half_genericQuery($sql,2,$arr);
     //$s->execute();
     $result=$sqlHandler->s->fetchAll();
-    print_r($result);
+    //print_r($result);
     //echo $sqlHandler->s>rowCount() > 0;
     if($sqlHandler->s->rowCount() > 0)
     {
         
         session_start();
         $_SESSION['username']=$name;
-        $_SESSION['id']=$result['id']; //adding session variable for id
+        //$_SESSION['id']=$result['id']; //adding session variable for id
+        echo $resultat['email']; 
         echo $result['id'];
        // header("Location: index.php?success=1");
        // exit(0);
