@@ -28,7 +28,9 @@ function login($name,$pass){
     $sqlHandler->half_genericQuery($sql,2,$arr);
     //$s->execute();
     $result=$sqlHandler->s->fetchAll();
-    //print_r($result);
+    print_r($result);
+    echo $resultat[0];
+    echo $resultat['id'];
     //echo $sqlHandler->s>rowCount() > 0;
     if($sqlHandler->s->rowCount() > 0)
     {
