@@ -31,7 +31,7 @@ function login($name,$pass){
  //   print_r($result);
     //echo $result[0];
     foreach ($result as $result) {
-        echo $result['id']."</br>";
+        echo $result['id']."</br>peepo: ";
     }
    // echo $result['id'];
     //echo $result['name'];
