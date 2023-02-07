@@ -29,7 +29,7 @@ function login($name,$pass){
     //$s->execute();
     $result=$sqlHandler->s->fetchAll();
     #print_r($result);
-    echo $sqlHandler->s>rowCount();
+    echo ($sqlHandler->s>rowCount() >0);
     if($sqlHandler->s->rowCount() > 0)
     {
         session_start();
