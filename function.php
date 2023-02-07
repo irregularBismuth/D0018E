@@ -30,9 +30,9 @@ function login($name,$pass){
     $result=$sqlHandler->s->fetchAll();
  //   print_r($result);
     //echo $result[0];
-    foreach ($result as $result) {
-        echo $result['id']."</br>peepo: ";
-    }
+    //foreach ($result as $result) {
+     //   echo $result['id']."</br>peepo: ";
+    //}
    // echo $result['id'];
     //echo $result['name'];
     //echo $result['email'];
@@ -44,7 +44,7 @@ function login($name,$pass){
         session_start();
         $_SESSION['username']=$name;
         //$_SESSION['id']=$result['id']; //adding session variable for id
-        echo $resultat['email']; 
+        echo $result['email']; 
         echo $result['id'];
        // header("Location: index.php?success=1");
        // exit(0);
