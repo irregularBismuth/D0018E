@@ -30,9 +30,9 @@ function login($name,$pass){
     $result=$sqlHandler->s->fetchAll();
  //   print_r($result);
     //echo $result[0];
-    //foreach ($result as $result) {
+    foreach ($result as $result) {
      //   echo $result['id']."</br>peepo: ";
-    //}
+    }
    // echo $result['id'];
     //echo $result['name'];
     //echo $result['email'];
