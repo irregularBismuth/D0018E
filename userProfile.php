@@ -13,7 +13,7 @@ require_once("sqlHandler.php");
         
         function __construct()
         {
-            $this->user_id = $_SESSION['user_id'];
+            $this->user_id = $_SESSION['id'];
             $this->username = $this->fetchUserData('name');
             $this->balance = $this->fetchUserData('balance');
             $this->profileImage = $this->fetchUserData('profile_image');   
@@ -26,6 +26,7 @@ require_once("sqlHandler.php");
             $temp_array = array($this->user_id);
             $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
             $output = $sqlHandler->s->fetchAll();
+            foreach($output as $output){ }
             return $output[$col_name];
         }
 
