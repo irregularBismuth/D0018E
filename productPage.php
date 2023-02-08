@@ -35,7 +35,7 @@ $row_count = count($animals['image']);
         
         <?php
             
-            if(!isset($_SESSION["cart"])){
+            if(!(isset($_SESSION["cart"]))){
                 $_SESSION["cart"] = array();
             }
             
