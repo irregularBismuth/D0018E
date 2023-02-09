@@ -20,11 +20,9 @@ require_once("userProfile.php");
             <a href="site.php">
                 <img src="logo.png" width="400">
             </a>
-        </div>
 
 
             <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-            <div class="infoStyle">
                 <ul id="infoSection">
                     <li>
                     <?php echo "Name: " $userProfile->fetchUserData("name"); ?>           
@@ -35,7 +33,8 @@ require_once("userProfile.php");
                     </li>  
 
                 </ul>
-            </div>
+            
+        </div>
                                 
     </body>
 </html>
