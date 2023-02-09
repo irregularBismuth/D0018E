@@ -25,11 +25,12 @@ $row_count = count($animals['image']);
                 <img src="logo.png" width="400">
             </a>
             <h3>Product cart</h3>
+            <div>
+    
             <?php 
-                
-                echo "name: ".$userProfile->getSessionData("name");
-                
+                echo "test";
             ?>
+            </div>
 
             <form role="search" id="form">
                 <input type="search" id="query" name="q" placeholder="Search...">
