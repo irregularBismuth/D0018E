@@ -2,7 +2,7 @@
 session_start();
 function checkSession(){
  
-    if(!(isset($_SESSION['username']))){
+    if(!(isset($_SESSION['id']))){
         header("Location: login.php");
         exit(0);
     }
