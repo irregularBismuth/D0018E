@@ -7,7 +7,8 @@ function checkSession(){
         exit(0);
     }
     else{
-        header("Location: site.php");
+        $site_url = "http://130.240.200.85/d0018e/D0018E/site.php";
+        header("Location: ".$site_url);
         exit(0);
     }
     
