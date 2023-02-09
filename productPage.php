@@ -27,7 +27,7 @@ $row_count = count($animals['image']);
             <h3>Product cart</h3>
             <?php 
                 
-                echo $userProfile->getSessionData("name");
+                echo "name: ".$userProfile->getSessionData("name");
                 
             ?>
 
