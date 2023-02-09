@@ -27,11 +27,11 @@ require_once("userProfile.php");
             <div class="infoStyle">
                 <ul id="infoSection">
                     <li>
-                        Name: <?php echo $userProfile->fetchUserData("name"); ?>           
+                    <?php echo "Name: " $userProfile->fetchUserData("name"); ?>           
                     </li>
 
                     <li>  
-                        Balance: 
+                        Balance
                     </li>  
 
                 </ul>
