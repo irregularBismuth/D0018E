@@ -10,6 +10,7 @@ function checkSession(){
         $site_url = "http://130.240.200.85/d0018e/D0018E/site.php";
         header("Location: productPage.php");
         exit(0);
+        //adahsdush
     }
     
 }
