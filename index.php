@@ -20,6 +20,7 @@ checkSession();
              echo "logged in as: ";
              echo $_SESSION['username']."</br>";
              echo $_SESSION['id']."</br> 123";
+             checkSession();
              
             
             ?>        
