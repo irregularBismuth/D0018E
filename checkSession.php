@@ -8,7 +8,7 @@ function checkSession(){
     }
     else{
         header("Location: site.php");
-        exit();
+        exit(0);
     }
     
 }
