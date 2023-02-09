@@ -25,7 +25,7 @@ require_once("userProfile.php");
             <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
                 <ul id="infoSection">
                     <li>
-                    <?php echo "Name: " $userProfile->fetchUserData("name"); ?>           
+                    <?php echo $userProfile->getSessionData("name"); ?>           
                     </li>
 
                     <li>  
