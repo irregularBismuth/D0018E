@@ -9,6 +9,7 @@ body {
 .bar li {
     float:left;
     display: block;
+    margin: 20px;
 }
 
 
