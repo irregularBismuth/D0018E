@@ -56,7 +56,7 @@ $row_count = count($animals['image']);
                                             <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
                                             <br>
                                             <hr>
-                                            <li><b>Subtotal:</b> '.$animalArray['price'][$i].'</li>
+                                            <li><b>Subtotal:</b> '.$animalArray['price'][$i].'¥ </li>
                                         </ul>
                                     </div>            
                                 </div>
