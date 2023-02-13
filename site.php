@@ -17,7 +17,7 @@ require_once("cartMenuSwitch.php");
 <div class="headern">
 <header>
  
-    <a href="site.php"><img src="logo.png" width="400"></a>
+    <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <?php generateCartButton()?>
     <form role="search" id="form">
   <input type="search" id="query" name="q"
@@ -32,8 +32,8 @@ require_once("cartMenuSwitch.php");
 </div>
     <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:50%;">
         <tr>
-            <th><a href="cats.php">Cats</a></th>
-            <th><a href="large.php">Large animals</a></th>
+            <th><a href="../images/cats.php">Cats</a></th>
+            <th><a href="../images/large.php">Large animals</a></th>
             <th>Small animals</th>
             <th>About us</th>
         </tr>
@@ -42,11 +42,11 @@ require_once("cartMenuSwitch.php");
     <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <tr><td><h2>Fetured</h2></td></tr>
         <tr>
-            <td><img src="capy.png" width="451" height="342"></td>
+            <td><img src="../images/capy.png" width="451" height="342"></td>
             <td>Capybara 6100kr</td>
         </tr>
         <tr>
-            <td><img src="large/elefant.jpg"width="451" height="342"></td>
+            <td><img src="../images/large/elefant.jpg"width="451" height="342"></td>
             <td>Elephant 128 699kr</td>
         </tr>
         <tr>
