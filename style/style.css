@@ -8,8 +8,9 @@ body {
 
 .bar li {
     float:left;
-
+    display: block;
 }
+
 
 .headern header {
 
