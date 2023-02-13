@@ -11,7 +11,7 @@ $row_count = count($animals['image']);
        
      <title> ProductPage </title>
     <link rel="stylesheet" type="text/css" target="cartPage" href="shoppingCartStyle.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style/style.css" media="screen" />
     </head>
 
     <body>
@@ -21,7 +21,7 @@ $row_count = count($animals['image']);
         <header>
 
             <a href="site.php">
-                <img src="logo.png" width="400">
+                <img src="../iages/logo.png" width="400">
             </a>
             <h3>Product cart...</h3>
             
