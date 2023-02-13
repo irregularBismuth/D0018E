@@ -27,7 +27,7 @@ require_once("userProfile.php");
                     <li>
                     <?php echo $userProfile->getSessionData("name"); ?>           
                     </li>
-                        abc
+                        abcdef
                     <li>  
                         Balance
                     </li>  
