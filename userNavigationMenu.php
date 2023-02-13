@@ -20,22 +20,21 @@ require_once("userProfile.php");
             <a href="site.php">
                 <img src="logo.png" width="400">
             </a>
-        </div>
 
 
             <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-            <div class="infoStyle">
                 <ul id="infoSection">
                     <li>
-                        Name: <?php echo $userProfile->getSessionData("name"); ?>           
+                    <?php echo $userProfile->getSessionData("name"); ?>           
                     </li>
 
                     <li>  
-                        Balance: 
+                        Balance
                     </li>  
 
                 </ul>
-            </div>
+            
+        </div>
                                 
     </body>
 </html>
