@@ -35,9 +35,6 @@ $row_count = count($animals['image']);
         
         <?php
             
-            if(!(isset($_SESSION["cart"]))){
-                $_SESSION["cart"] = array();
-            }
             
             function generateBoxFrames($countRow, $animalArray){
                 //adding some local variable reference:

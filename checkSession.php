@@ -7,6 +7,10 @@ function checkSession()
    header("Location: login.php");
    exit(0);
  }
+ else{
+    header("Location: site.php");
+    exit(0);
+}
 
 }
 ?>
