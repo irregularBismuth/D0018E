@@ -28,10 +28,6 @@ $row_count = count($animals['image']);
 
             <p>
 
-    
-            <?php 
-                echo "test"
-            ?>
             </p>
             
 
