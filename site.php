@@ -32,6 +32,25 @@ require_once("cartMenuSwitch.php");
     <a href="login.php"> Login </a>
 </header>
 </div>
+<div class="main">
+    
+    <div class="bar">
+        <ul>
+            <li>Cats</li>
+            <li>African</li>
+            <li>Wolves</li>
+        </ul>
+    </div>
+<?php 
+require_once "sqlHandler";
+
+
+
+?>
+
+
+</div>
+<!--
     <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:50%;">
         <tr>
             <th><a href="../images/cats.php">Cats</a></th>
@@ -63,6 +82,6 @@ require_once("cartMenuSwitch.php");
 <?php
 echo "Hello World!";
 ?>
-
+-->
 </body>
 </html> 
