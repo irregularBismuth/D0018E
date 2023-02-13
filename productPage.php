@@ -20,15 +20,12 @@ $row_count = count($animals['image']);
         <div class="headern">
         <header>
 
-<<<<<<< HEAD
             <a href="site.php"> <img src="logo.png" width="400"> </a>
             <?php echo "Profile info: ".$_SESSION['username']?>
-=======
             <a href="site.php">
                 <img src="../images/logo.png" width="400">
             </a>
             <h3>Product cart...</h3>
->>>>>>> 41c674d3e73ecc47e0c74d4abf6f3b6e1be43d0c
             
             
 
