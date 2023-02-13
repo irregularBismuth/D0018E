@@ -7,7 +7,7 @@ require_once("cartMenuSwitch.php");
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" class="" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" class="" href="style/style.css" media="screen" />
 </head>
 <style>
 
