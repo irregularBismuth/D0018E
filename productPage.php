@@ -21,7 +21,7 @@ $row_count = count($animals['image']);
         <header>
 
             <a href="site.php">
-                <img src="../iages/logo.png" width="400">
+                <img src="../images/logo.png" width="400">
             </a>
             <h3>Product cart...</h3>
             
