@@ -1,7 +1,7 @@
 <!--<!DOCTYPE html> -->
 <?php
 session_start();
-//require_once("userProfile.php");
+require_once("userProfile.php");
 require_once("sqlHandler.php");
 $animals = $sqlHandler->get_product_data();
 $row_count = count($animals['image']);
@@ -25,6 +25,15 @@ $row_count = count($animals['image']);
                 <img src="logo.png" width="400">
             </a>
             <h3>Product cart</h3>
+
+            <p>
+
+    
+            <?php 
+                echo "test"
+            ?>
+            </p>
+            
 
             <form role="search" id="form">
                 <input type="search" id="query" name="q" placeholder="Search...">
