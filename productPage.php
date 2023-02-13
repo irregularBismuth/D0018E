@@ -20,6 +20,8 @@ $row_count = count($animals['image']);
         <div class="headern">
         <header>
 
+            <a href="site.php"> <img src="logo.png" width="400"> </a>
+            <?php echo "Profile info: ".$_SESSION['username']?>
             <a href="site.php">
                 <img src="../images/logo.png" width="400">
             </a>
@@ -31,7 +33,6 @@ $row_count = count($animals['image']);
                 <input type="search" id="query" name="q" placeholder="Search...">
             </form>
         </header>
-        <br>
         </div>
         
         <?php
