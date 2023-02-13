@@ -19,7 +19,7 @@ require_once("cartMenuSwitch.php");
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
-    <?php generateCartButton()?>
+    <?php generateCartButton(); ?>
     <?php echo "Welcome: ".$_SESSION['username']; ?>
     <form role="search" id="form">
   <input type="search" id="query" name="q"
