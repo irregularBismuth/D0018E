@@ -6,9 +6,8 @@ body {
  margin: 0;
 }
 
-.main {
-
-
+.bar {
+    float:right;
 
 }
 
