@@ -5,14 +5,14 @@ session_start();
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="style/style.css" media="screen" />
 <title>
 </title>
 </head>
 <body>
 <div class="headern">
 <header>
-    <a href="site.php"><img src="logo.png" width="400"></a>
+    <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <form role="search" id="form">
   <input type="search" id="query" name="q"
    placeholder="Search..."
@@ -34,11 +34,6 @@ register form here
     <input type="submit" name="sub" />
     </form>
 </div>
-
-
-<?php
-echo "Hello World!";
-?>
 
 </body>
 </html> 
