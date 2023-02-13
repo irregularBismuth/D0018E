@@ -25,10 +25,6 @@ $row_count = count($animals['image']);
                 <img src="logo.png" width="400">
             </a>
             <h3>Product cart</h3>
-
-            <p>
-
-            </p>
             
 
             <form role="search" id="form">
