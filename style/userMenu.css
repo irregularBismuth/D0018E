@@ -1,0 +1,17 @@
+.dropdownMenu {
+    position: relative; 
+    display: inline-block;
+}
+
+.dropdownMenu-content {
+    position: absolute; 
+
+}
+
+.dropdownMenu:hover .dropdownMenu-content {
+    display: block;
+}
+
+img {
+    border-radius: 50%;
+}
