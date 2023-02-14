@@ -31,23 +31,30 @@ require_once("sqlHandler.php");
         }
 
         function getSessionData($stringFlag){
-            if ($stringFlag == "user_id"){
-                return $this->user_id;
-            }
-            
-            if ($stringFlag == "name"){          
-                return $this->username;
-            }
-            if ($stringFlag == "balance"){
-                return $this->balance;
-            }
-            
-            if ($stringFlag == "profile_image"){
-                return $this->profileImage;
-            }
 
-            else{
+            try{
+
+                if ($stringFlag == "user_id"){
+                return $this->user_id;
+                }
+            
+                if ($stringFlag == "name"){          
+                return $this->username;
+                }
+                if ($stringFlag == "balance"){
+                return $this->balance;
+                }
+            
+                if ($stringFlag == "profile_image"){
+                return $this->profileImage;
+                }
+
+                else{
                 return null; 
+                }
+            }
+            catch(Exception $e){
+                echo $e->getMessage();
             }
         }
 
