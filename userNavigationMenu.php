@@ -8,8 +8,9 @@ require_once("userProfile.php");
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="shoppingCartStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="style/shoppingCartStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="style/style.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="style/userMenu.css"/>
 
      <title> User navigation menu </title>
     
@@ -20,19 +21,12 @@ require_once("userProfile.php");
             <a href="site.php">
                 <img src="logo.png" width="400">
             </a>
-
-
-            <!-- <img src="PHPQUERY TO GET PROFILE IMG"> -->
-                <ul id="infoSection">
-                    <li>
-                    <?php echo $userProfile->getSessionData("name"); ?>           
-                    </li>
-                        abcdef
-                    <li>  
-                        Balance
-                    </li>  
-
-                </ul>
+            
+            <div class="dropdownMenu">
+                TEST
+                <?php echo $userProfile->getSessionData("name"); ?>    
+            </div>       
+                    
             
         </div>
                                 
