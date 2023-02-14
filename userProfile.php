@@ -30,7 +30,7 @@ require_once("sqlHandler.php");
             return $output[$col_name];
         }
 
-        function getSessionData($stringFlag=""){
+        function getSessionData($stringFlag){
             if ($stringFlag == "user_id"){
                 return $this->user_id;
             }
