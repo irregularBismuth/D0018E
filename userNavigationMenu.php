@@ -18,15 +18,18 @@ require_once("userProfile.php");
 
     <body>
         <div class="headern">
+        <header>
             <a href="site.php">
-                <img src="logo.png" width="400">
+                <img src="../images/logo.png" width="400">
             </a>
+
+            <?php echo "Profile info: ".$_SESSION['username'] ?>
             
             <div class="dropdownMenu">
                 TEST
             </div>       
                     
-            
+        </header>
         </div>
                                 
     </body>
