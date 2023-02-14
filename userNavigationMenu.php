@@ -15,17 +15,22 @@ require_once("userProfile.php");
     </head>
 
     <body>
-        <div class="headern">
-        <header>
-            <a href="site.php">
-                <img src="../images/logo.png" width="400">
-            </a>
 
-            <?php echo "Profile info: ".$_SESSION['username'] ?> 
+        <div class="headern">
+            <header>
+                <a href="site.php">
+                    <img src="../images/logo.png" width="400">
+                </a>
+
+                <?php 
+                    echo "Profile info: ".$_SESSION['username']."<br>";
                     
-        </header>
-        </div>
-                                
+                ?> 
+            
+
+            </header>
+        </div>                            
+    
     </body>
 </html>
 
