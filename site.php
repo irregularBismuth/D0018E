@@ -55,10 +55,12 @@ require_once("cartMenuSwitch.php");
             $arr=array(1,2);
             $query="select * from animals";
             $sqlHandler->half_genericQuery($query,0,$arr);
-            $sqlHandler->s->fetchAll();
+            $res=$sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
             {
-                echo "peepo</br>";
+                foreach ($res as $res) {
+                    echo $res['animal_name'];
+                }
             }
 
  
