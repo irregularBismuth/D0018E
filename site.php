@@ -2,6 +2,7 @@
 <?php
 session_start();
 //peepo
+require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
 ?>
 
@@ -49,15 +50,17 @@ require_once("cartMenuSwitch.php");
         </ul>
     </div>
     
-    <div class="">
+    <div class="products">
+        <?php
+            $query="select * from animals";
+            $sqlHandler->half_genericQuery($query,0,0);
+            $sqlHandler->s->fetchAll();
+            if($sqlHandler-s->rowCount() > 0)
+            {
+                echo "peepo"." ";
+            }
+        ?>
     </div>
-<?php 
-require_once "sqlHandler";
-
-
-
-?>
-
 
 </div>
 <!--
