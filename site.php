@@ -51,15 +51,18 @@ require_once("cartMenuSwitch.php");
     </div>
     
     <div class="products">
-        <?php
+<?php
+            $arr=array(1,2);
             $query="select * from animals";
-            $sqlHandler->half_genericQuery($query,0,0);
+            $sqlHandler->half_genericQuery($query,0,$arr);
             $sqlHandler->s->fetchAll();
             if($sqlHandler-s->rowCount() > 0)
             {
                 echo "peepo"." ";
             }
-        ?>
+
+ 
+       ?>
     </div>
 
 </div>
