@@ -16,6 +16,7 @@ require_once("sqlHandler.php");
         {
             $this->user_id = $_SESSION['id']; 
             $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
+            $this->fetchUserData();
         }
         
         function fetchUserData(){
