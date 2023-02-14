@@ -24,8 +24,11 @@ $row_count = count($animals['image']);
                 <img src="../images/logo.png" width="400">
             </a>
             
-            <?php echo "Profile info: ".$_SESSION['username']?>
-            <h3>Product cart...</h3>
+            <?php 
+                echo "Profile info: ".$_SESSION['username']."<br>";
+                echo "test";
+            ?>
+            
             
             
 
