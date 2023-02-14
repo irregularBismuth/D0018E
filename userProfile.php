@@ -10,52 +10,54 @@ require_once("sqlHandler.php");
         private $username;
         private $user_id;
         private $cart_items_added;
+        public $userData; 
         
         function __construct()
         {
-            $this->user_id = $_SESSION['id'];
-            $this->username = $this->fetchUserData('name');
-            $this->balance = $this->fetchUserData('balance');
-            $this->profileImage = $this->fetchUserData('profile_image');   
+            $this->user_id = $_SESSION['id']; 
+            $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
         }
         
-        function fetchUserData($col_name){
+        function fetchUserData(){
             require_once("sqlHandler.php");
             
-            $sql_query = "SELECT * FROM users where id=:x";
-            $temp_array = array($this->user_id);
-            $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
-            $output = $sqlHandler->s->fetchAll();
-            foreach($output as $output){ 
-
-                return $output[$col_name];
-            }
-        }
-
-        function getSessionData($stringFlag){
+            try{
                 
                 if (isset($_SESSION['id'])){
 
-                    if ($stringFlag == "user_id"){
-                    return $this->user_id;
+                    $sql_query = "SELECT * FROM users where id=:x";
+                    $temp_array = array($this->user_id);
+                    $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
+                    $output = $sqlHandler->s->fetchAll();
+                    foreach($output as $output){ 
+                        
+                        $this->username = $output['name'];
+                        $this->balance = $output['balance'];
+                        $this->profileImage = $output['profileImage'];
+                        array_push($this->userData["name"], $output["name"]);
+                        array_push($this->userData["balance"], $output["balance"]);
+                        array_push($this->userData["profileImage"], $output["profileImage"]);
                     }
-            
-                    if ($stringFlag == "name"){          
-                    return $this->username;
-                    }
-                    if ($stringFlag == "balance"){
-                    return $this->balance;
-                    }
-            
-                    if ($stringFlag == "profile_image"){
-                    return $this->profileImage;
-                    }
+                }
+                else{
+                    $this->userData = [];
+                }
+                
+            }
+            catch(Exception $e){
+                echo $e->getMessage();
+            }
+        }
 
-                    else{
-                    return null; 
-                    }
-                }else{
-                    echo "Login to see profile info!";
+        function getSessionData($arrayKey){
+                
+                
+            if ($this->userData == []){
+                return "Login to see info!";
+            }
+
+            else{
+                    return $this->userData[$arrayKey]; 
                 }
             
         }
