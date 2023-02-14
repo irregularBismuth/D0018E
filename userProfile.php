@@ -31,8 +31,6 @@ require_once("sqlHandler.php");
         }
 
         function getSessionData($stringFlag){
-
-            try{
                 
                 if (isset($_SESSION['id'])){
 
@@ -54,12 +52,10 @@ require_once("sqlHandler.php");
                     else{
                     return null; 
                     }
+                }else{
+                    echo "Login to see profile info!";
                 }
-            }
             
-            catch(Exception $e){
-                echo $e->getMessage();
-            }
         }
 
 
