@@ -21,11 +21,7 @@ require_once("userProfile.php");
                 <img src="../images/logo.png" width="400">
             </a>
 
-            <?php echo "Profile info: ".$_SESSION['username'] ?>
-            
-            <div class="dropdownMenu">
-                TEST
-            </div>       
+            <?php echo "Profile info: ".$_SESSION['username'] ?> 
                     
         </header>
         </div>
