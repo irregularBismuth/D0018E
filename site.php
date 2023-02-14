@@ -58,7 +58,7 @@ require_once("cartMenuSwitch.php");
             $sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
             {
-                echo "peepo"." ";
+                echo "peepo</br>";
             }
 
  
