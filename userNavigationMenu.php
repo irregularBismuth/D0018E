@@ -24,7 +24,6 @@ require_once("userProfile.php");
             
             <div class="dropdownMenu">
                 TEST
-                <?php echo $userProfile->getSessionData("name"); ?>    
             </div>       
                     
             
