@@ -26,8 +26,10 @@ require_once("sqlHandler.php");
             $temp_array = array($this->user_id);
             $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
             $output = $sqlHandler->s->fetchAll();
-            foreach($output as $output){ }
-            return $output[$col_name];
+            foreach($output as $output){ 
+
+                return $output[$col_name];
+            }
         }
 
         function getSessionData($stringFlag){
