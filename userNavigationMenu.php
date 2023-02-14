@@ -9,8 +9,6 @@ require_once("userProfile.php");
 
     <head>
         <title> User navigation menu </title>
-        <link rel="stylesheet" type="text/css" taget="cartPage" href="style/shoppingCartStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="style/style.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="style/userMenu.css"/>
     </head>
 
