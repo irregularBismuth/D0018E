@@ -23,13 +23,11 @@ require_once("userProfile.php");
                 </a>
 
                 <?php 
-                    echo "Profile info: ".$_SESSION['username']."<br>";
-                    
+                    echo "Profile info: ".$_SESSION['username']
                 ?> 
             
 
             </header>
-            <?php echo "hello";?>
         </div>                            
     
     </body>
