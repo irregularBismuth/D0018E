@@ -25,6 +25,8 @@ require_once("sqlHandler.php");
             try{
                 
                 if (isset($_SESSION['id'])){
+                    
+                    $this->user_id = $_SESSION['id'];
 
                     $sql_query = "SELECT * FROM users where id=:x";
                     $temp_array = array($this->user_id);
