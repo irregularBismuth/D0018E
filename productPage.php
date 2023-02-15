@@ -2,6 +2,7 @@
 <?php
 session_start();
 require_once("userProfile.php");
+$userProfile = new UserProfile($sqlHandler);
 require_once("sqlHandler.php");
 $animals = $sqlHandler->get_product_data();
 $row_count = count($animals['image']);
