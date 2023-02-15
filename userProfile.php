@@ -26,7 +26,7 @@ session_start();
             session_start();
             require_once("sqlHandler.php");
             
-            try{
+            //try{
                 
                 if (isset($_SESSION['id'])){
                     
@@ -50,10 +50,10 @@ session_start();
                     $this->userData = [];
                 }
                 
-            }
-            catch(Exception $e){
-                echo $e->getMessage();
-            }
+            //}
+           // catch(Exception $e){
+            //    echo $e->getMessage();
+           // }
         }
 
         function getSessionData(){
