@@ -1,6 +1,7 @@
 <?php 
 session_start();
-//require_once("sqlHandler.php");
+require_once("sqlHandler.php");
+$userProfile = new UserProfile($sqlHandler);
 ?> 
 
 <?php
