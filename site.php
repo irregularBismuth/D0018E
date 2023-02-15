@@ -35,7 +35,7 @@ require_once("cartMenuSwitch.php");
     echo "<a href='login.php'> Login </a>";
     }
     else {
-    echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logoutCheck.php'> Logout </a>";
     }
     ?>
 </header>
