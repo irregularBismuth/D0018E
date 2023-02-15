@@ -79,6 +79,5 @@ session_start();
             
         }
     }
-    $userProfile = new UserProfile();
 ?>
 
