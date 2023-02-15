@@ -8,14 +8,16 @@ body {
 
 .bar li {
     float:left;
-    display: block;
+    display: flex;
     margin: 20px;
+    padding:20px;
     background-color: yellow;
+    width:250px;    
 }
 
 .main {
     display:flex;
-    flex-direction:column;§
+    flex-direction:column;
 }
 
 .products {
