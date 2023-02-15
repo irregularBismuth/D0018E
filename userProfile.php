@@ -14,10 +14,15 @@ session_start();
         
         function __construct()
         {
+           session_start(); 
+            if(!(isset($_SESSION['id']))){
             
+            }
+            else {
             $this->user_id = $_SESSION['id']; 
-            $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
-            $this->fetchUserData();
+            }  
+        //  $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
+           // $this->fetchUserData();
 
             // FIX: set the global session variables in the function below!
         }
