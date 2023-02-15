@@ -1,6 +1,6 @@
 <?php 
 session_start();
-//require_once("sqlHandler.php"); /////
+//require_once("sqlHandler.php");
 ?> 
 
 <?php
@@ -10,58 +10,47 @@ session_start();
         private $username;
         private $user_id;
         private $cart_items_added;
-        public $userData; 
+        public $userData;
+        public $sqlHandler; 
         
         function __construct()
         {
            session_start(); 
-            if(!(isset($_SESSION['id']))){
-            
-            }
-            else {
-            $this->user_id = $_SESSION['id']; 
-            }  
-        //  $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
-            $this->empty();
-
+           $this->user_id = $_SESSION['id'];
+           $this->sqlHandler = $this->getSqlHandler();
+           $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
+            $this->fetchUserData();
             // FIX: set the global session variables in the function below!
         }
-        function empty() {
-        session_start();
-       // require_once "sqlHandler.php";
-        } 
-        function fetchUserData(){
-            session_start();
+
+        function getSqlHandler(){
             require_once("sqlHandler.php");
+            return $sqlHandler;
+        }
+        
+        function fetchUserData(){
             
-            //try{
-                
-               /* 
                 if (isset($_SESSION['id'])){
                     
                     $this->user_id = $_SESSION['id'];
 
                     $sql_query = "SELECT * FROM users where id=:x";
                     $temp_array = array($this->user_id);
-                    $sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
-                    $output = $sqlHandler->s->fetchAll();
+                    $this->sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
+                    $output = $this->sqlHandler->s->fetchAll();
                     foreach($output as $output){ 
                         
-                        $this->username = $output['name'];
-                        $this->balance = $output['balance'];
-                        $this->profileImage = $output['profileImage'];
-                        array_push($this->userData["name"], $output["name"]);
-                        array_push($this->userData["balance"], $output["balance"]);
-                        array_push($this->userData["profileImage"], $output["profileImage"]);
+                        //$this->username = $output['name'];
+                        //$this->balance = $output['balance'];
+                        //$this->profileImage = $output['profileImage'];
+                        $this->userData["name"] = $output["name"];
+                        $this->userData["balance"] = $output["balance"];
+                        $this->userData["profileImage"] = $output["profileImage"];
                     }
                 }
                 else{
                     $this->userData = [];
                 }
-            //}
-           // catch(Exception $e){
-            //    echo $e->getMessage();
-           // }*/
         }
 
         function getSessionData(){
