@@ -13,6 +13,8 @@ body {
     background-color: yellow;
 }
 .products {
+    display: flex;
+
     justify-content: flex-start;
 }
 .productsBox {
