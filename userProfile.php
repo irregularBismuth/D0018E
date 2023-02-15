@@ -27,7 +27,7 @@ session_start();
             // FIX: set the global session variables in the function below!
         }
         function empty() {
-
+        session_start();
         } 
         function fetchUserData(){
             session_start();
