@@ -28,6 +28,7 @@ session_start();
             
             //try{
                 
+               /* 
                 if (isset($_SESSION['id'])){
                     
                     $this->user_id = $_SESSION['id'];
@@ -49,11 +50,10 @@ session_start();
                 else{
                     $this->userData = [];
                 }
-                
             //}
            // catch(Exception $e){
             //    echo $e->getMessage();
-           // }
+           // }*/
         }
 
         function getSessionData(){
