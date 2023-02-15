@@ -28,7 +28,7 @@ session_start();
         }
         function empty() {
         session_start();
-        require_once "sqlHandler.php";
+       // require_once "sqlHandler.php";
         } 
         function fetchUserData(){
             session_start();
