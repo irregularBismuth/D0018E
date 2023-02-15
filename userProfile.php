@@ -55,7 +55,7 @@ require_once("sqlHandler.php"); /////
             }
         }
 
-        function getSessionData($arrayKey){
+        function getSessionData(){
                 
                 
             if ($this->userData == []){
@@ -63,7 +63,7 @@ require_once("sqlHandler.php"); /////
             }
 
             else{
-                    return $this->userData[$arrayKey]; 
+                    return $this->userData; 
                 }
             
         }
