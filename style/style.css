@@ -12,9 +12,14 @@ body {
     margin: 20px;
     background-color: yellow;
 }
+
+.main {
+    display:flex;
+    flex-direction:column;§
+}
+
 .products {
     display: flex;
-
     justify-content: flex-start;
 }
 .productsBox {
