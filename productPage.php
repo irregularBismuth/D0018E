@@ -78,7 +78,7 @@ $row_count = count($animals['image']);
                         </div>
                         <br>';
                 }
-            };
+            }
                
             generateBoxFrames($row_count, $animals);         
         ?>
