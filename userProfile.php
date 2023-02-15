@@ -13,20 +13,19 @@ session_start();
         public $userData;
         public $sqlHandler; 
         
-        function __construct()
+        function __construct($sqlObject)
         {
            session_start(); 
            $this->user_id = $_SESSION['id'];
-           $this->sqlHandler = $this->getSqlHandler();
-           $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
+           $this->username = "";
+           $this->balance = "";
+           $this->profileImage = "";
+           $this->sqlHandler = $sqlObject;
+           $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
             $this->fetchUserData();
             // FIX: set the global session variables in the function below!
         }
 
-        function getSqlHandler(){
-            require_once("sqlHandler.php");
-            return $sqlHandler;
-        }
         
         function fetchUserData(){
             
@@ -40,12 +39,12 @@ session_start();
                     $output = $this->sqlHandler->s->fetchAll();
                     foreach($output as $output){ 
                         
-                        //$this->username = $output['name'];
-                        //$this->balance = $output['balance'];
-                        //$this->profileImage = $output['profileImage'];
-                        $this->userData["name"] = $output["name"];
-                        $this->userData["balance"] = $output["balance"];
-                        $this->userData["profileImage"] = $output["profileImage"];
+                        $this->username = $output['name'];
+                        $this->balance = $output['balance'];
+                        $this->profileImage = $output['profileImage'];
+                        $this->userData["name"] = $this->username;
+                        $this->userData["balance"] = $this->balance;
+                        $this->userData["profileImage"] = $this->profileImage;
                     }
                 }
                 else{
