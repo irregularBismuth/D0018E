@@ -29,6 +29,7 @@ $row_count = count($animals['image']);
                 echo "Profile info: ".$_SESSION['username']."<br>";
 
                 echo $userProfile->getSessionData()["name"];
+                echo $userProfile->getSessionData()["balance"];
 
              //   $output = $userProfile->userData;
                // foreach ($output as $output){
