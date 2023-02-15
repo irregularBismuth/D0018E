@@ -22,11 +22,13 @@ session_start();
             $this->user_id = $_SESSION['id']; 
             }  
         //  $this->userData = array("name"=>"","username"=>"","balance"=>"","profileImage"=>"");//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
-            $this->fetchUserData();
+            $this->empty();
 
             // FIX: set the global session variables in the function below!
         }
-        
+        function empty() {
+
+        } 
         function fetchUserData(){
             session_start();
             require_once("sqlHandler.php");
