@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once("sqlHandler.php");
+require_once("sqlHandler.php"); //
 ?> 
 
 <?php
@@ -17,6 +17,8 @@ require_once("sqlHandler.php");
             $this->user_id = $_SESSION['id']; 
             $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
             $this->fetchUserData();
+
+            // FIX: set the global session variables in the function below!
         }
         
         function fetchUserData(){
