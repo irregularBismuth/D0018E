@@ -74,7 +74,7 @@ $userProfile = new UserProfile($sql);
         
         function addBalance($new_balance_amount){
             // adding balance that is initially 0, need to make INSERT query from sqlHandler!
-            /*
+            
             if(isset($_POST['submit_balance'])){
                 $current_balance = $this->balance;
                 $new_balance = $new_balance_amount + $current_balance;                           
@@ -87,7 +87,7 @@ $userProfile = new UserProfile($sql);
                    
                 $this->balance = $execution['balance'] + $new_balance;
                 $this->userData["balance"] = $this->balance;                                
-            } */
+            } 
         }
 
         function changeProfileImage(){
