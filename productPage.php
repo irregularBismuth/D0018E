@@ -25,8 +25,6 @@ $row_count = count($animals['image']);
             </a>
             
             <?php 
-                echo "Profile info: ".$_SESSION['username']."<br>";
-
                 include("userMenu.php");
             ?>
             
