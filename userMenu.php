@@ -11,12 +11,6 @@ require_once("userProfile.php");
     </head>
 
     <body> 
-            <div>
-
-                <?php echo $userProfile->getSessionData()['name']."<br>";
-                    echo $userProfile->getSessionData()['balance']."<br>"; 
-                ?>
-            </div>
 
         <?php 
                                            
