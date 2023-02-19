@@ -23,11 +23,9 @@ $row_count = count($animals['image']);
             <a href="site.php">
                 <img src="../images/logo.png" width="400">
             </a>
-            <nav>
             <?php 
                 include("userMenu.php");
             ?>
-            </nav>           
             
             <form role="search" id="form">
                 <input type="search" id="query" name="q" placeholder="Search...">
