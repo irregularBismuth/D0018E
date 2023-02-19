@@ -1,9 +1,9 @@
 .profileStyle{
-    display: inline-block;
+    display: flex;
     cursor: pointer;
     height: 3.5rem;
     width: auto; 
-
+    z-index: 1;
 }
 
 nav {
