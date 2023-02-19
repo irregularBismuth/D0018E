@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once("userProfile.php");
+$userProfile->addBalance($_POST['balance']);
 ?>
 
 <html>
