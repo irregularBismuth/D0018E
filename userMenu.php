@@ -13,7 +13,7 @@ require_once("userProfile.php");
     <body> 
         <nav>
         <ul>
-            Items here...?
+            Items here....?
             <li>
                 <img src="" class="profileStyle" />
                 <ul>
