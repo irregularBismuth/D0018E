@@ -11,7 +11,6 @@ require_once("userProfile.php");
     </head>
 
     <body> 
-        <nav>
         <ul>
             <li>
             <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
@@ -45,7 +44,6 @@ require_once("userProfile.php");
                 </ul>
             </li>
         </ul>
-        </nav>       
     
     </body>
 </html>
