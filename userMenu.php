@@ -27,7 +27,7 @@ require_once("userProfile.php");
                     </li>
 
                     <li class="submenu_item">
-                        <form action="userProfile.php" method='POST'>
+                        <form action="functionAddBalance.php" method='POST'>
                             <label> Add balance </label>
                             <input type='text' name='balance'>
                             <input type="submit" name='submit_balance'>
