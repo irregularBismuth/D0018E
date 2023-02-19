@@ -1,7 +1,8 @@
 <?php 
 session_start();
 require_once("sqlHandler.php");
-$userProfile = new UserProfile($sqlHandler);
+$sql = $sqlHandler;
+$userProfile = new UserProfile($sql);
 ?> 
 
 <?php
@@ -11,8 +12,8 @@ $userProfile = new UserProfile($sqlHandler);
         private $username;
         private $user_id;
         private $cart_items_added;
-        public $userData;
-        public $sqlHandler; 
+        private $userData;
+        private $sqlController; 
         
         function __construct($sqlObject)
         {
@@ -21,7 +22,7 @@ $userProfile = new UserProfile($sqlHandler);
            $this->username = "";
            $this->balance = "";
            $this->profileImage = "";
-           $this->sqlHandler = $sqlObject;
+           $this->sqlController = $sqlObject;
            $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
             $this->fetchUserData();
             // FIX: set the global session variables in the function below!
@@ -36,8 +37,8 @@ $userProfile = new UserProfile($sqlHandler);
 
                     $sql_query = "SELECT * FROM users where id=:x";
                     $temp_array = array($this->user_id);
-                    $this->sqlHandler->half_genericQuery($sql_query, 1, $temp_array);
-                    $output = $this->sqlHandler->s->fetchAll();
+                    $this->sqlController->half_genericQuery($sql_query, 1, $temp_array);
+                    $output = $this->sqlController->s->fetchAll();
                     foreach($output as $output){ 
                         
                         $this->username = $output['name'];
