@@ -1,10 +1,8 @@
 .profileStyle {
-    height: 50%;
-    width: 50%; 
     cursor: pointer;
 }
 
-.img profileStyle{
-    height: 50;
-    width: 50; 
+.profileStyle img{
+    height: 50px;
+    width: 50px; 
 }
