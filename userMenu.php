@@ -13,7 +13,6 @@ require_once("userProfile.php");
     <body> 
         <nav>
         <ul>
-            Items here....?
             <li>
             <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
                 <ul>
