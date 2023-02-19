@@ -1,21 +1,19 @@
-.profileStyle {
-    cursor: pointer;
-}
-
 .profileStyle{
     cursor: pointer;
-    height: 50%;
-    width: 50%; 
+    height: 4rem;
+    width: auto; 
 }
 
 nav {
-    background-color: #c838d0;
+    background-color: #ffff;
     padding: 0 4rem; 
     border-radius: 0.6rem;
 }
 
 ul{
     display: flex;
+    margin: 0;
+    padding: 0;
     alignt-items: center;
     gap: 4rem;
 }
@@ -23,6 +21,7 @@ ul{
 li{
     position: relative; 
     padding: 0.5rem 0 0.5rem;
+    list-style-type: none;
 }
 
 li ul {
@@ -35,6 +34,7 @@ li ul {
 
 .submenu_item{
     display: flex;
+    width: 100%;
     align-items: center;
     gap: 0.6rem;
     cursor: pointer;
