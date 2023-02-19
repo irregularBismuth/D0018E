@@ -18,6 +18,7 @@ ul{
     padding: 0;
     alignt-items: center;
     gap: 2rem;
+    border: 2px solid #ddd;
 }
 
 li{
