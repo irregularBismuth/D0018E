@@ -77,21 +77,17 @@ $userProfile = new UserProfile($sql);
             if(isset($_POST['submit_balance'])){
                 $current_balance = $this->balance;
                 $new_balance = $new_balance_amount + $current_balance;
+                             
+                $this->user_id = $_SESSION['id'];
 
-                if (isset($_SESSION['id'])){
-                    
-                    $this->user_id = $_SESSION['id'];
-
-                    $sql_update_query = "UPDATE users SET balance=:x where id=:y";
-                    $temp_array = array($new_balance,$this->user_id);
-                    $this->sqlController->half_genericQuery($sql_update_query, 2, $temp_array);
-                    $execution = $this->sqlController->s->prepare($sql_update_query);
-                    $execution->execute();                        
+                $sql_update_query = "UPDATE users SET balance=:x where id=:y";
+                $temp_array = array($new_balance,$this->user_id);
+                $this->sqlController->half_genericQuery($sql_update_query, 2, $temp_array);
+                $execution = $this->sqlController->s->prepare($sql_update_query);
+                $execution->execute();                        
                    
-                    $this->balance = $execution['balance'] + $new_balance;
-                    $this->userData["balance"] = $this->balance;
-                    
-                }
+                $this->balance = $execution['balance'] + $new_balance;
+                $this->userData["balance"] = $this->balance;                                
             } 
         }
 
