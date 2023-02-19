@@ -7,7 +7,7 @@ require_once("userProfile.php");
     
     <head>
         <title> UserMenu </title>
-        <link rel="stylesheet" type="text/css" href="style/userMenu.css" />
+        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" />
     </head>
 
     <body> 
