@@ -2,8 +2,8 @@
     cursor: pointer;
 }
 
-.profileStyleImage{
-    object-fit: cover;
+.profileStyle{
+    cursor: pointer;
     height: 50%;
     width: 50%; 
 }
@@ -12,4 +12,31 @@ nav {
     background-color: #c838d0;
     padding: 0 4rem; 
     border-radius: 0.6rem;
+}
+
+ul{
+    display: flex;
+    alignt-items: center;
+    gap: 4rem;
+}
+
+li{
+    position: relative; 
+    padding: 0.5rem 0 0.5rem;
+}
+
+li ul {
+    position: absolute; 
+    flex-direction: column; 
+    background-color: grey;
+    align-items: flex-start;
+    padding: 2rem 0rem;
+}
+
+.submenu_item{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    padding: 1.0rem 2.0rem;
 }
