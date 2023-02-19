@@ -58,7 +58,6 @@ $userProfile = new UserProfile($sql);
                 
                 
             if ($this->userData == []){
-                echo "Login to see info!";
                 return $this->userData;
             }
 
