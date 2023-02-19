@@ -5,7 +5,7 @@ $balance_to_add = $_POST['balance'];
 $userProfile->addBalance($balance_to_add);
 
 if(isset($_POST['submit_balance'])){
-    header("Location: userMenu.php"); 
+    header("refresh: userMenu.php"); 
     exit(0); 
 } 
 ?>
