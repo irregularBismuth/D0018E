@@ -87,7 +87,7 @@ $userProfile = new UserProfile($sql);
                    
                 $this->balance = $execution['balance'] + $new_balance;
                 $this->userData["balance"] = $this->balance; 
-                header("Refresh:0"); 
+                header("Refresh:0; url=userMenu.php"); 
                                            
             } 
         }
