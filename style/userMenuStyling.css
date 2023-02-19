@@ -1,12 +1,12 @@
 .profileStyle{
     cursor: pointer;
-    height: 4rem;
+    height: 2.5rem;
     width: auto; 
 }
 
 nav {
     background-color: #ffff;
-    padding: 0 4rem; 
+    padding: 0 2rem; 
     border-radius: 0.6rem;
 }
 
@@ -15,7 +15,7 @@ ul{
     margin: 0;
     padding: 0;
     alignt-items: center;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 li{
