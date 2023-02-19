@@ -86,7 +86,8 @@ $userProfile = new UserProfile($sql);
                 $execution->execute();                        
                    
                 $this->balance = $execution['balance'] + $new_balance;
-                $this->userData["balance"] = $this->balance;  
+                $this->userData["balance"] = $this->balance; 
+                header("Refresh:0"); 
                                            
             } 
         }
