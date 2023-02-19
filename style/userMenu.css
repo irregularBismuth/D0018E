@@ -3,7 +3,7 @@
 }
 
 .profileStyleImage{
-    display: inline;
-    height: 50px;
-    width: 50px; 
+    object-fit: cover;
+    height: 50%;
+    width: 50%; 
 }
