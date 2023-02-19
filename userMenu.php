@@ -35,7 +35,7 @@ require_once("userProfile.php");
 
             echo $userProfile->getSessionData()['balance'];            
         
-            echo "<img src=".$userProfile->getSessionData()['profileImage']."/>";    
+            echo '<img src="'.$userProfile->getSessionData()['profileImage'].'"/>';    
                     
         ?>
     
