@@ -26,7 +26,8 @@ li{
     list-style-type: none;
 }
 
-li ul { 
+li ul {
+    position: absolute; 
     flex-direction: column; 
     background-color: white;
     align-items: flex-start;
