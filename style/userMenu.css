@@ -1,17 +1,6 @@
-.dropdownMenu {
-    position: relative; 
-    display: inline-block;
+.profileStyle {
+    height: 4rem;
+    width: auto; 
+    cursor: pointer;
 }
 
-.dropdownMenu-content {
-    position: absolute; 
-
-}
-
-.dropdownMenu:hover .dropdownMenu-content {
-    display: block;
-}
-
-img {
-    border-radius: 50%;
-}
