@@ -1,4 +1,5 @@
 .profileStyle{
+    display: inline-block;
     cursor: pointer;
     height: 3.5rem;
     width: auto; 
