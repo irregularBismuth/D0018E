@@ -13,11 +13,16 @@ require_once("userProfile.php");
     <body>  
 
         <?php 
+            echo "Profile info: ".$_SESSION['username']."<br>";
+            echo $userProfile->getSessionData()['name']."<br>";
+            echo "Balance: ".$userProfile->getSessionData()['balance']."<br>";
+            
+
             echo "<form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
                         <input type='file' name='file'>
                         <button type='submit' name='submit' > upload image </button>
                     </form>";
-                
+               
         ?>
         
     </body>
