@@ -27,8 +27,7 @@ $row_count = count($animals['image']);
             <?php 
                 echo "Profile info: ".$_SESSION['username']."<br>";
 
-                echo $userProfile->getSessionData()["name"];
-                echo $userProfile->getSessionData()["balance"];
+                include("userMenu.php");
             ?>
             
             
