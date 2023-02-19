@@ -7,3 +7,9 @@
     height: 50%;
     width: 50%; 
 }
+
+nav {
+    background-color: #c838d0;
+    padding: 0 4rem; 
+    border-radius: 0.6rem;
+}
