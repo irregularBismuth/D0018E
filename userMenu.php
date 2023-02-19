@@ -12,9 +12,13 @@ require_once("userProfile.php");
 
     <body>  
 
-        <div class="dropdownMenu">
-            <h3 Hello />
-        </div>
+        <?php 
+            echo "<form action='' method='POST' enctype='multipart/form-data'>
+                        <input type='file' name='file'>
+                        <button type='submit' name='submit' > upload image </button>
+                    </form>";
+                
+        ?>
         
     </body>
 
