@@ -25,6 +25,14 @@ require_once("userProfile.php");
                         <span class="menu_icons"> </span>
                         <p> Balance: <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
+
+                    <li class="submenu_item">
+                        <form action="userProfile.php" method='POST'>
+                            <label> Add balance </label>
+                            <input type='text' name='balance'>
+                            <input type="submit" name='submit_balance'>
+                        </form>
+                    </li>
                     
                     <li class="submenu_item">
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
