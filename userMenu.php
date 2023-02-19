@@ -30,7 +30,12 @@ require_once("userProfile.php");
             echo "<form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
                         <input type='file' name='file'>
                         <button type='submit' name='submit' > upload image </button>
-                    </form>";              
+                    </form>";  
+            echo $userProfile->getSessionData()['name'];   
+
+            echo $userProfile->getSessionData()['balance'];            
+        
+            echo $userProfile->getSessionData()['profileImage'];            
         ?>
     
     </body>
