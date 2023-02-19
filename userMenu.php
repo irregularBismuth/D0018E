@@ -15,7 +15,7 @@ require_once("userProfile.php");
         <ul>
             Items here....?
             <li>
-            <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
+            <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].' height=50 width=50" />'; ?>
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons">Item1</span>
