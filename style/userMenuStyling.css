@@ -18,13 +18,14 @@ ul{
     padding: 0;
     alignt-items: center;
     gap: 2rem;
-    border: 2px solid #ddd;
+    
 }
 
 li{
     position: relative; 
     padding: 0.5rem 0 0.5rem;
     list-style-type: none;
+    border: 2px solid #ddd;
 }
 
 li ul {
