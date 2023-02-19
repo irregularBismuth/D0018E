@@ -51,5 +51,5 @@ ul li:hover > ul, ul li ul:hover{
     display: inline-block;
     opacity: 0.9;
     display: flex;
-    z-index: 1;
+    z-index: 10;
 }
