@@ -27,7 +27,7 @@ li{
 li ul {
     position: absolute; 
     flex-direction: column; 
-    background-color: grey;
+    background-color: white;
     align-items: flex-start;
     padding: 2rem 0rem;
 }
