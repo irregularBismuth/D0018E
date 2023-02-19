@@ -29,7 +29,8 @@ li ul {
     flex-direction: column; 
     background-color: white;
     align-items: flex-start;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
+    gap: 0;
 }
 
 .submenu_item{
