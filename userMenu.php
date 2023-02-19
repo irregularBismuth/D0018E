@@ -18,9 +18,16 @@ require_once("userProfile.php");
             <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
                 <ul>
                     <li class="submenu_item">
-                        <span class="menu_icons">Item1</span>
-                        <p> Test </p>
+                        <span class="menu_icons"></span>
+                        <p> Name: </p>
                     </li>
+                    
+                    <li class="submenu_item">
+                        <span class="menu_icons"> </span>
+                        <p> Balance </p>
+                    </li>
+            
+
                 </ul>
             </li>
         </ul>
