@@ -31,6 +31,8 @@ li ul {
     align-items: flex-start;
     padding: 1rem 0rem;
     gap: 0;
+    display: none; 
+    opacity: 0;
 }
 
 .submenu_item{
@@ -40,4 +42,10 @@ li ul {
     gap: 0.6rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
+}
+
+ul li:hover > ul, ul li ul:hover{
+    visability: visable; 
+    opacity: 0.9;
+    display: flex;
 }
