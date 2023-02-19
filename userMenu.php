@@ -30,7 +30,7 @@ require_once("userProfile.php");
                         <form action="functionAddBalance.php" method='POST'>
                             <label> Add balance </label>
                             <input type='text' name='balance'>
-                            <input type="submit" name='submit_balance'>
+                            <input type="submit" name='submit_balance' value="update">
                         </form>
                     </li>
                     
