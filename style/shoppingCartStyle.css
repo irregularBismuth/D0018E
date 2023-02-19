@@ -15,7 +15,7 @@
 }
 
 .boxFrame > div {
-
+    position: relative; 
     padding: 15px 0;
     text-align: left;
     padding-left: 10px;
