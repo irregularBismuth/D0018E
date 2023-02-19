@@ -34,10 +34,9 @@ $row_count = count($animals['image']);
             </form>
         </header>
         </div>
-        
+       <br> 
         <?php
-            
-            
+                       
             function generateBoxFrames($countRow, $animalArray){
                 //adding some local variable reference:
                 $additional_data = 0;
