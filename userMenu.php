@@ -19,14 +19,21 @@ require_once("userProfile.php");
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons"></span>
-                        <p> Name: </p>
+                        <p> Name: <?php echo $userProfile->getSessionData()['name'] ?> </p>
                     </li>
                     
                     <li class="submenu_item">
                         <span class="menu_icons"> </span>
-                        <p> Balance </p>
+                        <p> Balance:<?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
-            
+                    
+                    <li class="submenu_item">
+                        <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
+                            <input type='file' name='file'>
+                            <button type='submit' name='submit' > upload image </button>
+                        </form>  
+                    <p> Upload profile image </p>
+                    </li>
 
                 </ul>
             </li>
