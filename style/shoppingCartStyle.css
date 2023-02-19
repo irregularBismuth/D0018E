@@ -9,7 +9,7 @@
   text-align: center;  
   background: linear-gradient(rgba(148,187,233,1), rgba(238,174,202,1));
   border-radius: 10px;
-  
+  z-index: 0; 
 
 }
 
