@@ -23,7 +23,7 @@ require_once("userProfile.php");
                     
                     <li class="submenu_item">
                         <span class="menu_icons"> </span>
-                        <p> Balance:<?php echo $userProfile->getSessionData()['balance'] ?> </p>
+                        <p> Balance: <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
                     
                     <li class="submenu_item">
