@@ -33,7 +33,7 @@ li ul {
     flex-direction: column; 
     background-color: white;
     align-items: flex-start;
-    padding: 0.5rem 0rem;
+    padding: 0.25rem 0rem;
     gap: 0;
     display: none; 
     opacity: 0;
