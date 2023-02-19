@@ -7,6 +7,7 @@ $userProfile->addBalance($balance_to_add);
 if(isset($_POST['submit_balance'])){
     $display_balance = $_POST['update'];
     echo $display_balance;
+    header("Location: userMenu.php?success=1");
 }
 
 ?>
