@@ -13,13 +13,11 @@ nav {
 }
 
 ul{
-    position: absolute;
     display: flex;
     margin: 0;
     padding: 0;
     alignt-items: center;
     gap: 2rem;
-    z_index: 100;
     
 }
 
@@ -27,7 +25,6 @@ li{
     position: relative; 
     padding: 0.5rem 0 0rem;
     list-style-type: none;
-    z-index: 100;
     
 }
 
@@ -40,7 +37,6 @@ li ul {
     gap: 0;
     display: none; 
     opacity: 0;
-    z-index:100;
 }
 
 .submenu_item{
