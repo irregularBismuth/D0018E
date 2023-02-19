@@ -11,7 +11,7 @@ require_once("userProfile.php");
     </head>
 
     <body> 
-
+        test 123
         <?php 
                                            
             echo "<form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
