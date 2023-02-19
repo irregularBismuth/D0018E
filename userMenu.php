@@ -15,7 +15,7 @@ require_once("userProfile.php");
         <ul>
             Items here....?
             <li>
-            <?php echo '<img class="profileStyleImage" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
+            <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons">Item1</span>
@@ -33,9 +33,7 @@ require_once("userProfile.php");
                     </form>";  
             echo $userProfile->getSessionData()['name'];   
 
-            echo $userProfile->getSessionData()['balance'];            
-        
-            echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'"/>';    
+            echo $userProfile->getSessionData()['balance'];              
                     
         ?>
     
