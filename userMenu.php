@@ -13,7 +13,6 @@ require_once("userProfile.php");
     <body>  
 
         <?php 
-            echo "Profile info: ".$_SESSION['username']."<br>";
             echo $userProfile->getSessionData()['name']."<br>";
             echo "Balance: ".$userProfile->getSessionData()['balance']."<br>";
             
