@@ -1,6 +1,7 @@
 * {box-sizing: border-box;}
 
 .boxFrame {
+  position: relative; 
   display: grid;
   grid-template-columns: 200px auto;
   grid-gap: 10px;
