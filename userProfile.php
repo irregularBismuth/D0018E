@@ -50,14 +50,16 @@ $userProfile = new UserProfile($sql);
                     }
                 }
                 else{
-                    $this->userData = $this->userData;
+                    $this->userData["name"] = $this->username;
+                    $this->userData["balance"] = $this->balance;
+                    $this->userData["profileImage"] = "../images/default_profile_image.png";
                 }
         }
 
         function getSessionData(){
                 
                 
-            if ($this->userData['name'] == ""){
+            if ($this->userData['name'] == "" or $this->userData['balance'] == ""){
                 return $this->userData;
             }
 
