@@ -56,6 +56,6 @@ ul li:hover > ul, ul li ul:hover{
     display: flex;
     z-index: 100;
     border: 2px solid #ddd;
-    background-color: #ddd;
+    background-color: inherit;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
 }
