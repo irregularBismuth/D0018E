@@ -17,12 +17,12 @@ require_once("userProfile.php"); //
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons"></span>
-                        <p> Name: <?php echo $userProfile->getSessionData()['name'] ?> </p>
+                        <p> <b>Name:</b> <?php echo $userProfile->getSessionData()['name'] ?> </p>
                     </li>
                     
                     <li class="submenu_item">
                         <span class="menu_icons"> </span>
-                        <p> Balance: <?php echo $userProfile->getSessionData()['balance'] ?> </p>
+                        <p> <b>Balance:</b> <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
                     <hr>
                     <li class="submenu_item">
