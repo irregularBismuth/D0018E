@@ -37,6 +37,7 @@ require_once("userProfile.php"); //
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
                             <label> * Upload profile image: </label>
                             <input type='file' name='file'>
+                            <br>
                             <button type='submit' name='submit'> </button>
                         </form>  
                     </li>  
