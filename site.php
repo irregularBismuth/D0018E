@@ -25,19 +25,20 @@ require_once("cartMenuSwitch.php");
 
     
 <script>
-    function Search(str){
-        var xmlhttp = XMLHttpRequest();
-        xmlhttp.onreadystatechange=function(){
-            if(this.readyState==4 && this.status==200){
-                document.getElementById("products").innerHTML=xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET","search.php?q="+str,true);
-        xmlhttp.send();
+function search() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("livesearch").innerHTML =
+      this.responseText;
     }
+  };
+  xhttp.open("GET", "search.php?q="+str,true);
+  xhttp.send();
+}
 </script>
 <form>
-    <input type="text" size="30" onkeyup="Search(this.value)">
+    <input type="text" size="30" onkeyup="search(this.value)">
     <div id="livesearch"></div>
 </form>
 
