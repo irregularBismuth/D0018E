@@ -2,7 +2,8 @@
 session_start();
 //peepo
 require_once "sqlHandler.php";
-
+echo "oskar";
+/*
 $input=$_GET['q'];
             $arr=array($input);
             $query="select * from animals where animal_name like ':x%'";
@@ -14,5 +15,5 @@ $input=$_GET['q'];
                     echo "<div class='productsBox'>".$res['animal_name']."</div></br>";
                 }
             }
-
+*/
 ?>
