@@ -42,7 +42,13 @@ require_once("userProfile.php"); //
                     </li>  
                     
                     <li class="submenu_item">
-                        <a href="login.php"> Login to get user data </a>                
+                        <?php if(!(isset($_SESSION['username']))){
+                                    echo "<a href='login.php'> Login </a>";
+                               }
+                               else{
+                                    echo "<a href='logoutCheck.php'> Logout </a>";
+                                } 
+                         ?>               
                     </li>
                     
                 </ul>
