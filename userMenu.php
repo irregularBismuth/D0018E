@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once("userProfile.php");
+require_once("userProfile.php"); //
 ?>
 
 <html>
@@ -17,32 +17,45 @@ require_once("userProfile.php");
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons"></span>
-                        <p> Name: <?php echo $userProfile->getSessionData()['name'] ?> </p>
+                        <p> <b>Name:</b> <?php echo $userProfile->getSessionData()['name'] ?> </p>
                     </li>
                     
                     <li class="submenu_item">
                         <span class="menu_icons"> </span>
-                        <p> Balance: <?php echo $userProfile->getSessionData()['balance'] ?> </p>
+                        <p> <b>Balance:</b> <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
-
+                    <hr>
+                    <br>
                     <li class="submenu_item">
                         <form action="functionAddBalance.php" method='POST'>
-                            <label> Add balance </label>
+                            <p>
+                            <label> <i>* Add balance</i> </label>
                             <input type='text' name='balance'>
                             <input type="submit" name='submit_balance' value="update">
+                            </p>
                         </form>
                     </li>
-                    
+                   <br> 
                     <li class="submenu_item">
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
-                            <label> Upload profile image: </label>
+                            <p>
+                            <label> <i>* Upload profile image:</i> </label>
                             <input type='file' name='file'>
-                            <button type='submit' name='submit'> </button>
+                            <br>
+                            <button type='submit' name='submit'>upload</button>
+                            </p>
                         </form>  
+                        
                     </li>  
-                    
+                    <hr> 
                     <li class="submenu_item">
-                        <a href="login.php"> Login to get user data </a>                
+                        <?php if(!(isset($_SESSION['username']))){
+                                    echo "<a href='login.php'> Login </a>";
+                               }
+                               else{
+                                    echo "<a href='logoutCheck.php'> Logout </a>";
+                                } 
+                         ?>               
                     </li>
                     
                 </ul>
