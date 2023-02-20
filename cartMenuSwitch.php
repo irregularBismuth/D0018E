@@ -17,7 +17,7 @@ session_start();
             function generateCartButton(){
                 echo '
                     <div class="productCart">
-                        <label> Products </label>
+                        <p> Products <p>
                         <a href="productPage.php">
                         <img src="../images/animalIcon.png" alt ="Image" width=70, height=70>
                         </a>
