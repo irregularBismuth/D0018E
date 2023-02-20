@@ -1,7 +1,7 @@
 .profileStyle{
     display: flex;
     cursor: pointer;
-    height: 3.5rem;
+    height: 3.0rem;
     width: auto; 
 }
 
@@ -37,7 +37,7 @@ li ul {
     flex-direction: column; 
     background-color: white;
     align-items: flex-start;
-    padding: 0.15rem 0rem;
+    padding: 0.25rem 0rem;
     gap: 0;
     display: none; 
     opacity: 0;
