@@ -3,7 +3,6 @@
     cursor: pointer;
     height: 3.5rem;
     width: auto; 
-    z-index: 10;
 }
 
 nav {
@@ -25,8 +24,6 @@ li{
     position: relative; 
     padding: 0.5rem 0 0rem;
     list-style-type: none;
-    background-color: white;
-    z-index: 101;
     
 }
 
