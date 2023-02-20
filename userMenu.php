@@ -57,6 +57,7 @@ require_once("userProfile.php"); //
                                 } 
                          ?>               
                     </li>
+                    <b> Profile </b>
                     
                 </ul>
             </li>
