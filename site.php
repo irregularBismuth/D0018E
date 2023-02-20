@@ -27,6 +27,8 @@ require_once("cartMenuSwitch.php");
     
 <script>
 function search() {
+    
+    var str=document.getElementById("fname").value;
     if (str == "") {
         document.getElementById("livesearch").innerHTML = "";
         return;
@@ -34,7 +36,6 @@ function search() {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     }
-    var str=document.getElementById("fname").value;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
