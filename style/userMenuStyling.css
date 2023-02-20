@@ -53,7 +53,7 @@ li img {
 .submenu_item{
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: left;
     gap: 0.6rem;
     cursor: pointer;
     padding: 0.5rem 0.7rem;
