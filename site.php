@@ -21,7 +21,7 @@ require_once("cartMenuSwitch.php");
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <?php generateCartButton(); ?>
-    <?php include("userMenu.php"); echo "<br> Profile </br>"; ?>
+    <?php include("userMenu.php"); ?>
     
 
     
