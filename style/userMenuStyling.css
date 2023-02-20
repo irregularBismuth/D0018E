@@ -39,6 +39,7 @@ li ul {
 }
 
 li img {
+    display: flex; 
     background-color: rgb(160, 101, 101);
 }
 
