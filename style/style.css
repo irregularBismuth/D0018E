@@ -82,3 +82,15 @@ body {
 .headern p {
     padding: 0px 0px;
 }
+
+.livesearch{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 9999;
+}
