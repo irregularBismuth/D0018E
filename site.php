@@ -21,7 +21,7 @@ require_once("cartMenuSwitch.php");
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <?php generateCartButton(); ?>
-    <?php echo "Welcome: ".$_SESSION['username']; ?>
+    <?php include("userMenu.php"); ?>
 
     
 <script>
