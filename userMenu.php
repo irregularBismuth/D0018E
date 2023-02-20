@@ -39,8 +39,12 @@ require_once("userProfile.php");
                             <input type='file' name='file'>
                             <button type='submit' name='submit'> </button>
                         </form>  
-                    </li>                  
-
+                    </li>  
+                    
+                    <li class="submenu_item">
+                        <a href="login.php"> Login to get user data </a>                
+                    </li>
+                    
                 </ul>
             </li>
         </ul>
