@@ -26,16 +26,15 @@ require_once("cartMenuSwitch.php");
     
 <script>
     function Search(str){
-        if(str.lenght==0){
+        if(str.length==0){
             document.getElementById("livesearch").innerhtml="";
             document.getElementById("livesearch").style.border="0px";
-            return
+            return 1;
         }
         var xmlhttp = XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
             if(this.readyState==4 && this.status==200){
                 document.getElementById("livesearch").innerHTML=this.responseText;
-                document.getElementById("livesearch").style.border="1px solid #A5ACB2"
             }
         }
         xmlhttp.open("GET","search.php?q="+str,true);
