@@ -44,7 +44,7 @@ function showtickets() {
 }
 </script>
 <form>
-    <input type="text" size="30" id="fname" onkeyup="search(this.value)">
+    <input type="text" size="30" id="fname" onkeyup="search()">
     <div id="livesearch"></div>
 </form>
 
