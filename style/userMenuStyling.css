@@ -56,7 +56,7 @@ li img {
     align-items: center;
     gap: 0.6rem;
     cursor: pointer;
-    padding: 0.5rem 0rem;
+    padding: 0.5rem 0.5rem;
 }
 
 ul li:hover > ul, ul li ul:hover{
