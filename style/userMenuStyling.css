@@ -42,12 +42,6 @@ li ul {
     opacity: 0;
 }
 
-li img {
-    display: flex; 
-    background-color: rgb(160, 101, 101);
-}
-
-
 
 .submenu_item{
     display: flex;
