@@ -40,7 +40,7 @@ require_once("userProfile.php"); //
                             <button type='submit' name='submit'> </button>
                         </form>  
                     </li>  
-                    
+                    <hr> 
                     <li class="submenu_item">
                         <?php if(!(isset($_SESSION['username']))){
                                     echo "<a href='login.php'> Login </a>";
