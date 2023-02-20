@@ -25,6 +25,7 @@ require_once("userProfile.php"); //
                         <p> <b>Balance:</b> <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
                     <hr>
+                    <br>
                     <li class="submenu_item">
                         <form action="functionAddBalance.php" method='POST'>
                             <p>
