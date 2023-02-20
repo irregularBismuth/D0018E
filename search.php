@@ -5,9 +5,9 @@ require_once "sqlHandler.php";
 //echo "oskar";
 
 $input=$_REQUEST['q'];
-            $arr=array($input);
-            $query="select * from animals where animal_name like ':x%'";
-            $sqlHandler->half_genericQuery($query,1,$arr);
+            $arr=array(1,2);
+            $query="select * from animals";
+            $sqlHandler->half_genericQuery($query,0,$arr);
             $res=$sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
             {
@@ -15,5 +15,4 @@ $input=$_REQUEST['q'];
                     echo "<div class='productsBox'>".$res['animal_name']."</div></br>";
                 }
             }
-
 ?>
