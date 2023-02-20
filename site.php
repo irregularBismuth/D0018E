@@ -29,7 +29,7 @@ function search() {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("livesearch").innerHTML =
+      document.getElementById("products").innerHTML= 
       this.responseText;
     }
   };
