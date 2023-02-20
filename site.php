@@ -25,7 +25,7 @@ require_once("cartMenuSwitch.php");
 
     
 <script>
-function showtickets() {
+function search() {
     if (str == "") {
         document.getElementById("livesearch").innerHTML = "";
         return;
@@ -42,6 +42,7 @@ function showtickets() {
     xmlhttp.open("GET", "search.php?q=" + str, true);
     xmlhttp.send();
 }
+
 </script>
 <form>
     <input type="text" size="30" id="fname" onkeyup="search()">
