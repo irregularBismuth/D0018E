@@ -43,7 +43,7 @@ require_once("cartMenuSwitch.php");
     }
 </script>
 <form>
-    <input type="text" size="30" onkeyup="showResults(this.value)">
+    <input type="text" size="30" onkeyup="Search(this.value)">
     <div id="livesearch"></div>
 </form>
 

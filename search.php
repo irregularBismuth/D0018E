@@ -3,9 +3,9 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 
-
-$arr=array(1,2);
-            $query="select * from animals where animal_name='%$input'";
+$input=$_GET['q'];
+            $arr=array($input);
+            $query="select * from animals where animal_name=%:x";
             $sqlHandler->half_genericQuery($query,0,$arr);
             $res=$sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
