@@ -4,9 +4,9 @@ session_start();
 require_once "sqlHandler.php";
 //echo "oskar";
 
-$input=$_REQUEST['q'];
+$input=$_REQUEST['q']."%";
             $arr=array($input);
-            $query="select * from animals where animal_name like ':x%'";
+            $query="select * from animals where animal_name like :x";
             $sqlHandler->half_genericQuery($query,1,$arr);
             $res=$sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
