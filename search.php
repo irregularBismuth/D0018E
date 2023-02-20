@@ -4,10 +4,9 @@ session_start();
 require_once "sqlHandler.php";
 
 $input=$_GET['q'];
-echo $input;
-/*            $arr=array($input);
+            $arr=array($input);
             $query="select * from animals where animal_name=%:x";
-            $sqlHandler->half_genericQuery($query,0,$arr);
+            $sqlHandler->half_genericQuery($query,1,$arr);
             $res=$sqlHandler->s->fetchAll();
             if($sqlHandler->s->rowCount() > 0)
             {
@@ -15,5 +14,5 @@ echo $input;
                     echo "<div class='productsBox'>".$res['animal_name']."</div></br>";
                 }
             }
-*/
+
 ?>
