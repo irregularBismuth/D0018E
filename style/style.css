@@ -55,6 +55,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    z-index: -1; 
   }
 
 .headern input {
