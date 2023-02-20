@@ -25,7 +25,7 @@ require_once("cartMenuSwitch.php");
 
     
 <script>
-function search() {
+function search(str) {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
