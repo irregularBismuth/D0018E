@@ -27,7 +27,7 @@ require_once("userProfile.php"); //
 
                     <li class="submenu_item">
                         <form action="functionAddBalance.php" method='POST'>
-                            <label> *Add balance </label>
+                            <label> * Add balance </label>
                             <input type='text' name='balance'>
                             <input type="submit" name='submit_balance' value="update">
                         </form>
@@ -35,7 +35,7 @@ require_once("userProfile.php"); //
                     
                     <li class="submenu_item">
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
-                            <label> *Upload profile image: </label>
+                            <label> * Upload profile image: </label>
                             <input type='file' name='file'>
                             <button type='submit' name='submit'> </button>
                         </form>  
