@@ -52,7 +52,7 @@ $userProfile = new UserProfile($sql);
                 else{
                     $this->userData["name"] = $this->username;
                     $this->userData["balance"] = $this->balance;
-                    $this->userData["profileImage"] = "../images/default_profile_image.png";
+                    $this->userData["profileImage"] = "../images/defaultProfileImage.png";
                 }
         }
 
