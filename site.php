@@ -25,17 +25,21 @@ require_once("cartMenuSwitch.php");
 
     
 <script>
-function search(str) {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var x=document.getElementById("fname").value;
-      document.getElementById("products").innerHTML= x; 
-     // this.responseText;
+function showtickets(str) {
+    if (str == "") {
+        document.getElementById("livesearch").innerHTML = "";
+        return;
     }
-  };
-  xhttp.open("GET", "search.php?q="+str,true);
-  xhttp.send();
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET", "search.php?q=" + str, true);
+    xmlhttp.send();
 }
 </script>
 <form>
