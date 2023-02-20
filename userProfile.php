@@ -57,7 +57,7 @@ $userProfile = new UserProfile($sql);
         function getSessionData(){
                 
                 
-            if ($this->userData == []){
+            if ($this->userData['name'] == ""){
                 return $this->userData;
             }
 
