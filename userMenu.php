@@ -35,7 +35,6 @@ require_once("userProfile.php"); //
                             </p>
                         </form>
                     </li>
-                   <br>
                    <br> 
                     <li class="submenu_item">
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
