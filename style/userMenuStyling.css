@@ -5,6 +5,11 @@
     width: auto; 
 }
 
+.profileStyle:hover{
+    background-color: #3e8e41;
+    transform: scale(1.1);
+}
+
 nav {
     background-color: #ffff;
     padding: 0 2rem; 
@@ -43,11 +48,7 @@ li img {
     background-color: rgb(160, 101, 101);
 }
 
-.profileImageEffect:hover{
-    background-color: #3e8e41;
-    transform: scale(1.1);
 
-}
 
 .submenu_item{
     display: flex;
