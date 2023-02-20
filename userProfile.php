@@ -21,7 +21,7 @@ $userProfile = new UserProfile($sql);
            $this->user_id = $_SESSION['id'];
            $this->username = "";
            $this->balance = "";
-           $this->profileImage = "";
+           $this->profileImage = "../images/default_profile_image.png";
            $this->sqlController = $sqlObject;
            $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
             $this->fetchUserData();
