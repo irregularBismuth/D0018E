@@ -49,6 +49,7 @@ li ul {
 }
 
 ul li:hover > ul, ul li ul:hover{
+    position: absolute;
     visability: visable; 
     display: block;
     opacity: 0.85;
