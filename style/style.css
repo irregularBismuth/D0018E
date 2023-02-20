@@ -44,7 +44,7 @@ body {
     padding: 1px 5px;
     background-color: rgb(160, 101, 101);
     position: relative 
-    z-index: 999;
+    z-index: 0;
 }
 
 .headern form {
