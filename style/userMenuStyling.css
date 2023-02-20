@@ -43,8 +43,10 @@ li img {
     background-color: rgb(160, 101, 101);
 }
 
-li img:focus{
+.profileImageEffect:hover{
     background-color: #3e8e41;
+    transform: scale(1.1);
+
 }
 
 .submenu_item{
