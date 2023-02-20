@@ -29,8 +29,9 @@ function search(str) {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("products").innerHTML= 
-      this.responseText;
+      var x=document.getElementById("fname").value;
+      document.getElementById("products").innerHTML= x; 
+     // this.responseText;
     }
   };
   xhttp.open("GET", "search.php?q="+str,true);
@@ -38,7 +39,7 @@ function search(str) {
 }
 </script>
 <form>
-    <input type="text" size="30" onkeyup="search(this.value)">
+    <input type="text" size="30" id="fname" onkeyup="search(this.value)">
     <div id="livesearch"></div>
 </form>
 
