@@ -30,7 +30,7 @@ li{
 li ul {
     position: absolute; 
     flex-direction: column; 
-    background-color: #3e8e41;
+    background-color: white;
     align-items: flex-start;
     padding: 0.25rem 0rem;
     gap: 0;
@@ -41,6 +41,10 @@ li ul {
 li img {
     display: flex; 
     background-color: rgb(160, 101, 101);
+}
+
+li img:focus{
+    background-color: #3e8e41;
 }
 
 .submenu_item{
