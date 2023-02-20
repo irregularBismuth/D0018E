@@ -78,3 +78,7 @@ body {
     height: 24px;
     padding: 10px;
   }
+
+.headern p {
+    padding: 0px 0px;
+}
