@@ -18,6 +18,7 @@ session_start();
                 echo '
                     <div class="productCart">
                         <a href="productPage.php">
+                        <label> Products </label>
                         <img src="../images/animalIcon.png" alt ="Image" width=70, height=70>
                         </a>
                     </div>'; 
