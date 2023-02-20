@@ -1,13 +1,12 @@
 .profileStyle{
     display: flex;
     cursor: pointer;
-    height: 4.0rem;
+    height: 3.5rem;
     width: auto; 
 }
 
 .profileStyle:hover{
     transform: scale(1.1);
-    background-color: none;
 }
 
 nav {
