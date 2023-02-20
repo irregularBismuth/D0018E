@@ -43,8 +43,6 @@ body {
     border-bottom: 1px solid #000;
     padding: 1px 5px;
     background-color: rgb(160, 101, 101);
-    position: relative;
-    z-index: 999;
 }
 
 .headern form {
