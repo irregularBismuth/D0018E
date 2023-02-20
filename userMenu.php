@@ -35,11 +35,14 @@ require_once("userProfile.php"); //
                     
                     <li class="submenu_item">
                         <form action='uploadProfileImage.php' method='POST' enctype='multipart/form-data'>
+                            <p>
                             <label> <i>* Upload profile image:</i> </label>
                             <input type='file' name='file'>
                             <br>
                             <button type='submit' name='submit'>upload</button>
+                            </p>
                         </form>  
+                        
                     </li>  
                     <hr> 
                     <li class="submenu_item">
