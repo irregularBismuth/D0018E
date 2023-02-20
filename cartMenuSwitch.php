@@ -19,8 +19,9 @@ session_start();
                     <div class="productCart">
                         <a href="productPage.php">
                         <img src="../images/animalIcon.png" alt ="Image" width=70, height=70>
+                        <br>
+                        Products
                         </a>
-                        <p> Products </p>
                     </div>'; 
             }
         ?>
