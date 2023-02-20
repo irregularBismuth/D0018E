@@ -33,7 +33,7 @@ function search() {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     }
-    str=document.getElementById("fname").value;
+    var str=document.getElementById("fname").value;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
