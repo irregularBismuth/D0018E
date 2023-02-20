@@ -29,7 +29,7 @@ require_once("cartMenuSwitch.php");
         var xmlhttp = XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
             if(this.readyState==4 && this.status==200){
-                document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+                document.getElementById("products").innerHTML=xmlhttp.responseText;
             }
         }
         xmlhttp.open("GET","search.php?q="+str,true);
@@ -75,6 +75,7 @@ require_once("cartMenuSwitch.php");
     
     <div class="products">
 <?php
+/*
             $arr=array(1,2);
             $query="select * from animals";
             $sqlHandler->half_genericQuery($query,0,$arr);
@@ -87,7 +88,7 @@ require_once("cartMenuSwitch.php");
             }
 
  
-       ?>
+      */ ?> 
     </div>
 
 </div>
