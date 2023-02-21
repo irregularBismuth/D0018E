@@ -21,7 +21,7 @@ require_once("cartMenuSwitch.php");
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <?php generateCartButton(); ?>
-    <?php include("userMenu.php"); echo "Profile"; ?>
+    <?php include("userMenu.php"); ?>
     
 
     
@@ -39,6 +39,7 @@ function search() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
+            document.getElementById("liveserach").style.dispaly ="block";
         }
     }
     xmlhttp.open("GET", "search.php?q=" + str, true);

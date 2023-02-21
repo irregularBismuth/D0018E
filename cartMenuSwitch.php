@@ -18,10 +18,10 @@ session_start();
                 echo '
                     <div class="productCart">
                         <a href="productPage.php">
-                        <img src="../images/animalIcon.png" alt ="Image" width=70, height=70>
+                        <img src="../images/animalIcon.png" alt ="Image" width=80, height=74>
+                        </a>
                         <br>
                         Products
-                        </a>
                     </div>'; 
             }
         ?>
