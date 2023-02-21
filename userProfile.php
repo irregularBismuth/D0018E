@@ -22,10 +22,15 @@ $userProfile = new UserProfile($sql);
            $this->username = "";
            $this->balance = "";
            $this->profileImage = "";
+           $this->cart_items_added = array();
            $this->sqlController = $sqlObject;
            $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
             $this->fetchUserData();
             // FIX: set the global session variables in the function below!
+        }
+
+        function productsAddedToCart(){
+            
         }
 
         
