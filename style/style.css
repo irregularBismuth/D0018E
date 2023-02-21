@@ -92,7 +92,7 @@ body {
 }
 
 .livesearch {
-    display: flex;
+    display: block;
     background-color: green;
     width:1200px;
     height: 500px; 
