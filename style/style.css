@@ -91,9 +91,9 @@ body {
     padding: 0px 0px;
 }
 
-.livesearch{
+.livesearch {
     display: flex;
-    background-color: blue;
+    background-color: green;
     width:1200px;
     height: 500px; 
     z-index:3;
