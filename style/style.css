@@ -6,7 +6,7 @@ body {
  margin: 0;
 }
 
-.livesearch {
+#livesearch {
     display: block;
     width: 500px;
     height: 500px;
