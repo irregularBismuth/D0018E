@@ -12,7 +12,7 @@ require_once "sqlHandler.php";
     if($sqlHandler->s->rowCount() > 0)
     {
         foreach ($res as $res) {
-             echo "<div class='searchBox'><ul><li>".$res['animal_name']."</li><li>".$res['animal_price']."</li></ul></div></br>";
+             echo "<div class='searchBox'><ul><li>".$res['animal_name']."</li><li>".$res['animal_price']."¥</li></ul></div></br>";
         }
     }
 ?>
