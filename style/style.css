@@ -101,8 +101,8 @@ body {
 .searchImage img {
     position: relative;
     object-fit: cover;
-    width: 230px;
-    height: 230px;
+    width: 100px;
+    height: 100px;
 }
 .livesearch {
     position: absolute;
