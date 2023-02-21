@@ -6,6 +6,14 @@ body {
  margin: 0;
 }
 
+.livesearch {
+    display: block;
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+    
+}
+
 .bar li {
     float:left;
     display: flex;
