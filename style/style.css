@@ -6,13 +6,13 @@ body {
  margin: 0;
 }
 
-#livesearch div {
+/*#livesearch div {
     display: block;
     width: 500px;
     height: 500px;
     background-color: blue;
     
-}
+}*/
 
 .bar li {
     float:left;
@@ -92,13 +92,11 @@ body {
 }
 
 .livesearch{
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
-    background-color: white;
-    z-index: 9999;
+    display: flex;
+    background-color: blue;
+    width:500px;
+    height: 500px; 
+    z-index:99;
+    
+
 }
