@@ -91,12 +91,14 @@ body {
     padding: 0px 0px;
 }
 
-.livesearch{
-    display: flex;
-    background-color: blue;
-    width:500px;
-    height: 500px; 
-    z-index:99;
+.livesearch {
+    position: absolute;
+    display:none;
+    background-color: gray;
+    width:1200px;
+    height: 500px;
+    border: 3px 2px black;
+    z-index:3;
     
 
 }

@@ -31,6 +31,7 @@ function search() {
     var str=document.getElementById("fname").value;
     if (str == "") {
         document.getElementById("livesearch").innerHTML = "";
+        document.getElementById("livesearch").style.display="none";
         return;
     }
     if (window.XMLHttpRequest) {
@@ -39,7 +40,7 @@ function search() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
-            document.getElementById("liveserach").style.dispaly ="block";
+            document.getElementById("livesearch").style.display ="block";
         }
     }
     xmlhttp.open("GET", "search.php?q=" + str, true);
@@ -49,7 +50,6 @@ function search() {
 </script>
 <form>
     <input type="text" size="30" id="fname" onkeyup="search()">
-    <div id="livesearch"></div>
 </form>
 
 
@@ -75,7 +75,8 @@ function search() {
 </header>
 </div>
 <div class="main">
-        
+           
+    <div id="livesearch" class="livesearch"></div>
     <div class="bar">
         <ul>
             <li>Cats</li>
