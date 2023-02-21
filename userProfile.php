@@ -31,7 +31,7 @@ $userProfile = new UserProfile($sql);
 
         function transactionalCartControll(){
             $sql_connector = $this->sqlController->get_db_connector();
-            
+            $sql_connector->beginTransaction(); 
         }
 
         
