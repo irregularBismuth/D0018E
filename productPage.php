@@ -61,10 +61,10 @@ $row_count = count($animals['image']);
                                </div>
                                 <br> 
                                 <div class="section3">
-                                    <button class="button"> add </button>  
-                                    <button class="button"> checkout </button> 
-                                    <button class="button"> remove </button>
-                                    <button class="button"> info </button> 
+                                    <form method="POST">
+                                        <input type="submit" name="addButton" class="button" value="add to cart" />   
+                                        <input type="submit" name="infoButton" class="button" value="info" /> 
+                                    </form>
                                 </div>
                                 
                                 <div class="section4">...</div>
