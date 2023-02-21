@@ -49,7 +49,6 @@ function search() {
 </script>
 <form>
     <input type="text" size="30" id="fname" onkeyup="search()">
-    <div id="livesearch" class="livesearch"></div>
 </form>
 
 
@@ -75,7 +74,8 @@ function search() {
 </header>
 </div>
 <div class="main">
-        
+           
+    <div id="livesearch" class="livesearch"></div>
     <div class="bar">
         <ul>
             <li>Cats</li>
