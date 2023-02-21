@@ -12,6 +12,7 @@ $row_count = count($animals['image']);
        
      <title> ProductPage </title>
     <link rel="stylesheet" type="text/css" target="cartPage" href="style/shoppingCartStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
     </head>
 
     <body>
