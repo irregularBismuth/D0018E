@@ -29,23 +29,6 @@ $userProfile = new UserProfile($sql);
             // FIX: set the global session variables in the function below!
         }
 
-        function transactionalCartControll(){
-            $sql_connector = $this->sqlController->get_db_connector();
-            $sql_connector->beginTransaction();
-            if (isset($_SESSION['id'])){
-                    
-                    $this->user_id = $_SESSION['id'];
-
-                    $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
-                    $temp_array = array($this->user_id);
-                    $this->sqlController->half_genericQuery($sql_transactional_query, 1, $temp_array);
-                    $execution = $this->sqlController->s->prepare($sql_transactional_query);
-                    $execution->execute([$_GET['id']]);  
-
-                    $this->cart_items_added = $execution->fetch($sql_connector::FETCH_ASSOC);
-            } 
-        }
-
         
         function fetchUserData(){
             
