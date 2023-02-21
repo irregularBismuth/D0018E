@@ -40,7 +40,7 @@ function search() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
-            document.getElementById("liveserach").style.dispaly ="block";
+            document.getElementById("livesearch").style.dispaly ="block";
         }
     }
     xmlhttp.open("GET", "search.php?q=" + str, true);
