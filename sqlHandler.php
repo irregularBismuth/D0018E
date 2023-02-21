@@ -12,6 +12,10 @@
             $this->query_array = []; //initilize an empty array that should store unique users queries.
             $this->animal_array = array("name"=>[],"price"=>[],"image"=>[], "category"=>[]);
         }
+
+        function get_db_connector(){
+            return $this->db_connector;
+        }
     
         function get_product_data(){
             /*
