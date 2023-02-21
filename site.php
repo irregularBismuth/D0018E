@@ -49,7 +49,7 @@ function search() {
 </script>
 <form>
     <input type="text" size="30" id="fname" onkeyup="search()">
-    <div id="livesearch"></div>
+    <div id="livesearch" class="livesearch"></div>
 </form>
 
 
