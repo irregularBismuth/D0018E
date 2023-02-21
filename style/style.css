@@ -94,9 +94,9 @@ body {
 .livesearch{
     display: flex;
     background-color: blue;
-    width:500px;
-    height: 500px; 
-    z-index:99;
+    width:1200px;
+    height: 00px; 
+    z-index:3;
     
 
 }
