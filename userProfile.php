@@ -29,7 +29,8 @@ $userProfile = new UserProfile($sql);
             // FIX: set the global session variables in the function below!
         }
 
-        function productsAddedToCart(){
+        function transactionalCartControll(){
+            $this->sqlController->$this->db_connector;
             
         }
 
