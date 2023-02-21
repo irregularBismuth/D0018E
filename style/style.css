@@ -96,6 +96,11 @@ body {
   height: auto;
 }
 
+.searchImage {
+height:200px;
+width:200px;
+display:block;
+}
 .livesearch {
     position: absolute;
     display:none;
