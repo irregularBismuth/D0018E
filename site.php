@@ -31,7 +31,7 @@ function search() {
     var str=document.getElementById("fname").value;
     if (str == "") {
         document.getElementById("livesearch").innerHTML = "";
-      //  document.getElementById("livesearch").style.display="none";
+        document.getElementById("livesearch").style.display="none";
         return;
     }
     if (window.XMLHttpRequest) {
@@ -40,7 +40,7 @@ function search() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
-            document.getElementById("livesearch").style.dispaly ="block";
+            document.getElementById("livesearch").style.display ="block";
         }
     }
     xmlhttp.open("GET", "search.php?q=" + str, true);
