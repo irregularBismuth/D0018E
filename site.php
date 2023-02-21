@@ -31,6 +31,7 @@ function search() {
     var str=document.getElementById("fname").value;
     if (str == "") {
         document.getElementById("livesearch").innerHTML = "";
+        document.getElementById("livesearch").style.display="none";
         return;
     }
     if (window.XMLHttpRequest) {
