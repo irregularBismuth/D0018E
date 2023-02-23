@@ -15,7 +15,7 @@ require_once("transactionalHandler.php");
     <body>
         <ul>
             <li>
-                    <img class="" src="" />
+                    <img class="" src="../images/cartIcon.png" />
                 <ul>
                     <li>
                         <?php echo "method call here for showing cart with products"; ?>
