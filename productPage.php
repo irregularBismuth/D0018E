@@ -27,6 +27,7 @@ $row_count = count($animals['image']);
             <?php 
                 include("userMenu.php");
             ?>
+            <?php include("transactionalMenu.php");?>
             <form role="search" id="form">
                 <input type="search" id="query" name="q" placeholder="Search...">
             </form>
