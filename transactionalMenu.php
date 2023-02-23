@@ -9,15 +9,15 @@ require_once("transactionalHandler.php");
 
     <head>
         <title> Transactional Cart Menu </title>
-        
+        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" /> 
     </head>
     
     <body>
         <ul>
             <li>
-                    <img class="" src="../images/cartIcon.png" />
+                    <img class="profileStyle" src="../images/cartIcon.png" />
                 <ul>
-                    <li>
+                    <li class="submenu_item">
                         <?php echo "method call here for showing cart with products"; ?>
                     </li>
                 
