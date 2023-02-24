@@ -2,7 +2,8 @@
 session_start();
 require_once("sqlHandler.php");
 require_once("userProfile.php");
-$transactionalHandler = new TransactionalHandler($sqlHandler);
+$sql = $sqlHandler;
+$transactionalHandler = new TransactionalHandler($sql);
 
 ?>
 
@@ -11,7 +12,7 @@ class TransactionalHandler{
     private $products_added;
     private $sqlConnector;
     private $session_order_id;
-    private $customer_order_id;
+    private $customer_id;
 
     function __construct($sqlConnectorReference)
     {
@@ -19,14 +20,28 @@ class TransactionalHandler{
         $this->products_added = [];
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
-        $this->customer_order_id = "";
+        $this->customer_id = "";
         
     }
 
     function checkCustomerId(){
-        if(!(isset($_SESSION['id']))){
-            
+        require_once("userProfile.php");
+        
+        if($userProfile->checkIfUserIdSet()){ 
+            $_SESSION['customer_id'] = $_SESSION['id'];
+            $this->customer_id = $_SESSION['id'];
+            $update_id_query = "UPDATE transactional SET customer_id=:x where users.id=:y";
+            $param_array = array($this->customer_id);
+            $this->sqlConnector->half_genericQuery($update_id_query, 1, $param_array);
+            $output = $this->sqlConnector->s->
         }
+        else {          
+                $this->customer_id = session_create_id();
+                session_id($this->customer_id);
+                session_start();
+                $_SESSION['customer_id'] = $this->session_order_id;
+                session_commit();
+            }
     }
     
     function execTransaction(){
@@ -38,20 +53,7 @@ class TransactionalHandler{
         */
 
         if(isset($_POST['addButton'])){
-            //assing order id here: $this->order_id =
-            if(!(isset($_SESSION['order_id']))){
-
-                $this->session_order_id = session_create_id();
-                session_id($this->session_order_id);
-                session_start();
-                $_SESSION['order_id'] = $this->session_order_id;
-                session_commit();
-            }
-            else {
-                // add if-branch here to assign order id based on if logged in or not...
-                $this->session_order_id = $_SESSION['order_id'];
-            }
-
+            $this->checkCustomerId();
             
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             $sqlTransaction->beginTransaction();
