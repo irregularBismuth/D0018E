@@ -31,11 +31,14 @@ class TransactionalHandler{
 
         if(isset($_POST['addButton'])){
             //assing order id here: $this->order_id =
-            $this->session_order_id = session_create_id();
-            session_id($this->session_order_id);
-            session_start();
-            $_SESSION['order_id'] = $this->session_order_id;
-            session_commit();
+            if(!(isset($_SESSION['order_id']))){
+
+                $this->session_order_id = session_create_id();
+                session_id($this->session_order_id);
+                session_start();
+                $_SESSION['order_id'] = $this->session_order_id;
+                session_commit();
+            }
             
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             $sqlTransaction->beginTransaction();
