@@ -21,6 +21,7 @@ require_once("transactionalHandler.php");
                 <ul>
                     <li class="submenu_item">
                         <?php echo "method call here for showing cart with products"; ?>
+                        <?php echo "<form action=".?>
                     </li>
                 
                 </ul>
