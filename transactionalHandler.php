@@ -39,6 +39,11 @@ class TransactionalHandler{
                 $_SESSION['order_id'] = $this->session_order_id;
                 session_commit();
             }
+            else {
+                // add if-branch here to assign order id based on if logged in or not...
+                $this->session_order_id = $_SESSION['order_id'];
+            }
+
             
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             $sqlTransaction->beginTransaction();
