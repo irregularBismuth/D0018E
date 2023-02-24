@@ -21,7 +21,6 @@ require_once("transactionalHandler.php");
                 <ul>
                     <li class="submenu_item">
                         <?php echo $_SESSION['order_id']; ?>
-                        /*<?php echo "<form action=".$transactionalHandler->execTransaction().'"/>;'?>*/
                     </li>
                 
                 </ul>
