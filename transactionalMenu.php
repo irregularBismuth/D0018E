@@ -15,13 +15,13 @@ require_once("transactionalHandler.php");
     <body>
         <ul>
             <li>
-                    <img class="profileStyle" src="../images/cartIcon.png" />
+                    <img class="'profileStyle" src="../images/cartIcon.png" />
                     <br>
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
                         <?php echo "method call here for showing cart with products"; ?>
-                        <?php echo "<form action=".?>
+                        <?php echo "<form action=".$transactionalHandler->execTransaction().'"/>;'?>
                     </li>
                 
                 </ul>
