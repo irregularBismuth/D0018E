@@ -11,6 +11,7 @@ class TransactionalHandler{
     private $products_added;
     private $sqlConnector;
     private $session_order_id;
+    private $customer_order_id;
 
     function __construct($sqlConnectorReference)
     {
@@ -18,7 +19,14 @@ class TransactionalHandler{
         $this->products_added = [];
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
+        $this->customer_order_id = "";
         
+    }
+
+    function checkCustomerId(){
+        if(!(isset($_SESSION['id']))){
+            
+        }
     }
     
     function execTransaction(){
