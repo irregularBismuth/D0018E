@@ -2,7 +2,7 @@
 session_start();
 require_once("sqlHandler.php");
 require_once("userProfile.php");
-
+$transactionalHandler = new TransactionalHandler($sqlHandler);
 
 ?>
 
