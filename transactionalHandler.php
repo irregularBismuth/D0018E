@@ -36,7 +36,6 @@ class TransactionalHandler{
             session_start();
             $_SESSION['order_id'] = $this->session_order_id;
             session_commit();
-            echo $this->session_order_id;
             
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             $sqlTransaction->beginTransaction();
