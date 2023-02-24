@@ -57,6 +57,13 @@ $userProfile = new UserProfile($sql);
                 }
         }
 
+        function checkIfUserIdSet(){
+            if ($this->user_id != ""){
+                return true;
+            }
+            else{return false;} 
+        }
+
         function getSessionData(){
                 
                 
