@@ -20,8 +20,8 @@ require_once("transactionalHandler.php");
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
-                        <?php echo "method call here for showing cart with products"; ?>
-                        <?php echo "<form action=".$transactionalHandler->execTransaction().'"/>;'?>
+                        <?php echo $_SESSION['order_id']; ?>
+                        /*<?php echo "<form action=".$transactionalHandler->execTransaction().'"/>;'?>*/
                     </li>
                 
                 </ul>
