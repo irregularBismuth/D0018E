@@ -78,7 +78,7 @@ class TransactionalHandler{
                 $sqlTransaction->beginTransaction();
                               
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
-                $param_array = array($this->session_order_id);
+                $param_array = array($this->customer_id);
 
                 $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
                 $execution = $this->sqlConnector->s->execute();
