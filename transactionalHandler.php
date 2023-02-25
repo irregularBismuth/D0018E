@@ -4,7 +4,6 @@ require_once("sqlHandler.php");
 require_once("userProfile.php");
 $sql = $sqlHandler;
 $transactionalHandler = new TransactionalHandler($sql);
-
 ?>
 
 <?php 
@@ -13,6 +12,7 @@ class TransactionalHandler{
     private $sqlConnector;
     private $session_order_id;
     private $customer_id;
+    private $product_id; 
 
     function __construct($sqlConnectorReference)
     {
@@ -30,17 +30,35 @@ class TransactionalHandler{
         if($userProfile->checkIfUserIdSet()){ 
             $_SESSION['customer_id'] = $_SESSION['id'];
             $this->customer_id = $_SESSION['id'];
-            $update_id_query = "UPDATE transactional SET customer_id=:x where users.id=:y";
-            $param_array = array($this->customer_id);
-            $this->sqlConnector->half_genericQuery($update_id_query, 1, $param_array);
-            $output = $this->sqlConnector->s->
+            
+            try {
+                $update_id_query = "UPDATE transactional SET customer_id=users.id where users.id=:x";
+                $param_array = array($this->customer_id);
+                $this->sqlConnector->half_genericQuery($update_id_query, 1, $param_array);
+                
+                $execution = $this->sqlConnector->s->execute();
+            }
+            catch (PDOException $e){
+                $e->getMessage();
+            }
+            
         }
         else {          
                 $this->customer_id = session_create_id();
                 session_id($this->customer_id);
                 session_start();
-                $_SESSION['customer_id'] = $this->session_order_id;
+                $_SESSION['customer_id'] = $this->customer_id;
                 session_commit();
+                
+                try {
+                    $update_id_query = "UPDATE transactional SET customer_id=:x";
+                    $param_array = array($this->customer_id);
+                    $this->sqlConnector->half_genericQuery($update_id_query, 1, $param_array);
+                    $execution = $this->sqlConnector->s->execute();
+                }
+                catch (PDOException $e){
+                    $e->getMessage();
+                } 
             }
     }
     
@@ -54,14 +72,21 @@ class TransactionalHandler{
 
         if(isset($_POST['addButton'])){
             $this->checkCustomerId();
-            
-            $sqlTransaction = $this->sqlConnector->get_db_connector();
-            $sqlTransaction->beginTransaction();
+            try {
+                $sqlTransaction = $this->sqlConnector->get_db_connector();
+                $sqlTransaction->beginTransaction();
                               
-            $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
-            $param_array = array($this->session_order_id);
+                $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
+                $param_array = array($this->session_order_id);
 
-            $this->sqlConnector->half_genericQuery();
+                $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
+                $execution = $this->sqlConnector->s->execute();
+                
+            } catch (PDOException $e){
+                $this->sqlConnector->get_db_connector()->rollback();
+                die($e->getMessage());
+            }
+
         }
         else {
             return $this->products_added = [];
