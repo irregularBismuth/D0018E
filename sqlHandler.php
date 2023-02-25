@@ -22,7 +22,6 @@
             This metod should request query from our database that show product/item data on our site
             */
             $query = "SELECT * FROM animals";
-            $queryUser = "SELECT * FROM animals WHERE item_id = animal_id";
         
             $fetch_result = $this->db_connector->query($query);
             //$row_count = $fetch_result->rowCount();
