@@ -56,6 +56,8 @@ $row_count = count($animals['image']);
                                             <br>
                                             <hr>
                                             <li><b>Subtotal:</b> '.$animalArray['price'][$i].'¥ </li>
+                                            <br
+                                            <br>
                                            <form method="POST">
                                                 <input type="submit" name="addButton" class="button" value="add to cart" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
@@ -66,10 +68,7 @@ $row_count = count($animals['image']);
                                </div>
                                 <br> 
                                 <div class="section3">
-                                    <form method="POST">
-                                        <input type="submit" name="addButton" class="button" value="add to cart" />   
-                                        <input type="submit" name="infoButton" class="button" value="info" /> 
-                                    </form>
+                                    Section3...
                                 </div>
                                 
                                 <div class="section4">...</div>
