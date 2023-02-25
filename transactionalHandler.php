@@ -63,9 +63,10 @@ class TransactionalHandler{
             }
     }
 
-    function addButtonClickAction($product_id_to_add){
+    function addButtonClickAction(){
         if(isset($_POST['addButton'])){
-            $this->products_added = $_SESSION['product_id'];
+            $product_id = $_POST['product_id'];
+            array_push($this->products_added, $product_id);
             
         }
     }
