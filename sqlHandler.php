@@ -10,7 +10,7 @@
         {
             $this->db_connector = $db_connector;
             $this->query_array = []; //initilize an empty array that should store unique users queries.
-            $this->animal_array = array("name"=>[],"price"=>[],"image"=>[], "category"=>[]);
+            $this->animal_array = array("animal_id"=>[],"name"=>[],"price"=>[],"image"=>[], "category"=>[]);
         }
 
         function get_db_connector(){
@@ -28,6 +28,7 @@
             $output = $fetch_result->fetchAll();
 
             foreach($output as $output){
+                array_push($this->animal_array['animal_id'],$output['animal_id']);
                 array_push($this->animal_array['image'],$output['animal_image']);
                 array_push($this->animal_array['name'],$output['animal_name']);
                 array_push($this->animal_array['price'],$output['animal_price']);
