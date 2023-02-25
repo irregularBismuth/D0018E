@@ -41,6 +41,8 @@ $row_count = count($animals['image']);
                 $additional_data = 0;
                 
                 for ($i = 0; $i<$countRow;$i++){
+                    $product_id = $animalArray['animal_id'][$i];
+                    $_SESSION['product_id'] = $product_id;
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
@@ -60,7 +62,7 @@ $row_count = count($animals['image']);
                                             <br>
                                             <li>
                                            <form method="POST">
-                                                <input type="submit" name="addButton" class="button" value="add to cart" />   
+                                                <input type="submit" name="addButton" id='.$product_id.' class="button" value="add to cart" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
                                             </form> 
                                             </li>
