@@ -62,6 +62,13 @@ class TransactionalHandler{
                 } 
             }
     }
+
+    function addButtonClickAction(){
+        if(isset($_POST['addButton'])){
+            $this->products_added = $_SESSION['product_id'];
+            
+        }
+    }
     
     function execTransaction(){
         /* If the add button form is pressed it should start a new transaction:
