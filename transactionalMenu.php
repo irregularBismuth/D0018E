@@ -20,8 +20,11 @@ require_once("transactionalHandler.php");
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
+                        <span class="menu_icons"> </span>
                         <p> <b>Session id: </b> </p>
                     </li>
+                    <hr>
+                    <br>
                 
                 </ul>
             </li>
