@@ -21,6 +21,7 @@ class TransactionalHandler{
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
         $this->customer_id = "";
+        //product_id and button_id... 
         
     }
 
