@@ -48,10 +48,11 @@ $row_count = count($animals['image']);
                                 <div class="section1">
                                         <img class="fit_image" src='.$animalArray['image'][$i].'>
                                 </div>
-                                 <p>'.$product_id;' </p>
                                 <div class="section2">
                                     <div class="infoStyle">
-                                        <ul id="infoSection">                             
+                                        <ul id="infoSection">
+                                            <li>Product id: '.$product_id;' </li>
+                                            <br>                             
                                             <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
                                             <br>
                                             <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
