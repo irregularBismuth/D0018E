@@ -20,7 +20,7 @@ require_once("transactionalHandler.php");
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
-                        <b>Session id: </b><?php echo $_SESSION['order_id']; ?>
+                        <b>Session id: </b>
                     </li>
                 
                 </ul>
