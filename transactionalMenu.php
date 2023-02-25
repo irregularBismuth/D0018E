@@ -15,7 +15,7 @@ require_once("transactionalHandler.php");
     <body>
         <ul>
             <li>
-                    <img class="'profileStyle" src="../images/cartIcon.png" />
+                    <img class="'profileStyle" src="../images/cartIcon.png" width="512px" height="512px" />
                     <br>
                     Shopping Cart
                 <ul>
