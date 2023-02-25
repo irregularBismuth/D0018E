@@ -67,7 +67,7 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             array_push($this->products_added, $product_id);
-            
+            return $this->products_added; 
         }
     }
     
