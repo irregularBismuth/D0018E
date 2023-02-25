@@ -46,11 +46,9 @@ $row_count = count($animals['image']);
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
-                                        <br>
-                                        <p>'.$product_id;' </p>
                                         <img class="fit_image" src='.$animalArray['image'][$i].'>
                                 </div>
-
+                                 <p>'.$product_id;' </p>
                                 <div class="section2">
                                     <div class="infoStyle">
                                         <ul id="infoSection">                             
