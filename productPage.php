@@ -51,7 +51,7 @@ $row_count = count($animals['image']);
                                 <div class="section2">
                                     <div class="infoStyle">
                                         <ul id="infoSection">
-                                            <li>Product id: '.$animalArray['animal_id'][$i]' </li>
+                                            <li>Product id: '.$animalArray['animal_id'][$i].' </li>
                                             <br>                             
                                             <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
                                             <br>
