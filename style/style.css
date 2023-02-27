@@ -17,13 +17,14 @@ body {
     display: flex;
     background-color: grey;
     margin:auto;
-    width:50%;
-
+    width:75%;
+    height: 800px;
 
 }
 
 .comments {
-
+ background-color: blue;
+ 
 }
 
 .bar li {
