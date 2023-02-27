@@ -71,9 +71,9 @@ class TransactionalHandler{
                               
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
-                $param_array = array($this->customer_id);
+                $param_array = $this->products_added;
 
-                $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
+                $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
                 $execution = $this->sqlConnector->s->execute();
                 
             } catch (PDOException $e){
