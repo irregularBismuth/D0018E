@@ -44,7 +44,7 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             array_push($this->products_added, $product_id);
-            return $this->products_added; 
+            //return $this->products_added; 
         }
     }
     
@@ -55,14 +55,13 @@ class TransactionalHandler{
                 1. If logged in it should fetch/query transactional.product_id = user.id
                 2. If not logged in it should check if(isset($_SESSION['order_id'] instead!
         */
-
-        if(isset($_POST['addButton'])){
-            $this->checkCustomerId();
+    
             try {
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
                 $sqlTransaction->beginTransaction();
                               
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
+                $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
                 $param_array = array($this->customer_id);
 
                 $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
@@ -72,11 +71,6 @@ class TransactionalHandler{
                 $this->sqlConnector->get_db_connector()->rollback();
                 die($e->getMessage());
             }
-
-        }
-        else {
-            return $this->products_added = [];
-        }
     } 
 }
 ?>
