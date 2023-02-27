@@ -17,7 +17,7 @@ body {
 .bar li {
     float:left;
     display: flex;
-    margin: 20px;
+    margin: 5px;
     padding:5px;
     background-color: yellow;
     width:250px;    
