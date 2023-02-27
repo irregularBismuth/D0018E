@@ -13,6 +13,17 @@ body {
     background-color: blue;
     
 }*/
+.producten {
+    display: flex;
+    background-color: grey;
+
+
+
+}
+
+.comments {
+    background-color: blue;
+}
 
 .bar li {
     float:left;
