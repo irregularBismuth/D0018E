@@ -102,38 +102,5 @@ function search() {
     </div>
 
 </div>
-<!--
-    <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:50%;">
-        <tr>
-            <th><a href="../images/cats.php">Cats</a></th>
-            <th><a href="../images/large.php">Large animals</a></th>
-            <th>Small animals</th>
-            <th>About us</th>
-        </tr>
-    </table>
-
-    <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
-        <tr><td><h2>Fetured</h2></td></tr>
-        <tr>
-            <td><img src="../images/capy.png" width="451" height="342"></td>
-            <td>Capybara 6100kr</td>
-        </tr>
-        <tr>
-            <td><img src="../images/large/elefant.jpg"width="451" height="342"></td>
-            <td>Elephant 128 699kr</td>
-        </tr>
-        <tr>
-            <td><img src="koala.jpg"width="451" height="342"></td>
-            <td>Koala 3.50kr</td>
-        </tr>
-        <tr>
-            <td><img src="cat/tiger.jpg"width="451" height="342"></td>
-            <td>Tiger 78 000kr</td>
-        </tr>
-    </table>
-<?php
-echo "Hello World!";
-?>
--->
 </body>
 </html> 
