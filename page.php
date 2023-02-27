@@ -3,6 +3,8 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
+
+
 ?>
 
 <html>
@@ -65,6 +67,14 @@ function search() {
             <li>Wolves</li>
         </ul>
     </div>
+
+
+    <div class="producten">
+
+        <div class="comments">
+           <p>Peepo peepo peepo frog </p> 
+        </div>            
+    <div>
 
 
 </body>
