@@ -2,7 +2,7 @@
 session_start();
 //peepo
 require_once "sqlHandler.php";
-//require_once("cartMenuSwitch.php");
+require_once("cartMenuSwitch.php");
 ?>
 
 <html>
