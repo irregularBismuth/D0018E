@@ -45,7 +45,8 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
     
                 $product_id = $_POST['product_id'];
-                $product_item = array_column($_SESSION['product_cart'], $product_id);
+                $count = count($_SESSION['product_cart']);
+                $_SESSION['product_cart'][$count] = $this->products_added;
                 //array_push($this->products_added, $product_id);
             }
             else{
