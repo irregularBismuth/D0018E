@@ -16,13 +16,14 @@ body {
 .producten {
     display: flex;
     background-color: grey;
-
+    margin:auto;
+    width:50%;
 
 
 }
 
 .comments {
-    background-color: blue;
+
 }
 
 .bar li {
