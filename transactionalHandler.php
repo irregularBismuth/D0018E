@@ -37,16 +37,6 @@ class TransactionalHandler{
         else {          
                 $this->customer_id = session_create_id();
                 $_SESSION['customer_id'] = $this->customer_id;
-                
-                try {
-                    $update_id_query = "UPDATE transactional SET customer_id=:x";
-                    $param_array = array($this->customer_id);
-                    $this->sqlConnector->half_genericQuery($update_id_query, 1, $param_array);
-                    $execution = $this->sqlConnector->s->execute();
-                }
-                catch (PDOException $e){
-                    $e->getMessage();
-                } 
             }
     }
 
