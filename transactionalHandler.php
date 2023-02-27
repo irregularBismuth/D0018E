@@ -42,9 +42,17 @@ class TransactionalHandler{
 
     function addButtonClickAction(){
         if(isset($_POST['addButton'])){
-            $product_id = $_POST['product_id'];
-            array_push($this->products_added, $product_id);
-            //return $this->products_added; 
+            if(isset($_SESSION['product_cart'])){
+    
+                $product_id = $_POST['product_id'];
+                $product_item = array_column($_SESSION['product_cart'], $product_id);
+                //array_push($this->products_added, $product_id);
+            }
+            else{
+                $product_id = $_POST['product_id'];
+                $this->products_added = array('animal_id' => $product_id);
+                $_SESSION['product_cart'][0] = $this->products_added;
+            } 
         }
     }
     
