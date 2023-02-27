@@ -21,6 +21,7 @@ require_once("transactionalHandler.php");
                 <ul>
                     <li class="submenu_item">
                         <p> <b>Session id: </b> </p>
+                    
                     </li>
                     <hr>
                     <br>
