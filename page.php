@@ -9,20 +9,14 @@ require_once("cartMenuSwitch.php");
 <head>
 <link rel="stylesheet" type="text/css" class="" href="style/style.css" media="screen" />
 </head>
-<style>
 
-
-
-</style>
 <body>
 <div class="headern">
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
     <?php generateCartButton(); ?>
-    <?php require_once("userMenu.php"); ?>
-    
-
+    <?php require_once("userMenu.php"); ?>    
     
 <script>
 function search() {
@@ -50,15 +44,6 @@ function search() {
 <form>
     <input type="text" size="30" id="fname" onkeyup="search()">
 </form>
-
-
-
-<!--
-<form role="search" id="form">
-  <input type="search" id="query" name="q"
-   placeholder="Search..."
-   aria-label="Search through site content">
--->
   <button>
     <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
   </button>
@@ -72,9 +57,7 @@ function search() {
     ?>
 </header>
 </div>
-<div class="main">
-           
-    <div id="livesearch" class="livesearch"></div>
+
     <div class="bar">
         <ul>
             <li>Cats</li>
@@ -82,25 +65,7 @@ function search() {
             <li>Wolves</li>
         </ul>
     </div>
-    
-    <div class="products">
-<?php
-/*
-            $arr=array(1,2);
-            $query="select * from animals";
-            $sqlHandler->half_genericQuery($query,0,$arr);
-            $res=$sqlHandler->s->fetchAll();
-            if($sqlHandler->s->rowCount() > 0)
-            {
-                foreach ($res as $res) {
-                    echo "<div class='productsBox'>".$res['animal_name']."</div></br>";
-                }
-            }
 
- 
-      */ ?> 
-    </div>
 
-</div>
 </body>
 </html> 
