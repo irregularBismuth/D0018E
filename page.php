@@ -12,7 +12,6 @@ if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
 //          echo $res['animal_img'];
-            echo "<img src=".$res['animal_img']."/>";
     }
 }
 
@@ -83,8 +82,9 @@ function search() {
     <div class="producten">
 
         <div class="comments">
-          
-           <p>Peepo peepo peepo frog</p> 
+<?php  
+            echo "<img src=".$res['animal_img']."/>"; ?>
+            <p>Peepo peepo peepo frog</p> 
         </div>            
     <div>
 
