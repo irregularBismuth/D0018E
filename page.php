@@ -11,7 +11,7 @@ $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
-    
+             
      }
 }
 
@@ -83,13 +83,7 @@ function search() {
     
 <?php 
 
-if($sqlHandler->s->rowCount() > 0)
-{
-     foreach ($res as $res) {
-         echo "<div class='searchImg'><img src=".$res['animal_img']."/></div>";
-     }
-}
-
+         echo "<div class='searchImage'><img src=".$res['animal_img']." /></div>";
 ?>
 
 
