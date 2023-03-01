@@ -24,6 +24,9 @@ body {
     justify-content:center; 
 }
 
+.producten h3 {
+    background-color: green;
+}
 .pageImage div {
     position: relative;
     height:500px;
