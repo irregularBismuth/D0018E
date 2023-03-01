@@ -81,10 +81,11 @@ function search() {
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
-              echo "<div class='buyInfo'>".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
+              echo "<div class='buyInfo'> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
          ?>
         <div class="comments">
             <form action="comments.php" method="POST">
+            
             </form>
              
         </div>            
