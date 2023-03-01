@@ -3,6 +3,10 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
+/*$query="select * from animals where id=1";
+$arr=array();
+$sqlHandler->half_genericQuery($query,0,$arr);
+*/
 ?>
 
 <html>
