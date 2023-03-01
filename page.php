@@ -11,7 +11,7 @@ $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
-          echo $res['animal_img']; 
+//          echo $res['animal_img']; 
     }
 }
 
