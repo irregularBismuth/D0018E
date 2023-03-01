@@ -16,7 +16,6 @@ body {
 .producten {
     display: flex;
     background-color: grey;
-    margin:auto;
     width:75%;
     height: 800px;
     flex-direction: column;

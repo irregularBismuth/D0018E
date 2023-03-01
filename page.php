@@ -8,7 +8,6 @@ $query="select * from animals where animal_id=2";
 $arr="test";
 $sqlHandler->half_genericQuery($query,0,$arr); 
 $res=$sqlHandler->s->fetchAll();
-$image="";
 if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
