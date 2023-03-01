@@ -5,14 +5,13 @@ require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
 
 $query="select * from animals where id=1";
-$arr=array();
-$sqlHandler->half_genericQuery($query,0,$arr);
-   
+$arr="test";
+$sqlHandler->half_genericQuery($query,0,$arr); 
 $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
-          echo "$res['animal_img']"; 
+          echo $res['animal_img']; 
     }
 }
 
