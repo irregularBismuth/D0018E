@@ -12,12 +12,11 @@ if(isset($_POST['submit_rating'])){
 $rating = $_POST['rating'];
 
 $user_id = $SESSION['user_id'];
-$stmt = $conn->prepare("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?");
-$stmt->execute([$product_id]);
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$sqlHandler->INSERT("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?");
+
 $avg_rating = $row['avg_rating'];
 
-$stmt = $conn->prepare("UPDATE products SET rating = ? WHERE id = ?");
+$sqlHandler->FETCH("UPDATE products SET rating = ? WHERE id = ?");
 $stmt->execute([$avg_rating, $product_id]);
 
 exit;
