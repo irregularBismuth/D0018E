@@ -12,7 +12,7 @@ if($sqlHandler->s->rowCount() > 0)
 {
      foreach ($res as $res) {
 //          echo $res['animal_img'];
-            echo $res['animal_img'];
+            echo "<img src=".$res['animal_img']."/>";
     }
 }
 
