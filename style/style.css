@@ -22,6 +22,22 @@ body {
 
 }
 
+.pageImage div {
+    position: relative;
+    height:200px;
+    width:200px;
+    overflow:hidden;
+    display:inline-block;
+}
+
+.pageImage img {
+    position: relative;
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+}
+
+
 .comments {
  background-color: blue;
  
