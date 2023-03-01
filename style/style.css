@@ -19,7 +19,7 @@ body {
     margin:auto;
     width:75%;
     height: 800px;
-
+    flex-direction: column;
 }
 
 .pageImage div {
