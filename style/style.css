@@ -24,8 +24,8 @@ body {
 
 .pageImage div {
     position: relative;
-    height:200px;
-    width:200px;
+    height:500px;
+    width:500px;
     overflow:hidden;
     display:inline-block;
 }
@@ -33,8 +33,8 @@ body {
 .pageImage img {
     position: relative;
     object-fit: cover;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 
