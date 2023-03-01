@@ -20,6 +20,8 @@ body {
     width:75%;
     height: 800px;
     flex-direction: column;
+    align-items: center;
+    justify-content:center; 
 }
 
 .pageImage div {
