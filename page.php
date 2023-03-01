@@ -81,9 +81,11 @@ function search() {
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
+              echo "<div class='buyInfo'></div>";
          ?>
         <div class="comments">
-            <p>Peepo peepo peepo frog</p> 
+            <p>Peepo peepo peepo frog</p>
+             
         </div>            
     <div>
 
