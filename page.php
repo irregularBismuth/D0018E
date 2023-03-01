@@ -83,7 +83,7 @@ function search() {
 
         <div class="comments">
 <?php  
-            echo "<img src=".$res['animal_img']."/>"; ?>
+            echo "<div class='searchImg'><img src=".$res['animal_img']."/></div>"; ?>
             <p>Peepo peepo peepo frog</p> 
         </div>            
     <div>
