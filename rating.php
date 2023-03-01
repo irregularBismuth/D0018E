@@ -8,28 +8,23 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
-if(isset($_POST['submit_review'])){
-    $rating = mysqli_real_escape_string($conn, $_POST['rating']);
-    $review = mysqli_real_escape_string($conn, $_POST['review']);
+if(isset($_POST['submit_rating'])){
+$rating = $_POST['rating'];
 
-    $user_id = $_SESSION['user_id'];
-    $sql = "INSERT INTO reviews (product_id, user_id, rating, review) VALUES ('$product_id', '$user_id', '$rating', '$review')";
-    mysqli_query($conn, $sql);
+$user_id = $SESSION['user_id'];
+$stmt = $conn->prepare("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?");
+$stmt->execute([$product_id]);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$avg_rating = $row['avg_rating'];
 
-    $sql = "SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = '$product_id'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $avg_rating = $row['avg_rating'];
+$stmt = $conn->prepare("UPDATE products SET rating = ? WHERE id = ?");
+$stmt->execute([$avg_rating, $product_id]);
 
-    // Round the average rating to the nearest 0.5
-    $avg_rating = round($avg_rating * 2) / 2;
+exit;
 
-    $sql = "UPDATE products SET rating = '$avg_rating' WHERE id = '$product_id'";
-    mysqli_query($conn, $sql);
 
-    // Redirect to product page
-    header("Location: product.php?product_id=$product_id");
-    exit;
+
+
 }
 ?>
 <form action="" method="post">
@@ -46,9 +41,6 @@ if(isset($_POST['submit_review'])){
         <input type="radio" name="rating" value="4.5"><i></i>
         <input type="radio" name="rating" value="5"><i></i>
     </div>
-
-    <label for="review">Review:</label>
-    <textarea name="review" required></textarea>
 
     <input type="submit" name="submit_review" value="Submit Review">
 </form>
