@@ -82,7 +82,8 @@ function search() {
     <div class="producten">
 
         <div class="comments">
-           <p>Peepo peepo peepo frog </p> 
+            <?php echo "<img src='.$res['animal_id'].'/>" ?>
+           <p>Peepo peepo peepo frog</p> 
         </div>            
     <div>
 
