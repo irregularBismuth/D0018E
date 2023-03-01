@@ -80,7 +80,7 @@ function search() {
 
 
     <div class="producten">
-        <?php echo "<h3><span>".$res['animal_name']."</span></h3>";  
+        <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
          ?>
         <div class="comments">
