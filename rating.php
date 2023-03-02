@@ -1,4 +1,5 @@
-<?
+<?php
+session_start();
 require_once("sqlHandler.php");
 
 $product_id = $_GET['product_id'];
@@ -9,22 +10,19 @@ if(!isset($_SESSION['user_id'])){
 }
 
 if(isset($_POST['submit_rating'])){
-$rating = $_POST['rating'];
+    $rating = $_POST['rating'];
 
-$user_id = $SESSION['user_id'];
-$sqlHandler->INSERT("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?");
+    $user_id = $_SESSION['user_id'];
+    $row = $sqlHandler->FETCH("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?", [$product_id]);
 
-$avg_rating = $row['avg_rating'];
+    $avg_rating = $row['avg_rating'];
 
-$sqlHandler->FETCH("UPDATE products SET rating = ? WHERE id = ?");
-$stmt->execute([$avg_rating, $product_id]);
+    $stmt = $sqlHandler->prepare("UPDATE products SET rating = ? WHERE id = ?");
+    $stmt->execute([$avg_rating, $product_id]);
 
-exit;
-
-
-
-
+    exit;
 }
+
 ?>
 <form action="" method="post">
     <label for="rating">Rating:</label>
