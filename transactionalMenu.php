@@ -20,7 +20,8 @@ require_once("transactionalHandler.php");
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
-
+                        <form method="POST" action="productPageButtonActions.php">
+                        </form>
                     
                     </li>
                     <hr>
