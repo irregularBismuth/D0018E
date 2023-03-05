@@ -74,12 +74,17 @@ class TransactionalHandler{
                 echo '<p>'.$product_data["animal_image"].'</p>';
                 echo '<p>'.$product_data["animal_name"].'</p>';
                 echo '<p>'.$product_data["animal_price"].'</p>';
-                echo "<hr>";
-                echo "<br>";
+                echo '<form method="POST">';
+                echo '<input type="hidden" name="product_id" value='.$product_data["animal_id"].' />';
+                echo '<input type="submit" name="removeButton" value="add" />';
+                echo '</form>';
+                echo '<hr>';
+                echo '<br>';
                 echo '</li>';
                 echo '</pre>';
             }
             //header('location: '.$_SERVER['REQUEST_URI']); 
+
         }
         
     }
@@ -92,8 +97,12 @@ class TransactionalHandler{
         return $output; 
     }
     
-    function updateCartDisplay(){
-        $_SESSION['product_cart'] = array_diff($_SESSION['cart'], $this->product_id);
+    function updateCartDisplay($product_id_to_remove){
+        if (isset($_POST['removeButton'])){
+            $_SESSION['product_cart'] = array_diff($_SESSION['product_cart'], $product_id_to_remove);
+            $this->product_cart = $_SESSION['product_cart'];
+            $this->generateCartDisplay();
+        }
     }
     
     function execTransaction(){
