@@ -41,7 +41,7 @@ $row_count = count($animals['image']);
                 $additional_data = 0;
                 
                 for ($i = 0; $i<$countRow;$i++){
-                    $_SESSION['product_id'] = $animalArray['animal_id'][$i];
+                    //$_SESSION['product_id'] = $animalArray['animal_id'][$i];
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
