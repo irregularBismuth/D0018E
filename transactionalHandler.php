@@ -72,7 +72,7 @@ class TransactionalHandler{
                 //echo $product_id;
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
-                echo '<p> product name: '.$product_data["animal_name"].'</p>';
+                echo '<p> product: '.$product_data["animal_name"].'</p>';
                 echo '<br>';
                 echo '<p> price: '.$product_data["animal_price"].'¥</p>';
                 echo '<br>';
