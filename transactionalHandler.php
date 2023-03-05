@@ -66,7 +66,7 @@ class TransactionalHandler{
     function generateCartDisplay(){
         
         if(isset($_SESSION['product_cart'])){
-            $product_ids = $this->product_id;
+            $product_ids = $_SESSION['product_cart'];
             
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
@@ -82,7 +82,7 @@ class TransactionalHandler{
 
     function getProductData($product_id){
         $query = "SELECT * FROM animals where animal_id=:x";
-        $param_array = array($this->product_id);
+        $param_array = array($product_id);
         $this->sqlConnector->half_genericQuery($query, 1, $param_array);
         $output = $this->sqlConnector->s->fetchAll();
         return $output; 
