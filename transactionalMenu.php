@@ -19,14 +19,10 @@ require_once("transactionalHandler.php");
                     <br>
                     Shopping Cart
                 <ul>
-                   <form method="POST">
-                        <input type="submit" name="removeButton" value="remove"/>
-                    </form>
                     <?php 
                         $transactionalHandler->generateCartDisplay();
                     ?>
                     
-                
                 </ul>
             </li>
         </ul>
