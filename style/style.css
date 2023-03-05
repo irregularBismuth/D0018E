@@ -88,8 +88,7 @@ body {
     background-color: rgb(160, 101, 101);
 }
 
-.headern form {
-    background-color: #4654e1; 
+.headern form { 
     width: 300px;
     height: 44px;
     border-radius: 5px;
@@ -108,7 +107,6 @@ body {
   }
 
 .headern  button {
-
 
     display: inline-block;
     cursor: pointer;
