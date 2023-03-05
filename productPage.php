@@ -63,7 +63,7 @@ $row_count = count($animals['image']);
                                             <li>
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$animalArray['animal_id'][$i].'> 
-                                                <input type="submit" name="addButton" class="button value="add" />   
+                                                <input type="submit" name="addButton" class="button" value="add" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
                                             </form> 
                                             </li>
