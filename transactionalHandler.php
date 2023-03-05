@@ -45,7 +45,7 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
-            $this->product_id = $product_id;
+            //$this->product_id = $product_id;
             if(!isset($_SESSION['product_cart'])){
                 $_SESSION['product_cart'] = [];
                 $this->product_cart = $_SESSION['product_cart'];
@@ -64,6 +64,8 @@ class TransactionalHandler{
         
         if(isset($_SESSION['product_cart'])){
             $product_ids = $this->product_cart;
+            echo $product_ids;
+            echo $_POST['product_id'];
              
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
