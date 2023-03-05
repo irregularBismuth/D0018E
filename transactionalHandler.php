@@ -55,7 +55,7 @@ class TransactionalHandler{
                 array_push($_SESSION['product_cart'], $product_id);
                 $this->product_cart = $_SESSION['product_cart'];
                 //$this->products_added = array('animal_id' => $product_id);
-                header('location: '.$_SERVER['REQUEST_URI']); 
+                //header('location: '.$_SERVER['REQUEST_URI']); 
             }
         }
     }
