@@ -80,6 +80,7 @@ class TransactionalHandler{
                 echo '</li>';
                 echo '</pre>';
             }
+            header('location: '.$_SERVER['REQUEST_URI']); 
         }
         
     }
