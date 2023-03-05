@@ -120,8 +120,15 @@ class TransactionalHandler{
     }
 
     function checkoutOrderPlaced(){
-        //1. Need to be logged in to place order - CHECK 
-        //2. 
+        //1. Need to be logged in to place order - CHECK
+        if(!isset($_SESSION['username'])){
+            echo "Need to login to complete purchase!";
+            echo '<a href="login.php"> Login here! </a>';
+        }
+        else {
+            //2. Check if enough balance - CHECK
+
+        }
     }
     
     function execTransaction(){
@@ -134,6 +141,7 @@ class TransactionalHandler{
     
             try {
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
+                $sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
                               
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
@@ -142,10 +150,11 @@ class TransactionalHandler{
 
                 $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
                 $execution = $this->sqlConnector->s->execute();
+    
+                $sqlTransaction->commit();
                 
             } catch (PDOException $e){
                 $this->sqlConnector->get_db_connector()->rollback();
-                die($e->getMessage());
             }
     } 
 }
