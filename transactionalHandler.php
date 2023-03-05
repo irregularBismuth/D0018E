@@ -17,11 +17,11 @@ class TransactionalHandler{
     function __construct($sqlConnectorReference)
     {
         session_start();
-        $this->product_cart = array();
+        $this->product_cart = [];
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
         $this->customer_id = "";
-        $this->product_id = array();
+        $this->product_id = [];
         //product_id and button_id... 
         
     }
@@ -47,7 +47,7 @@ class TransactionalHandler{
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
             if(!isset($_SESSION['product_cart'])){
-                $_SESSION['product_cart'] = array();
+                $_SESSION['product_cart'] = [];
                 $this->product_cart = $_SESSION['product_cart'];
             }
             
@@ -67,6 +67,7 @@ class TransactionalHandler{
              
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
+                echo '<pre>';
                 echo $product_data['animal_name'];
                 echo '<li class="submenu_item">';
                 echo '<p>'.$product_data["animal_image"].'</p>';
@@ -75,6 +76,7 @@ class TransactionalHandler{
                 echo "<hr>";
                 echo "<br>";
                 echo '</li>';
+                echo '</pre>';
             }
         }
         
@@ -89,7 +91,7 @@ class TransactionalHandler{
     }
     
     function updateCartDisplay(){
-
+        $_SESSION['product_cart'] = array_diff($_SESSION['cart'], $this->product_id);
     }
     
     function execTransaction(){
