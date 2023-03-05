@@ -6,8 +6,4 @@ if (isset($_POST["addButton"])){
     $transactionalHandler->addButtonClickAction();
 }
 
-if (isset($_SESSION['product_cart'])){
-    $transactionalHandler->generateCartDisplay();
-}
-
 ?>
