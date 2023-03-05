@@ -47,20 +47,16 @@ class TransactionalHandler{
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
             if(!isset($_SESSION['product_cart'])){
-                $this->product_cart = array(); // creates a new empty array for cart... 
-                $_SESSION['product_cart'] = $this->product_cart;
+                $_SESSION['product_cart'] = array();
+                $this->product_cart = $_SESSION['product_cart'];
             }
             
             if(isset($_SESSION['product_cart'])){
                 array_push($_SESSION['product_cart'], $product_id);
                 $this->product_cart = $_SESSION['product_cart'];
                 //$this->products_added = array('animal_id' => $product_id);
-                
+               header('location: '.$_SERVER['REQUEST_URI']); 
             }
-            else {
-                
-                $_SESSION['product_cart'][$product_id] = 1;
-            } 
         }
     }
     
