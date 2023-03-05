@@ -86,7 +86,7 @@ $row_count = count($animals['image']);
                         
                         require_once("transactionalHandler.php");
                         $transactionalHandler->addButtonClickAction();
-                                              
+                        header("location: ".$_SERVER['REQUEST_URI']);      
                         
                     }  
             generateBoxFrames($row_count, $animals);         
