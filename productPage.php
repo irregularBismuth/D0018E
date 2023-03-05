@@ -79,16 +79,16 @@ $row_count = count($animals['image']);
                                 <div class="section4">...</div>
                         </div>
                         <br>';
-                    if (isset($_POST['addButton'])){
+                    
+                }
+            }
+              if (isset($_POST['addButton'])){
                         
                         require_once("transactionalHandler.php");
                         $transactionalHandler->addButtonClickAction();
                                               
                         
-                    } 
-                }
-            }
-               
+                    }  
             generateBoxFrames($row_count, $animals);         
         ?>
 
