@@ -43,6 +43,7 @@ li ul {
 }
 
 .button {
+    background-color: #ffff;
     display: inline-block;
     cursor: pointer;
     font-size: 20px;
