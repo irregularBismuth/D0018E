@@ -22,8 +22,9 @@ require_once("transactionalHandler.php");
                     <?php 
                         $transactionalHandler->generateCartDisplay();
                     ?>
-                    
+                
                 </ul>
+                Checkout here
             </li>
         </ul>
     
