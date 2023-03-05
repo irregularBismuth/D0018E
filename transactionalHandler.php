@@ -111,6 +111,10 @@ class TransactionalHandler{
         }
     }
     
+    function checkoutForm(){
+        
+    }
+    
     function execTransaction(){
         /* If the add button form is pressed it should start a new transaction:
  
