@@ -19,11 +19,13 @@ require_once("transactionalHandler.php");
                     <br>
                     Shopping Cart
                 <ul>
+                    <pre>
                     <?php $transactionalHandler->generateCartDisplay();?>
 
                     <?php echo 'subtotal: <p>'.$_SESSION['product_total'].'</p>' ?>
                     
                     <?php $transactionalHandler->checkoutForm();?> 
+                    </pre>
                 </ul>
                 
             </li>
