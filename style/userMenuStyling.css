@@ -42,7 +42,7 @@ li ul {
     opacity: 0;
 }
 
-.button {
+.submenu_item button {
     background-color: #ffff;
     display: inline-block;
     cursor: pointer;
