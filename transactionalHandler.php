@@ -112,7 +112,9 @@ class TransactionalHandler{
     }
     
     function checkoutForm(){
-        
+        echo '<form method="POST">';     
+        echo '<input class="submenu_item" type="submit" name="checkoutButton" value="checkout" >';
+        echo '</form>'; 
     }
     
     function execTransaction(){
