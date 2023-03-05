@@ -69,9 +69,8 @@ class TransactionalHandler{
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
                 echo '<pre>';
-                echo $product_data;
+                //echo $product_data;
                 echo $product_id;
-                echo $_POST['product_id'];
                 echo '<li class="submenu_item">';
                 echo '<p>'.$product_data["animal_image"].'</p>';
                 echo '<p>'.$product_data["animal_name"].'</p>';
