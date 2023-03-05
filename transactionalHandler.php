@@ -87,7 +87,6 @@ class TransactionalHandler{
             //header('location: '.$_SERVER['REQUEST_URI']);
             $this->updateCartDisplay($_POST['product_id_cart']); 
 
-
         }
         
     }
@@ -102,7 +101,7 @@ class TransactionalHandler{
     
     function updateCartDisplay($product_id_to_remove){
         if (isset($_POST['removeButton'])){
-            $_SESSION['product_cart'] = array_diff($_SESSION['product_cart'], $product_id_to_remove);
+            $_SESSION['product_cart'] = unset($_SESSION['product_cart'][$product_id_to_remove]);
             $this->product_cart = $_SESSION['product_cart'];
             $this->generateCartDisplay();
             //header('location: '.$_SERVER['REQUEST_URI']); 
