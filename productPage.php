@@ -3,7 +3,6 @@
 session_start();
 require_once("userProfile.php");
 require_once("sqlHandler.php");
-
 $animals = $sqlHandler->get_product_data();
 $row_count = count($animals['image']);
 ?>
@@ -62,7 +61,7 @@ $row_count = count($animals['image']);
                                             <br>
                                             <br>
                                             <li>
-                                           <form method="POST" action="productPageButtonActions.php">
+                                           <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="submit" name="addButton" class="button" value="add" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
@@ -80,7 +79,13 @@ $row_count = count($animals['image']);
                                 <div class="section4">...</div>
                         </div>
                         <br>';
- 
+                    if (isset($_POST['addButton'])){
+                        
+                        require_once("transactionalHandler.php");
+                        $transactionalHandler->addButtonClickAction();
+                                              
+                        
+                    } 
                 }
             }
                
