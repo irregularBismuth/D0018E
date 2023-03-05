@@ -19,7 +19,7 @@ require_once("transactionalHandler.php");
                     <br>
                     Shopping Cart
                 <ul>
-                    
+                   <form method="POST"></form>
                     <?php 
                         $transactionalHandler->generateCartDisplay();
                     ?>
