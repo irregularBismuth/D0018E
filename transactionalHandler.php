@@ -63,7 +63,7 @@ class TransactionalHandler{
     function generateCartDisplay(){
         
         if(isset($_SESSION['product_cart'])){
-            $product_ids = $_SESSION['product_cart'];
+            $product_ids = $this->product_cart;
              
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
