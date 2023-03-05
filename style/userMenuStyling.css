@@ -55,7 +55,8 @@ li ul {
 }
 
 .submenu_item form {
-    background-color: green;
+    border: solid;
+    border-radius: 0.5rem;
 }
 
 .submenu_item{
