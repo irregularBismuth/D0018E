@@ -47,15 +47,14 @@ li ul {
     object-fit: cover; 
     display: inline-block;
     cursor: pointer;
-    font-size: 20px;
-    opacity: 0.7;
-    transition: background-color 0.3s;  
+    background-color: inherit;   
 
 }
 
 .submenu_item form {
     border: solid;
     border-radius: 0.5rem;
+    background-color: inherit;
 }
 
 .submenu_item{
