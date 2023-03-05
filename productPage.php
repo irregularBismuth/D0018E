@@ -62,7 +62,7 @@ $row_count = count($animals['image']);
                                             <br>
                                             <br>
                                             <li>
-                                           <form method="POST" action="">
+                                           <form method="POST" action="productPageButtonActions.php">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="submit" name="addButton" class="button" value="add" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
@@ -80,12 +80,7 @@ $row_count = count($animals['image']);
                                 <div class="section4">...</div>
                         </div>
                         <br>';
-
-                    if (isset($_POST['addButton']) && $_POST['product_id'] === $product_id) {
-                        require_once("transactionalHandler.php");
-                        $cart_handler = $transactionalHandler; 
-                        $cart_handler->addButtonClickAction();                        
-                    }  
+ 
                 }
             }
                
