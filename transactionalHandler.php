@@ -17,11 +17,11 @@ class TransactionalHandler{
     function __construct($sqlConnectorReference)
     {
         session_start();
-        $this->product_cart = [];
+        $this->product_cart = array();
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
         $this->customer_id = "";
-        $this->product_id = [];
+        $this->product_id = array();
         //product_id and button_id... 
         
     }
