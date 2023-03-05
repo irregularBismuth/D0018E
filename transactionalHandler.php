@@ -68,7 +68,7 @@ class TransactionalHandler{
              
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
-                echo '<pre>';
+               // echo '<pre>';
                 echo $product_data;
                 echo $product_id;
                 echo $_POST['product_id'];
@@ -79,7 +79,7 @@ class TransactionalHandler{
                 echo "<hr>";
                 echo "<br>";
                 echo '</li>';
-                echo '</pre>';
+                //echo '</pre>';
             }
         }
         
