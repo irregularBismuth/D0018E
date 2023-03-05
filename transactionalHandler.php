@@ -8,7 +8,7 @@ $transactionalHandler = new TransactionalHandler($sql);
 
 <?php 
 class TransactionalHandler{
-    private $products_added;
+    private $product_cart;
     private $sqlConnector;
     private $session_order_id;
     private $customer_id;
@@ -17,10 +17,11 @@ class TransactionalHandler{
     function __construct($sqlConnectorReference)
     {
         session_start();
-        $this->products_added = [];
+        $this->product_cart = array();
         $this->sqlConnector = $sqlConnectorReference;
         $this->session_order_id = "";
         $this->customer_id = "";
+        $this->product_id = array();
         //product_id and button_id... 
         
     }
@@ -42,23 +43,49 @@ class TransactionalHandler{
 
     function addButtonClickAction(){
         if(isset($_POST['addButton'])){
-            if(isset($_SESSION['product_cart'])){
-    
-                $product_id = $_POST['product_id'];
-                $count = count($_SESSION['product_cart']);
-                $_SESSION['product_cart'][$count] = $this->products_added;
-                //array_push($this->products_added, $product_id);
+
+            $product_id = $_POST['product_id'];
+            $this->product_id = $product_id;
+            if(!isset($_SESSION['product_cart'])){
+                $this->product_cart = array(); // creates a new empty array for cart... 
+                $_SESSION['product_cart'] = $this->product_cart;
             }
-            else{
-                $product_id = $_POST['product_id'];
-                $this->products_added = array('animal_id' => $product_id);
-                $_SESSION['product_cart'][0] = $this->products_added;
+            
+            if(isset($_SESSION['product_cart'][$product_id])){
+                $_SESSION['product_cart'][$product_id]++;
+                //$this->products_added = array('animal_id' => $product_id);
+                
+            }
+            else {
+                
+                $_SESSION['product_cart'][$product_id] = 1;
             } 
         }
     }
     
     function generateCartDisplay(){
         
+        if(isset($_SESSION['product_cart'])){
+            $product_ids = $this->product_id;
+            
+            foreach($product_ids as $product_id){
+                $product_data = $this->getProductData($product_id);
+                echo '<ul class="horizontalCartItem">';
+                echo '<li>'.$product_data["animal_image"].'</li>';
+                echo '<li>'.$product_data["animal_name"].'</li>';
+                echo '<li>'.$product_data["animal_price"].'</li>';
+                echo "</ul>";
+            }
+        }
+        
+    }
+
+    function getProductData($product_id){
+        $query = "SELECT * FROM animals where animal_id=:x";
+        $param_array = array($this->product_id);
+        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
+        $output = $this->sqlConnector->s->fetchAll();
+        return $output; 
     }
     
     function updateCartDisplay(){
@@ -79,7 +106,7 @@ class TransactionalHandler{
                               
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
-                $param_array = $this->products_added;
+                $param_array = $this->product_cart;
 
                 $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
                 $execution = $this->sqlConnector->s->execute();
