@@ -118,6 +118,11 @@ class TransactionalHandler{
         echo '<input type="submit" name="checkoutButton" value="checkout" >';
         echo '</form>'; 
     }
+
+    function checkoutOrderPlaced(){
+        //1. Need to be logged in to place order - CHECK 
+        //2. 
+    }
     
     function execTransaction(){
         /* If the add button form is pressed it should start a new transaction:
