@@ -71,7 +71,7 @@ class TransactionalHandler{
                 echo '<pre>';
                 //echo $product_id;
                 echo '<li class="submenu_item">';
-                echo '<p>'.$product_data["animal_image"].'</p>';
+                echo '<img src='.$product_data["animal_image"].'>';
                 echo '<p>'.$product_data["animal_name"].'</p>';
                 echo '<p>'.$product_data["animal_price"].'</p>';
                 echo '<form method="POST">';
