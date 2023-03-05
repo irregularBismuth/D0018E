@@ -54,8 +54,9 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
                 array_push($_SESSION['product_cart'], $product_id);
                 $this->product_cart = $_SESSION['product_cart'];
+                //$this->products_added = array('animal_id' => $product_id);
+                header('location: '.$_SERVER['REQUEST_URI']); 
             }
-            header('location: '.$_SERVER['REQUEST_URI']); 
         }
     }
     
@@ -78,7 +79,7 @@ class TransactionalHandler{
                 echo '</li>';
                 echo '</pre>';
             }
-            header('location: '.$_SERVER['REQUEST_URI']); 
+            //header('location: '.$_SERVER['REQUEST_URI']); 
         }
         
     }
