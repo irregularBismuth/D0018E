@@ -80,7 +80,6 @@ class TransactionalHandler{
                 echo '<form method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
                 echo '<button class="submenu_item" type="submit" name="removeButton" value="add" >';
-                echo '<img src="../images/checkoutIcon.png" />';
                 echo '</button>';
                 echo '</form>';
                 echo '<hr>';
