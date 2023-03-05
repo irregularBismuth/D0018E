@@ -81,7 +81,7 @@ $row_count = count($animals['image']);
                         </div>
                         <br>';
 
-                    if (isset($_POST['addButton']) && $_POST['product_id'] === $product_id) {
+                    if (isset($_POST['addButton'])) {
                         require_once("transactionalHandler.php");
                         $cart_handler = $transactionalHandler; 
                         $cart_handler->addButtonClickAction();                        
