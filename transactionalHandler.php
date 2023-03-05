@@ -70,13 +70,13 @@ class TransactionalHandler{
             
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
-                echo '<ul>';
-                echo '<li>'.$product_data["animal_image"].'</li>';
-                echo '<li>'.$product_data["animal_name"].'</li>';
-                echo '<li>'.$product_data["animal_price"].'</li>';
+                echo '<li class="submenu_item">';
+                echo '<p>'.$product_data["animal_image"].'</p>';
+                echo '<p>'.$product_data["animal_name"].'</p>';
+                echo '<p>'.$product_data["animal_price"].'</p>';
                 echo "<hr>";
                 echo "<br>";
-                echo '</ul>';
+                echo '</li>';
             }
         }
         
