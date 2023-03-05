@@ -3,6 +3,8 @@
 session_start();
 require_once("userProfile.php");
 require_once("sqlHandler.php");
+require_once("transactionalHandler.php");
+$cart_handler = $transactionalHandler;
 $animals = $sqlHandler->get_product_data();
 $row_count = count($animals['image']);
 ?>
@@ -81,6 +83,7 @@ $row_count = count($animals['image']);
                         <br>';
 
                     if (isset($_POST['addButton']) && $_POST['product_id'] === $product_id {
+                        require_once("transactionalHandler.php"); 
                         
                     } 
                 }
