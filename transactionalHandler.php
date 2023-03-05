@@ -76,7 +76,8 @@ class TransactionalHandler{
                 echo '<p>'.$product_data["animal_price"].'</p>';
                 echo '<form method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<button type="submit" name="removeButton" value="add" />';
+                echo '<button type="submit" name="removeButton" value="add" >';
+                echo '</button>';
                 echo '</form>';
                 echo '<hr>';
                 echo '<br>';
