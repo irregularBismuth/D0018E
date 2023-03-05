@@ -108,10 +108,7 @@ body {
   }
 
 .headern  button {
-    all: unset;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
+
 
     display: inline-block;
     cursor: pointer;
