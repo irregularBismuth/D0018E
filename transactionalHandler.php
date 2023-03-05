@@ -67,7 +67,10 @@ class TransactionalHandler{
         
         if(isset($_SESSION['product_cart'])){
             $product_ids = $_SESSION['product_cart'];
-            
+            echo $product_ids;
+            echo $this->product_cart;
+            echo $this->product_id;
+             
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
                 echo '<li class="submenu_item">';
