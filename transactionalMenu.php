@@ -20,11 +20,13 @@ require_once("transactionalHandler.php");
                     Shopping Cart
                 <ul>
                     <li class="submenu_item">
-                        <?php $transactionalHandler->generateCartDisplay();?>
+                        <?php
+                            
+                            $transactionalHandler->generateCartDisplay();
+                        ?>
                     
                     </li>
-                    <hr>
-                    <br>
+                    
                 
                 </ul>
             </li>
