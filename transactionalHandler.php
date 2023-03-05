@@ -51,8 +51,9 @@ class TransactionalHandler{
                 $_SESSION['product_cart'] = $this->product_cart;
             }
             
-            if(isset($_SESSION['product_cart'][$product_id])){
-                $_SESSION['product_cart'][$product_id]++;
+            if(isset($_SESSION['product_cart'])){
+                array_push($_SESSION['product_cart'], $product_id);
+                $this->product_cart = $_SESSION['product_cart'];
                 //$this->products_added = array('animal_id' => $product_id);
                 
             }
@@ -66,8 +67,8 @@ class TransactionalHandler{
     function generateCartDisplay(){
         
         if(isset($_SESSION['product_cart'])){
-            $product_ids = $_SESSION['product_cart'];
-            echo count($product_ids);
+            $product_ids = $this->product_cart;
+            echo $product_ids;
              
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id);
