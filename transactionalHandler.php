@@ -57,6 +57,14 @@ class TransactionalHandler{
         }
     }
     
+    function generateCartDisplay(){
+        
+    }
+    
+    function updateCartDisplay(){
+
+    }
+    
     function execTransaction(){
         /* If the add button form is pressed it should start a new transaction:
  
