@@ -79,7 +79,7 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<button class="submenu_item" type="submit" name="removeButton" value="add"> remove';
+                echo '<button class="submenu_item" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
                 echo '</form>';
                 echo '<hr>';
@@ -115,7 +115,8 @@ class TransactionalHandler{
     
     function checkoutForm(){
         echo '<form style="display: block; background-color: grey" class="submenu_item" method="POST">';     
-        echo '<input type="submit" name="checkoutButton" > checkout';
+        echo '<button type="submit" name="checkoutButton" value="checkout" >checkout ';
+        echo '</button>';
         echo '</form>'; 
     }
 
