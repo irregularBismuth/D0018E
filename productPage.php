@@ -91,7 +91,7 @@ $row_count = count($animals['image']);
                         
             } 
 
-            if (isset($_POST['balance'])){
+            if (isset($_POST['submit_balance'])){
                 
                 require_once("userProfile.php");
                 $userProfile->addBalance();  
