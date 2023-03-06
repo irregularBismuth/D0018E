@@ -86,8 +86,7 @@ function search() {
          ?>
         <div class="comments">
             <form action="comments.php" method="POST">
-                <input type="text" />
-              
+                <textarea class="comment" id="comment" placeholder="Comment here"> </textarea> 
             </form>
              
         </div>            
