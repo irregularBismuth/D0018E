@@ -120,17 +120,21 @@ class TransactionalHandler{
         echo '<button type="submit" name="checkoutButton" value="checkout" >checkout ';
         echo '</button>';
         echo '</form>'; 
+        $this->checkoutOrderPlaced();
     }
 
     function checkoutOrderPlaced(){
         //1. Need to be logged in to place order - CHECK
-        if(!isset($_SESSION['username'])){
-            echo "<p>Need to login to complete purchase!</p>";
-            echo '<a href="login.php"> Login here! </a>';
-        }
-        else {
+        if(isset($_POST['checkoutButton'])){
+
+            if(!isset($_SESSION['username'])){
+                echo "<p>Need to login to complete purchase!</p>";
+                echo '<a href="login.php"> Login here! </a>';
+            }
+            else {
             //2. Check if enough balance - CHECK
 
+            }
         }
     }
 
