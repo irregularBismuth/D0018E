@@ -69,6 +69,7 @@ function search() {
 </header>
 </div>
 
+    <div id="livesearch" class="livesearch"></div>
     <div class="bar">
         <ul>
             <li>Cats</li>
