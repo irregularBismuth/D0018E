@@ -3,8 +3,8 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
-
-$query="select * from animals where animal_id=2";
+$who=$_REQUEST['id'];
+$query="select * from animals where animal_id=";
 $arr="test";
 $sqlHandler->half_genericQuery($query,0,$arr); 
 $res=$sqlHandler->s->fetchAll();
@@ -88,7 +88,10 @@ function search() {
             <form action="comments.php" method="POST"> 
                 <textarea class="comment" id="comment" placeholder="Comment here"></textarea> 
                 <input type="submit" value="Comment"/>
-            </form>
+           
+
+             </form>
+            
              
         </div>            
     <div>

@@ -4,7 +4,7 @@ require_once("sqlHandler.php");
 
 $product_id = $_GET['product_id'];
 
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['username'])){
     header('Location: login.php');
     exit(0);
 }
