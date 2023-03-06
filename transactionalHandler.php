@@ -114,7 +114,7 @@ class TransactionalHandler{
     }
     
     function checkoutForm(){
-        echo '<form style="display: block; background-color: grey" class="submenu_item" method="POST">';     
+        echo '<form style="display: block; background-color: inherit" class="submenu_item" method="POST">';     
         echo '<button type="submit" name="checkoutButton" value="checkout" >checkout ';
         echo '</button>';
         echo '</form>'; 
