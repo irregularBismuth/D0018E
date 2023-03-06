@@ -79,7 +79,7 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<button style="border-radius: 60%; margin: 4px 2px;" class="submenu_item" type="submit" name="removeButton" value="remove"> remove';
+                echo '<button style="border-radius: 50%; padding: 20px" class="submenu_item" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
                 echo '</form>';
                 echo '<hr>';
