@@ -85,8 +85,9 @@ function search() {
               echo "<div class='buyInfo'> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
          ?>
         <div class="comments">
-            <form action="comments.php" method="POST">
-                <textarea class="comment" id="comment" placeholder="Comment here"> </textarea> 
+            <form action="comments.php" method="POST"> 
+                <textarea class="comment" id="comment" placeholder="Comment here"></textarea> 
+                <input type="button" />
             </form>
              
         </div>            
