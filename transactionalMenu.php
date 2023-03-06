@@ -9,7 +9,11 @@ require_once("transactionalHandler.php");
 
     <head>
         <title> Transactional Cart Menu </title>
-        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" /> 
+        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" />
+
+        <style> 
+            form {display: block; }
+        </style> 
     </head>
     
     <body>
