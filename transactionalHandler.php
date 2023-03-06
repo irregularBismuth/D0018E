@@ -125,7 +125,7 @@ class TransactionalHandler{
     function checkoutOrderPlaced(){
         //1. Need to be logged in to place order - CHECK
         if(!isset($_SESSION['username'])){
-            echo "Need to login to complete purchase!";
+            echo "<p>Need to login to complete purchase!</p>";
             echo '<a href="login.php"> Login here! </a>';
         }
         else {
