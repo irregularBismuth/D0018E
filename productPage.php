@@ -83,16 +83,19 @@ $row_count = count($animals['image']);
                     
                 }
             }
-              if (isset($_POST['addButton'])){
+            if (isset($_POST['addButton'])){
                         
-                        require_once("transactionalHandler.php");
-                        $transactionalHandler->addButtonClickAction();
-                        header("location: ".$_SERVER['REQUEST_URI']);      
+                require_once("transactionalHandler.php");
+                $transactionalHandler->addButtonClickAction();
+                header("location: ".$_SERVER['REQUEST_URI']);      
                         
-                    } 
+            } 
 
             if (isset($_POST['balance'])){
                 
+                require_once("userProfile.php");
+                $userProfile->addBalance();  
+                header("location: ".$_SERVER['REQUEST_URI']);      
             }
              
             generateBoxFrames($row_count, $animals);         
