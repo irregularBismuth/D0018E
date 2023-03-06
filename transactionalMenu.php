@@ -25,7 +25,7 @@ require_once("transactionalHandler.php");
                 <ul>
                     <?php $transactionalHandler->generateCartDisplay();?>
 
-                   <b> <?php echo 'subtotal: <p>'.$_SESSION['product_total'].'</p>' ?></b>
+                   <?php echo '<b>subtotal:</b> <p>'.$_SESSION['product_total'].'</p>' ?>
                     
                     <?php $transactionalHandler->checkoutForm();?>       
                 </ul>
