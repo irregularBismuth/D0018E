@@ -83,7 +83,7 @@ $row_count = count($animals['image']);
                     
                 }
             }
-            if (isset($_POST['addButton'])){
+            if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
                 require_once("transactionalHandler.php");
                 $transactionalHandler->addButtonClickAction();
