@@ -65,6 +65,8 @@ class TransactionalHandler{
         
         if(isset($_SESSION['product_cart'])){
             $product_ids = $_SESSION['product_cart'];
+
+            $this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
             foreach($product_ids as $product_id){
@@ -88,9 +90,8 @@ class TransactionalHandler{
                 echo '</li>';
                 echo '</pre>';
             }
-            //header('location: '.$_SERVER['REQUEST_URI']);
             $_SESSION['product_total'] = $subtotal;
-            $this->updateCartDisplay($_POST['product_id_cart']); 
+            //$this->updateCartDisplay($_POST['product_id_cart']); 
 
         }
         
