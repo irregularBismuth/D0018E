@@ -86,7 +86,8 @@ function search() {
          ?>
         <div class="comments">
             <form action="comments.php" method="POST">
-            
+                <input type="text" />
+              
             </form>
              
         </div>            
