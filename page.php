@@ -69,6 +69,7 @@ function search() {
 </header>
 </div>
 
+    <div id="livesearch" class="livesearch"></div>
     <div class="bar">
         <ul>
             <li>Cats</li>
@@ -85,7 +86,7 @@ function search() {
          ?>
         <div class="comments">
             <form action="comments.php" method="POST">
-            
+                <textarea class="comment" id="comment" placeholder="Comment here"> </textarea> 
             </form>
              
         </div>            
