@@ -6,7 +6,7 @@ $product_id = $_GET['product_id'];
 
 if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
-    exit;
+    exit(0);
 }
 
 if(isset($_POST['submit_rating'])){
