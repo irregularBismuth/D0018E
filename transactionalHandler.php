@@ -70,7 +70,7 @@ class TransactionalHandler{
            
             $subtotal = 0;
             foreach($product_ids as $product_id){
-                $product_data = $this->getProductData($product_id)[0];
+                $product_data = $this->getProductData($product_id)[0]; // check the [0] index! 
                 $subtotal += $product_data['animal_price']; 
                 echo '<pre>';
                 //echo $product_id;
