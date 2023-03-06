@@ -6,6 +6,9 @@ body {
  margin: 0;
 }
 
+textarea {
+    resize:none;
+}
 /*#livesearch div {
     display: block;
     width: 500px;
