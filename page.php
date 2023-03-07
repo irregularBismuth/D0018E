@@ -4,9 +4,9 @@ session_start();
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
 $who=$_REQUEST['a'];
-$query="select * from animals where animal_id=".$who;
-$arr="test";
-$sqlHandler->half_genericQuery($query,0,$arr); 
+$query="select * from animals where animal_id=:x";
+$arr=array($who);
+$sqlHandler->half_genericQuery($query,1,$arr); 
 $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
@@ -80,9 +80,19 @@ function search() {
             <form action="comments.php" method="POST"> 
                 <textarea class="comment" id="comment" placeholder="Comment here"></textarea> 
                 <input type="submit" value="Comment"/>
-           
-
              </form>
+
+            <?php 
+               $quer="select * from comments where animal_id=:x order by comment_id, parent_comment_id asc";  
+               $sqlHandler->half_genericQuery($quer,1,$arr);
+               $rez=$sqlHandler->s->fetchAll();
+               if($sqlHandler->s->rowCount() > 0)
+               {
+                    foreach($rez as $rez){
+                     echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p></div>"
+                    }     
+               }
+            ?>
             
              
         </div>            
