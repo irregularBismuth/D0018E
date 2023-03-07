@@ -6,7 +6,7 @@ $uname=$_POST['name'];
 $anmid=$_POST['animal_id'];
 $query="insert into comments(animal_id,parent_comment_id,comment,comment_username) values(:x,0,:y,:z)";
 $arr=array($anmid,$text,$uname);
-$sqlHandler->half_genericQuery($quer,3,$arr);
+$sqlHandler->half_genericQuery($query,3,$arr);
 //$res=$sqlHandler->s->fetchAll();
 header("Location: page.php?a=".$anmid.");
 exit(0);
