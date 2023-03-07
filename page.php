@@ -77,7 +77,7 @@ function search() {
               echo "<div class='buyInfo'> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
          ?>
         <div class="comments">
-            <form action="comments.php" method="POST"> 
+            <form method="post" action="comments.php"> 
                 <textarea class="comment" name="comment" id="comment" placeholder="Comment here"></textarea>  
                 <input type="hidden" name="name" value="<?php echo $_SESSION['username']; ?>" />
                 <input type="hidden" name="animal_id" value="<?php echo $who; ?>" />
