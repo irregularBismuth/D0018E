@@ -89,7 +89,7 @@ function search() {
                if($sqlHandler->s->rowCount() > 0)
                {
                     foreach($rez as $rez){
-                     echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p></div>"
+                     echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p></div>";
                     }     
                }
             ?>
