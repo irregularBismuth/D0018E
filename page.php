@@ -3,8 +3,8 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
-$who=$_REQUEST['id'];
-$query="select * from animals where animal_id=";
+$who=$_REQUEST['a'];
+$query="select * from animals where animal_id=".$who;
 $arr="test";
 $sqlHandler->half_genericQuery($query,0,$arr); 
 $res=$sqlHandler->s->fetchAll();
@@ -70,14 +70,6 @@ function search() {
 </div>
 
     <div id="livesearch" class="livesearch"></div>
-    <div class="bar">
-        <ul>
-            <li>Cats</li>
-            <li>African</li>
-            <li>Wolves</li>
-        </ul>
-    </div>
-
 
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
