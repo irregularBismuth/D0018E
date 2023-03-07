@@ -79,6 +79,7 @@ function search() {
         <div class="comments">
             <form action="comments.php" method="POST"> 
                 <textarea class="comment" id="comment" placeholder="Comment here"></textarea> 
+                <input type="hidden" name="name" />
                 <input type="submit" value="Comment"/>
              </form>
 
