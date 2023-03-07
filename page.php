@@ -82,7 +82,7 @@ function search() {
                 
                 <input type="hidden" name="name" value="<?php echo $_SESSION['username']; ?>" />
                 <input type="hidden" name="animal_id" value="<?php echo $who; ?>" />
-<input type="submit" name="subknapp" value="Comment"/>
+                <input type="submit" name="subknapp" value="Comment"/>
              </form>
 
             <?php 
