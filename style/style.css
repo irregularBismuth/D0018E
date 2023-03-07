@@ -10,6 +10,10 @@ textarea {
     resize:none;
     
 }
+
+.com {
+    background-color: #454545;
+}
 /*#livesearch div {
     display: block;
     width: 500px;
