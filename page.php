@@ -78,8 +78,7 @@ function search() {
          ?>
         <div class="comments">
             <form action="comments.php" method="POST"> 
-                <textarea class="comment" name="comment" id="comment" placeholder="Comment here"></textarea> 
-                
+                <textarea class="comment" name="comment" id="comment" placeholder="Comment here"></textarea>  
                 <input type="hidden" name="name" value="<?php echo $_SESSION['username']; ?>" />
                 <input type="hidden" name="animal_id" value="<?php echo $who; ?>" />
                 <input type="submit" name="subknapp" value="Comment"/>
