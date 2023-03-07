@@ -14,6 +14,6 @@ $arr=array($ani,$pass,$name);
 $sql="insert into comments (animal_id,comment,comment_username) values (:x,:y,:z)";
 $sqlHandler->half_genericQuery($sql,3,$arr);
 
-header("Location: page.php?a=".$ani.");
+header("Location: page.php?a=".$ani);
 exit(0);
 ?>
