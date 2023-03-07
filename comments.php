@@ -15,6 +15,7 @@ $arr=array($anmid,$text,$name);
 $sqlHandler->half_genericQuery($sql,3,$arr);
 $res=$sqlHandler->s->fetchAll();
 
-header("Location:")
+header("Location: page.php?a=".$anmid.");
+exit(0);
 
 ?>
