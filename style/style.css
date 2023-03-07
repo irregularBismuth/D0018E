@@ -54,7 +54,8 @@ textarea {
 
 .comments {
  background-color: blue;
- 
+ width: 50%;
+ height:auto;
 }
 
 .bar li {
