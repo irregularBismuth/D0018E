@@ -154,13 +154,17 @@ class TransactionalHandler{
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
                 $sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
-                              
+
+                // SELECT WHERE QUERY - step 1            
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
                 $param_array = $this->product_cart;
-
                 $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
-    
+
+                // LOGIC FOR (1) TO PERFORM
+
+                // UPDATE SET QUERY - step 2
+
                 $sqlTransaction->commit();
                 
             } catch (PDOException $e){
