@@ -135,13 +135,13 @@ class TransactionalHandler{
             }
             else {
             //2. EXEC TRANSACTION 
-            $this->execTransaction();
+            $this->execTransaction($_SESSION['username'],$_SESSION['product_cart']);
 
             }
         }
     }
     
-    function execTransaction(){
+    function execTransaction($userid, $product_ids){
         /* */
     
             try {
@@ -149,9 +149,21 @@ class TransactionalHandler{
                 $sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
 
-                // SELECT WHERE QUERY - step 1            
+                // SELECT WHERE QUERY OR INSERT INTO - step 1
+                for ($i = 0 ; $i < count($product_ids) ; $i++){
+
+                    $sql_query = "INSERT INTO transactional (animal.animal_id =:x";
+                }
+
+                // transactional amount 
+                $query_balance = "SELECT balance FROM users WHERE id=:x";
+                $userid_param = array($userid);
+                $transactional_amount = $_SESSION['product_total'];
+                $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
+                
+                // ... 
+
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
-                $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
                 $param_array = $this->product_cart;
                 $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
 
