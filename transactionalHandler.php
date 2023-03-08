@@ -54,7 +54,9 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
                 array_push($_SESSION['product_cart'], $product_id);
                 $this->product_cart = $_SESSION['product_cart'];
-                //$this->products_added = array('animal_id' => $product_id);
+
+                //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
+
             }
 
             header('location: '.$_SERVER['REQUEST_URI']); 
@@ -139,7 +141,9 @@ class TransactionalHandler{
     }
 
     function insertMetadataNewOrder(){
-        
+            $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
+            $param_array = $this->product_cart;
+            $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array); 
     }
     
     function execTransaction(){
