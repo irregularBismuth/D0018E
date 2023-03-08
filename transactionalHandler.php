@@ -68,7 +68,7 @@ class TransactionalHandler{
         if(isset($_SESSION['product_cart'])){
             $product_ids = $_SESSION['product_cart'];
 
-            $this->updateCartDisplay($_POST['product_id_cart']); 
+            //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
             foreach($product_ids as $product_id){
@@ -93,7 +93,7 @@ class TransactionalHandler{
                 echo '</pre>';
             }
             $_SESSION['product_total'] = $subtotal;
-            //$this->updateCartDisplay($_POST['product_id_cart']); 
+            $this->updateCartDisplay($_POST['product_id_cart']); 
 
         }
         
@@ -135,13 +135,13 @@ class TransactionalHandler{
             }
             else {
             //2. EXEC TRANSACTION 
-            $this->execTransaction($_SESSION['username'],$_SESSION['product_cart']);
+            $this->execTransaction($_SESSION['username'],$_SESSION['product_cart'], $_SESSION['product_total']);
 
             }
         }
     }
     
-    function execTransaction($userid, $product_ids){
+    public function execTransaction($userid, $product_ids, $total_amount){
         /* */
     
             try {
@@ -149,20 +149,34 @@ class TransactionalHandler{
                 $sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
 
-                // SELECT WHERE QUERY OR INSERT INTO - step 1
+                // SELECT WHERE QUERY - step 1
+               
+                // transactional amount 
+                $query_balance = "SELECT balance FROM users WHERE id=:x";
+                $userid_param = array($userid);
+                $output = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
+                
+                $current_balance = $output->fetchColumn();                
+                $transactional_amount = $total_amount;
+
+                if ($current_balance < $transactional_amount){
+                    echo "not enough money, add more!";
+                    return false;  
+                }
+                $updated_balance = $current_balance - $total_amount;
+
+                $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
+                $balance_param = array($updated_balance, $userid);
+                $output = $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param);
+
+                // INSERT INTO TRANSACTIONAL - ITERATE THROUGH PRODUCT CART IDS
+                // 1. $product_ids argument for accessing products ids from cart 
+                // 2. Should I insert as separate rows in the table or how do I reference multiple produdct ids in the same table????
+
                 for ($i = 0 ; $i < count($product_ids) ; $i++){
 
                     $sql_query = "INSERT INTO transactional (animal.animal_id =:x";
                 }
-
-                // transactional amount 
-                $query_balance = "SELECT balance FROM users WHERE id=:x";
-                $userid_param = array($userid);
-                $transactional_amount = $_SESSION['product_total'];
-                $output = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
-                
-                $current_balance = $output->fetchColumn();
-                // ... 
 
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $param_array = $this->product_cart;
