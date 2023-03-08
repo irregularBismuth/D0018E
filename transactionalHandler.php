@@ -134,25 +134,15 @@ class TransactionalHandler{
                 echo '<a href="login.php"> Login here! </a>';
             }
             else {
-            //2. insert metadata to transactional table
+            //2. EXEC TRANSACTION 
+            $this->execTransaction();
 
             }
         }
     }
-
-    function insertMetadataNewOrder(){
-            $sql_query = "SELECT * FROM animals WHERE animal.animal_id =:x";
-            $param_array = $this->product_cart;
-            $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array); 
-    }
     
     function execTransaction(){
-        /* If the add button form is pressed it should start a new transaction:
- 
-        - Add if else for checking if(isset($_SESSION['id'] is set = LOGGED IN!
-                1. If logged in it should fetch/query transactional.product_id = user.id
-                2. If not logged in it should check if(isset($_SESSION['order_id'] instead!
-        */
+        /* */
     
             try {
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
