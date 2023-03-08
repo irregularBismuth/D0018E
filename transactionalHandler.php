@@ -165,6 +165,7 @@ class TransactionalHandler{
                 
             } catch (PDOException $e){
                 $this->sqlConnector->get_db_connector()->rollback();
+                die($e->getMessage());
             }
     } 
 }
