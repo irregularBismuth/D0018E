@@ -159,9 +159,9 @@ class TransactionalHandler{
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
                 $userid_param = array($userid);
                 $transactional_amount = $_SESSION['product_total'];
-                $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
+                $output = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
                 
-                $current_balance = $this->sqlController->s->fetchColumn();
+                $current_balance = $output->fetchColumn();
                 // ... 
 
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
