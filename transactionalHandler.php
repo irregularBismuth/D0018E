@@ -160,7 +160,6 @@ class TransactionalHandler{
                 $param_array = $this->product_cart;
 
                 $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
-                $execution = $this->sqlConnector->s->execute();
     
                 $sqlTransaction->commit();
                 
