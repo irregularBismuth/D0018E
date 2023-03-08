@@ -132,7 +132,7 @@ class TransactionalHandler{
                 echo '<a href="login.php"> Login here! </a>';
             }
             else {
-            //2. Check if enough balance - CHECK
+            //2. insert metadata to transactional table
 
             }
         }
