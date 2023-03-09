@@ -28,7 +28,6 @@ class TransactionalHandler{
 
     function checkCustomerId(){
         require_once("userProfile.php");
-        session_start();
         
         if($userProfile->checkIfUserIdSet()){ 
             $_SESSION['customer_id'] = $_SESSION['id'];
