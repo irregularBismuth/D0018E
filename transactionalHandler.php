@@ -168,11 +168,11 @@ class TransactionalHandler{
                 $current_balance = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
                                 
                 $transactional_amount = $total_amount;
-                $transaction_comment = "";
+                $transaction_comment = "order confirmed!";
 
                 if ($current_balance < $transactional_amount){
                     $transaction_comment = "not enough money, add more!";
-                    echo $transaction_comment;
+                    echo "<p>".$transaction_comment."</p>";
                     return false;  
                 }
 
