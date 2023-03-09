@@ -182,7 +182,7 @@ class TransactionalHandler{
 
                 //###############################################################################
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
-                $session_order_id = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
+                $session_order_id = $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param)->fetchColumn();
                           
                 foreach($product_ids as $product_id){
                     $product_data = $this->getProductData($product_id)[0]; 
