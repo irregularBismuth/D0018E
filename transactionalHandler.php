@@ -94,6 +94,7 @@ class TransactionalHandler{
                 echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
                 echo '</form>';
+                echo '<p>Stock quantity: '.$product_data['animal_quantity'].'</p>';
                 echo '<hr>';
                 echo '<br>';
                 echo '</li>';
