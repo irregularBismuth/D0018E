@@ -140,12 +140,6 @@ class TransactionalHandler{
 
             }
         }
-        else if(!isset($_POST['checkoutButton'])) {
-            // INSERT META DATA HERE IF checkoutButton is not set
-            if (isset($_SESSION['id'])){
-                $this->insertTransactionalMetadata($_SESSION['id']);
-            }
-        }
 
     }
 
@@ -165,6 +159,7 @@ class TransactionalHandler{
                 $sqlTransaction->beginTransaction();
 
                 //###############################################################################
+                $this->insertTransactionalMetadata($userid);
                 
                 // CHECK IF BALANCE IS ENOUGH!  
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
