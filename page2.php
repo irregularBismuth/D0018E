@@ -70,14 +70,7 @@ function search() {
 </div>
 
     <div id="livesearch" class="livesearch"></div>
-    <?php 
-      
-      if($_SESSION['admin']==1)
-      {
-         echo "<form action='delete.php' method='post'><input value='Delete post' type='submit'></form>";   
-      } 
 
-    ?>
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
@@ -98,19 +91,16 @@ function search() {
                if($sqlHandler->s->rowCount() > 0)
                {
                     foreach($rez as $rez){
-                        $sr="";
-                        if($_SESSION['admin']==1){
-                        $sr="<form action='delcom.php' mehod=post><input type='hidden' value=".$rez['comment_id']."><input type='submit'></form>"; } 
-                        echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p>".$sr."</div>";
+                     echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p></div>";
                     }     
                }
             ?>
             
              
-        </div>
-       
+        </div>            
     <div>
 
 
 </body>
 </html> 
+
