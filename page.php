@@ -98,7 +98,10 @@ function search() {
                if($sqlHandler->s->rowCount() > 0)
                {
                     foreach($rez as $rez){
-                        echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p><form action='delcom.php' mehod=post><input type='hidden' value=".$rez['comment_id']."><input type='submit'></form></div>";
+                        $sr="";
+                        if($_SESSION['admin']==1){
+                        $sr="<form action='delcom.php' mehod=post><input type='hidden' value=".$rez['comment_id']."><input type='submit'></form>"; } 
+                        echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p>".$sr."</div>";
                     }     
                }
             ?>
