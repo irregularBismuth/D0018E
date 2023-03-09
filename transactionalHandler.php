@@ -182,7 +182,6 @@ class TransactionalHandler{
 
                 //###############################################################################
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
-                $order_param = array($userid);
                 $session_order_id = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
                           
                 foreach($product_ids as $product_id){
@@ -191,14 +190,19 @@ class TransactionalHandler{
 
                     $sql_order_info = "INSERT INTO order_info SET order_id=:x, product_id=:y";
                     $order_param = array($session_order_id, $animal_id);
-                    $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
+                    $this->sqlConnector->half_genericQuery($sql_order_info, 2, $order_param)->execute();
                 }
+
+                //###############################################################################
+                $sql_update_transaction = "UPDATE transactional SET shoppingCart_bool=:x, transactional_amount=:y, comment=:z" ;                
+                $transac_param = array(1, $transactional_amount, $transaction_comment);
+                $this->sqlConnector->half_genericQuery($sql_update_transaction, 2, $transac_param)->execute();
 
                 //###############################################################################
                 $updated_balance = $current_balance - $total_amount;
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
                 $balance_param = array($updated_balance, $userid);
-                $output = $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param);
+                $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
 
                 // INSERT INTO TRANSACTIONAL - METADATA INITAL VALUES
 
