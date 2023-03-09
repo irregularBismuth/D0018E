@@ -97,7 +97,27 @@ function search() {
             ?>
             
              
-        </div>            
+        </div>
+        <div class="rating">
+            <form action="rate" action="rating.php">
+                <div class="star-rating">
+                <input type="radio" name="rating" value="1" required><i></i>
+                <input type="radio" name="rating" value="2"><i></i>
+                <input type="radio" name="rating" value="3"><i></i>
+                <input type="radio" name="rating" value="4"><i></i>
+                <input type="radio" name="rating" value="5"><i></i>
+                </div>
+            <input type="submit" name="submit_review" value="Submit Review">
+            <?php
+                $rquer="SELECT AVG(rating) AS avg_rating FROM reviews WHERE animal_id = :x"
+                $sqlHandler->half_genericQuery($rquer,1,$arr);
+                $rez=$sqlHandler->s->fetchAll();
+                echo"$rez[AVG(rating)]"
+
+            ?>   
+        </div>
+
+       
     <div>
 
 
