@@ -184,8 +184,11 @@ class TransactionalHandler{
                     $animal_id = $product_data['animal_id'];
 
                     $sql_order_info = "INSERT INTO order_info SET order_id=:x, product_id=:y";
+                    $query_remove = "DELETE FROM animals WHERE animal_id=:x";
                     $order_param = array($session_order_id, $animal_id);
+                    $remove_param = array($animal_id);
                     $this->sqlConnector->half_genericQuery($sql_order_info, 2, $order_param)->execute();
+                    $this->sqlConnector->half_genericQuery($query_remove, 1, $remove_param)->execute();
                 }
 
                 //###############################################################################
@@ -198,6 +201,8 @@ class TransactionalHandler{
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
                 $balance_param = array($updated_balance, $userid);
                 $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
+
+                //###############################################################################
                 
                 $sqlTransaction->commit();
                 
