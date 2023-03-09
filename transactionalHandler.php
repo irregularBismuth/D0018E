@@ -136,9 +136,9 @@ class TransactionalHandler{
             else {
             //2. EXEC TRANSACTION 
             $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']);
-
-            }
             header('location: '.$_SERVER['REQUEST_URI']); 
+            }
+          
         }
 
     }
