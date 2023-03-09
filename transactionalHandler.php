@@ -163,22 +163,13 @@ class TransactionalHandler{
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
                 //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
-               
-
-                for ($i = 0 ; $i < count($product_ids) ; $i++){
-
-                    $sql_order_info = "INSERT INTO order_info SET order_id=transactional.order_id, product_id=:x";
-                    $order_param = array($product_ids);
-                    
-                }
 
                 // transactional amount 
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
                 $userid_param = array($userid);
-                $output = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
+                $current_balance = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
                 
-                
-                $current_balance = $output->fetchColumn();                
+                              
                 $transactional_amount = $total_amount;
                 $transaction_comment = "";
 
@@ -187,6 +178,22 @@ class TransactionalHandler{
                     echo $transaction_comment;
                     return false;  
                 }
+
+                //###############################################################################
+                $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
+                $order_param = array($userid);
+                $session_order_id = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
+                          
+                foreach($product_ids as $product_id){
+                    $product_data = $this->getProductData($product_id)[0]; 
+                    $animal_id = $product_data['animal_id'];
+
+                    $sql_order_info = "INSERT INTO order_info SET order_id=:x, product_id=:y";
+                    $order_param = array($session_order_id, $animal_id);
+                    
+                }
+
+                //###############################################################################
                 $updated_balance = $current_balance - $total_amount;
 
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
