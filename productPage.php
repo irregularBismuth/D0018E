@@ -91,8 +91,9 @@ $row_count = count($animals['image']);
                         
             }
 
-            if (isset($_POST['checkout'])){
-                
+            if (isset($_POST['checkoutButton'])){
+                require_once("transactionalHandler.php");
+                $transactionalHandler->checkoutOrderPlaced();
             } 
 
             if (isset($_POST['submit_balance'])){
