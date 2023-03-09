@@ -204,7 +204,6 @@ class TransactionalHandler{
                 $balance_param = array($updated_balance, $userid);
                 $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
                 
-
                 $sqlTransaction->commit();
                 
             } catch (PDOException $e){
