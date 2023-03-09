@@ -105,7 +105,7 @@ function search() {
             
              
         </div>
-        <div class="rating">
+  <!--      <div class="rating">
             <form action="rate" action="rating.php">
                 <div class="star-rating">
                 <input type="radio" name="rating" value="1" required><i></i>
@@ -123,7 +123,7 @@ function search() {
 
             ?>   
         </div>
-
+-->
        
     <div>
 
