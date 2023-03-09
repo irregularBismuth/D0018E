@@ -70,7 +70,14 @@ function search() {
 </div>
 
     <div id="livesearch" class="livesearch"></div>
+    <?php 
+      
+      if($_SESSION['admin']==1)
+      {
+         echo "<form action='delete.php' method='post'><input type='submit'></form>";   
+      }
 
+    ?>
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
@@ -109,10 +116,10 @@ function search() {
                 </div>
             <input type="submit" name="submit_review" value="Submit Review">
             <?php
-                $rquer="SELECT AVG(rating) AS avg_rating FROM reviews WHERE animal_id = :x"
+                $rquer="SELECT AVG(rating) AS avg_rating FROM reviews WHERE animal_id = :x";
                 $sqlHandler->half_genericQuery($rquer,1,$arr);
                 $rez=$sqlHandler->s->fetchAll();
-                echo"$rez[AVG(rating)]"
+                echo"$rez[AVG(rating)]";
 
             ?>   
         </div>

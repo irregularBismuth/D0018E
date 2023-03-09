@@ -122,6 +122,7 @@ class TransactionalHandler{
         echo '<button type="submit" name="checkoutButton" value="checkout" >checkout ';
         echo '</button>';
         echo '</form>'; 
+
         //$this->checkoutOrderPlaced();
     }
 
