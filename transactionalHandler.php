@@ -169,9 +169,9 @@ class TransactionalHandler{
                 $balance_param = array($updated_balance, $userid);
                 $output = $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param);
 
-                // INSERT INTO TRANSACTIONAL - ITERATE THROUGH PRODUCT CART IDS
-                // 1. $product_ids argument for accessing products ids from cart 
-                // 2. Should I insert as separate rows in the table or how do I reference multiple produdct ids in the same table????
+                // INSERT INTO TRANSACTIONAL - METADATA INITAL VALUES
+
+                $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount) VALUES (:x, :y, :z)";
 
                 for ($i = 0 ; $i < count($product_ids) ; $i++){
 
