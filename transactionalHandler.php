@@ -153,8 +153,8 @@ class TransactionalHandler{
     public function execTransaction($userid, $product_ids, $total_amount){
         /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
     
+            $sqlTransaction = $this->sqlConnector->get_db_connector();
             try {
-                $sqlTransaction = $this->sqlConnector->get_db_connector();
                 //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
 
@@ -209,7 +209,7 @@ class TransactionalHandler{
             } catch (PDOException $e){
 
                 echo "<p>".$transaction_comment."</p>";
-                $this->sqlConnector->get_db_connector()->rollback();
+                $sqlTransaction->rollback();
                 die($e->getMessage());
             }
     } 
