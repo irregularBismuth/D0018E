@@ -89,6 +89,10 @@ $row_count = count($animals['image']);
                 $transactionalHandler->addButtonClickAction();
                 header("location: ".$_SERVER['REQUEST_URI']);      
                         
+            }
+
+            if (isset($_POST['checkout'])){
+                
             } 
 
             if (isset($_POST['submit_balance'])){
