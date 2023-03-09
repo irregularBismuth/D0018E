@@ -175,8 +175,12 @@ class TransactionalHandler{
 
                 for ($i = 0 ; $i < count($product_ids) ; $i++){
 
-                    $sql_query = "INSERT INTO transactional (animal.animal_id =:x";
+                    $sql_order_info = "INSERT INTO order_info (order_id, product_id) VALUES (:x, :y)";
+                    $order_param = array($userid, $product_ids);
+                    
                 }
+
+                
 
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $param_array = $this->product_cart;
