@@ -53,6 +53,7 @@ class TransactionalHandler{
             
             if(isset($_SESSION['product_cart'])){
                 array_push($_SESSION['product_cart'], $product_id);
+                array_unique($_SESSION['product_cart']); // removing duplicates
                 $this->product_cart = $_SESSION['product_cart'];
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
@@ -149,26 +150,25 @@ class TransactionalHandler{
     }
 
     public function insertTransactionalMetadata($userid){
-            $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, :y, :z)"; 
+            $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, (SELECT id from users WHERE id=:y), :z)"; 
             $t_param = array(0, $userid, "no status");
             $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param);
             $output->execute();
     }
     
     public function execTransaction($userid, $product_ids, $total_amount){
-        /* */
+        /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
     
             try {
                 $sqlTransaction = $this->sqlConnector->get_db_connector();
-                $sqlTransaction->exec('PRAGMA foregin_keys = ON');
+                //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
-
                
 
                 for ($i = 0 ; $i < count($product_ids) ; $i++){
 
-                    $sql_order_info = "INSERT INTO order_info (order_id, product_id) VALUES (:x, :y)";
-                    $order_param = array($userid, $product_ids);
+                    $sql_order_info = "INSERT INTO order_info SET order_id=transactional.order_id, product_id=:x";
+                    $order_param = array($product_ids);
                     
                 }
 
