@@ -184,7 +184,7 @@ class TransactionalHandler{
 
                 $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
                 $param_array = $this->product_cart;
-                $this->sqlConnector->half_genericQuery($sql_query, 1, $param_array);
+                $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
 
                 // LOGIC FOR (1) TO PERFORM
 
