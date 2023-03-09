@@ -133,9 +133,10 @@ class TransactionalHandler{
                 echo "<p>Need to login to complete purchase!</p>";
                 echo '<a href="login.php"> Login here! </a>';
             }
-            else {
-            //2. EXEC TRANSACTION 
-            $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']); 
+
+            else if (isset($_SESSION['id'])) {
+                //2. EXEC TRANSACTION 
+                $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']); 
             }
           
         }
@@ -171,7 +172,7 @@ class TransactionalHandler{
 
                 if ($current_balance < $transactional_amount){
                     $transaction_comment = "not enough money, add more!";
-                    echo "<p>".$transaction_comment."</p>";
+                    //echo "<p>".$transaction_comment."</p>";
                     return false;  
                 }
 
