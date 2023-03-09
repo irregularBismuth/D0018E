@@ -53,7 +53,7 @@ class TransactionalHandler{
             
             if(isset($_SESSION['product_cart'])){
                 array_push($_SESSION['product_cart'], $product_id);
-                array_unique($_SESSION['product_cart']); // removing duplicates
+                $_SESSION['product_cart'] = array_unique($_SESSION['product_cart']); // removing duplicates
                 $this->product_cart = $_SESSION['product_cart'];
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
