@@ -147,7 +147,7 @@ class TransactionalHandler{
             $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, (SELECT id from users WHERE id=:y), :z, :w)"; 
             $t_param = array(0, $userid, 0, "no status");
             $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 4, $t_param);
-            $output->execute();
+            $output->s->execute();
     }
     
     public function execTransaction($userid, $product_ids, $total_amount){
@@ -161,6 +161,7 @@ class TransactionalHandler{
 
                 //###############################################################################
                 $this->insertTransactionalMetadata($userid);
+                $this->sqlConnector->s->closeCursor();;
                 
                 // CHECK IF BALANCE IS ENOUGH!  
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
@@ -168,7 +169,7 @@ class TransactionalHandler{
                 $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
 
                 $current_balance = $this->sqlConnector->s->fetchColumn();
-                
+                $this->sqlConnector->s->closeCursor();;
                                 
                 $transactional_amount = $total_amount;
                 $transaction_comment = "order confirmed!";
@@ -183,6 +184,7 @@ class TransactionalHandler{
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
                 $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
                 $session_order_id = $this->sqlConnector->s->fetchColumn();
+                $this->sqlConnector->s->closeCursor();;
 
                 foreach($product_ids as $product_id){
                     $product_data = $this->getProductData($product_id)[0]; 
@@ -194,9 +196,10 @@ class TransactionalHandler{
                     $remove_param = array($animal_id);
                     $this->sqlConnector->half_genericQuery($sql_order_info, 2, $order_param);
                     $this->sqlConnector->s->execute();
-
+                    $this->sqlConnector->s->closeCursor();;
                     $this->sqlConnector->half_genericQuery($query_remove, 1, $remove_param);
                     $this->sqlConnector->s->execute();
+                    $this->sqlConnector->s->closeCursor();;
                 }
 
                 //###############################################################################
@@ -204,6 +207,7 @@ class TransactionalHandler{
                 $transac_param = array(1, $transactional_amount, $transaction_comment);
                 $this->sqlConnector->half_genericQuery($sql_update_transaction, 2, $transac_param);
                 $this->sqlConnector->s->execute();
+                $this->sqlConnector->s->closeCursor();;
 
                 //###############################################################################
                 $updated_balance = $current_balance - $total_amount;
