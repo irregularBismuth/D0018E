@@ -203,20 +203,7 @@ class TransactionalHandler{
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
                 $balance_param = array($updated_balance, $userid);
                 $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
-
-                // INSERT INTO TRANSACTIONAL - METADATA INITAL VALUES
-
-               
-
                 
-
-                $sql_transactional_query = "SELECT * FROM transactional JOIN animals ON transactional.product_id = animals.animal_id WHERE transactional.order_id =:x";
-                $param_array = $this->product_cart;
-                $this->sqlConnector->half_genericQuery($sql_transactional_query, 1, $param_array);
-
-                // LOGIC FOR (1) TO PERFORM
-
-                // UPDATE SET QUERY - step 2
 
                 $sqlTransaction->commit();
                 
