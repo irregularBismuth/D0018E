@@ -74,7 +74,7 @@ function search() {
       
       if($_SESSION['admin']==1)
       {
-         echo "<form action='delete.php' method='post'><input type='submit'></form>";   
+         echo "<form action='delete.php' method='post'><input value='Delete post' type='submit'></form>";   
       } 
 
     ?>
