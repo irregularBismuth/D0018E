@@ -51,6 +51,7 @@ class TransactionalHandler{
             }
             
             if(isset($_SESSION['product_cart'])){
+                
                 array_push($_SESSION['product_cart'], $product_id);
                 $_SESSION['product_cart'] = array_unique($_SESSION['product_cart']); // removing duplicates
                 $this->product_cart = $_SESSION['product_cart'];
@@ -61,6 +62,10 @@ class TransactionalHandler{
 
             header('location: '.$_SERVER['REQUEST_URI']); 
         }
+    }
+
+    function checkProductQuantity(){
+        
     }
     
     function generateCartDisplay(){
@@ -84,6 +89,7 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
+                echo '<input type="hidden" name=product_quantity value='.$product_data["animal_quantity"].'/>';
                 echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
                 echo '</form>';
