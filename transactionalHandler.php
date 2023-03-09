@@ -150,9 +150,9 @@ class TransactionalHandler{
     }
 
     public function insertTransactionalMetadata($userid){
-            $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, (SELECT id from users WHERE id=:y), :z)"; 
-            $t_param = array(0, $userid, "no status");
-            $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param);
+            $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, (SELECT id from users WHERE id=:y), :z, :w)"; 
+            $t_param = array(0, $userid, 0, "no status");
+            $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 4, $t_param);
             $output->execute();
     }
     
@@ -164,12 +164,13 @@ class TransactionalHandler{
                 //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
 
-                // transactional amount 
+                //###############################################################################
+                
+                // CHECK IF BALANCE IS ENOUGH!  
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
                 $userid_param = array($userid);
                 $current_balance = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
-                
-                              
+                                
                 $transactional_amount = $total_amount;
                 $transaction_comment = "";
 
@@ -190,12 +191,11 @@ class TransactionalHandler{
 
                     $sql_order_info = "INSERT INTO order_info SET order_id=:x, product_id=:y";
                     $order_param = array($session_order_id, $animal_id);
-                    
+                    $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
                 }
 
                 //###############################################################################
                 $updated_balance = $current_balance - $total_amount;
-
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
                 $balance_param = array($updated_balance, $userid);
                 $output = $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param);
