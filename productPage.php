@@ -65,7 +65,7 @@ $row_count = count($animals['image']);
                                             <li>
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
-                                                <input type="number" name="quantity_add" value='.$product_quantity.'>
+                                                <input type="number" name="quantity_add" value='.$product_quantity.' min="1">
                                                 <input type="submit" name="addButton" class="button" value="add" />   
                                                 <input type="submit" name="infoButton" class="button" value="info" /> 
                                             </form> 
