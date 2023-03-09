@@ -208,6 +208,8 @@ class TransactionalHandler{
                 $sqlTransaction->commit();
                 
             } catch (PDOException $e){
+
+                echo "<p>".$transaction_comment."</p>";
                 $this->sqlConnector->get_db_connector()->rollback();
                 die($e->getMessage());
             }
