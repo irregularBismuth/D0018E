@@ -70,14 +70,7 @@ function search() {
 </div>
 
     <div id="livesearch" class="livesearch"></div>
-    <?php 
-      
-/*    if($_SESSION['admin']==1)
-      {
-         echo "<form action='delete.php' method='post'><input type='submit'></form>";   
-      } */
 
-    ?>
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
@@ -104,10 +97,10 @@ function search() {
             ?>
             
              
-        </div>
-       
+        </div>            
     <div>
 
 
 </body>
 </html> 
+
