@@ -129,16 +129,31 @@ class TransactionalHandler{
         //1. Need to be logged in to place order - CHECK
         if(isset($_POST['checkoutButton'])){
 
-            if(!isset($_SESSION['username'])){
+            if(!isset($_SESSION['id'])){
                 echo "<p>Need to login to complete purchase!</p>";
                 echo '<a href="login.php"> Login here! </a>';
             }
             else {
             //2. EXEC TRANSACTION 
-            $this->execTransaction($_SESSION['username'],$_SESSION['product_cart'], $_SESSION['product_total']);
+            $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']);
 
             }
         }
+        else if(!isset($_POST['checkoutButton'])) {
+            // INSERT META DATA HERE IF checkoutButton is not set
+            if (isset($_SESSION['id'])){
+                $this->insertTransactionalMetadata($_SESSION['id']);
+            }
+        }
+
+    }
+
+    public function insertTransactionalMetadata($userid){
+            // SELECT WHERE QUERY - step 1
+            $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, :y, :z)"; 
+            $t_param = array(0, $userid, "no status");
+            $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param);
+            $output->execute();
     }
     
     public function execTransaction($userid, $product_ids, $total_amount){
@@ -149,18 +164,28 @@ class TransactionalHandler{
                 $sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
 
-                // SELECT WHERE QUERY - step 1
                
+
+                for ($i = 0 ; $i < count($product_ids) ; $i++){
+
+                    $sql_order_info = "INSERT INTO order_info (order_id, product_id) VALUES (:x, :y)";
+                    $order_param = array($userid, $product_ids);
+                    
+                }
+
                 // transactional amount 
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
                 $userid_param = array($userid);
                 $output = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
                 
+                
                 $current_balance = $output->fetchColumn();                
                 $transactional_amount = $total_amount;
+                $transaction_comment = "";
 
                 if ($current_balance < $transactional_amount){
-                    echo "not enough money, add more!";
+                    $transaction_comment = "not enough money, add more!";
+                    echo $transaction_comment;
                     return false;  
                 }
                 $updated_balance = $current_balance - $total_amount;
@@ -171,14 +196,7 @@ class TransactionalHandler{
 
                 // INSERT INTO TRANSACTIONAL - METADATA INITAL VALUES
 
-                $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount) VALUES (:x, :y, :z)";
-
-                for ($i = 0 ; $i < count($product_ids) ; $i++){
-
-                    $sql_order_info = "INSERT INTO order_info (order_id, product_id) VALUES (:x, :y)";
-                    $order_param = array($userid, $product_ids);
-                    
-                }
+               
 
                 
 
