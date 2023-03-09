@@ -152,8 +152,7 @@ class TransactionalHandler{
     
     public function execTransaction($userid, $product_ids, $total_amount){
         /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
-            require_once('sqlHandler.php');
-            $sqlTransaction = $sqlHandler->get_db_connector();
+            $sqlTransaction = $this->sqlConnector->get_db_connector();
             
             try {
                 //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
