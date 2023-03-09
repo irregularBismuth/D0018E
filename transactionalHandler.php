@@ -149,7 +149,6 @@ class TransactionalHandler{
     }
 
     public function insertTransactionalMetadata($userid){
-            // SELECT WHERE QUERY - step 1
             $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, :y, :z)"; 
             $t_param = array(0, $userid, "no status");
             $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param);
