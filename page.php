@@ -72,10 +72,10 @@ function search() {
     <div id="livesearch" class="livesearch"></div>
     <?php 
       
-/*    if($_SESSION['admin']==1)
+      if($_SESSION['admin']==1)
       {
          echo "<form action='delete.php' method='post'><input type='submit'></form>";   
-      } */
+      } 
 
     ?>
     <div class="producten">
