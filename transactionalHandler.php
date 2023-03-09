@@ -135,8 +135,7 @@ class TransactionalHandler{
             }
             else {
             //2. EXEC TRANSACTION 
-            $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']);
-            header('location: '.$_SERVER['REQUEST_URI']); 
+            $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']); 
             }
           
         }
@@ -154,6 +153,7 @@ class TransactionalHandler{
         /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
             require_once('sqlHandler.php');
             $sqlTransaction = $sqlHandler->get_db_connector();
+            
             try {
                 //$sqlTransaction->exec('PRAGMA foregin_keys = ON');
                 $sqlTransaction->beginTransaction();
