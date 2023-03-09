@@ -161,7 +161,7 @@ class TransactionalHandler{
 
                 //###############################################################################
                 $this->insertTransactionalMetadata($userid);
-                $this->sqlConnector->s->closeCursor();;
+                $this->sqlConnector->s->closeCursor();
                 
                 // CHECK IF BALANCE IS ENOUGH!  
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
