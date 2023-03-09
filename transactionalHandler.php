@@ -125,7 +125,7 @@ class TransactionalHandler{
         $this->checkoutOrderPlaced();
     }
 
-    function checkoutOrderPlaced(){
+    public function checkoutOrderPlaced(){
         //1. Need to be logged in to place order - CHECK
         if(isset($_POST['checkoutButton'])){
 
