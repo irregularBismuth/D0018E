@@ -181,8 +181,9 @@ class TransactionalHandler{
 
                 //###############################################################################
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
-                $session_order_id = $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param)->fetchColumn();
-                          
+                $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+                $session_order_id = $this->sqlConnector->s->fetchColumn();
+
                 foreach($product_ids as $product_id){
                     $product_data = $this->getProductData($product_id)[0]; 
                     $animal_id = $product_data['animal_id'];
@@ -191,20 +192,25 @@ class TransactionalHandler{
                     $query_remove = "DELETE FROM animals WHERE animal_id=:x";
                     $order_param = array($session_order_id, $animal_id);
                     $remove_param = array($animal_id);
-                    $this->sqlConnector->half_genericQuery($sql_order_info, 2, $order_param)->execute();
-                    $this->sqlConnector->half_genericQuery($query_remove, 1, $remove_param)->execute();
+                    $this->sqlConnector->half_genericQuery($sql_order_info, 2, $order_param);
+                    $this->sqlConnector->s->execute();
+
+                    $this->sqlConnector->half_genericQuery($query_remove, 1, $remove_param);
+                    $this->sqlConnector->s->execute();
                 }
 
                 //###############################################################################
                 $sql_update_transaction = "UPDATE transactional SET shoppingCart_bool=:x, transactional_amount=:y, comment=:z" ;                
                 $transac_param = array(1, $transactional_amount, $transaction_comment);
-                $this->sqlConnector->half_genericQuery($sql_update_transaction, 2, $transac_param)->execute();
+                $this->sqlConnector->half_genericQuery($sql_update_transaction, 2, $transac_param);
+                $this->sqlConnector->s->execute();
 
                 //###############################################################################
                 $updated_balance = $current_balance - $total_amount;
                 $sql_subtract_balance = "UPDATE users SET balance = :x WHERE id =:y";
                 $balance_param = array($updated_balance, $userid);
-                $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param)->execute();
+                $this->sqlConnector->half_genericQuery($sql_subtract_balance, 2, $balance_param);
+                $this->sqlConnector->s->execute();
 
                 //###############################################################################
                 
