@@ -165,9 +165,9 @@ class TransactionalHandler{
                 // CHECK IF BALANCE IS ENOUGH!  
                 $query_balance = "SELECT balance FROM users WHERE id=:x";
                 $userid_param = array($userid);
-                $current_balance = $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param)->fetchColumn();
+                $this->sqlConnector->half_genericQuery($query_balance, 1, $userid_param);
 
-                $this->sqlConnector->s->fetchColumn();
+                $current_balance = $this->sqlConnector->s->fetchColumn();
                 
                                 
                 $transactional_amount = $total_amount;
