@@ -109,7 +109,7 @@ class TransactionalHandler{
             */
             
             if (isset($_SESSION['product_cart'])){
-                $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
+                $product_ids = $_SESSION['product_cart']; // check the [0] index!  
              
                 echo (var_dump($_SESSION['product_cart']['product_id']));
            
