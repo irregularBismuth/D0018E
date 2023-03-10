@@ -211,8 +211,7 @@ class TransactionalHandler{
     public function insertTransactionalMetadata($userid){
             $sql_metadata_transactional = "INSERT INTO transactional (shoppingCart_bool, customer_id, transactional_amount, comment) VALUES (:x, :y, :z, :w)"; 
             $t_param = array(0, $userid, 0, "no status");
-            $output = $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 4, $t_param);
-    
+            $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 4, $t_param); 
     }
     
     public function execTransaction($userid, $product_ids, $total_amount){
