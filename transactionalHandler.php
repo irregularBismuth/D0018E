@@ -87,10 +87,10 @@ class TransactionalHandler{
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
                 $userid_param = array($_SESSION['id']);
                 $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-                $session_order_id = $this->sqlConnector->s->fetch();
+                $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_order_id, $product_id, 1);
+                $param_insert = array($session_order_id['order_id'], $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
                 $this->sqlConnector->s->execute(); 
             }
@@ -104,10 +104,10 @@ class TransactionalHandler{
             $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
             $userid_param = array($_SESSION['id']);
             $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-            $session_order_id = $this->sqlConnector->s->fetch();
+            $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
 
-            $product_ids = $this->getProductCart($session_order_id); // check the [0] index!  
+            $product_ids = $this->getProductCart($session_order_id['order_id']); // check the [0] index!  
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
