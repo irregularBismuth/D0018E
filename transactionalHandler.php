@@ -93,7 +93,7 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
 
                 
-                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] < $items['animal_quantity']){
+                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <= $items['animal_quantity']){
                     
                     $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
                     array_push($_SESSION['product_cart']['order_quantity'], $product_id);
