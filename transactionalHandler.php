@@ -68,16 +68,14 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
-
+            $query_products = "SELECT * FROM animals WHERE animal_id=:x";
+            $animal_param = array($product_id);
+            $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
+            $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+            
             if(!isset($_SESSION['product_cart'])){
                 
                 $this->insertTransactionalMetadata($_SESSION['id']);
-
-                $query_products = "SELECT * FROM animals WHERE animal_id=:x";
-                $animal_param = array($product_id);
-                $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
-                $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
-        
 
                 $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
                 $userid_param = array($_SESSION['id']);
@@ -95,7 +93,8 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
 
                 
-                if(in_array($product_id, $_SESSION['product_cart']['product_id'])){
+                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <$items['animal_quantity']){
+                    
                     array_push($_SESSION['product_cart']['product_id'], $product_id);
                     $update_quantity = $products['order_quantity'] + 1;
                     $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
