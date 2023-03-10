@@ -47,30 +47,30 @@ class TransactionalHandler{
     $product_id=$_POST['product_id'];
     // Check if the customer already has a cart
     $cart_query = "SELECT * FROM cart WHERE customer_id = :x";
-    $cart_data = $sqlHandler->half_genericQuery($cart_query, 1, array($customer_id));
+    $cart_data = $this->sqlConnector->half_genericQuery($cart_query, 1, array($customer_id));
 
     if (empty($cart_data)) {
         // If the customer does not have a cart, create one
         $cart_insert_query = "INSERT INTO cart (customer_id) VALUES (:x)";
-        $sqlHandler->half_genericQuery($cart_insert_query, 1, array($customer_id));
-        $cart_id = $sqlHandler->getLastInsertedID();
+        $this->sqlConnector->half_genericQuery($cart_insert_query, 1, array($customer_id));
+        $cart_id = $this->sqlConnector->getLastInsertedID();
     } else {
         $cart_id = $cart_data[0]['id'];
     }
 
     // Check if the product already exists in the cart
     $cart_item_query = "SELECT * FROM cart_item WHERE cart_id = :x AND product_id = :y";
-    $cart_item_data = $sqlHandler->half_genericQuery($cart_item_query, 2, array($cart_id, $product_id));
+    $cart_item_data = $this->sqlConnector->half_genericQuery($cart_item_query, 2, array($cart_id, $product_id));
 
     if (empty($cart_item_data)) {
         // If the product does not exist in the cart, add it
         $cart_item_insert_query = "INSERT INTO cart_item (cart_id, product_id, quantity, price) VALUES (:x, :y, :z, :w)";
-        $sqlHandler->half_genericQuery($cart_item_insert_query, 4, array($cart_id, $product_id, $quantity, $price_per_item));
+        $this->sqlConnector->half_genericQuery($cart_item_insert_query, 4, array($cart_id, $product_id, $quantity, $price_per_item));
     } else {
         // If the product already exists in the cart, update its quantity
         $new_quantity = $cart_item_data[0]['quantity'] + $quantity;
         $cart_item_update_query = "UPDATE cart_item SET quantity = :x WHERE cart_id = :y AND product_id = :z";
-        $sqlHandler->half_genericQuery($cart_item_update_query, 3, array($new_quantity, $cart_id, $product_id));
+        $this->sqlConnector->half_genericQuery($cart_item_update_query, 3, array($new_quantity, $cart_id, $product_id));
     }
 } 
        /* $quer="select * from cart where customer_id = :x";
