@@ -66,19 +66,14 @@ $row_count = count($animals['image']);
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="submit" name="addButton" class="button" value="add" />   
-                                                <input type="submit" name="infoButton" class="button" value="info" /> 
+                                                <a href=page.php?a='.$animalArray['animal_id'].'><input type="submit" name="infoButton" class="button" value="info" /> 
                                             </form> 
                                             </li>
                                         </ul>
                                     </div>            
                                 </div>
                                </div>
-                                <br> 
-                                <div class="section3">
-                                    Section3...
-                                </div>
-                                
-                                <div class="section4">...</div>
+                                <br>    
                         </div>
                         <br>';
                     
