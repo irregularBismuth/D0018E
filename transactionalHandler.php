@@ -63,7 +63,7 @@ class TransactionalHandler{
                 $param_insert = array($session_transactional['order_id'], $items['animal_id'], 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
 
-                $_SESSION['product_cart'] = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1);
+                $_SESSION['product_cart'][] = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1);
             }
             
             if(isset($_SESSION['product_cart'])){
@@ -117,7 +117,7 @@ class TransactionalHandler{
             $subtotal = 0;
             
             foreach($cart_items as $cart_item){
-                $product_data = $this->getProductItems($cart_item)[0];
+                $product_data = $this->getProductItems($cart_item);
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo var_dump($product_data);
