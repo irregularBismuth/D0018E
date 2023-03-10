@@ -90,7 +90,7 @@ class TransactionalHandler{
                 $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_order_id, $product_id, $products['order_quantity']);
+                $param_insert = array($session_order_id, $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
                 $this->sqlConnector->s->execute(); 
             }
