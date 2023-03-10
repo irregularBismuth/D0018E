@@ -66,7 +66,7 @@ class TransactionalHandler{
                 
                 $animal_data = $this->getProductItems($product_id);
                 
-                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] < $animal_data['animal_quantity']){
+                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <= $animal_data['animal_quantity']){
                     
                     $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
                     $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
