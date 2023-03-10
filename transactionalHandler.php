@@ -78,7 +78,7 @@ class TransactionalHandler{
                 $update_quantity = $products['order_quantity'] + 1;
                 $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                 $param_update = array($update_quantity, $product_id);
-                $this->sqlConnector->half_genericQuery($product_query, 2, $param_update);
+                $this->sqlConnector->half_genericQuery($update_query, 2, $param_update);
                 $this->sqlConnector->s->execute();
             }
             else {
@@ -87,7 +87,7 @@ class TransactionalHandler{
                 $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
                 $userid_param = array($_SESSION['id']);
                 $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-                $session_order_id = $this->sqlConnector->s->fetchColumn();
+                $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
                 $param_insert = array($session_order_id, $product_id, $products['order_quantity']);
