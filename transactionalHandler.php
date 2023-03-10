@@ -40,7 +40,7 @@ class TransactionalHandler{
             }
     }
 
-    function addButtonClickAction(){
+    /*function addButtonClickAction(){
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
@@ -62,6 +62,16 @@ class TransactionalHandler{
 
             header('location: '.$_SERVER['REQUEST_URI']); 
         }
+    }*/
+
+    function addButtonClickAction(){
+        if(isset($_POST['addButton'])){
+            $product_id = $_POST['product_id'];
+            $this->product_id = $product_id;
+
+            
+        } 
+        
     }
 
     function checkProductQuantity(){
