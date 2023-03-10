@@ -96,6 +96,9 @@ class TransactionalHandler{
                 echo '<button type="submit" name="removeButton" value="remove">';
                 echo '<img src=../images/remove_icon.jpg>';
                 echo '</button>';
+                echo '<button type="submit" name="addQuantity" value="addquantity">';
+                echo '<img src=../images/add_icon.png>';
+                echo '</button>';
                 echo '</li>';
                 echo '</form>';
                 echo '<li class="submenu_item">';
