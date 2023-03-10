@@ -115,7 +115,7 @@ class TransactionalHandler{
            
             $subtotal = 0;
             foreach($product_ids as $product_id){
-                $product_data = $this->getProductItems($product_id)[1];
+                $product_data = $this->getProductItems($product_id)[0];
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
