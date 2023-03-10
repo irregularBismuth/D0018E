@@ -71,28 +71,37 @@ class TransactionalHandler{
 
             if(!isset($_SESSION['product_cart'])){
                 
-                //$this->insertTransactionalMetadata($_SESSION['id']);
+                $this->insertTransactionalMetadata($_SESSION['id']);
 
                 $query_products = "SELECT * FROM animals WHERE animal_id=:x";
                 $animal_param = array($product_id);
                 $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
                 $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
-                $_SESSION['product_cart'] = array('product_id'=>$product_id , 'animal_name'=>$items['animal_name'], 'animal_price'=>$items['animal_price'], 'animal_image'=>$items['animal_image'], 'animal_quantity'=>$items['animal_quantity']);
 
+                $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
+                $userid_param = array($_SESSION['id']);
+                $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+                $session_transactional = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+                
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_order_id['order_id'], $product_id, 1);
+                $param_insert = array($session_transactional['order_id'], $items['animal_id'], 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
+
+                $_SESSION['product_cart'] = array('product_id'=>$items['animal_id'], 'order_id'=>$s , 'order_quantity'=>$items['animal_quantity']);
 
             }
             
             if(isset($_SESSION['product_cart'])){
 
-                array_push($_SESSION['product_cart'], $product_id);
-                $update_quantity = $products['order_quantity'] + 1;
-                $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
-                $param_update = array($update_quantity, $product_id);
-                $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
+                
+                if(in_array($product_id, $_SESSION['product_cart']['product_id'])){
+                    array_push($_SESSION['product_cart']['product_id'], $product_id);
+                    $update_quantity = $products['order_quantity'] + 1;
+                    $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
+                    $param_update = array($update_quantity, $product_id);
+                    $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
+                }
      
                 if(!in_array($product_id, $_SESSION['product_cart'])){
                     
