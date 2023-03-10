@@ -108,7 +108,7 @@ class TransactionalHandler{
             
 
             $product_ids = $this->getProductCart($session_order_id); // check the [0] index! 
-            echo $product_ids; 
+            echo $product_ids[0]; 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
@@ -164,7 +164,7 @@ class TransactionalHandler{
     }
 
     function getProductCart($order_id){
-        $query = "SELECT * FROM order_info WHERE order_id=:x";
+        $query = "SELECT product_id FROM order_info WHERE order_id=:x";
         $param_array = array($order_id);
         $this->sqlConnector->half_genericQuery($query, 1, $param_array);
         $output = $this->sqlConnector->s->fetchAll();
