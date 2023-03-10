@@ -35,6 +35,7 @@ $row_count = count($animals['image']);
         </header>
         </div>
        <br> 
+
         <?php
                        
             function generateBoxFrames($countRow, $animalArray){
@@ -66,7 +67,7 @@ $row_count = count($animals['image']);
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="submit" name="addButton" class="button" value="add" />   
-                                                <input type="submit" name="infoButton" onclick="location.href=`page.php?a='.$animalArray['animal_id'][$i].'`" class="button" value="info" /> 
+                                                <a href=page.php?a='.$animalArray['animal_id'][$i].'><input type="submit" name="infoButton" class="button" value="info" /></a> 
                                             </form> 
                                             </li>
                                         </ul>
