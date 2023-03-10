@@ -75,8 +75,27 @@ class TransactionalHandler{
             $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
             if($products){
-                $update_quantity = $products['quantity'];
+                $update_quantity = $products['order_quantity'] + 1;
+                $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
+                $param_update = array($update_quantity, $product_id);
+                $this->sqlConnector->half_genericQuery($product_query, 2, $param_update);
+                $this->sqlConnector->s->execute();
             }
+            else {
+                $this->insertTransactionalMetadata($_SESSION['id']);
+
+                $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
+                $userid_param = array($_SESSION['id']);
+                $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+                $session_order_id = $this->sqlConnector->s->fetchColumn();
+        
+                $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
+                $param_insert = array($session_order_id, $product_id, $products['order_quantity']);
+                $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
+                $this->sqlConnector->s->execute(); 
+            }
+            header("Location: productPage.php");
+            exit();
         } 
         
     }
@@ -94,7 +113,7 @@ class TransactionalHandler{
            
             $subtotal = 0;
             foreach($product_ids as $product_id){
-                $product_data = $this->getProductData($product_id)[0]; // check the [0] index! 
+                $product_data = $this->getProductCart($product_id)[0]; // check the [0] index! 
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
@@ -138,10 +157,10 @@ class TransactionalHandler{
         
     }
 
-    function getProductData($product_id){
-        $query = "SELECT * FROM animals where animal_id=:x";
+    function getProductCart($product_id){
+        $query = "SELECT * FROM order_info";
         $param_array = array($product_id);
-        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
+        $this->sqlConnector->half_genericQuery($query, 0, $param_array);
         $output = $this->sqlConnector->s->fetchAll();
         return $output; 
     }
