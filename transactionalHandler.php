@@ -85,8 +85,10 @@ class TransactionalHandler{
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
                 echo '<p> product: '.$product_data["animal_name"].'</p>';
+                echo '|';
                 echo '<br>';
                 echo '<p> price: '.$product_data["animal_price"].'¥</p>';
+                echo '|';
                 echo '<p> total: '.$product_data["animal_price"]*$product_quantity.'¥</p>';
                 echo '<br>';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
