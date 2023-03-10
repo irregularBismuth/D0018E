@@ -64,7 +64,7 @@ class TransactionalHandler{
 
     if (empty($cart_item_data)) {
         // If the product does not exist in the cart, add it
-        $cart_item_insert_query = "INSERT INTO cart_item (cart_id, product_id, quantity, price_per_item) VALUES (:x, :y, :z, :w)";
+        $cart_item_insert_query = "INSERT INTO cart_item (cart_id, product_id, quantity, price) VALUES (:x, :y, :z, :w)";
         $sqlHandler->half_genericQuery($cart_item_insert_query, 4, array($cart_id, $product_id, $quantity, $price_per_item));
     } else {
         // If the product already exists in the cart, update its quantity
