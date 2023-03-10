@@ -94,8 +94,6 @@ class TransactionalHandler{
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
                 $this->sqlConnector->s->execute(); 
             }
-            header("Location: productPage.php");
-            exit();
         } 
         
     }
