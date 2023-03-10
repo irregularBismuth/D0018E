@@ -14,7 +14,7 @@ class TransactionalHandler{
     private $customer_id;
     private $product_id; 
 
-    function __construct($sqlConnectorReference)
+    function __construct(SQLHandler $sqlConnectorReference)
     {
         session_start();
         $this->product_cart = array();
