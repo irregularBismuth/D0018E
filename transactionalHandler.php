@@ -64,7 +64,6 @@ class TransactionalHandler{
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
 
                 $_SESSION['product_cart'] = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1);
-                $_SESSION['product_cart'] = $_SESSION['product_cart'];
             }
             
             if(isset($_SESSION['product_cart'])){
@@ -74,7 +73,6 @@ class TransactionalHandler{
                     
                     $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
                     $_SESSION['product_cart']['order_quantity'] =  $update_quantity;
-                    $_SESSION['product_cart'] = $_SESSION['product_cart'];
                     $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                     $param_update = array($update_quantity, $product_id);
                     $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
@@ -89,7 +87,6 @@ class TransactionalHandler{
                     $new_product = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
                     //array_push($_SESSION['product_cart']['product_id'], $product_id);
                     $_SESSION['product_cart'][] = $new_product; //[] means appending to the array
-                    $_SESSION['product_cart'] = $_SESSION['product_cart'];
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
