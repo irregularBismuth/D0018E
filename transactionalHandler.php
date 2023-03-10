@@ -73,7 +73,7 @@ class TransactionalHandler{
                 $_SESSION['product_cart'][] = array('product_id'=>$product_id);
             }
             
-            if(isset($_SESSION['product_cart'])){
+            else if(isset($_SESSION['product_cart'])){
 
                 $session_array = array_column($_SESSION['product_cart'], 'product_id');
                 
@@ -86,8 +86,9 @@ class TransactionalHandler{
 
             }
 
+            /*
             $product_query = "SELECT * FROM order_info WHERE product_id=:x";
-            $params = array($product_id);
+            $params = array($_SESSION['product_cart']['product_id']);
             $this->sqlConnector->half_genericQuery($product_query, 1, $params);
             $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
@@ -109,7 +110,7 @@ class TransactionalHandler{
                 $param_insert = array($session_order_id['order_id'], $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
             
-            }
+            }*/
         } 
         
     }
@@ -122,7 +123,8 @@ class TransactionalHandler{
             $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
-
+            
+            if (!empty($_SESSION['product_cart'])){
             $product_ids = $this->getProductCart($session_order_id['order_id']); // check the [0] index!  
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
