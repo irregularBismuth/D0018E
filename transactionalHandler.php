@@ -129,8 +129,8 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<li class="submenu_item">';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
-                echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
+                //echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
+                //echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
                 echo '</li>';
                 echo '<li class="submenu_item">';
                 echo '<button type="submit" name="removeButton" value="remove">';
