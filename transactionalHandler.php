@@ -120,9 +120,9 @@ class TransactionalHandler{
                 $product_data = $this->getProductItems($product_id);
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
+                echo var_dump($product_data);
                 echo '<pre>';
                 echo '<li class="submenu_item">';
-                echo $product_data;
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
                 echo '<p> product: '.$product_data["animal_name"].'</p>';
                 echo '|';
