@@ -111,13 +111,13 @@ class TransactionalHandler{
             if (isset($_SESSION['product_cart'])){
                 //$product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
              
-                echo (var_dump($_SESSION['product_cart']['product_id']));
            
             //$product_data = $this->getProductItems($product_id['']);
             $subtotal = 0;
+            $i = 0;
             foreach($_SESSION['product_cart'] as $product_id){
                 echo $product_id;
-                $product_data = $this->getProductItems($product_id)[0];
+                $product_data = $this->getProductItems($product_id)[$i];
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo var_dump($product_data);
@@ -152,6 +152,7 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '</li>';
                 echo '</pre>';
+                $i++;
             }
 
             $_SESSION['product_total'] = $subtotal;
