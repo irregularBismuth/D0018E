@@ -65,6 +65,7 @@ class TransactionalHandler{
     }*/
 
     function addButtonClickAction(){
+        session_start();
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
@@ -104,12 +105,13 @@ class TransactionalHandler{
      
                 if(!in_array($product_id, $_SESSION['product_cart']['product_id'])){
                     
-                    array_push($_SESSION['product_cart']['product_id'], $product_id);
                     $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
                     $param_insert = array($session_transactional['order_id'], $items['animal_id'], 1);
                     $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
 
-                    $_SESSION['product_cart'] = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
+                    $new_product = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
+                    //array_push($_SESSION['product_cart']['product_id'], $product_id);
+                    $_SESSION['product_cart'][] = $new_product; //[] means appending to the array
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
