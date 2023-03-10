@@ -49,11 +49,11 @@ class TransactionalHandler{
 
             $query_products = "SELECT * FROM animals WHERE animal_id=:x";
             $this->sqlConnector->half_genericQuery($query_products, 1, array($product_id));
-            $items = $this->sqlConnector->s->fetch();
+            $items = $this->sqlConnector->s->fetchAll();
 
             $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
             $this->sqlConnector->half_genericQuery($query_order_id, 1, array($_SESSION['id']));         
-            $session_transactional = $this->sqlConnector->s->fetch(); 
+            $session_transactional = $this->sqlConnector->s->fetchAll(); 
             
             if(!isset($_SESSION['product_cart'])){
                 
