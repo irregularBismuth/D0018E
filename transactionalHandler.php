@@ -79,6 +79,7 @@ class TransactionalHandler{
             foreach($product_ids as $product_id){
                 $product_data = $this->getProductData($product_id)[0]; // check the [0] index! 
                 $subtotal += $product_data['animal_price']; 
+                $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
                 //echo $product_id;
                 echo '<li class="submenu_item">';
@@ -89,17 +90,19 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<input type="number" name=product_quantity value="1" max='.$product_data["animal_quantity"].'min="1"/>';
+                echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
                 echo '<br>';
                 echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
                 echo '</form>';
-                echo '<p>Stock quantity: '.$product_data['animal_quantity'].'</p>';
+                echo '<br>';
+                echo '<p>Stock quantity: '.$product_quantity.'</p>';
                 echo '<hr>';
                 echo '<br>';
                 echo '</li>';
                 echo '</pre>';
             }
+
             $_SESSION['product_total'] = $subtotal;
             $this->updateCartDisplay($_POST['product_id_cart']); 
 
