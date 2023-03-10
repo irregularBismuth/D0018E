@@ -84,9 +84,11 @@ class TransactionalHandler{
                     $param_insert = array($session_transactional, $items['animal_id'], 1);
                     $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
 
-                    $new_product = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
-                    //array_push($_SESSION['product_cart']['product_id'], $product_id);
-                    $_SESSION['product_cart'][] = $new_product; //[] means appending to the array
+                    //$new_product = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
+                    array_push($_SESSION['product_cart']['product_id'], $product_id);
+                    array_push($_SESSION['product_cart']['order_id'], $session_transactional);
+                    array_push($_SESSION['product_cart']['order_quantity'], 1);
+                    //$_SESSION['product_cart'][] = $new_product; //[] means appending to the array
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
