@@ -68,8 +68,15 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
-
+            $product_query = "SELECT * FROM order_info WHERE product_id=:x";
+            $params = array($product_id);
             
+            $this->sqlConnector->half_genericQuery($product_query, 1, $params);
+            $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+            
+            if($products){
+                $update_quantity = $products['quantity'];
+            }
         } 
         
     }
