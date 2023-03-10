@@ -117,16 +117,16 @@ class TransactionalHandler{
     
     function generateCartDisplay(){
         
-        
+            /* 
             $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
             $userid_param = array($_SESSION['id']);
             $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
-            
+            */
             
             if (!empty($_SESSION['product_cart'])){
-            $product_ids = $this->getProductCart($session_order_id['order_id']); // check the [0] index!  
-            //$this->updateCartDisplay($_POST['product_id_cart']); 
+                $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
+             
            
             //$product_data = $this->getProductItems($product_id['']);
             $subtotal = 0;
@@ -135,7 +135,7 @@ class TransactionalHandler{
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
-                var_dump($_SESSION['product_cart']);
+                //var_dump($_SESSION['product_cart']);
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
                 echo '<p> product: '.$product_data["animal_name"].'</p>';
