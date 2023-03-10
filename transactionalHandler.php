@@ -85,7 +85,7 @@ class TransactionalHandler{
                     //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['product_id'], $product_id);
                     //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['order_id'], $session_transactional);
                     //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['order_quantity'], 1);
-                    $_SESSION['product_cart'][] = $new_product; //[] means appending to the array
+                    $_SESSION['product_cart'][] = $new_product; //[] means aepending to the array
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
