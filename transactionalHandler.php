@@ -96,7 +96,7 @@ class TransactionalHandler{
                 if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <= $items['animal_quantity']){
                     
                     $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
-                    array_push($_SESSION['product_cart']['order_quantity'], $product_id);
+                    $_SESSION['product_cart']['order_quantity'] =  $update_quantity;
                     $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                     $param_update = array($update_quantity, $product_id);
                     $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
