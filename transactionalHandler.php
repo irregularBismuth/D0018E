@@ -73,7 +73,7 @@ class TransactionalHandler{
                 $_SESSION['product_cart'] = array();
             }
             
-            else if(isset($_SESSION['product_cart'])){
+            if(isset($_SESSION['product_cart'])){
 
                 array_push($_SESSION['product_cart'], $product_id);
                 
