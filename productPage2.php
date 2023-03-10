@@ -84,7 +84,8 @@ $row_count = count($animals['image']);
             if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
                 require_once("transactionalHandler2.php");
-                $transactionalHandler->addToCart();
+                addToCart();      
+        //  $transactionalHandler->addToCart();
                 header("location: ".$_SERVER['REQUEST_URI']);      
                         
             }
