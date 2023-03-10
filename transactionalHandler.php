@@ -76,13 +76,14 @@ class TransactionalHandler{
                 $query_products = "SELECT * FROM animals WHERE animal_id=:x";
                 $animal_param = array($product_id);
                 $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
-                $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+                $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
+                $_SESSION['product_cart'] = array('product_id'=>$product_id , 'animal_name'=>$items['animal_name'], 'animal_price'=>$items['animal_price'], 'animal_image'=>$items['animal_image'], 'animal_quantity'=>$items['animal_quantity']);
+
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
                 $param_insert = array($session_order_id['order_id'], $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
 
-                $_SESSION['product_cart'] = array();
             }
             
             if(isset($_SESSION['product_cart'])){
