@@ -108,7 +108,7 @@ class TransactionalHandler{
             
 
             $product_ids = $this->getProductCart($session_order_id); // check the [0] index! 
-            echo $product_ids['product_id']; 
+            echo $product_ids['product_id'][0]; 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
