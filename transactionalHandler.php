@@ -65,7 +65,7 @@ class TransactionalHandler{
     }*/
 
     function addButtonClickAction(){
-        session_start();
+        //session_start();
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
@@ -118,31 +118,7 @@ class TransactionalHandler{
 
             }
 
-            /*
-            $product_query = "SELECT * FROM order_info WHERE product_id=:x";
-            $params = array($_SESSION['product_cart']['product_id']);
-            $this->sqlConnector->half_genericQuery($product_query, 1, $params);
-            $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
-            if($products){
-                $update_quantity = $products['order_quantity'] + 1;
-                $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
-                $param_update = array($update_quantity, $product_id);
-                $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
-            }
-            else {
-                $this->insertTransactionalMetadata($_SESSION['id']);
-
-                $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
-                $userid_param = array($_SESSION['id']);
-                $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-                $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
-        
-                $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_order_id['order_id'], $product_id, 1);
-                $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
-            
-            }*/
         } 
         
     }
