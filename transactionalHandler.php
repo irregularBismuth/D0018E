@@ -99,21 +99,22 @@ class TransactionalHandler{
         } 
         
     }
-
-    function checkProductQuantity(){
-        
-    }
     
     function generateCartDisplay(){
         
-        if(isset($_SESSION['product_cart'])){
-            $product_ids = $_SESSION['product_cart'];
+        
 
+            $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
+            $userid_param = array($_SESSION['id']);
+            $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+            $session_order_id = $this->sqlConnector->s->fetchColumn();
+            
+
+            $product_data = $this->getProductCart($product_id)['product_id']; // check the [0] index! 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
-            foreach($product_ids as $product_id){
-                $product_data = $this->getProductCart($product_id)[0]; // check the [0] index! 
+            foreach($product_data as $product_id){
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
@@ -152,14 +153,14 @@ class TransactionalHandler{
 
             $_SESSION['product_total'] = $subtotal;
             $this->updateCartDisplay($_POST['product_id_cart']); 
-
-        }
         
     }
 
-    function getProductCart(){
-        $query = "SELECT * FROM order_info";
-        $output = $this->sqlConnector->s->prepare($query)->fetchAll();
+    function getProductCart($order_id){
+        $query = "SELECT * FROM order_info WHERE order_id=:x";
+        $param_array = array($order_id);
+        $this->sqlConnector->half_genericQuery($query, 0, $param_array);
+        $output = $this->sqlConnector->s->fetchAll();
         return $output; 
     }
     
