@@ -68,9 +68,26 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
+
+            if(!isset($_SESSION['product_cart'])){
+                $_SESSION['product_cart'][] = array('product_id'=>$product_id);
+            }
+            
+            if(isset($_SESSION['product_cart'])){
+
+                $session_array = array_column($_SESSION['product_cart'], 'product_id');
+                
+                if(!in_array($product_id, $session_array)){
+                    
+                    $_SESSION['product_cart'][] = array('product_id'=>$product_id);
+                }
+
+                //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
+
+            }
+
             $product_query = "SELECT * FROM order_info WHERE product_id=:x";
             $params = array($product_id);
-            
             $this->sqlConnector->half_genericQuery($product_query, 1, $params);
             $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
@@ -116,7 +133,7 @@ class TransactionalHandler{
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
-                //print_r($product_ids);
+                var_dump($_SESSION['product_cart']);
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
                 echo '<p> product: '.$product_data["animal_name"].'</p>';
