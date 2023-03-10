@@ -46,7 +46,7 @@ class TransactionalHandler{
     $quantity=1;
     $product_id=$_POST['product_id'];
     // Check if the customer already has a cart
-    $cart_query = "SELECT * FROM carts WHERE customer_id = :x";
+    $cart_query = "SELECT * FROM cart WHERE customer_id = :x";
     $cart_data = $sqlHandler->half_genericQuery($cart_query, 1, array($customer_id));
 
     if (empty($cart_data)) {
