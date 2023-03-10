@@ -93,18 +93,19 @@ class TransactionalHandler{
             if(isset($_SESSION['product_cart'])){
 
                 
-                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <$items['animal_quantity']){
+                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] < $items['animal_quantity']){
                     
-                    array_push($_SESSION['product_cart']['product_id'], $product_id);
-                    $update_quantity = $products['order_quantity'] + 1;
+                    $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
+                    array_push($_SESSION['product_cart']['order_quantity'], $product_id);
                     $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                     $param_update = array($update_quantity, $product_id);
                     $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
                 }
      
-                if(!in_array($product_id, $_SESSION['product_cart'])){
+                if(!in_array($product_id, $_SESSION['product_cart']['product_id'])){
                     
-                    $_SESSION['product_cart'] = array_push($_SESSION['product_cart'],$product_id);
+                    array_push($_SESSION['product_cart']['product_id'], $product_id);
+                    //$_SESSION['product_cart'] = array_push($_SESSION['product_cart'],$product_id);
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
