@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once "sqlHandler.php";
-$delid=$_GET['comid'];
-$anmid=$_GET['aid'];
+$delid=$_POST['comid'];
+$anmid=$_POST['aid'];
 $arr=array($delid);
 $quer="delete from comments where comment_id=:x";
 $sqlHandler->half_genericQuery($quer,1,$arr);
