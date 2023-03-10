@@ -118,7 +118,7 @@ class TransactionalHandler{
             
             foreach($product_ids as $product_id){
                 echo $product_id['product_id'];
-                $product_data = $this->getProductItems($product_id);
+                $product_data = $this->getProductItems($product_id)[0];
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo var_dump($product_data);
