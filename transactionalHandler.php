@@ -69,14 +69,13 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
             $this->product_id = $product_id;
+
             $query_products = "SELECT * FROM animals WHERE animal_id=:x";
-            $animal_param = array($product_id);
-            $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
+            $this->sqlConnector->half_genericQuery($query_products, 1, array($product_id));
             $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
 
             $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
-            $userid_param = array($_SESSION['id']);
-            $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+            $this->sqlConnector->half_genericQuery($query_order_id, 1, array($_SESSION['id']));         
             $session_transactional = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC); 
             
             if(!isset($_SESSION['product_cart'])){
