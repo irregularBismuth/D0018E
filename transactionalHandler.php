@@ -157,11 +157,9 @@ class TransactionalHandler{
         
     }
 
-    function getProductCart($product_id){
+    function getProductCart(){
         $query = "SELECT * FROM order_info";
-        $param_array = array($product_id);
-        $this->sqlConnector->half_genericQuery($query, 0, $param_array);
-        $output = $this->sqlConnector->s->fetchAll();
+        $output = $this->sqlConnector->s->prepare($query)->fetchAll();
         return $output; 
     }
     
