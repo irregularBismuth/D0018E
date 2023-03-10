@@ -108,9 +108,10 @@ class TransactionalHandler{
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             */
             
-            if (!empty($_SESSION['product_cart'])){
+            if (!isset($_SESSION['product_cart'])){
                 $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
              
+                echo (var_dump($_SESSION['product_cart']));
            
             //$product_data = $this->getProductItems($product_id['']);
             $subtotal = 0;
@@ -119,7 +120,7 @@ class TransactionalHandler{
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
-                var_dump($_SESSION['product_cart']);
+                //var_dump($_SESSION['product_cart']);
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
                 echo '<p> product: '.$product_data["animal_name"].'</p>';
