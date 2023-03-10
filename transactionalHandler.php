@@ -90,7 +90,7 @@ class TransactionalHandler{
                 $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
         
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_order_id, $product_id, 1);
+                $param_insert = array($session_order_id['order_id'], $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
                 $this->sqlConnector->s->execute(); 
             }
@@ -107,7 +107,7 @@ class TransactionalHandler{
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
 
-            $product_ids = $this->getProductCart($session_order_id); // check the [0] index!  
+            $product_ids = $this->getProductCart($session_order_id['order_id']); // check the [0] index!  
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
@@ -129,8 +129,8 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<li class="submenu_item">';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
-                //echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                //echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
+                echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
+                echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
                 echo '</li>';
                 echo '<li class="submenu_item">';
                 echo '<button type="submit" name="removeButton" value="remove">';
@@ -164,7 +164,7 @@ class TransactionalHandler{
     }
 
     function getProductCart($order_id){
-        $query = "SELECT product_id FROM order_info WHERE order_id=:x";
+        $query = "SELECT order_id FROM order_info WHERE order_id=:x";
         $param_array = array($order_id);
         $this->sqlConnector->half_genericQuery($query, 1, $param_array);
         $output = $this->sqlConnector->s->fetchAll();
