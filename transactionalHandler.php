@@ -93,7 +93,7 @@ class TransactionalHandler{
                 echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
                 echo '<br>';
                 echo '<li class="submenu_item">';
-                echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
+                echo '<button type="submit" name="removeButton" value="remove">';
                 echo '<img src=../images/remove_icon.jpg>';
                 echo '</button>';
                 echo '</li>';
