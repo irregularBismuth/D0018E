@@ -70,12 +70,12 @@ class TransactionalHandler{
             $this->product_id = $product_id;
 
             if(!isset($_SESSION['product_cart'])){
-                $_SESSION['product_cart'] = array($product_id);
+                $_SESSION['product_cart'] = array();
             }
             
             else if(isset($_SESSION['product_cart'])){
 
-                $session_array = array_column($_SESSION['product_cart'], 'product_id');
+                $session_array = array_column($_SESSION['product_cart'], $product_id);
                 
                 if(!in_array($product_id, $session_array)){
                     
