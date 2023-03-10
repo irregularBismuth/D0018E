@@ -110,7 +110,7 @@ class TransactionalHandler{
             $session_order_id = $this->sqlConnector->s->fetchColumn();
             
 
-            $product_data = $this->getProductCart($product_id)['product_id']; // check the [0] index! 
+            $product_data = $this->getProductCart($session_order_id)['product_id']; // check the [0] index! 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
@@ -156,10 +156,18 @@ class TransactionalHandler{
         
     }
 
+    function getProductItems($product_id){
+        $query = "SELECT * FROM animals WHERE animal_id=:x";
+        $param_array = array($product_id);
+        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
+        $output = $this->sqlConnector->s->fetchAll();
+        return $output;  
+    }
+
     function getProductCart($order_id){
         $query = "SELECT * FROM order_info WHERE order_id=:x";
         $param_array = array($order_id);
-        $this->sqlConnector->half_genericQuery($query, 0, $param_array);
+        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
         $output = $this->sqlConnector->s->fetchAll();
         return $output; 
     }
