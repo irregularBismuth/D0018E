@@ -94,6 +94,7 @@ class TransactionalHandler{
                 echo '<br>';
                 echo '<li class="submenu_item">';
                 echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
+                echo '<img src=../images/remove_icon.jpg>';
                 echo '</button>';
                 echo '</li>';
                 echo '</form>';
