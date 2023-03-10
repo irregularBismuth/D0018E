@@ -49,11 +49,11 @@ class TransactionalHandler{
 
             $query_products = "SELECT * FROM animals WHERE animal_id=:x";
             $this->sqlConnector->half_genericQuery($query_products, 1, array($product_id));
-            $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+            $items = $this->sqlConnector->s->fetch();
 
             $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
             $this->sqlConnector->half_genericQuery($query_order_id, 1, array($_SESSION['id']));         
-            $session_transactional = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC); 
+            $session_transactional = $this->sqlConnector->s->fetch(); 
             
             if(!isset($_SESSION['product_cart'])){
                 
@@ -109,7 +109,7 @@ class TransactionalHandler{
             */
             
             if (isset($_SESSION['product_cart'])){
-                $product_ids = $_SESSION['product_cart']; // check the [0] index!  
+                $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
              
                 echo (var_dump($_SESSION['product_cart']['product_id']));
            
