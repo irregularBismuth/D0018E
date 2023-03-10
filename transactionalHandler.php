@@ -101,14 +101,14 @@ class TransactionalHandler{
     function generateCartDisplay(){
         
         
-
             $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
             $userid_param = array($_SESSION['id']);
             $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
 
-            $product_ids = $this->getProductCart($session_order_id)['product_id']; // check the [0] index! 
+            $product_ids = $this->getProductCart($session_order_id); // check the [0] index! 
+            echo $product_ids; 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
