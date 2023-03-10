@@ -79,7 +79,7 @@ class TransactionalHandler{
                 $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                 $param_update = array($update_quantity, $product_id);
                 $this->sqlConnector->half_genericQuery($update_query, 2, $param_update);
-                $this->sqlConnector->s->execute();
+                
             }
             else {
                 $this->insertTransactionalMetadata($_SESSION['id']);
@@ -92,7 +92,7 @@ class TransactionalHandler{
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
                 $param_insert = array($session_order_id['order_id'], $product_id, 1);
                 $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
-                $this->sqlConnector->s->execute(); 
+            
             }
         } 
         
