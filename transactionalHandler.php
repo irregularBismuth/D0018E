@@ -151,7 +151,7 @@ class TransactionalHandler{
             }
 
             $_SESSION['product_total'] = $subtotal;
-            $this->updateCartDisplay($_POST['product_id_cart']); 
+           // $this->updateCartDisplay($_POST['product_id_cart']); 
         
     }
 
