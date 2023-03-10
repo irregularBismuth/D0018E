@@ -40,26 +40,62 @@ class TransactionalHandler{
             }
     }
 
-    function addToCart()
-    {   
-        $quer="select * from carts where customer_id = :x";
+     function addToCart() {
+    $customer_id=$_SESSION['id'];
+    $price_per_item=$_POST['price'];
+    $quantity=1;
+    $product_id=$_POST['product_id'];
+    // Check if the customer already has a cart
+    $cart_query = "SELECT * FROM carts WHERE customer_id = :x";
+    $cart_data = $sqlHandler->half_genericQuery($cart_query, 1, array($customer_id));
+
+    if (empty($cart_data)) {
+        // If the customer does not have a cart, create one
+        $cart_insert_query = "INSERT INTO cart (customer_id) VALUES (:x)";
+        $sqlHandler->half_genericQuery($cart_insert_query, 1, array($customer_id));
+        $cart_id = $sqlHandler->getLastInsertedID();
+    } else {
+        $cart_id = $cart_data[0]['id'];
+    }
+
+    // Check if the product already exists in the cart
+    $cart_item_query = "SELECT * FROM cart_item WHERE cart_id = :x AND product_id = :y";
+    $cart_item_data = $sqlHandler->half_genericQuery($cart_item_query, 2, array($cart_id, $product_id));
+
+    if (empty($cart_item_data)) {
+        // If the product does not exist in the cart, add it
+        $cart_item_insert_query = "INSERT INTO cart_item (cart_id, product_id, quantity, price_per_item) VALUES (:x, :y, :z, :w)";
+        $sqlHandler->half_genericQuery($cart_item_insert_query, 4, array($cart_id, $product_id, $quantity, $price_per_item));
+    } else {
+        // If the product already exists in the cart, update its quantity
+        $new_quantity = $cart_item_data[0]['quantity'] + $quantity;
+        $cart_item_update_query = "UPDATE cart_item SET quantity = :x WHERE cart_id = :y AND product_id = :z";
+        $sqlHandler->half_genericQuery($cart_item_update_query, 3, array($new_quantity, $cart_id, $product_id));
+    }
+} 
+       /* $quer="select * from cart where customer_id = :x";
         $arr=(array($_SESSION['id']));
         $this->sqlConnector->half_genericQuery($quer,1,$arr);
         $res=$this->sqlConnector->s->fetchAll();
-        foreach($res as $res) { }
+      //  foreach($res as $res) { }
         if($res===false)
         {
             $query="insert into carts(customer_id) values(:x)";
             $arr2=(array($_SESSION['id']));
             $this->sqlConnector->s->half_genericQuery($query,1,$arr2);
-            $cid=$this->sqlConnector->s->lastInsertId();
+            $res=$this->sqlConnector->s->lastInsertId();
         
         }
         else {
-            $cid=res['cart_id'];
+            $res=res['cart_id'];
         }
 
-    }
+        $quee="insert into cart_item(cart_id,product_id,quantity,price) values(:x,:y,:z,:w)";
+        $arre=array($res,$_POST['product_id'],1,$_POST['price']);
+        $rez=$this->sqlConnector->s->half_genericQuery($quee,4,$arre);
+        */ 
+ 
+    
     
     function checkout()
     {
