@@ -253,7 +253,7 @@ class TransactionalHandler{
                 $this->sqlConnector->s->closeCursor();;
 
                 foreach($product_ids as $product_id){
-                    $product_data = $this->getProductData($product_id)[0]; 
+                    $product_data = $this->getProductCart($product_id)[0]; 
                     $animal_id = $product_data['animal_id'];
 
                     $sql_order_info = "INSERT INTO order_info SET order_id=:x, product_id=:y";
