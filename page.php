@@ -26,7 +26,8 @@ if($sqlHandler->s->rowCount() > 0)
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
-    <?php generateCartButton(); ?>
+    <?php if($_SESSION['admin']==1){ echo "<form action='newAnm' method='post'>"; }?>
+     <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
     
 <script>
@@ -101,7 +102,7 @@ function search() {
                     foreach($rez as $rez){
                         $sr="";
                         if($_SESSION['admin']==1){
-                        $sr="<form action='delcom.php' mehod=post><input type='hidden' name='aid' value=".$who."><input type='hidden' name='comid' value=".$rez['comment_id']."><input type='submit'></form>"; } 
+                        $sr="<form action='delcom.php' mehod='post'><input type='hidden' name='aid' value=".$who."><input type='hidden' name='comid' value=".$rez['comment_id']."><input type='submit'></form>"; } 
                         echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p>".$sr."</div>";
                     }     
                }
