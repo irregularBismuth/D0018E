@@ -111,7 +111,7 @@ class TransactionalHandler{
             if (isset($_SESSION['product_cart'])){
                 $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
              
-                echo (var_dump($_SESSION['product_cart'][0]));
+                echo (var_dump($_SESSION['product_cart']['product_id']));
            
             //$product_data = $this->getProductItems($product_id['']);
             $subtotal = 0;
