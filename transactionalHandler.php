@@ -70,7 +70,7 @@ class TransactionalHandler{
             $this->product_id = $product_id;
 
             if(!isset($_SESSION['product_cart'])){
-                $_SESSION['product_cart'][] = array('product_id'=>$product_id);
+                $_SESSION['product_cart'] = array($product_id);
             }
             
             else if(isset($_SESSION['product_cart'])){
@@ -79,7 +79,7 @@ class TransactionalHandler{
                 
                 if(!in_array($product_id, $session_array)){
                     
-                    $_SESSION['product_cart'][] = array('product_id'=>$product_id);
+                    $_SESSION['product_cart'] = array($product_id);
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
