@@ -74,12 +74,11 @@ class TransactionalHandler{
             $this->sqlConnector->half_genericQuery($product_query, 1, $params);
             $products = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             
-            if($products){
+            if(!empty($products)){
                 $update_quantity = $products['order_quantity'] + 1;
                 $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
                 $param_update = array($update_quantity, $product_id);
-                $this->sqlConnector->half_genericQuery($update_query, 2, $param_update);
-                
+                $this->sqlConnector->half_genericQuery($update_query, 2, $param_update); 
             }
             else {
                 $this->insertTransactionalMetadata($_SESSION['id']);
