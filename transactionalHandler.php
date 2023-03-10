@@ -108,7 +108,7 @@ class TransactionalHandler{
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             */
             
-            if (!isset($_SESSION['product_cart'])){
+            if (isset($_SESSION['product_cart'])){
                 $product_ids = $_SESSION['product_cart']['product_id']; // check the [0] index!  
              
                 echo (var_dump($_SESSION['product_cart']));
