@@ -72,15 +72,15 @@ class TransactionalHandler{
             $animal_param = array($product_id);
             $this->sqlConnector->half_genericQuery($query_products, 1, $animal_param);         
             $items = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
+
+            $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
+            $userid_param = array($_SESSION['id']);
+            $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
+            $session_transactional = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC); 
             
             if(!isset($_SESSION['product_cart'])){
                 
                 $this->insertTransactionalMetadata($_SESSION['id']);
-
-                $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
-                $userid_param = array($_SESSION['id']);
-                $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-                $session_transactional = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
                 
                 $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
                 $param_insert = array($session_transactional['order_id'], $items['animal_id'], 1);
@@ -105,7 +105,11 @@ class TransactionalHandler{
                 if(!in_array($product_id, $_SESSION['product_cart']['product_id'])){
                     
                     array_push($_SESSION['product_cart']['product_id'], $product_id);
-                    //$_SESSION['product_cart'] = array_push($_SESSION['product_cart'],$product_id);
+                    $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
+                    $param_insert = array($session_transactional['order_id'], $items['animal_id'], 1);
+                    $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
+
+                    $_SESSION['product_cart'] = array('product_id'=>$items['animal_id'], 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
                 }
 
                 //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
