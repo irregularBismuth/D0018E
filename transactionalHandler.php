@@ -8,37 +8,15 @@ $transactionalHandler = new TransactionalHandler($sql);
 
 <?php 
 class TransactionalHandler{
-    private $product_cart;
     private $sqlConnector;
-    private $session_order_id;
-    private $customer_id;
-    private $product_id; 
 
     function __construct(SQLHandler $sqlConnectorReference)
     {
         session_start();
-        $this->product_cart = array();
         $this->sqlConnector = $sqlConnectorReference;
-        $this->session_order_id = "";
-        $this->customer_id = "";
-        $this->product_id = array();
-        //product_id and button_id... 
-        
+        //product_id and button_id...         
     }
-
-    function checkCustomerId(){
-        require_once("userProfile.php");
-        
-        if($userProfile->checkIfUserIdSet()){ 
-            $_SESSION['customer_id'] = $_SESSION['id'];
-            $this->customer_id = $_SESSION['id'];            
-            
-        }
-        else {          
-                $this->customer_id = session_create_id();
-                $_SESSION['customer_id'] = $this->customer_id;
-            }
-    }
+ 
 
     /*function addButtonClickAction(){
         if(isset($_POST['addButton'])){
@@ -68,7 +46,6 @@ class TransactionalHandler{
         //session_start();
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
-            $this->product_id = $product_id;
 
             $query_products = "SELECT * FROM animals WHERE animal_id=:x";
             $this->sqlConnector->half_genericQuery($query_products, 1, array($product_id));
