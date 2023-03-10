@@ -290,7 +290,6 @@ class TransactionalHandler{
             } catch (PDOException $e){
 
                 $sqlTransaction->rollback();
-                echo "<p>".$transaction_comment."</p>";
                 die($e->getMessage());
             }
     } 
