@@ -110,11 +110,12 @@ class TransactionalHandler{
             $session_order_id = $this->sqlConnector->s->fetchColumn();
             
 
-            $product_data = $this->getProductCart($session_order_id)['product_id']; // check the [0] index! 
+            $product_ids = $this->getProductCart($session_order_id)['product_id']; // check the [0] index! 
             //$this->updateCartDisplay($_POST['product_id_cart']); 
            
             $subtotal = 0;
-            foreach($product_data as $product_id){
+            foreach($product_ids as $product_id){
+                $$product_data = $this->getProductItems($product_id);
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
                 echo '<pre>';
