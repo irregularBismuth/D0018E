@@ -92,8 +92,10 @@ class TransactionalHandler{
                 echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
                 echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
                 echo '<br>';
+                echo '<li class="submenu_item">'
                 echo '<button style="border-radius: 50%; padding: 20px; font-size: 15px;" type="submit" name="removeButton" value="remove"> remove';
                 echo '</button>';
+                echo '</li>';
                 echo '</form>';
                 echo '<li class="submenu_item">';
                 echo '<p>Stock quantity: '.$product_quantity.'</p>';
