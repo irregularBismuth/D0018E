@@ -11,9 +11,17 @@ require_once "sqlHandler.php";
     
 <body>
 <?php
-    echo "test";   
-    echo "<form action='shoppingCartHandler.php' method='post'><input type='number' name='anmquanity' /><input type='button' value='addToCart' name='animalButton' /><input type='submit' /></form>"; 
-    ?>
+    $quer="select * from animals";
+    $sqlHandler->half_genereicQuery($quer,0,0);  
+    $res=$sqlHandler->s->fetchAll();
+
+    echo "<form action='scHandler.php' method='post'>";
+    foreach($res as $res){
+        echo "<input type='number' name='anmquanity' /><input type='hidden' value=".$res['animal_id']."><input type='button' value='addToCart' name='animalButton' /></br>"; 
+    }
+    echo "</form>";
+    
+?>
 </body>
 
 </html>
