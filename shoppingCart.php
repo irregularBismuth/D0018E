@@ -15,12 +15,12 @@ require_once "sqlHandler.php";
     $sqlHandler->half_genereicQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();
 
-    echo "<form action='scHandler.php' method='post'>";
+    $str="<form action='scHandler.php' method='post'>";
     foreach($res as $res){
-        echo "<input type='number' name='anmquanity' /><input type='hidden' value=".$res['animal_id']."><input type='button' value='addToCart' name='animalButton' /></br>"; 
+        $str=$str."<input type='number' name='anmquanity' /><input type='hidden' value=".$res['animal_id']."><input type='button' value='addToCart' name='animalButton' /></br>"; 
     }
-    echo "</form>";
-    
+    $str=$str."</form>";
+   echo $str; 
 ?>
 </body>
 
