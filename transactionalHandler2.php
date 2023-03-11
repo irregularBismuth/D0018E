@@ -6,7 +6,11 @@ require_once("userProfile.php");
 
 function addToCart()
 {
-    $quer="select * from cart where customer_id=:x";
+    
+    
+
+
+ /*   $quer="select * from cart where customer_id=:x";
     $arr=array($_SESSION['id']);
     $sqlHandler->half_genericQuery($quer,1,$arr);
     $res=$sqlHandler->s->fetchAll();
@@ -33,7 +37,7 @@ function addToCart()
         $ciiq="update cart_item set quantity =:x where cart_id=:y and product_id=:z";
         $sqlHandler->half_genericQuery($ciiq,3,array($new,$cid,$_POST['product_id']));
         
-    }
+    } */
 } 
     
     
