@@ -11,7 +11,7 @@ require_once "sqlHandler.php";
     
 <body>
 <?php
-     
+    echo "test";   
     echo "<form action='shoppingCartHandler.php' method='post'><input type='number' name='anmquanity' /><input type='button' value='addToCart' name='animalButton' /><input type='submit' /></form>"; 
     ?>
 </body>
