@@ -20,7 +20,7 @@ else {
     foreach ($res as $res){
         $cartid=$res['id'];
     }
-    $quer="insert into cart_item(cart_id,product_id,price) values(:x,:y,:z)";
+    $quer="insert into cart_item(cart_id,product_id,quantity,price) values(:x,:y,1,:z)";
     $sqlHandler->half_genericQuery($quer,3,array($cartid,$id,$_POST['price']));
     
 }
