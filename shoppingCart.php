@@ -12,7 +12,7 @@ require_once "sqlHandler.php";
 <body>
 <?php
     $quer="select * from animals";
-    $sqlHandler->half_genereicQuery($quer,0,0);  
+    $sqlHandler->half_genericQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();
     foreach($res as $res){
         echo $res['animal_id'];
