@@ -26,6 +26,6 @@ else {
 }
 
 
-//header("Location: shoppingCart.php");
-//exit(0);
+header("Location: shoppingCart.php");
+exit(0);
 ?>

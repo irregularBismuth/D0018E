@@ -11,7 +11,27 @@ require_once "sqlHandler.php";
  </head>
     
 <body>
+
+
 <?php
+    $quer="select * from cart where customer_id=:x";
+    $sqlHandler->half_genericQuery($quer,1,array($_SESSION['id'])); 
+    $res=$sqlHandler->s->fetchAll();
+    $intid=0;
+    foreach($res as $res)
+    {
+        $intid=$res['id'];
+    }
+    $quer="select * from cart_item where cart_id=:x";
+    $sqlHandler->half_genericQuery($quer,1,array($intid)); 
+    $res=$sqlHandler->s->fetchAll();
+    foreach($res as $res)
+    {
+       $query="select * from animals where animal_id=:x";
+       $sqlHandler->half_genericQuery($query,1,array($res['product_id']));
+       $rez=$sqlHandler->s->fetchAll();
+       foreach($rez as $rez){ echo "<div class='animal'><p>".$res['animal_name']."</p></div>"; }  
+    }
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();
