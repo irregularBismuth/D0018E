@@ -27,9 +27,9 @@ require_once "sqlHandler.php";
     $res=$sqlHandler->s->fetchAll();
     foreach($res as $res)
     {
-       if($res['product_id']==$res['animal_id']){
+       /*if($res['product_id']==$res['animal_id']){
             echo "<p>".$res['animal_id']."</p>"
-       }
+       }*/
     }
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
