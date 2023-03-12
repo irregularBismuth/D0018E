@@ -17,7 +17,7 @@ require_once "sqlHandler.php";
     foreach($res as $res){
         
         echo "<form action='scHandler.php' method='post'>";
-        echo "<input type='hidden' name='anmid' value=".$res['animal_id']."/><input type='submit' value='Add'/>";    
+        echo "<input type='hidden' name='anmid' value=".$res['animal_id']." ><input type='submit' value='Add'/>";    
         echo "</form>"; 
    
      }
