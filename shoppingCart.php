@@ -30,7 +30,7 @@ require_once "sqlHandler.php";
        $query="select * from animals where animal_id=:x";
        $sqlHandler->half_genericQuery($query,1,array($res['product_id']));
        $rez=$sqlHandler->s->fetchAll();
-       foreach($rez as $rez){ echo "<div class='animal'><p>".$res['animal_name']."</p></div>"; }  
+       foreach($rez as $rez){ echo "<div class='animal'><p>".$rez['animal_name']."</p></div>"; }  
     }
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
