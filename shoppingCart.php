@@ -22,7 +22,7 @@ require_once "sqlHandler.php";
     {
         $intid=$res['id'];
     }
-    $quer="select * from cart_item where cart_id=:x";
+    $quer="select * from animals,cart_item where cart_id=:x";
     $sqlHandler->half_genericQuery($quer,1,array($intid)); 
     $res=$sqlHandler->s->fetchAll();
     foreach($res as $res)
