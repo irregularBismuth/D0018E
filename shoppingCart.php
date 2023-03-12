@@ -18,7 +18,6 @@ require_once "sqlHandler.php";
     foreach($res as $res){
         echo "<input type='hidden' name='anmid' value=".$res['animal_id']."/><input type='submit'/>";    
     }
-    echo "<input type='submit' />";
    echo "</form>"; 
 ?>
 </body>
