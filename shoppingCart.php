@@ -28,7 +28,7 @@ require_once "sqlHandler.php";
     foreach($res as $res)
     {
         if($res['product_id']==$res['animal_id']){
-            echo "<span>".$res['animal_name']." ".$res['animal_price']." ".$res['quantity']."</span>";
+            echo "<span>".$res['animal_name']." ".$res['animal_price']." x".$res['quantity']."</span>";
         }
        /*if($res['product_id']==$res['animal_id']){
             echo "<p>".$res['animal_id']."</p>"
