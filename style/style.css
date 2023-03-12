@@ -12,6 +12,7 @@ textarea {
 }
 
 .animal img {
+    position: relative;
     width: 250px;
     height: 250px;
     overflow:hidden;
