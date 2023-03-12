@@ -14,11 +14,13 @@ require_once "sqlHandler.php";
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();
-    echo "<form action='scHandler.php' method='post'>";
     foreach($res as $res){
+        
+        echo "<form action='scHandler.php' method='post'>";
         echo "<input type='hidden' name='anmid' value=".$res['animal_id']."/><input type='submit'/>";    
-    }
-   echo "</form>"; 
+        echo "</form>"; 
+   
+     }
 ?>
 </body>
 
