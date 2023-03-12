@@ -10,6 +10,12 @@ if($sqlHandler->s->rowCount() > 0)
 {
  
 }
+else {
+    $query="insert into cart(customer_id) values(:x)";
+    $sqlHandler->half_genericQuery($query,1,array($_POST['uid']));
+    
+    
+}
 
 
 //header("Location: shoppingCart.php");
