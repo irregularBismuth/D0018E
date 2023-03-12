@@ -16,6 +16,7 @@ else {
     $querry="select * from cart where customer_id=:x";
     $sqlHandler->half_genericQuery($querry,1,array($_POST['uid']));
     $res=$sqlHandler->s->fetchAll();
+    $cartid=0;
     foreach ($res as $res){
         $cartid=$res['id'];
     }
