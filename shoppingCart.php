@@ -25,15 +25,18 @@ require_once "sqlHandler.php";
     $quer="select * from animals,cart_item where cart_id=:x";
     $sqlHandler->half_genericQuery($quer,1,array($intid)); 
     $res=$sqlHandler->s->fetchAll();
+    $tot=0;
     foreach($res as $res)
     {
         if($res['product_id']==$res['animal_id']){
+           $tot+=$res['price']*$res['quantity']; 
             echo "<span>".$res['animal_name']." ".$res['animal_price']." x".$res['quantity']."</span>";
         }
        /*if($res['product_id']==$res['animal_id']){
             echo "<p>".$res['animal_id']."</p>"
        }*/
     }
+    echo "Total: ".$tot;
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();

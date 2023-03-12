@@ -8,7 +8,10 @@ $sqlHandler->half_genericQuery($quer,1,array($_POST['uid']));
 $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
- 
+    $intid=0;
+    foreach($res as $res){
+        $intid=$res['cart_id'];
+    } 
 }
 else {
     $query="insert into cart(customer_id) values(:x)";
