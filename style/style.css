@@ -11,6 +11,13 @@ textarea {
     
 }
 
+.animal img {
+    width: 250px;
+    height: 250px;
+    overflow:hidden;
+    object-fit: cover;
+}
+
 .com {
     background-color: #454545;
 }
