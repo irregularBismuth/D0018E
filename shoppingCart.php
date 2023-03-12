@@ -27,6 +27,7 @@ require_once "sqlHandler.php";
     $res=$sqlHandler->s->fetchAll();
     foreach($res as $res)
     {
+        echo $res['animal_name'];
        /*if($res['product_id']==$res['animal_id']){
             echo "<p>".$res['animal_id']."</p>"
        }*/
