@@ -21,7 +21,6 @@ else {
     }
     $quer="insert into cart_item(cart_id,product_id,price) values(:x,:y,:z)";
     $sqlHandler->half_genericQuery($quer,3,array($cartid,$id,$_POST['price']));
-    $res=$sqlHandler->s->fetchAll();
     
 }
 
