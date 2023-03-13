@@ -24,23 +24,24 @@ class TransactionalHandler{
 
             $product_id = $_POST['product_id'];
             $query = "SELECT * FROM cart where customer_id=:x";
-            $sqlHandler->half_genericQuery($query, 1, array($product_id));
+            $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
             $output = $sqlHandler->s->fetchAll();
-            
+            $initid=0;
+
             if($sqlHandler->s->rowCount() > 0 ){
-                $initid=0;
                 foreach($output as $output){
                     $initid = $output['cart_id'];
                 }
             }
+
             else{
                 $query = "INSERT INTO cart(customer_id) VALUES(:x)";
 
-                $sqlHandler->half_genericQuery($query, 1, array($product_id));
+                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
 
                 $query = "SELECT * FROM cart where customer_id=:x";
                 
-                $sqlHandler->half_genericQuery($query, 1, array($product_id));
+                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
 
                 $output = $sqlHandler->s->fetchAll();
                 $cartid=0;
