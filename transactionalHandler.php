@@ -99,14 +99,19 @@ class TransactionalHandler{
             if ($output['product_id'] == ['animal_id']){
             $tot = $output['price']*$output['quantity'];                 
             $subtotal += $tot; 
-                
-            //echo '<pre>';
+            
+            $qry = "SELECT * FROM animals WHERE animal_id =:x";
+            
+            $sqlHandler->half_genericQuery($query, 1, array($output['product_id']));
+            $data = $sqlHandler->s->fetchAll();
+
+            echo '<pre>';
             echo '<li class="submenu_item">';
-            echo '<img class="submenu_item" src='.$output["animal_image"].'>';
-            echo '<p> product: '.$output["animal_name"].'</p>';
+            echo '<img class="submenu_item" src='.$data["animal_image"].'>';
+            echo '<p> product: '.$data["animal_name"].'</p>';
             echo '|';
             echo '<br>';
-            echo '<p> price: '.$output["animal_price"].'¥</p>';
+            echo '<p> price: '.$data["animal_price"].'¥</p>';
             echo '|';
             echo '<p> total: '.$tot.'¥</p>';
             echo '<br>';
@@ -124,11 +129,11 @@ class TransactionalHandler{
             echo '</li>';
             echo '</form>';
             echo '<li class="submenu_item">';
-            echo '<p>Stock quantity: '.$output['quantity'].'</p>';
+            echo '<p>Stock quantity: '.$data['quantity'].'</p>';
             echo '</li>';
             echo '<br>';
             echo '</li>';
-            //echo '</pre>'; 
+            echo '</pre>'; 
             }   
         }
         //$_SESSION['product_total'] = $subtotal;
