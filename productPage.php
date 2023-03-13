@@ -39,13 +39,13 @@ $row_count = count($animals['image']);
         <?php
                        
             function generateBoxFrames(){
-                require_once("sqlHandler.php");
+                include("sqlHandler.php");
                 $query = "SELECT * FROM animals";
                 $sqlHandler->half_genericQuery($query,0,0);
                 $output = $sqlHandler->s->fetchAll();
                 foreach($output as $output){
                     $product_id = $output['animal_id'];
-                    $product_quantity = $output['quantity'];
+                    //$product_quantity = $output['quantity'];
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
@@ -84,7 +84,7 @@ $row_count = count($animals['image']);
             }
             if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
-                require_once("transactionalHandler.php");
+                include("transactionalHandler.php");
                 $transactionalHandler->addButtonClickAction();
                 header("location: ".$_SERVER['REQUEST_URI']);      
                         
