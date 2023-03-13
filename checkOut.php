@@ -38,6 +38,10 @@ require_once "sqlHandler.php";
             exit(0);
         }
         */
+        if(1)
+        {
+            return false;
+        }
         $dbcc->commit();
       return true;  
    //     header("Location: shoppingCart.php");
