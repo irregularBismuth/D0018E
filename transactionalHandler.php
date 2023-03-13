@@ -53,10 +53,9 @@ class TransactionalHandler{
                 $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
 
-            
-            
-            header('location: '.$_SERVER['REQUEST_URI']); 
         }
+
+        header('location: '.$_SERVER['REQUEST_URI']); 
     }
    
    /* function addButtonClickAction(){
