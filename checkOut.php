@@ -54,8 +54,13 @@ require_once "sqlHandler.php";
        // echo ($e->getMessage());    
     }
 }
-check();
+if(check()){
 header("Location: shoppingCart.php");
 exit(0);
+}
+else{
+header("Location: shoppingCart.php?bad=1");
+exit(0);
+}
 
 ?>
