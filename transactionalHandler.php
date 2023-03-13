@@ -77,8 +77,8 @@ class TransactionalHandler{
             
         $initid = $this->getUserCartId()['id'];
 
-        $query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
-        //$query = "SELECT * FROM animals, cart_item where cart_id=:x";
+        //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
+        $query = "SELECT * FROM animals, cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query, 1, array($initid));
         $output = $sqlHandler->s->fetchAll();
         $tot=0;
@@ -119,8 +119,7 @@ class TransactionalHandler{
             echo '</li>';
             echo '</pre>';    
         }
-
-        $_SESSION['product_total'] = $subtotal;
+        //$_SESSION['product_total'] = $subtotal;
         //$this->updateCartDisplay($_POST['product_id_cart']);      
     }
      
