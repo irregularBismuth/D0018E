@@ -115,12 +115,7 @@ class TransactionalHandler{
     
     function generateCartDisplay(){
         
-            /* 
-            $query_order_id = "SELECT order_id FROM transactional WHERE customer_id=:x";
-            $userid_param = array($_SESSION['id']);
-            $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
-            $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
-            */
+            
 
             require_once("sqlHandler.php");
                 //adding some local variable reference:
@@ -142,12 +137,9 @@ class TransactionalHandler{
             foreach($output as $output){
                 if($output['product_id'] == $output['animal_id']){
                     $tot = $output['price']*$output['quantity'];
-                    }
-                               
-            
-                $subtotal += $tot; 
+                                 
+                    $subtotal += $tot; 
                 
-                //echo var_dump($product_data);
                 echo '<pre>';
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$output["animal_image"].'>';
@@ -174,15 +166,13 @@ class TransactionalHandler{
                 echo '<li class="submenu_item">';
                 echo '<p>Stock quantity: '.$output['quantity'].'</p>';
                 echo '</li>';
-                //echo '<hr>';
                 echo '<br>';
                 echo '</li>';
-                echo '</pre>';
-                
+                echo '</pre>';    
             }
 
             $_SESSION['product_total'] = $subtotal;
-            $this->updateCartDisplay($_POST['product_id_cart']);
+            //$this->updateCartDisplay($_POST['product_id_cart']);
         } 
         
     }
