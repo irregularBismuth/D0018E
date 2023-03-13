@@ -83,6 +83,22 @@ function search() {
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
               echo "<div class='buyInfo'> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
          ?>
+
+        <div class="rating">
+            <form action = "rating.php" method="POST">
+                <input type="hidden" name="product_id" value="<?php echo $res['product_id']?>">
+                <label for="rating">Rate this product:</label>
+                <select id="rating" name="rating>
+                    <option value="1">1 banana</option>
+                    <option value="2">2 bananas</option>
+                    <option value="3">3 bananas</option>
+                    <option value="4">4 bananas</option>
+                    <option value="5">5 bananas</option>
+                </select>
+                <button type="submit" name="submit_rating"> Submit</button>
+            </form>
+        </div>
+
         <div class="comments">
             <form action="comments.php" method="POST">
             
