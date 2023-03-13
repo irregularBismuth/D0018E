@@ -82,12 +82,12 @@ $userProfile = new UserProfile($sql);
             //For setting the profile image need to access the sqlHandler class for INSERT query. 
         }
         
-        function addBalance($new_balance_amount){
+        function addBalance(){
             // adding balance that is initially 0, need to make INSERT query from sqlHandler!
             
             if(isset($_POST['submit_balance'])){
                 $current_balance = $this->balance;
-                $new_balance = $new_balance_amount + $current_balance;                           
+                $new_balance = $_POST['balance'] + $current_balance;                           
 
                 $sql_update_query = "UPDATE users SET balance=:x where id=:y";
                 $temp_array = array($new_balance,$this->user_id);

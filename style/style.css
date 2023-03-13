@@ -6,6 +6,22 @@ body {
  margin: 0;
 }
 
+textarea {
+    resize:none;
+    
+}
+
+.animal img {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow:hidden;
+    object-fit: cover;
+}
+
+.com {
+    background-color: #454545;
+}
 /*#livesearch div {
     display: block;
     width: 500px;
@@ -18,7 +34,7 @@ body {
     background-color: grey;
     width:75%;
     margin: auto;
-    height: 800px;
+    height: auto;
     flex-direction: column;
     align-items: center;
     justify-content:center; 
@@ -46,7 +62,8 @@ body {
 
 .comments {
  background-color: blue;
- 
+ width: 50%;
+ height:auto;
 }
 
 .bar li {
@@ -106,13 +123,6 @@ body {
     width: 100%;
     padding: 6px 10px;
   }
-
-.headern  button {
-    all: unset;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-  }
   
 .headern svg {
     color: #fff;
@@ -158,3 +168,4 @@ body {
     border: 2px 2px 1px 1px black;
     display: inline-block;
 }
+

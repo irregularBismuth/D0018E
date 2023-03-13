@@ -44,7 +44,8 @@ function login($name,$pass){
         session_start();
         $_SESSION['username']=$name;
         $_SESSION['id']=$result['id']; //adding session variable for id
-      //  echo $result['email']; 
+        $_SESSION['admin']=$result['adminbool'];
+         //  echo $result['email']; 
        // echo $result['id'];
        header("Location: index.php?success=1");
        exit(0);

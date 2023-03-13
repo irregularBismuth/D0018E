@@ -26,8 +26,7 @@ if($sqlHandler->s->rowCount() > 0)
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
-    <?php if($_SESSION['admin']==1){ echo "<a href='addnew.php'> Add new animal </a>"; }?>
-     <?php generateCartButton(); ?>
+    <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
     
 <script>
@@ -71,36 +70,12 @@ function search() {
 </div>
 
     <div id="livesearch" class="livesearch"></div>
-    <?php 
-      
-      if($_SESSION['admin']==1)
-      {
-         echo "<form action='delete.php' method='post'><input type='hidden' name='animal_id' value=".$who."><input value='Delete post' type='submit'></form>";   
-      } 
 
-    ?>
     <div class="producten">
         <?php echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
-              echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
-            
+              echo "<div class='buyInfo'> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
          ?>
-
-        <div class="rating">
-            <form action = "rating.php" method="POST">
-                <input type="hidden" name="product_id" value="<?php echo $res['product_id']?>">
-                <label for="rating">Rate this product:</label>
-                <select id="rating" name="rating>
-                    <option value="1">1 banana</option>
-                    <option value="2">2 bananas</option>
-                    <option value="3">3 bananas</option>
-                    <option value="4">4 bananas</option>
-                    <option value="5">5 bananas</option>
-                </select>
-                <button type="submit" name="submit_rating"> Submit</button>
-            </form>
-        </div>
-
         <div class="comments">
             <form method="post" action="comments.php"> 
                 <textarea class="comment" name="comment" id="comment" placeholder="Comment here"></textarea>  
@@ -116,19 +91,16 @@ function search() {
                if($sqlHandler->s->rowCount() > 0)
                {
                     foreach($rez as $rez){
-                        $sr="";
-                        if($_SESSION['admin']==1){
-                        $sr="<form action='delcom.php' mehod='get'><input type='hidden' name='aid' value=".$who."><input type='hidden' name='comid' value=".$rez['comment_id']."><input type='submit'></form>"; } 
-                        echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p>".$sr."</div>";
+                     echo "<div class='com'><span style='font-weight:bold'>".$rez['comment_username']."</span></p><p>".$rez['comment_time']."</p><p>".$rez['comment']."</p></div>";
                     }     
                }
             ?>
             
              
-        </div>
-       
+        </div>            
     <div>
 
 
 </body>
 </html> 
+

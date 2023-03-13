@@ -66,6 +66,7 @@ $row_count = count($animals['image']);
                                             <li>
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
+                                                <input type="hidden" name="price" value='.$animalArray['price'][$i].' />
                                                 <input type="submit" name="addButton" class="button" value="add" />   
                                                 <a href=page.php?a='.$animalArray['animal_id'][$i].'>INFO</a>
                                                 </form> 
@@ -82,15 +83,16 @@ $row_count = count($animals['image']);
             }
             if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
-                require_once("transactionalHandler.php");
-                $transactionalHandler->addButtonClickAction();
+                require_once("transactionalHandler2.php");
+                addToCart();      
+        //  $transactionalHandler->addToCart();
                 header("location: ".$_SERVER['REQUEST_URI']);      
                         
             }
 
             if (isset($_POST['checkoutButton'])){
-                require_once("transactionalHandler.php");
-                $transactionalHandler->checkoutOrderPlaced();
+                require_once("transactionalHandler2.php");
+             //   $transactionalHandler->checkoutOrderPlaced();
                 header("location: ".$_SERVER['REQUEST_URI']);      
             } 
 

@@ -9,7 +9,11 @@ require_once("transactionalHandler.php");
 
     <head>
         <title> Transactional Cart Menu </title>
-        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" /> 
+        <link rel="stylesheet" type="text/css" href="style/userMenuStyling.css" />
+
+        <style> 
+            form {display: block; }
+        </style> 
     </head>
     
     <body>
@@ -19,14 +23,13 @@ require_once("transactionalHandler.php");
                     <br>
                     Shopping Cart
                 <ul>
-                    <li class="submenu_item">
-                        <p> <b>Session id: </b> </p>
-                    
-                    </li>
+                    <?php $transactionalHandler->generateCartDisplay();?>
                     <hr>
-                    <br>
-                
+                   <?php echo '<b>subtotal:</b> <p>'.$_SESSION['product_total'].'</p>' ?>
+                    
+                    <?php $transactionalHandler->checkoutForm();?>       
                 </ul>
+                
             </li>
         </ul>
     

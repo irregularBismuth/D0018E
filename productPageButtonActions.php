@@ -1,14 +1,9 @@
 <?php 
 session_start();
+require_once("transactionalHandler.php");
 
-$buttonAdd = $_POST['addButton'];
-$buttonInfo = $_POST['infoButton'];
-
-function addProductToCartView(){
-    require_once('userProfile.php');
-    if(isset($_POST['addButton'])){
-        //Call userProfile class
-    }
+if (isset($_POST["addButton"])){
+    $transactionalHandler->addButtonClickAction();
 }
 
 ?>
