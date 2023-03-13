@@ -18,7 +18,7 @@ class TransactionalHandler{
     }
  
     function addButtonClickAction(){
-        require_once("sqlHandler.php");
+        //require_once("sqlHandler.php");
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
@@ -28,8 +28,8 @@ class TransactionalHandler{
             if($this->getUserCartId()->rowCount() > 0 ){
                 
                 $query = "SELECT * FROM cart_item where cart_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($initid)); 
-                $out = $sqlHandler->s->fetchAll();
+                $this->sqlConnector->half_genericQuery($query, 1, array($initid)); 
+                $out = $this->sqlConnector->s->fetchAll();
                 $zz = 0; 
                 $qq = 1; 
                 $alread=0;
@@ -44,11 +44,11 @@ class TransactionalHandler{
                 $qq+=1;
                 if($alread){
                     $qr = "update cart_item set quantity=:x where id=:y";
-                    $sqlHandler->half_genericQuery($qr, 2, array($qq, $zz));
+                    $this->sqlConnector->half_genericQuery($qr, 2, array($qq, $zz));
                 }
                 else{
                     $quer = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, :z)";
-                    $sqlHandler->half_genericQuery($quer,3,array($initid, $product_id, $_POST['price']));
+                    $this->sqlConnector->half_genericQuery($quer,3,array($initid, $product_id, $_POST['price']));
                 }
                     //update quantity here:
                 
@@ -58,12 +58,12 @@ class TransactionalHandler{
             else{
                 $query = "INSERT INTO cart(customer_id) VALUES(:x)";
 
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
+                $this->sqlConnector->half_genericQuery($query, 1, array($_SESSION['id']));
 
                 $cartid=$this->getUserCartId()['id'];
                 
                 $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
-                $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
+                $this->sqlConnector->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
         }
 
@@ -71,25 +71,25 @@ class TransactionalHandler{
     }
 
     function getUserCartId(){
-        require_once("sqlHandler.php");
+        //require_once("sqlHandler.php");
         $query = "SELECT * FROM cart where customer_id=:x";   
-        $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-        $output = $sqlHandler->s->fetchAll();
+        $this->sqlConnector->half_genericQuery($query, 1, array($_SESSION['id']));
+        $output = $this->sqlConnector->s->fetchAll();
         return $output;
  
     } 
     
     function generateCartDisplay(){
         
-        require_once("sqlHandler.php");
+        //require_once("sqlHandler.php");
             //adding some local variable reference:
             
         $initid = $this->getUserCartId()['id'];
 
         //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
         $query = "SELECT * FROM animals, cart_item WHERE cart_id=:x";
-        $sqlHandler->half_genericQuery($query, 1, array($initid));
-        $output = $sqlHandler->s->fetchAll();
+        $this->sqlConnector->half_genericQuery($query, 1, array($initid));
+        $output = $this->sqlConnector->s->fetchAll();
         $tot=0;
         $subtotal = 0;
         //echo var_dump($output);
@@ -102,8 +102,8 @@ class TransactionalHandler{
             
             $qry = "SELECT * FROM animals WHERE animal_id =:x";
             
-            $sqlHandler->half_genericQuery($query, 1, array($output['product_id']));
-            $data = $sqlHandler->s->fetchAll();
+            $this->sqlConnector->half_genericQuery($query, 1, array($output['product_id']));
+            $data = $this->sqlConnector->s->fetchAll();
 
             echo '<pre>';
             echo '<li class="submenu_item">';
