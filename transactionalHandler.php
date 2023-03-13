@@ -135,6 +135,7 @@ class TransactionalHandler{
                 $output = $sqlHandler->s->fetchAll();
                 $tot=0;
                 $subtotal = 0;
+            echo var_dump($output);
 
             foreach($output as $output){
                 if($output['product_id'] == $output['animal_id']){
