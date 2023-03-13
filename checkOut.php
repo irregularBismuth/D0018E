@@ -17,9 +17,19 @@ $id=$_SESSION['id'];
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
         foreach($rez as $rez){
-                   
+            if($rez['product_id']==$rez['animal_id'])
+            {
+                $tot+=$rez['quantity']*$rez['price']; 
+                
+            }
         }
 
+        if($tot > 100){
+            $sqlHandler->rollBack();
+            header("Location: shoppingCart.php?bad=1");
+            exit(0);
+        }
+        
         
 
         $sqlHandler->commit();
