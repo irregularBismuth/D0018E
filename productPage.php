@@ -39,35 +39,37 @@ $row_count = count($animals['image']);
         <?php
                        
             function generateBoxFrames($countRow, $animalArray){
-                   
-
-                for ($i = 0; $i<$countRow;$i++){
-                    $product_id = $animalArray['animal_id'][$i];
-                    $product_quantity = $animalArray['animal_quantity'][$i];
+                require_once("sqlHandler.php");
+                $query = "SELECT * FROM animals";
+                $sqlHandler->half_genericQuery($query,0,0);
+                $output = $sqlHandler->s->fetchAll();
+                foreach($output as $output){
+                    $product_id = $output['animal_id'];
+                    $product_quantity = $output['quantity'];
                     echo '
                         <div class="boxFrame">
                                 <div class="section1">
-                                        <img class="fit_image" src='.$animalArray['image'][$i].'>
+                                        <img class="fit_image" src='.$output['animal_image'].'>
                                 </div>
                                 <div class="section2">
                                     <div class="infoStyle">
                                         <ul id="infoSection">
-                                            <li>Product id: '.$animalArray['animal_id'][$i].' </li>
+                                            <li>Product id: '.$output['animal_id'].' </li>
                                             <br>                             
-                                            <li><b>Animal type:</b> '.$animalArray['name'][$i].'</li>
+                                            <li><b>Animal type:</b> '.$output['animal_name'].'</li>
                                             <br>
-                                            <li><b>Description:</b> '.$animalArray['category'][$i].'</li>
+                                            <li><b>Description:</b> '.$output['animal_category'].'</li>
                                             <br>
                                             <hr>
-                                            <li><b>Subtotal:</b> '.$animalArray['price'][$i].'¥ </li>
+                                            <li><b>Subtotal:</b> '.$output['animal_price'].'¥ </li>
                                             <br>
                                             <br>
                                             <li>
                                            <form method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
-                                                <input type="hidden" name="price" value='.$animalArray['price'][$i].'>
+                                                <input type="hidden" name="price" value='.$output['animal_price'].'>
                                                 <input type="submit" name="addButton" class="button" value="add" />   
-                                                <a href=page.php?a='.$animalArray['animal_id'][$i].'>INFO</a>
+                                                <a href=page.php?a='.$output['animal_id'].'>INFO</a>
                                                 </form> 
                                             </li>
                                         </ul>
