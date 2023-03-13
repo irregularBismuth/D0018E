@@ -40,7 +40,7 @@ require_once "sqlHandler.php";
         */
         $dbcc->commit();
         
-        header("Location.php: shoppingCart.php");
+        header("Location: shoppingCart.php");
          exit(0);
         //return true;
     }
@@ -51,7 +51,7 @@ require_once "sqlHandler.php";
     }
 }
 check();
-header("Location.php: shoppingCart.php");
+header("Location: shoppingCart.php");
 exit(0);
 
 ?>
