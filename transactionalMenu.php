@@ -27,7 +27,7 @@ require_once("transactionalHandler.php");
                     <hr>
                    <?php echo '<b>subtotal:</b> <p>'.$_SESSION['product_total'].'</p>' ?>
                     
-                    /*<?php $transactionalHandler->checkoutForm();?>     */  
+                    <?php $transactionalHandler->checkoutForm();?>
                 </ul>
                 
             </li>

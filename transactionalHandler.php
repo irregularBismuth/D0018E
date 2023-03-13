@@ -221,7 +221,7 @@ class TransactionalHandler{
         //$this->checkoutOrderPlaced();
     }
 
-    public function checkoutOrderPlaced(){
+    function checkoutOrderPlaced(){
         //1. Need to be logged in to place order - CHECK
         if(isset($_POST['checkoutButton'])){
 
@@ -239,13 +239,13 @@ class TransactionalHandler{
 
     }
 
-    public function insertTransactionalMetadata($userid){
+    function insertTransactionalMetadata($userid){
             $sql_metadata_transactional = "INSERT INTO transactional (customer_id, transactional_amount, comment) VALUES (:x, :y, :z)"; 
             $t_param = array($userid, 0, "no status");
             $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param); 
     }
     
-    public function execTransaction($userid, $product_ids, $total_amount){
+    function execTransaction($userid, $product_ids, $total_amount){
         /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             
