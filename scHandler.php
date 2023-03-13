@@ -11,7 +11,9 @@ if($sqlHandler->s->rowCount() > 0)
     $intid=0;
     foreach($res as $res){
         $intid=$res['cart_id'];
-    } 
+    }
+    $query="insert into cart_item(cart_id,product_id,quanity,price)";
+    $sqlHandler->half_genericQuery($query,3,array($intid,$id,$_POST['price']))); 
 }
 else {
     $query="insert into cart(customer_id) values(:x)";
