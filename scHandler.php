@@ -9,7 +9,7 @@ $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
     $yy=0;
-    foreach($res as $res){$yy=$res['cart_id'];}
+    foreach($res as $res){$yy=$res['id'];}
     $query="select * from cart_item where cart_id=:x";
     $sqlHandler->half_genericQuery($query,1,array($yy));
     $rez=$sqlHandler->s->fetchAll();
