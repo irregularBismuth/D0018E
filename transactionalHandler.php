@@ -86,6 +86,8 @@ class TransactionalHandler{
         //echo var_dump($output);
 
         foreach($output as $output){
+
+            if ($output['product_id'] == ['animal_id']){
             $tot = $output['price']*$output['quantity'];                 
             $subtotal += $tot; 
                 
@@ -117,7 +119,8 @@ class TransactionalHandler{
             echo '</li>';
             echo '<br>';
             echo '</li>';
-            echo '</pre>';    
+            echo '</pre>'; 
+            }   
         }
         //$_SESSION['product_total'] = $subtotal;
         //$this->updateCartDisplay($_POST['product_id_cart']);      
