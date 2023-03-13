@@ -14,7 +14,7 @@ if($sqlHandler->s->rowCount() > 0)
         $yy=$res{'id'];
     }
     $query="update cart_item set quantity=5 where id=1";
-    $sqlHandler->half_genericQuery($quer,0,array(0));
+    $sqlHandler->half_genericQuery($query,0,array(0));
      /* $xx= 0;
     foreach($res as $res){
         $xx=$res['cart_id'];
