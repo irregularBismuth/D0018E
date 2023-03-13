@@ -37,7 +37,7 @@ require_once "sqlHandler.php";
     catch(Exception $e)
     {
         $dbcc->rollBack();
-        die($e->getMessage());    
+        echo ($e->getMessage());    
     }
 }
 check();
