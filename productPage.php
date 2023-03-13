@@ -39,29 +39,7 @@ $row_count = count($animals['image']);
         <?php
                        
             function generateBoxFrames($countRow, $animalArray){
-                require_once("sqlHandler.php");
-                //adding some local variable reference:
-                $query = "SELECT * FROM cart WHERE customer_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-                $output = $sqlHandler->s->fetchAll();
-                $initid = 0;
-
-                foreach($output as $output){
-                    $initid=$output['id'];
-                }
-
-                $query = "SELECT * FROM animals, cart_item where cart_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-                $output = $sqlHandler->s->fetchAll();
-                $tot=0;
-
-                foreach($output as $output){
-                    if($output['product_id'] == $output['animal_id']){
-                        $tot = $output['price']*$output['quantity'];
-                    }
-                }
-
-                
+                   
 
                 for ($i = 0; $i<$countRow;$i++){
                     $product_id = $animalArray['animal_id'][$i];
