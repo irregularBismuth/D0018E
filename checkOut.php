@@ -34,7 +34,7 @@ require_once "sqlHandler.php";
         }
         $dbcc->commit();
     }
-    catch(Exception $e)
+    catch(PDOException $e)
     {
         $dbcc->rollBack();
         echo ($e->getMessage());    
