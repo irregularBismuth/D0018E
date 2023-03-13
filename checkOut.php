@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once "sqlHandler.php";
 $id=$_SESSION['id'];
+function check()
+{
+require_once "sqlHandler.php";
     try{
        
         $query="select * from cart where customer_id=:x";
@@ -29,11 +31,9 @@ $id=$_SESSION['id'];
             header("Location: shoppingCart.php?bad=1");
             exit(0);
         }
-        
-        
-
         $sqlHandler->commit();
-    }catch(Exception $e)
+    }
+    catch(Exception $e)
     {
         $sqlHandler->rollBack();
         die($e->getMessage());    
