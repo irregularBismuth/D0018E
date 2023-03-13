@@ -12,20 +12,12 @@ $id=$_SESSION['id'];
             $yy=$res['cart_id'];
         }
         $sqlHandler->beginTransaction();
-        $query="select * from cart_item where cart_id=:x";
+        $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
         foreach($rez as $rez){
-           if($rez['product_id']==$rez['animal_id']){
-               $tot+=$rez['quantity']*$rez['price'];
-               if($rez['quantity'] > $rez['animal_quantity'])
-               {
-                  $sqlHandler->rollBack();
-                  header("Location: shoppingCart.php?bad=1");
-                  exit(0); 
-               }         
-           } 
+                   
         }
 
         
