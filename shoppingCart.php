@@ -26,6 +26,7 @@ require_once "sqlHandler.php";
     $sqlHandler->half_genericQuery($quer,1,array($intid)); 
     $res=$sqlHandler->s->fetchAll();
     $tot=0;
+    echo "<b>Shoppingcart:</b><br>";
     foreach($res as $res)
     {
         if($res['product_id']==$res['animal_id']){
@@ -36,7 +37,7 @@ require_once "sqlHandler.php";
             echo "<p>".$res['animal_id']."</p>"
        }*/
     }
-    echo "Total: ".$tot."</br><form action='checkOut.php' method='post'><input type='submit' value='Checkout'></form>";
+    echo "Total: ".$tot."</br><form action='checkOut.php' method='post'><inpuit type='submit' value='Checkout'></form>";
     
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
