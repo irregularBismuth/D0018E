@@ -16,16 +16,20 @@ if($sqlHandler->s->rowCount() > 0)
     $sqlHandler->half_genericQuery($quer,1,array($intid));
     $res=$sqlHandler->s->fetchAll();
     $quantity=0;
-    foreach($res as $res)
-    {
-        if($res['product_id']==$id)
+    $intiid=0;
+    if($sqlHandler->s->rowCount() > 0){
+        foreach($res as $res)
         {
-           $quantity=$res['quantity']; 
+            if($res['product_id']==$id)
+            {   $intiid=$res['id'];
+                $quantity=$res['quantity']; 
+            }
         }
     }
     $quantity=$quantity+1;
-    $query="insert into cart_item(cart_id,product_id,quanity,price) values(:x,:y,:z,:w)";
-    $sqlHandler->half_genericQuery($query,3,array($intid,$id,$quantity,$_POST['price']))); 
+    $quer="update cart_item set quanity=:x where cart_id=:y"; 
+    $sqlHandler->half_genericQuery($query,2,array($quantity,$intiid))); 
+    } 
 }
 else {
     $query="insert into cart(customer_id) values(:x)";
