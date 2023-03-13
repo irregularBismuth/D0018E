@@ -13,7 +13,7 @@ require_once "sqlHandler.php";
         foreach($res as $res){
             $yy=$res['id'];
         }
-        $sqlHandler->beginTransaction();
+        $dbcc=$sqlHandler->get_db_connector();
         $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
@@ -31,11 +31,11 @@ require_once "sqlHandler.php";
             header("Location: shoppingCart.php?bad=1");
             exit(0);
         }
-        $sqlHandler->commit();
+        $dbcc->commit();
     }
     catch(Exception $e)
     {
-        $sqlHandler->rollBack();
+        $dbcc->rollBack();
         die($e->getMessage());    
     }
 }
