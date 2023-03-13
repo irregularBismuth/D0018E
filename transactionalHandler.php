@@ -105,19 +105,33 @@ class TransactionalHandler{
             $this->sqlConnector->half_genericQuery($query_order_id, 1, $userid_param);         
             $session_order_id = $this->sqlConnector->s->fetch(PDO::FETCH_ASSOC);
             */
+
+            require_once("sqlHandler.php");
+                //adding some local variable reference:
+                $query = "SELECT * FROM cart WHERE customer_id=:x";
+                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
+                $output = $sqlHandler->s->fetchAll();
+                $initid = 0;
+
+                foreach($output as $output){
+                    $initid=$output['id'];
+                }
+
+                $query = "SELECT * FROM animals, cart_item where cart_id=:x";
+                $sqlHandler->half_genericQuery($query, 1, array($initid));
+                $output = $sqlHandler->s->fetchAll();
+                $tot=0;
+                $subtotal = 0;
+
+            foreach($output as $output){
+                if($output['product_id'] == $output['animal_id']){
+                    $tot = $output['price']*$output['quantity'];
+                    }
+                               
             
-            if (isset($_SESSION['product_cart'])){
-                $cart_items = $_SESSION['product_cart']['product_id']; // check the [0] index!  
-             
-           
-            //$product_data = $this->getProductItems($product_id['']);
-            $subtotal = 0;
-            
-            foreach($cart_items as $cart_item){
-                $product_data = $this->getProductItems($cart_item);
                 $subtotal += $product_data['animal_price']; 
                 $product_quantity = $product_data['animal_quantity'];
-                echo var_dump($product_data);
+                //echo var_dump($product_data);
                 echo '<pre>';
                 echo '<li class="submenu_item">';
                 echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
