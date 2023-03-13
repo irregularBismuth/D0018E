@@ -25,7 +25,7 @@ $id=$_SESSION['id'];
         }
 
         if($tot > 100){
-            $sqlHandler->rollBack();
+            $sqlHandler->rollBack(); 
             header("Location: shoppingCart.php?bad=1");
             exit(0);
         }
@@ -36,7 +36,7 @@ $id=$_SESSION['id'];
     }catch(PDOException $e)
     {
         $sqlHandler->rollBack();
-        throw $e;
+        die($e->getMessage());    
     }
 }
 
