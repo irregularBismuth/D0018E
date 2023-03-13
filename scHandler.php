@@ -9,57 +9,30 @@ $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
     $yy=0;
-    foreach($res as $res)
-    {
-        $yy=$res{'id'];
-    }
-    $qq="update cart_item set quantity=2 where id=1";
-    $sqlHandler->half_genericQuery($qq,0,0);
-     /* $xx= 0;
-    foreach($res as $res){
-        $xx=$res['cart_id'];
-    }
-    $quer="select * from cart_item where cart_id=:x";
-    $sqlHandler->half_genericQuery($quer,1,array($xx));
-    $res=$sqlHandler->s->fetchAll();
-    $quantity=0;
-    $yy=0;
-    $exist=0;
-    if($sqlHandler->s->rowCount() > 0){
-        foreach($res as $res)
-        {
-            if($res['product_id']==$id)
-            {  $exist=1; 
-               $yy=$res['id'];
-               $quantity=$res['quantity'];
-            }
+    foreach($res as $res){$yy=$res['cart_id'];}
+    $query="select * from cart_item where cart_id=:x";
+    $sqlHandler->half_genericQuery($query,1,array($yy));
+    $rez=$sqlHandler->s->fetchAll();
+    $zz=0;
+    $qq=1;
+    $alred=0;
+    foreach($rez as $rez){
+         if($rez['product_id']==$id){
+            $zz=$rez['id'];
+            $qq=$rez['quantity']; 
+            $alred=1;
         }
-        $query="update cart_item set quantity=:x where id=:y";
-        $sqlHandler->half_genericQuery($query,2,array($quantity,$yy));
     }
-    else{
-    */
-   /* xx=0;
-    foreach($res as $res){
-        $intid=$res['cart_id'];
+    $qq+=1;
+    if($alred){
+        $quer="update cart_item set quantity=:x where id=:y";
+        $sqlHandler->half_genericQuery($quer,2,array($qq,$zz));
+    
+    }else {
+        $quer="insert into cart_item(cart_id,product_id,quantity,price) values(:x,:y,1,:z)";
+        $sqlHandler->half_genericQuery($quer,3,array($yy,$id,$_POST['price']));
     }
-    $quer="select * from cart_item where cart_id=:x";
-    $sqlHandler->half_genericQuery($quer,1,array($intid));
-    $res=$sqlHandler->s->fetchAll();
-    $quantity=0;
-    $xx=0;
-    if($sqlHandler->s->rowCount() > 0){
-        foreach($res as $res)
-        {
-            if($res['product_id']==$id)
-            {   $xx=$res['id'];
-                $quantity=$res['quantity']; 
-            }
-        }
-    $quantity=$quantity+1;
-    $query="update cart_item set quantity=:x where cart_id=:y"; 
-    $sqlHandler->half_genericQuery($query,2,array($quantity,$intiid))); 
-    } */
+    
 }
 else {
     $query="insert into cart(customer_id) values(:x)";
