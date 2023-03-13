@@ -25,23 +25,33 @@ class TransactionalHandler{
             $initid=$this->getUserCartId()['id'];
             
             // if cart already exists then: 
-            if($initid->rowCount() > 0 ){
+            if($this->getUserCartId()->rowCount() > 0 ){
                 
                 $query = "SELECT * FROM cart_item where cart_id=:x";
                 $sqlHandler->half_genericQuery($query, 1, array($initid)); 
-                $output = $sqlHandler->s->fetchAll();
-                $quantity = 0; 
-                $yy = 0; 
-
-                if ($sqlHandler->s->rowCount() > 0){
-                    foreach($output as $output){
-                        if($output['product_id']==$product_id){
-                            $yy = $output['id'];
-                            $quantity = $output['quantity'];
-                        }
+                $out = $sqlHandler->s->fetchAll();
+                $zz = 0; 
+                $qq = 1; 
+                $alread=0;
+                
+                foreach($out as $out){
+                    if($out['product_id']==$product_id){
+                        $zz = $out['id'];
+                        $qq = $out'quantity'];
+                        $alread = 1;
                     }
-                    //update quantity here:
                 }
+                $qq+=1;
+                if($alread){
+                    $qr = "update cart_item set quantity=:x where id=:y";
+                    $sqlHandler->half_genericQuery($qr, 2, array($qq, $zz));
+                }
+                else{
+                    $quer = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, :z)";
+                    $sqlHandler->half_genericQuery($quer,3,array($initid, $product_id, $_POST['price']));
+                }
+                    //update quantity here:
+                
             }
 
             // if cart doesnt exist we create a new one to the user:
@@ -55,7 +65,6 @@ class TransactionalHandler{
                 $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
                 $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
-
         }
 
         header('location: '.$_SERVER['REQUEST_URI']); 
@@ -78,7 +87,7 @@ class TransactionalHandler{
         $initid = $this->getUserCartId()['id'];
 
         //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
-        $query = "SELECT * FROM animals, cart_item where cart_id=:x";
+        $query = "SELECT * FROM animals, cart_item WHERE cart_id=:x";
         $sqlHandler->half_genericQuery($query, 1, array($initid));
         $output = $sqlHandler->s->fetchAll();
         $tot=0;
@@ -91,7 +100,7 @@ class TransactionalHandler{
             $tot = $output['price']*$output['quantity'];                 
             $subtotal += $tot; 
                 
-            echo '<pre>';
+            //echo '<pre>';
             echo '<li class="submenu_item">';
             echo '<img class="submenu_item" src='.$output["animal_image"].'>';
             echo '<p> product: '.$output["animal_name"].'</p>';
@@ -119,7 +128,7 @@ class TransactionalHandler{
             echo '</li>';
             echo '<br>';
             echo '</li>';
-            echo '</pre>'; 
+            //echo '</pre>'; 
             }   
         }
         //$_SESSION['product_total'] = $subtotal;
