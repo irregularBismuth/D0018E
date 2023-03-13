@@ -30,7 +30,7 @@ require_once "sqlHandler.php";
     {
         if($res['product_id']==$res['animal_id']){
            $tot+=$res['price']*$res['quantity']; 
-            echo "<span>".$res['animal_name']." ".$res['animal_price']." x".$res['quantity']."</span><form action='removeCart.php'><input type='hidden' name='cid' value=".$res['cart_id']."><input type='hidden' name='aid' value=".$res['animal_id']."><input type='submit' value='Remove from cart'></form></br>";
+            echo "<span>".$res['animal_name']." ".$res['animal_price']." x".$res['quantity']."</span><form action='removeCart.php' method='post' ><input type='hidden' name='cid' value=".$res['cart_id']."><input type='hidden' name='aid' value=".$res['animal_id']."><input type='submit' value='Remove'></form></br>";
         }
        /*if($res['product_id']==$res['animal_id']){
             echo "<p>".$res['animal_id']."</p>"
