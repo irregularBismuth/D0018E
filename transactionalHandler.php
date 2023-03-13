@@ -22,12 +22,11 @@ class TransactionalHandler{
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
-        
-            // if cart already exists then: 
-            if($sqlHandler->s->rowCount() > 0 ){
-                
-                $initid=$this->getUserCartId();
+            $initid=$this->getUserCartId()['id'];
             
+            // if cart already exists then: 
+            if($initid->rowCount() > 0 ){
+                
                 $query = "SELECT * FROM cart_item where cart_id=:x";
                 $sqlHandler->half_genericQuery($query, 1, array($initid)); 
                 $output = $sqlHandler->s->fetchAll();
@@ -44,14 +43,14 @@ class TransactionalHandler{
                     //update quantity here:
                 }
             }
-           
+
+            // if cart doesnt exist we create a new one to the user:
             else{
                 $query = "INSERT INTO cart(customer_id) VALUES(:x)";
 
                 $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
 
-                $cartid=$this->getUserCartId();
-                $price=0;
+                $cartid=$this->getUserCartId()['id'];
                 
                 $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
                 $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
@@ -66,7 +65,7 @@ class TransactionalHandler{
         $query = "SELECT * FROM cart where customer_id=:x";   
         $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
         $output = $sqlHandler->s->fetchAll();
-        return $output['id'];
+        return $output;
  
     }
    
