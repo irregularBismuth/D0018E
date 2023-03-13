@@ -87,7 +87,7 @@ class TransactionalHandler{
         $initid = $this->getUserCartId()['id'];
 
         //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
-        $query = "SELECT * FROM animals, cart_item WHERE cart_id=:x";
+        $query = "select * from animals,cart_item where cart_id=:x";
         $this->sqlConnector->half_genericQuery($query, 1, array($initid));
         $output = $this->sqlConnector->s->fetchAll();
         $tot=0;
@@ -96,22 +96,17 @@ class TransactionalHandler{
 
         foreach($output as $output){
 
-            if ($output['product_id'] == ['animal_id']){
+            if ($output['product_id'] == $output['animal_id']){
             $tot = $output['price']*$output['quantity'];                 
-            $subtotal += $tot; 
-            
-            $qry = "SELECT * FROM animals WHERE animal_id =:x";
-            
-            $this->sqlConnector->half_genericQuery($query, 1, array($output['product_id']));
-            $data = $this->sqlConnector->s->fetchAll();
+            $subtotal += $tot;  
 
             echo '<pre>';
             echo '<li class="submenu_item">';
             echo '<img class="submenu_item" src='.$data["animal_image"].'>';
-            echo '<p> product: '.$data["animal_name"].'</p>';
+            echo '<p> product: '.$output["animal_name"].'</p>';
             echo '|';
             echo '<br>';
-            echo '<p> price: '.$data["animal_price"].'¥</p>';
+            echo '<p> price: '.$output["animal_price"].'¥</p>';
             echo '|';
             echo '<p> total: '.$tot.'¥</p>';
             echo '<br>';
@@ -129,7 +124,7 @@ class TransactionalHandler{
             echo '</li>';
             echo '</form>';
             echo '<li class="submenu_item">';
-            echo '<p>Stock quantity: '.$data['quantity'].'</p>';
+            echo '<p>Stock quantity: '.$output['quantity'].'</p>';
             echo '</li>';
             echo '<br>';
             echo '</li>';
