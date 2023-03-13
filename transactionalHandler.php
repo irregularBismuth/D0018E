@@ -176,23 +176,7 @@ class TransactionalHandler{
         } 
         
     }
-
-    function getProductItems($product_id){
-        $query = "SELECT * FROM animals WHERE animal_id=:x";
-        $param_array = array($product_id);
-        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
-        $output = $this->sqlConnector->s->fetchAll();
-        return $output;  
-    }
-
-    function getProductCart($order_id){
-        $query = "SELECT order_id FROM order_info WHERE order_id=:x";
-        $param_array = array($order_id);
-        $this->sqlConnector->half_genericQuery($query, 1, $param_array);
-        $output = $this->sqlConnector->s->fetchAll();
-        return $output; 
-    }
-    
+     
     function updateCartDisplay($product_id_to_remove){
         if (isset($_POST['removeButton'])){
             $item_to_remove = array_search($product_id_to_remove, $_SESSION['product_cart']['product_id']);
@@ -208,7 +192,7 @@ class TransactionalHandler{
         echo '</button>';
         echo '</form>'; 
 
-        //$this->checkoutOrderPlaced();
+        $this->checkoutOrderPlaced();
     }
 
     function checkoutOrderPlaced(){
