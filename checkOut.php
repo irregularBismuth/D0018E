@@ -14,6 +14,7 @@ require_once "sqlHandler.php";
             $yy=$res['id'];
         }
         $dbcc=$sqlHandler->get_db_connector();
+        $dbcc->beginTransaction();
         $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
