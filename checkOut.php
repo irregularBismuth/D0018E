@@ -39,6 +39,7 @@ require_once "sqlHandler.php";
         die($e->getMessage());    
     }
 }
+check();
 
 header("Location.php: shoppingCart.php");
 exit(0);
