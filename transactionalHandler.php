@@ -155,7 +155,7 @@ class TransactionalHandler{
 
             else if (isset($_SESSION['id'])) {
                 //2. EXEC TRANSACTION 
-                $this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']); 
+                //$this->execTransaction($_SESSION['id'],$_SESSION['product_cart'], $_SESSION['product_total']); 
             }
           
         }
@@ -167,9 +167,10 @@ class TransactionalHandler{
             $t_param = array($userid, 0, "no status");
             $this->sqlConnector->half_genericQuery($sql_metadata_transactional, 3, $t_param); 
     }
-    
+
+    /*
     function execTransaction($userid, $product_ids, $total_amount){
-        /* TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED */
+        //TRANSACTION PERFORMED WHENEVER CHECKOUT BUTTON IS PRESSED 
             $sqlTransaction = $this->sqlConnector->get_db_connector();
             
             try {
@@ -242,6 +243,6 @@ class TransactionalHandler{
                 $sqlTransaction->rollback();
                 die($e->getMessage());
             }
-    } 
+    } */
 }
 ?>
