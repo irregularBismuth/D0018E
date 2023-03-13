@@ -37,7 +37,7 @@ class TransactionalHandler{
                 foreach($out as $out){
                     if($out['product_id']==$product_id){
                         $zz = $out['id'];
-                        $qq = $out'quantity'];
+                        $qq = $out['quantity'];
                         $alread = 1;
                     }
                 }
