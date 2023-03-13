@@ -8,8 +8,14 @@ $sqlHandler->half_genericQuery($quer,1,array($_POST['uid']));
 $res=$sqlHandler->s->fetchAll();
 if($sqlHandler->s->rowCount() > 0)
 {
-
-    $xx= 0;
+    $yy=0;
+    foreach($res as $res)
+    {
+        $yy=$res{'id'];
+    }
+    $qq="update cart_item set quantity=2 where id=1";
+    $sqlHandler->half_genericQuery($qq,0,0);
+     /* $xx= 0;
     foreach($res as $res){
         $xx=$res['cart_id'];
     }
@@ -18,21 +24,21 @@ if($sqlHandler->s->rowCount() > 0)
     $res=$sqlHandler->s->fetchAll();
     $quantity=0;
     $yy=0;
+    $exist=0;
     if($sqlHandler->s->rowCount() > 0){
         foreach($res as $res)
         {
             if($res['product_id']==$id)
-            { $yy=$res['id'];
-             $quantity=$res['quantity'];
+            {  $exist=1; 
+               $yy=$res['id'];
+               $quantity=$res['quantity'];
             }
         }
-        $quantity=3;
         $query="update cart_item set quantity=:x where id=:y";
         $sqlHandler->half_genericQuery($query,2,array($quantity,$yy));
     }
     else{
-
-    }
+    */
    /* xx=0;
     foreach($res as $res){
         $intid=$res['cart_id'];
