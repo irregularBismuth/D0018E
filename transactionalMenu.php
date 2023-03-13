@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include("transactionalHandler.php");
+require_once("transactionalHandler.php");
 
 ?>
 

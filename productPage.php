@@ -39,7 +39,7 @@ $row_count = count($animals['image']);
         <?php
                        
             function generateBoxFrames(){
-                include("sqlHandler.php");
+                require_once("sqlHandler.php");
                 $query = "SELECT * FROM animals";
                 $sqlHandler->half_genericQuery($query,0,0);
                 $output = $sqlHandler->s->fetchAll();
@@ -84,7 +84,7 @@ $row_count = count($animals['image']);
             }
             if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
-                include("transactionalHandler.php");
+                require_once("transactionalHandler.php");
                 $transactionalHandler->addButtonClickAction();
                 header("location: ".$_SERVER['REQUEST_URI']);      
                         
@@ -102,7 +102,7 @@ $row_count = count($animals['image']);
                 $userProfile->addBalance();  
                 header("location: ".$_SERVER['REQUEST_URI']);      
             }
-             
+ 
             generateBoxFrames();         
         ?>
 
