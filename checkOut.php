@@ -38,6 +38,7 @@ require_once "sqlHandler.php";
         }
         */
         $dbcc->commit();
+        return true;
     }
     catch(PDOException $e)
     {
@@ -46,7 +47,6 @@ require_once "sqlHandler.php";
     }
 }
 check();
-
 header("Location.php: shoppingCart.php");
 exit(0);
 
