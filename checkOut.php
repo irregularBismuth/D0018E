@@ -6,16 +6,20 @@ function check()
 require_once "sqlHandler.php";
     try{
        
-        $query="select * from cart where customer_id=:x";
+  /*      $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll();
         $yy=0;
         foreach($res as $res){
             $yy=$res['id'];
         }
-        $dbcc=$sqlHandler->get_db_connector();
+   */
+         $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
-        $query="select * from animals,cart_item where cart_id=:x";
+        
+        $query="insert into cart(customer_id) values(99)";
+        $sqlHandler->half_genericQuery($query,0,0);  
+ /*    $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
@@ -32,6 +36,7 @@ require_once "sqlHandler.php";
             header("Location: shoppingCart.php?bad=1");
             exit(0);
         }
+        */
         $dbcc->commit();
     }
     catch(PDOException $e)
