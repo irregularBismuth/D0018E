@@ -102,7 +102,7 @@ class TransactionalHandler{
 
             echo '<pre>';
             echo '<li class="submenu_item">';
-            echo '<img class="submenu_item" src='.$data["animal_image"].'>';
+            echo '<img class="submenu_item" src='.$output["animal_image"].'>';
             echo '<p> product: '.$output["animal_name"].'</p>';
             echo '|';
             echo '<br>';
