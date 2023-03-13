@@ -129,8 +129,8 @@ class TransactionalHandler{
                     $initid=$output['id'];
                 }
 
-                $query = "SELECT * FROM animals join cart_item on animals.animals_id = cart_item.product_id";
-                //$query = "SELECT * FROM animals, cart_item where cart_id=:x";
+                //$query = "SELECT * FROM animals join cart_item on animals.animals_id = cart_item.product_id";
+                $query = "SELECT * FROM animals, cart_item where cart_id=:x";
                 $sqlHandler->half_genericQuery($query, 1, array($initid));
                 $output = $sqlHandler->s->fetchAll();
                 $tot=0;
