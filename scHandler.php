@@ -27,8 +27,8 @@ if($sqlHandler->s->rowCount() > 0)
             }
         }
         $quantity+=1;
-        $query="update cart_item set quantity=:y where id=:x";
-        $sqlHandler->half_genericQuery($query,2,array($yy,$quantity));
+        $query="update cart_item set quantity=:x where id=:y";
+        $sqlHandler->half_genericQuery($query,2,array($quantity,$yy));
     }
     else{
 
