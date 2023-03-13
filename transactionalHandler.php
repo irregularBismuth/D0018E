@@ -18,31 +18,48 @@ class TransactionalHandler{
     }
  
 
-    /*function addButtonClickAction(){
+    function addButtonClickAction(){
+        require_once("sqlHandler.php");
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
-            $this->product_id = $product_id;
-            if(!isset($_SESSION['product_cart'])){
-                $_SESSION['product_cart'] = array();
-                $this->product_cart = $_SESSION['product_cart'];
-            }
+            $query = "SELECT * FROM cart where customer_id=:x";
+            $sqlHandler->half_genericQuery($query, 1, array($product_id));
+            $output = $sqlHandler->s->fetchAll();
             
-            if(isset($_SESSION['product_cart'])){
-                
-                array_push($_SESSION['product_cart'], $product_id);
-                $_SESSION['product_cart'] = array_unique($_SESSION['product_cart']); // removing duplicates
-                $this->product_cart = $_SESSION['product_cart'];
-
-                //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
-
+            if($sqlHandler->s->rowCount() > 0 ){
+                $initid=0;
+                foreach($output as $output){
+                    $initid = $output['cart_id'];
+                }
             }
+            else{
+                $query = "INSERT INTO cart(customer_id) VALUES(:x)";
 
+                $sqlHandler->half_genericQuery($query, 1, array($product_id));
+
+                $query = "SELECT * FROM cart where customer_id=:x";
+                
+                $sqlHandler->half_genericQuery($query, 1, array($product_id));
+
+                $output = $sqlHandler->s->fetchAll();
+                $cartid=0;
+                $price=0;
+                
+                foreach($output as $output){
+                    $cartid = $output['id'];
+                }
+                $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
+                $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
+            } 
+
+            
+            
             header('location: '.$_SERVER['REQUEST_URI']); 
         }
-    }*/
-
-    function addButtonClickAction(){
+    }
+   
+   /* function addButtonClickAction(){
         //session_start();
         if(isset($_POST['addButton'])){
             $product_id = $_POST['product_id'];
@@ -95,7 +112,7 @@ class TransactionalHandler{
             
         } 
         
-    }
+    }*/
     
     function generateCartDisplay(){
         
