@@ -38,7 +38,7 @@ $row_count = count($animals['image']);
 
         <?php
                        
-            function generateBoxFrames($countRow, $animalArray){
+            function generateBoxFrames(){
                 require_once("sqlHandler.php");
                 $query = "SELECT * FROM animals";
                 $sqlHandler->half_genericQuery($query,0,0);
@@ -103,7 +103,7 @@ $row_count = count($animals['image']);
                 header("location: ".$_SERVER['REQUEST_URI']);      
             }
              
-            generateBoxFrames($row_count, $animals);         
+            generateBoxFrames();         
         ?>
 
     </body>
