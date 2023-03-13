@@ -62,128 +62,66 @@ class TransactionalHandler{
     }
 
     function getUserCartId(){
+        require_once("sqlHandler.php");
         $query = "SELECT * FROM cart where customer_id=:x";   
         $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
         $output = $sqlHandler->s->fetchAll();
         return $output;
  
-    }
-   
-   /* function addButtonClickAction(){
-        //session_start();
-        if(isset($_POST['addButton'])){
-            $product_id = $_POST['product_id'];
-
-
-            $this->insertTransactionalMetadata($_SESSION['id']);
-            $query_order_id = "SELECT * FROM transactional WHERE customer_id=:x";
-            $this->sqlConnector->half_genericQuery($query_order_id, 1, array($_SESSION['id']));         
-            $session_transactional = $this->sqlConnector->s->fetchAll(); 
-            
-            if(!isset($_SESSION['product_cart'])){
-                
-                $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                $param_insert = array($session_transactional['order_id'], $product_id, 1);
-                $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
-
-                $_SESSION['product_cart'] = array('product_id'=>$product_id, 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1);
-            }
-            
-            if(isset($_SESSION['product_cart'])){
-                
-                $animal_data = $this->getProductItems($product_id);
-                
-                if(in_array($product_id, $_SESSION['product_cart']['product_id']) && $_SESSION['product_cart']['order_quantity'] <= $animal_data['animal_quantity']){
-                    
-                    $update_quantity = $_SESSION['product_cart']['order_quantity'] + 1;
-                    $update_query = "UPDATE order_info SET order_quantity=:x WHERE product_id=:y";
-                    $param_update = array($update_quantity, $product_id);
-                    $this->sqlConnector->half_genericQuery($update_query, 2, $param_update);
-                    $_SESSION['product_cart']['order_quantity'] =  $update_quantity;
-                }
-     
-                if(!in_array($product_id, $_SESSION['product_cart']['product_id'])){
-                    
-                    $insert_query = "INSERT INTO order_info (order_id, product_id, order_quantity) VALUES (:x, :y, :z)";
-                    $param_insert = array($session_transactional['order_id'], $product_id, 1);
-                    $this->sqlConnector->half_genericQuery($insert_query, 3, $param_insert);
-
-                    $new_product = array('product_id'=>$product_id, 'order_id'=>$session_transactional['order_id'] , 'order_quantity'=>1); 
-                    //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['product_id'], $product_id);
-                    //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['order_id'], $session_transactional);
-                    //$_SESSION['product_cart'] = array_push($_SESSION['product_cart']['order_quantity'], 1);
-                    $_SESSION['product_cart'][] = $new_product; //[] means aepending to the array
-                }
-
-                //INSERT META DATA HERE FOR TRANSACTIONAL TABLE
-
-            }
-
-            
-        } 
-        
-    }*/
+    } 
     
     function generateCartDisplay(){
         
         require_once("sqlHandler.php");
             //adding some local variable reference:
-            $query = "SELECT * FROM cart WHERE customer_id=:x";
-            $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-            $output = $sqlHandler->s->fetchAll();
-            $initid = 0;
+            
+        $initid = $this->getUserCartId()['id'];
 
-            foreach($output as $output){
-                $initid=$output['id'];
-            }
+        $query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
+        //$query = "SELECT * FROM animals, cart_item where cart_id=:x";
+        $sqlHandler->half_genericQuery($query, 1, array($initid));
+        $output = $sqlHandler->s->fetchAll();
+        $tot=0;
+        $subtotal = 0;
+        //echo var_dump($output);
 
-            $query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id";
-            //$query = "SELECT * FROM animals, cart_item where cart_id=:x";
-            $sqlHandler->half_genericQuery($query, 1, array($initid));
-            $output = $sqlHandler->s->fetchAll();
-            $tot=0;
-            $subtotal = 0;
-            //echo var_dump($output);
-
-            foreach($output as $output){
-                $tot = $output['price']*$output['quantity'];                 
-                $subtotal += $tot; 
+        foreach($output as $output){
+            $tot = $output['price']*$output['quantity'];                 
+            $subtotal += $tot; 
                 
-                echo '<pre>';
-                echo '<li class="submenu_item">';
-                echo '<img class="submenu_item" src='.$output["animal_image"].'>';
-                echo '<p> product: '.$output["animal_name"].'</p>';
-                echo '|';
-                echo '<br>';
-                echo '<p> price: '.$output["animal_price"].'¥</p>';
-                echo '|';
-                echo '<p> total: '.$tot.'¥</p>';
-                echo '<br>';
-                echo '<li class="submenu_item">';
-                echo '<form style="display: block; background-color: inherit;" method="POST">';
-                echo '<input type="hidden" name="product_id_cart" value='.$output["animal_id"].' />';
-                echo '</li>';
-                echo '<li class="submenu_item">';
-                echo '<button type="submit" name="removeButton" value="remove">';
-                echo '<img src=../images/remove_icon.jpg>';
-                echo '</button>';
-                echo '<button type="submit" name="addQuantity" value="addquantity">';
-                echo '<img src=../images/add_icon.png>';
-                echo '</button>';
-                echo '</li>';
-                echo '</form>';
-                echo '<li class="submenu_item">';
-                echo '<p>Stock quantity: '.$output['quantity'].'</p>';
-                echo '</li>';
-                echo '<br>';
-                echo '</li>';
-                echo '</pre>';    
-            }
+            echo '<pre>';
+            echo '<li class="submenu_item">';
+            echo '<img class="submenu_item" src='.$output["animal_image"].'>';
+            echo '<p> product: '.$output["animal_name"].'</p>';
+            echo '|';
+            echo '<br>';
+            echo '<p> price: '.$output["animal_price"].'¥</p>';
+            echo '|';
+            echo '<p> total: '.$tot.'¥</p>';
+            echo '<br>';
+            echo '<li class="submenu_item">';
+            echo '<form style="display: block; background-color: inherit;" method="POST">';
+            echo '<input type="hidden" name="product_id_cart" value='.$output["animal_id"].' />';
+            echo '</li>';
+            echo '<li class="submenu_item">';
+            echo '<button type="submit" name="removeButton" value="remove">';
+            echo '<img src=../images/remove_icon.jpg>';
+            echo '</button>';
+            echo '<button type="submit" name="addQuantity" value="addquantity">';
+            echo '<img src=../images/add_icon.png>';
+            echo '</button>';
+            echo '</li>';
+            echo '</form>';
+            echo '<li class="submenu_item">';
+            echo '<p>Stock quantity: '.$output['quantity'].'</p>';
+            echo '</li>';
+            echo '<br>';
+            echo '</li>';
+            echo '</pre>';    
+        }
 
-            $_SESSION['product_total'] = $subtotal;
-            //$this->updateCartDisplay($_POST['product_id_cart']);
-        } 
-        
+        $_SESSION['product_total'] = $subtotal;
+        //$this->updateCartDisplay($_POST['product_id_cart']);      
     }
      
     function updateCartDisplay($product_id_to_remove){
