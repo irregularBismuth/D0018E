@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 $id=$_SESSION['id'];
 function check()
