@@ -17,7 +17,7 @@ require_once "sqlHandler.php";
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
         
-        $query="insert into cart(customer_id) values(1)";
+        $query="insert into cart(customer_id) values(7)";
         $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
