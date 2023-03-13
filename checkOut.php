@@ -25,7 +25,7 @@ $id=$_SESSION['id'];
         }
 
         if($tot > 100){
-            $sqlHandler->rollBack(); 
+            throw "123"; 
             header("Location: shoppingCart.php?bad=1");
             exit(0);
         }
