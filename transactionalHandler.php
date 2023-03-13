@@ -145,23 +145,22 @@ class TransactionalHandler{
                     }
                                
             
-                $subtotal += $product_data['animal_price']; 
-                $product_quantity = $product_data['animal_quantity'];
+                $subtotal += $tot; 
+                
                 //echo var_dump($product_data);
                 echo '<pre>';
                 echo '<li class="submenu_item">';
-                echo '<img class="submenu_item" src='.$product_data["animal_image"].'>';
-                echo '<p> product: '.$product_data["animal_name"].'</p>';
+                echo '<img class="submenu_item" src='.$output["animal_image"].'>';
+                echo '<p> product: '.$output["animal_name"].'</p>';
                 echo '|';
                 echo '<br>';
-                echo '<p> price: '.$product_data["animal_price"].'¥</p>';
+                echo '<p> price: '.$output["animal_price"].'¥</p>';
                 echo '|';
-                echo '<p> total: '.$product_data["animal_price"]*$product_quantity.'¥</p>';
+                echo '<p> total: '.$tot.'¥</p>';
                 echo '<br>';
                 echo '<li class="submenu_item">';
                 echo '<form style="display: block; background-color: inherit;" method="POST">';
-                echo '<input type="hidden" name="product_id_cart" value='.$product_data["animal_id"].' />';
-                echo '<input type="number" name=product_quantity value="1" max='.$product_quantity.'min="1"/>';
+                echo '<input type="hidden" name="product_id_cart" value='.$output["animal_id"].' />';
                 echo '</li>';
                 echo '<li class="submenu_item">';
                 echo '<button type="submit" name="removeButton" value="remove">';
@@ -173,7 +172,7 @@ class TransactionalHandler{
                 echo '</li>';
                 echo '</form>';
                 echo '<li class="submenu_item">';
-                echo '<p>Stock quantity: '.$product_quantity.'</p>';
+                echo '<p>Stock quantity: '.$output['quantity'].'</p>';
                 echo '</li>';
                 //echo '<hr>';
                 echo '<br>';
