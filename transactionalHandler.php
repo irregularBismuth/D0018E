@@ -17,39 +17,42 @@ class TransactionalHandler{
         //product_id and button_id...         
     }
  
-
     function addButtonClickAction(){
         require_once("sqlHandler.php");
         if(isset($_POST['addButton'])){
 
             $product_id = $_POST['product_id'];
-            $query = "SELECT * FROM cart where customer_id=:x";
-            $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-            $output = $sqlHandler->s->fetchAll();
-            $initid=0;
-
+        
+            // if cart already exists then: 
             if($sqlHandler->s->rowCount() > 0 ){
-                foreach($output as $output){
-                    $initid = $output['cart_id'];
+                
+                $initid=$this->getUserCartId();
+            
+                $query = "SELECT * FROM cart_item where cart_id=:x";
+                $sqlHandler->half_genericQuery($query, 1, array($initid)); 
+                $output = $sqlHandler->s->fetchAll();
+                $quantity = 0; 
+                $yy = 0; 
+
+                if ($sqlHandler->s->rowCount() > 0){
+                    foreach($output as $output){
+                        if($output['product_id']==$product_id){
+                            $yy = $output['id'];
+                            $quantity = $output['quantity'];
+                        }
+                    }
+                    //update quantity here:
                 }
             }
-
+           
             else{
                 $query = "INSERT INTO cart(customer_id) VALUES(:x)";
 
                 $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
 
-                $query = "SELECT * FROM cart where customer_id=:x";
-                
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-
-                $output = $sqlHandler->s->fetchAll();
-                $cartid=0;
+                $cartid=$this->getUserCartId();
                 $price=0;
                 
-                foreach($output as $output){
-                    $cartid = $output['id'];
-                }
                 $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
                 $sqlHandler->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
@@ -57,6 +60,14 @@ class TransactionalHandler{
         }
 
         header('location: '.$_SERVER['REQUEST_URI']); 
+    }
+
+    function getUserCartId(){
+        $query = "SELECT * FROM cart where customer_id=:x";   
+        $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
+        $output = $sqlHandler->s->fetchAll();
+        return $output['id'];
+ 
     }
    
    /* function addButtonClickAction(){
@@ -116,25 +127,23 @@ class TransactionalHandler{
     
     function generateCartDisplay(){
         
-            
+        require_once("sqlHandler.php");
+            //adding some local variable reference:
+            $query = "SELECT * FROM cart WHERE customer_id=:x";
+            $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
+            $output = $sqlHandler->s->fetchAll();
+            $initid = 0;
 
-            require_once("sqlHandler.php");
-                //adding some local variable reference:
-                $query = "SELECT * FROM cart WHERE customer_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
-                $output = $sqlHandler->s->fetchAll();
-                $initid = 0;
+            foreach($output as $output){
+                $initid=$output['id'];
+            }
 
-                foreach($output as $output){
-                    $initid=$output['id'];
-                }
-
-                //$query = "SELECT * FROM animals join cart_item on animals.animals_id = cart_item.product_id";
-                $query = "SELECT * FROM animals, cart_item where cart_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($initid));
-                $output = $sqlHandler->s->fetchAll();
-                $tot=0;
-                $subtotal = 0;
+            $query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id";
+            //$query = "SELECT * FROM animals, cart_item where cart_id=:x";
+            $sqlHandler->half_genericQuery($query, 1, array($initid));
+            $output = $sqlHandler->s->fetchAll();
+            $tot=0;
+            $subtotal = 0;
             //echo var_dump($output);
 
             foreach($output as $output){
