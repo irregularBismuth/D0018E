@@ -36,8 +36,8 @@ require_once "sqlHandler.php";
             echo "<p>".$res['animal_id']."</p>"
        }*/
     }
-    echo "Total: ".$tot;
-    echo "<form action='checkOut.php' method='post'><inpuit type='submit' value='Checkout'></form>";
+    echo "Total: ".$tot."</br><form action='checkOut.php' method='post'><inpuit type='submit' value='Checkout'></form>";
+    
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
     $res=$sqlHandler->s->fetchAll();
