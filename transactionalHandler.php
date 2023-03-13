@@ -131,16 +131,14 @@ class TransactionalHandler{
 
                 //$query = "SELECT * FROM animals join cart_item on animals.animals_id = cart_item.product_id";
                 $query = "SELECT * FROM animals, cart_item where cart_id=:x";
-                $sqlHandler->half_genericQuery($query, 1, array($_SESSION['id']));
+                $sqlHandler->half_genericQuery($query, 1, array($initid));
                 $output = $sqlHandler->s->fetchAll();
                 $tot=0;
                 $subtotal = 0;
             //echo var_dump($output);
 
             foreach($output as $output){
-                if($output['product_id'] == $output['animal_id']){
-                    $tot = $output['price']*$output['quantity'];
-                }                 
+                $tot = $output['price']*$output['quantity'];                 
                 $subtotal += $tot; 
                 
                 echo '<pre>';
