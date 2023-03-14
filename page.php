@@ -31,7 +31,7 @@ if($sqlHandler->s->rowCount() > 0)
 <div class="headern">
 <header>
  
-    <a href="site.php"><img src="../images/logo.png" width="400"></a>
+    <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>
     <?php if($_SESSION['admin']==1){ echo "<a href='addnew.php'> Add new animal </a>"; }?>
      <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
