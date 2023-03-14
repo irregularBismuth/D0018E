@@ -84,7 +84,8 @@ function search() {
          echo "<form action='delete.php' method='post'><input type='hidden' name='animal_id' value=".$who."><input value='Delete post' type='submit'></form>";   
         //echo "</br>current quantity: ".$['animal_quantity'];//."<form action='alter.php' method='post'><input type='number' min='0' max='100'><input type='hidden' name='aid' value=".$who."><input type='submit'></form>";
        // echo "<form action='alter.php' method='post'><input type='number' min='0' max='100'><input type='hidden' value=".$who."name='aid'><input type='submit' value='alter Quantity'></form>";
-      } 
+        echo "test1123";  
+    } 
 
     ?>
     <div class="producten">
