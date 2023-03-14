@@ -80,21 +80,20 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:x";
-        $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
+   /*     $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
     
         $dtaap="set foreign_key_checks =:x";
-        $sqlHandler->half_genericQuery($dtaap,1,array(0));
-        
+        $sqlHandler->half_genericQuery($dtaap,1,array(0)); 
         $dll="delete from cart_item where cart_id=:x";
             $sqlHandler->half_genericQuery($dll,1,array($yy)); 
         $xing="delete from cart where id=:x";
             $sqlHandler->half_genericQuery($xing,1,array($yy));
-        /*$qwert="delete from cart_item where cart_id=:x";
+    */  
+      /*$qwert="delete from cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy));
         $qwerty="delete from cart where id=:x";
         $sqlHandler->half_genericQuery($qwerty,1,array($yy))
         */
-        $sqlHandler->half_genericQuery($dtaap,1,array(1));
 
 
        // $sqlHandler->half_genericQuery($query,0,0);  
@@ -117,7 +116,7 @@ function check($id)
         }
         */
         $dbcc->commit();
-      return 0;  
+         return 0;  
    //     header("Location: shoppingCart.php");
     //     exit(0);
         //return true;
@@ -130,7 +129,7 @@ function check($id)
 }
 $val=check($id);
 if($val==0){
-header("Location: shoppingCart.php");
+header("Location: shoppingCart.php?succ=1");
 exit(0);
 }
 if($val==1){
