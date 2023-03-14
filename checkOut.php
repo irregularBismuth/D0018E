@@ -20,9 +20,23 @@ require_once "sqlHandler.php";
             return 2;
         }
         
-         $dbcc=$sqlHandler->get_db_connector();
+        $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
+    
+        $condition_balance_check = false;
+        $condition_check2 = false; 
+        $condition_check3 = false;
         
+        if ($condition_balance_check){
+
+        }
+
+        // if all transactional conditions evaluate to true then UPDATE-queries 
+        if ($condition_balance_check & $condition_check2 & $condition_check3){
+
+        }
+
+
         return 3;
       /*  $quer="select * from animals,cart_item where cart_item=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
