@@ -67,8 +67,8 @@ class TransactionalHandler{
                 $this->sqlConnector->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
         }
-
-        header('location: productPage.php'); 
+        header("Refresh:0");
+        //header('location: productPage.php'); 
     }
 
     function getUserCartId(){
