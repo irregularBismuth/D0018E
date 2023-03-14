@@ -10,8 +10,7 @@ $id=$_SESSION['id'];
 function check($id)
 {
     require_once "sqlHandler.php";
-    try{
-         
+    try{   
         $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
@@ -27,18 +26,6 @@ function check($id)
         
         $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();    
-       /* $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
-        //$query="select from animals,cart_item where animal_id=product_id and cart_id=:x";
-        $sqlHandler->half_genericQuery($quer,1,array($yy));
-        $rez=$sqlHandler->s->fetchAll();
-        $tot=0;
-        foreach($rez as $rez){
-                $tot+=$rez['quantity']*$rez['price'];
-                if($rez['quantity'] > $rez['animal_quantity']){
-                    return 3;}
-                }
-        }
-        */
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
         //global $ide;
@@ -61,10 +48,8 @@ function check($id)
             $quary="insert into ode_item(odeid,product_id,price,quantity) values(:x,:y,:z,:w)";
             $sqlHandler->half_genericQuery($quary,4,array($ide,$z['product_id'],$z['price'],$z['quantity']));
         }
-        
         $yama="update ode set total=:x where id=:y";
         $sqlHandler->half_genericQuery($yama,2,array($tot,$ide));
- 
         $serifu="select * from users where id=:x";
         $sqlHandler->half_genericQuery($serifu,1,array($id));
         $w=$sqlHandler->s->fetchAll();
