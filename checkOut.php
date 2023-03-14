@@ -7,7 +7,7 @@ function check()
 require_once "sqlHandler.php";
     try{
        
-    /*   $query="select * from cart where customer_id=:x";
+        $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
         $yy=0;
@@ -19,7 +19,7 @@ require_once "sqlHandler.php";
         else{ 
             return 2;
         }
-        */
+        
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
         
