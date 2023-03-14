@@ -16,6 +16,7 @@ $bad=$_GET['bad'];
     if($bad==1){
         echo "More animals in cart then in stock please remove some to continue";
     }
+    echo "</br>";
     $quer="select * from cart where customer_id=:x";
     $sqlHandler->half_genericQuery($quer,1,array($_SESSION['id'])); 
     $res=$sqlHandler->s->fetchAll();
