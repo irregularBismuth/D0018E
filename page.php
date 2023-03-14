@@ -3,6 +3,12 @@ session_start();
 //peepo
 require_once "sqlHandler.php";
 require_once("cartMenuSwitch.php");
+
+
+if(!isset($_SESSION['username'])){
+    header('Location: login.php');
+    exit(0);
+}
 $who=$_REQUEST['a'];
 $query="select * from animals where animal_id=:x";
 $arr=array($who);
@@ -93,8 +99,30 @@ function search() {
     
               echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
-              echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
+              echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price'];
+                if($res['animal_quantity'] > 0){  
+            echo "<form action='scHandler.php' method='post'>"; 
+              echo "<input type='hidden' name='uid' value=".$_SESSION['id']." ><input type='hidden' name='price' value=".$res['animal_price'].">";
+              echo "<input type='hidden' name='anmid' value=".$res['animal_id']."><input type='submit' value='Add to cart'></form></div>"; 
+            }
+            else{
+                echo "This animal is currently out of stock";
+            }
+            
 
+            //<input type='hidden' name='price' value=".$res['animal_price']."><input value='Add to cart' type='submit'  /></form></div>";
+                
+            
+                //if($res['animal_quantity'] > 0){
+               // echo "<form action='scHandler.php' method='post'>";
+               // echo 
+             /*  "<input type='hidden' name='uid' value=".$_SESSION['id']." >
+                <input type='hidden' name='price' value=".$res['animal_price'].">
+                <input type='hidden' name='anmid' value=".$res['animal_id'].">
+                <input type='submit' value='Add'>"; 
+        */
+
+        
              $frog="select MAX(id) as gii,AVG(rate) as frogz from rating";
              $sqlHandler->half_genericQuery($frog,0,array(0));
              $f=$sqlHandler->s->fetchAll();

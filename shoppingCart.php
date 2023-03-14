@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once "sqlHandler.php";
+
+if(!isset($_SESSION['username'])){
+    header('Location: login.php');
+    exit(0);
+}
+
 $bad=$_GET['bad'];
 $succ=$_GET['succ'];
 ?>
