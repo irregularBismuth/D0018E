@@ -41,7 +41,19 @@ function check($id)
                 }
         }
         */
-        return 3; 
+        $line="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
+        $sqlHandler->half_genericQuery($line,1,array($yy));
+        $z=$sqlHandler->s->fetchAll();
+        $tot=0;
+        foreach($z as $z){
+            $tot+=$z['price']*$z['quantity'];
+            if($z['quantity'] > $z['animal_quantity']){
+                return 2;
+            }
+        }
+    
+
+
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
