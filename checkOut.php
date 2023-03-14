@@ -31,18 +31,15 @@ function check($id)
         $dbcc->beginTransaction();
             
         
-       $quer="select * from animals,cart_item where cart_id=:x";
+       $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
         foreach($rez as $rez){
-            if($rez['product_id']==$rez['animal_id']){
                 $tot+=$rez['quantity']*$rez['price'];
                 if($rez['quantity'] > $rez['animal_quantity']){
                     return 3;
-                }
-            }
-            
+                } 
         }
         
          
