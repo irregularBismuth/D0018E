@@ -22,7 +22,6 @@ foreach($rez as $rez){
     $milkert="select * from animals,ode_item where animal_id=product_id and odeid=:x";
     $sqlHandler->half_genericQuery($milkert,1,array($odeid));
     $p=$sqlHandler->s->fetchAll();    
-        
     echo "order number: ".$rez['id']." Ordertime".$rez['dateTime'];
     foreach($p as $p)
     {
