@@ -37,7 +37,7 @@ $row_count = count($animals['image']);
                         document.getElementById("cartIcon").style.display ="block";
                     }
                 }
-                //xmlhttp.open("GET", "search.php?q=" + str, true);
+                xmlhttp.open("GET", "search.php?q=" + str, true);
                 xmlhttp.send();
                 }
         </script>
