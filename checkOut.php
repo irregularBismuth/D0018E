@@ -66,9 +66,9 @@ function check($id)
         {
             return 3;
         }
-        $lou="update users set balance=:x";
-        $sqlHandler->half_genericQuery($lou,1,array($cost));  
-    
+        $lou="update users set balance=:x where id=:x";
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
+        
 
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
