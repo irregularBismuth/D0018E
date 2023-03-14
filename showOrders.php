@@ -12,7 +12,7 @@ if(!isset($_SESSION['username'])){
 
 $id=$_SESSION['id'];
 
-if(isset($_SESSION['admin'])==0){
+if($_SESSION['admin']==0){
 $milkerz="select * from ode where customer_id=:x";
 $sqlHandler->half_genericQuery($milkerz,1,array($id));
 }
