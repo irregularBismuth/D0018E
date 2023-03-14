@@ -25,7 +25,7 @@ $userProfile = new UserProfile($sql);
            $this->cart_items_added = array();
            $this->sqlController = $sqlObject;
            $this->userData = array("name"=>$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);//$this->username,"balance"=>$this->balance,"profileImage"=>$this->profileImage);
-            $this->fetchUserData();
+            //$this->fetchUserData();
             // FIX: set the global session variables in the function below!
         }
 
@@ -68,7 +68,7 @@ $userProfile = new UserProfile($sql);
                 
                 
             $query = "select name, balance, profileImage from users where id=:x";
-            $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
+            $this->sqlController->half_genericQuery($query, 1, array($_SESSION['username']));
             $output = $this->sqlController->s->fetchAll();                      
             $this->userData["name"] = $output['name'];
             $this->userData["balance"] = $output['balance'];
