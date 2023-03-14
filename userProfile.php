@@ -86,17 +86,18 @@ $userProfile = new UserProfile($sql);
             // adding balance that is initially 0, need to make INSERT query from sqlHandler!
             
             if(isset($_POST['submit_balance'])){
-                $current_balance = $this->balance;
+
+                $query = "select balance from users where id=:x";
+                $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
+                $output = $this->sqlController->s->fetchAll();                      
+
+                $current_balance = $output['balance'];
                 $new_balance = $_POST['balance'] + $current_balance;                           
 
                 $sql_update_query = "UPDATE users SET balance=:x where id=:y";
-                $temp_array = array($new_balance,$this->user_id);
-                $this->sqlController->half_genericQuery($sql_update_query, 2, $temp_array);
-                $execution = $this->sqlController->s->prepare($sql_update_query);
-                $execution->execute();                        
+                $temp_array = array($new_balance,$_SESSION['id']);
+                $this->sqlController->half_genericQuery($sql_update_query, 2, $temp_array);                      
                    
-                $this->balance = $execution['balance'] + $new_balance;
-                $this->userData["balance"] = $this->balance; 
                 header("Refresh:0; url=userMenu.php"); 
                                            
             } 
