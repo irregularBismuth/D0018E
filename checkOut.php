@@ -41,6 +41,11 @@ function check($id)
                 }
         }
         */
+        $wer="insert into ode(customer_id,total) values(:x,:y)";
+        $sqlHandler->half_genericQuery($wer,2,array($id,0));
+        $ide=$sqlHandler->s->lastInsertId(); 
+
+
         $line="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($line,1,array($yy));
         $z=$sqlHandler->s->fetchAll();
@@ -53,7 +58,15 @@ function check($id)
             $quant=($z['animal_quantity']-$z['quantity']);
             $link="update animals set animal_quantity=:x where animal_id=:y";
             $sqlHandler->half_genericQuery($link,2,array($quant,$z['animal_id']));
+
+            $quary="insert into ode_item(odeid,product_id,price,quantity) values(:x,:y,:z,:w)";
+            $sqlHandler->half_genericQuery($quary,4,array($ide,$z['product_id'],$z['price'],$z['quantity']));
         }
+        
+        $yama="update ode set total=:x where id=:y";
+        $sqlHandler->half_genericQuery($yama,2,array($tot,$ide));
+
+        
         $serifu="select * from users where id=:x";
         $sqlHandler->half_genericQuery($serifu,1,array($id));
         $w=$sqlHandler->s->fetchAll();
@@ -67,8 +80,14 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:x";
-        $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));  
         
+        $qwert="delete from cart_item where cart_id=:x";
+        $sqlHandler->half_genericQuery($qwert,1,array($yy));
+        $qwerty="delete from cart where id=:x";
+        $sqlHandler->half_genericQuery($qwert,1,array($yy));
+        
+
 
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
