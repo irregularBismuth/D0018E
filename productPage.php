@@ -20,7 +20,7 @@ $row_count = count($animals['image']);
 
         <div class="headern">
         <header>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>
             
             <a href="site.php">
                 <img src="../images/logo.png" width="400">
