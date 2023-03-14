@@ -29,9 +29,9 @@ function check($id)
         
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
+            
         
-        return 2;
-      /*  $quer="select * from animals,cart_item where cart_item=:x";
+       $quer="select * from animals,cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
@@ -44,7 +44,7 @@ function check($id)
             }
             
         }
-       */ 
+        
          
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
