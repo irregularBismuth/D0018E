@@ -23,8 +23,6 @@ $sqlHandler->half_genericQuery($query,0,$arr);
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
-    <?php generateCartButton(); ?>
-    <?php include("userMenu.php"); ?>
     
 
     
