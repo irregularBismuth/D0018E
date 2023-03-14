@@ -100,7 +100,7 @@ function search() {
 
         <div class="rating">
             <form action = "rating.php" method="post">
-                <input type="hidden" name="product_id" value='<?php echo $res['product_id']; ?> >
+                <input type="hidden" name="product_id" value="<?php echo $res['product_id']; ?>">
                 <label for="rating">Rate this product:</label>
                 <select id="rating" name="ratingx">
                     <option value="1">1 banana</option>
