@@ -69,6 +69,6 @@ $succ=$_GET['succ'];
    
      }
 ?>
-</body>$
+</body>
 
 </html>
