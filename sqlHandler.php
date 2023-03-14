@@ -6,7 +6,6 @@
         public $query_array;
         public $animal_array;
         public $s;
-        public $id;
         function __construct($db_connector)
         {
             $this->db_connector = $db_connector;
@@ -67,7 +66,6 @@
                           $s->bindValue(':w',$arr[3]); }
             $s->execute();
             $this->s=$s;
-            $id=$s->lastInsertId(); 
 //   {
   //      echo $res['animal_name']." "; 
             
