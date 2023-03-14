@@ -65,8 +65,7 @@ function check($id)
         
         $yama="update ode set total=:x where id=:y";
         $sqlHandler->half_genericQuery($yama,2,array($tot,$ide));
-
-        
+ 
         $serifu="select * from users where id=:x";
         $sqlHandler->half_genericQuery($serifu,1,array($id));
         $w=$sqlHandler->s->fetchAll();
@@ -80,11 +79,9 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:y";
-        $sqlHandler->half_genericQuery($lou,2,array($cost,$id)); 
-        
-        $milker="set foreign_key_checks =:x";
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
+        $milker="set foreign_key_checks=:x";
             $sqlHandler->half_genericQuery($milker,1,array(0));
-
         $milkers="delete from cart_item where cart_id=:x";
             $sqlHandler->half_genericQuery($milkers,1,array($yy));
         $milkerz="delete from cart where id=:x";
