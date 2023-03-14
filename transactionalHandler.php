@@ -19,9 +19,10 @@ class TransactionalHandler{
  
     function addButtonClickAction(){
         //require_once("sqlHandler.php");
-        if(isset($_POST['addButton'])){
-
-            $product_id = $_POST['product_id'];
+        if(isset($_POST['addButton']) | isset($_POST['anmid'])){
+            //abcdef
+            $product_id = $_POST['anmid'];
+            //$product_id = $_POST['product_id'];
             $initid=$this->getUserCartId()['id'];
             
             // if cart already exists then: 
