@@ -118,11 +118,13 @@ function search() {
         if($res['animal_quantity'] > 0){
         echo "<form action='scHandler.php' method='post'>";
         echo "<input type='hidden' name='uid' value=".$_SESSION['id']." ><input type='hidden' name='price' value=".$res['animal_price']."><input type='hidden' name='anmid' value=".$res['animal_id']."><input type='submit' value='Add'>"; 
-        echo "</form><form action='redirect.php' method='post'><input type='hidden' name='who' value=".$res['animal_id']."><input type='submit' value='info'></form></div>";  
+        echo "</form>";
         }
         else{
             echo "Item currently out of stock retry tomorrow";
         }
+        
+        echo "<form action='redirect.php' method='post'><input type='hidden' name='who' value=".$res['animal_id']."><input type='submit' value='info'></form></div>";  
    
      }
 ?>
