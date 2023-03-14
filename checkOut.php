@@ -30,7 +30,7 @@ require_once "sqlHandler.php";
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
         
-        return 3;
+        return 2;
       /*  $quer="select * from animals,cart_item where cart_item=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
