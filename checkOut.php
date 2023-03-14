@@ -105,8 +105,8 @@ function check($id)
 
 $val=check($_SESSION['id']);
 if($val==0){
-//header("Location: shoppingCart.php?succ=1");
-//exit(0);
+header("Location: shoppingCart.php?succ=1");
+exit(0);
 }
 if($val==1){
 header("Location: shoppingCart.php?bad=1");
