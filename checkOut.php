@@ -82,7 +82,7 @@ function check($id)
         $lou="update users set balance=:x where id=:x";
         $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
     
-        $dtaap="set foreign_key_checks set :x";
+        $dtaap="set foreign_key_checks =:x";
         $sqlHandler->half_genericQuery($dtaap,1,array(0));
         
         $dll="delete from cart_item where cart_id=:x";
