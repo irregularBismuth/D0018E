@@ -98,14 +98,14 @@ function search() {
             <form action = "rating.php" method="POST">
                 <input type="hidden" name="product_id" value="<?php echo $res['product_id']?>">
                 <label for="rating">Rate this product:</label>
-                <select id="rating" name="rating">
+                <select id="rating" name="ratingx">
                     <option value="1">1 banana</option>
                     <option value="2">2 bananas</option>
                     <option value="3">3 bananas</option>
                     <option value="4">4 bananas</option>
                     <option value="5">5 bananas</option>
                 </select>
-                <button type="submit" name="submit_rating"> Submit</button>
+                <input type="submit" name="submit_rating" value='Leave rating'>
             </form>
         </div>
 

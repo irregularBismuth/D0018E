@@ -10,7 +10,7 @@ if(!isset($_SESSION['username'])){
 }
 
 if(isset($_POST['submit_rating'])){
-    $rating = $_POST['rating'];
+ /*   $rating = $_POST['rating'];
     $user_id = $_SESSION['user_id'];
 
     $sqlHandler->execute("INSERT INTO reviews (product_id, user_id, rating) VALUES (?, ?, ?)", [$product_id, $user_id, $rating]);
@@ -20,7 +20,15 @@ if(isset($_POST['submit_rating'])){
     $sqlHandler->execute("UPDATE products SET rating = ? WHERE id = ?", [$avg_rating, $product_id]);
 
     header('Location: product.php?id=' . $product_id);
-    exit;
+    exit;*/
+
+    $id=$_SESSION['id'];
+    $rating=$_POST['ratingx'];
+    $aid=$_POST['product_id'];
+    $banana="insert into rating(rate,aid,uid) values(:x,:y,:z)";
+    $sqlHandler->half_genericQuery($banana,3,array($rating,$aid,$id));
+    header("Location: page.php?a=".$aid); 
+    exit(0);
 }
 
 ?>
