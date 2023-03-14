@@ -72,6 +72,7 @@ $userProfile = new UserProfile($sql);
             $output = $this->sqlController->s->fetchAll();                      
             $this->userData["name"] = $output['name'];
             $this->userData["balance"] = $output['balance'];
+            
             if($this->checkIfUserIdSet()){
                 
                 $this->userData["profileImage"] = $output['profileImage'];
