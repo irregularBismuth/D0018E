@@ -15,7 +15,7 @@ $rez=$sqlHandler->s->fetchAll();
 
 <?php
 
-echo "<h1>ORder history of ".$_SESSION{'username']."</h1>";
+echo "<h1>Order history of ".$_SESSION{'username']."</h1>";
 foreach($rez as $rez){
 
     $odeid=$rez['id'];
