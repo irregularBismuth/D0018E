@@ -181,13 +181,19 @@ class TransactionalHandler{
         }
         echo $subtotal;
         // STOCK QUANTITY
-        //$this->updateCartDisplay($_POST['product_id_cart']);      
+        $this->updateCartDisplay($_POST['product_id_cart']);      
     }
      
     function updateCartDisplay($product_id_to_remove){
         if (isset($_POST['removeButton'])){
-            $item_to_remove = array_search($product_id_to_remove, $_SESSION['product_cart']['product_id']);
-            unset($_SESSION['product_cart']['product_id'][$item_to_remove]);
+            $initid =0;
+            foreach($this->getUserCartId() as $output){
+                $initid = $output['id'];
+            }
+
+            //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
+            $query = "delete from cart_item where product_id=:x";
+            $this->sqlConnector->half_genericQuery($query, 1, array($product_id_to_remove));
             //$this->generateCartDisplay();
             header('location: '.$_SERVER['REQUEST_URI']); 
         }
