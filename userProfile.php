@@ -69,7 +69,7 @@ $userProfile = new UserProfile($sql);
             //require_once("transactionalHandler.php");
             
                 
-            $query = "select * from users where id=:x";
+            $query = "SELECT * FROM users where id=:x";
             $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
             $output = $this->sqlController->s->fetchAll();                      
             $this->userData["name"] = $output['name'];
