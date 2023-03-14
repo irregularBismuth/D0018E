@@ -108,7 +108,7 @@ function check($id)
 
 $val=check($id);
 if($val==0){
-header("Location: review.php".$ide);
+header("Location: review.php?succ=".$ide);
 exit(0);
 }
 if($val==1){
