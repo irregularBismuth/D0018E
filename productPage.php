@@ -37,51 +37,10 @@ $row_count = count($animals['image']);
        <br> 
 
         <?php
-                       
-            function generateBoxFrames(){
-                require_once("sqlHandler.php");
-                $query = "SELECT * FROM animals";
-                $sqlHandler->half_genericQuery($query,0,0);
-                $output = $sqlHandler->s->fetchAll();
-                foreach($output as $output){
-                    $product_id = $output['animal_id'];
-                    //$product_quantity = $output['quantity'];
-                    echo '
-                        <div class="boxFrame">
-                                <div class="section1">
-                                        <img class="fit_image" src='.$output['animal_image'].'>
-                                </div>
-                                <div class="section2">
-                                    <div class="infoStyle">
-                                        <ul id="infoSection">
-                                            <li>Product id: '.$output['animal_id'].' </li>
-                                            <br>                             
-                                            <li><b>Animal type:</b> '.$output['animal_name'].'</li>
-                                            <br>
-                                            <li><b>Description:</b> '.$output['animal_category'].'</li>
-                                            <br>
-                                            <hr>
-                                            <li><b>Subtotal:</b> '.$output['animal_price'].'¥ </li>
-                                            <br>
-                                            <br>
-                                            <li>
-                                           <form method="POST">
-                                                <input type="hidden" name="product_id" value='.$product_id.'> 
-                                                <input type="hidden" name="price" value='.$output['animal_price'].'>
-                                                <input type="submit" name="addButton" class="button" value="add" />   
-                                                <a href=page.php?a='.$output['animal_id'].'>INFO</a>
-                                                </form> 
-                                            </li>
-                                        </ul>
-                                    </div>            
-                                </div>
-                               </div>
-                                <br>    
-                        </div>
-                        <br>';
-                    
-                }
-            }
+            
+            require_once("transactionalHandler.php");
+            $transactionalHandler->generateBoxFrames();
+            
             if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
                         
                 require_once("transactionalHandler.php");
@@ -102,8 +61,7 @@ $row_count = count($animals['image']);
                 $userProfile->addBalance();  
                 header("location: ".$_SERVER['REQUEST_URI']);      
             }
- 
-            generateBoxFrames();         
+          
         ?>
 
     </body>
