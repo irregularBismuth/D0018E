@@ -18,10 +18,29 @@ $row_count = count($animals['image']);
 
     <body>
 
-
         <div class="headern">
         <header>
-
+        <script>
+            function search() { 
+                var str=document.getElementById("badd").value;
+                if (str == "") {
+                    document.getElementById("cartIcon").innerHTML = "";
+                    document.getElementById("cartIcon").style.display="none";
+                return;
+                }
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("cartIcon").innerHTML = xmlhttp.responseText;
+                        document.getElementById("cartIcon").style.display ="block";
+                    }
+                }
+                //xmlhttp.open("GET", "search.php?q=" + str, true);
+                xmlhttp.send();
+                }
+        </script>
             <a href="site.php">
                 <img src="../images/logo.png" width="400">
             </a>

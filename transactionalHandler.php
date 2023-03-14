@@ -34,7 +34,7 @@ class TransactionalHandler{
                 $zz = 0; 
                 $qq = 1; 
                 $alread=0;
-                
+             
                 foreach($out as $out){
                     if($out['product_id']==$product_id){
                         $zz = $out['id'];
@@ -110,7 +110,7 @@ class TransactionalHandler{
                                             <br>
                                             <li>
                                            <form action='.$this->addButtonClickAction().' method="POST">
-                                                <input type="hidden" name="product_id" value='.$product_id.'> 
+                                                <input type="hidden" id="badd" name="product_id" value='.$product_id.'> 
                                                 <input type="hidden" name="price" value='.$output['animal_price'].'>
                                                 <input type="submit" name="addButton" class="button" value="add" />   
                                                 <a href=page.php?a='.$output['animal_id'].'>INFO</a>
@@ -152,7 +152,7 @@ class TransactionalHandler{
             $subtotal += $tot;  
 
             echo '<pre>';
-            echo '<li class="submenu_item">';
+            echo '<li class="submenu_item" id="cartIcon">';
             echo '<img class="submenu_item" src='.$output["animal_image"].'>';
             echo '<p> product: '.$output["animal_name"].'</p>';
             echo '|';
