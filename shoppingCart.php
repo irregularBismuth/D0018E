@@ -23,7 +23,7 @@ $succ=$_GET['succ'];
 <div class="headern">
 <header>
  
-    <a href="site.php"><img src="../images/logo.png" width="400"></a>            
+    <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>            
     <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
 
