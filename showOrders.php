@@ -97,6 +97,9 @@ foreach($rez as $rez){
     foreach($p as $p)
     {
         echo "  ".$p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
+        if($_SESSION['admin']==1){
+            echo "<form action='alterQuantity.php' method='post'><input type='number' name='num' min='0' max='100'><input type='submit' value='alter quantity'></form>";
+        }
     }
     echo " Total cost of ".$rez['total']."</br>";
     
