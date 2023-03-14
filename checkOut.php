@@ -11,7 +11,7 @@ if(!(isset($_SESSION['id'])))
 $id=$_SESSION['id'];
 function check($id)
 {
-require_once "sqlHandler.php";
+    require_once "sqlHandler.php";
     try{
        
         $query="select * from cart where customer_id=:x";
@@ -30,7 +30,7 @@ require_once "sqlHandler.php";
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
         
-        return 2;
+        return 3;
       /*  $quer="select * from animals,cart_item where cart_item=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
@@ -86,9 +86,12 @@ if($val==1){
 header("Location: shoppingCart.php?bad=1");
 exit(0);
 }
-
-if($val==3){
+if($val==2){
 header("Location: shoppingCart.php?bad=2");
+exit(0);
+}
+if($val==3){
+header("Location: shoppingCart.php?bad=3");
 exit(0);
 }
 
