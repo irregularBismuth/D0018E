@@ -39,9 +39,6 @@ function check($id)
                 if($rez['quantity'] > $rez['animal_quantity']){
                     return 3;
                 }
-                else{
-                    return 2;
-                } 
         }
         
          
