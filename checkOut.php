@@ -80,8 +80,7 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:y";
-        $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));
-        
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$yy)); 
         
         $dbcc->commit();
              return 0;  
