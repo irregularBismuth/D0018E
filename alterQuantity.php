@@ -18,7 +18,7 @@ $tot=0;
 foreach($ww as $ww){
  $tot+=$ww['price']*$w['quantity'];
 }
-$bate="update ode set price=:x where id=:y";
+$bate="update ode set total=:x where id=:y";
 $sqlHandler->half_genericQuery($bate,2,array($tot,$odeid));
 
 
