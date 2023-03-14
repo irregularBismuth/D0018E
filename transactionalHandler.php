@@ -68,7 +68,7 @@ class TransactionalHandler{
             } 
 
             //header("Refresh:0");
-            header('location: productPage.php'); 
+            //header('location: productPage.php'); 
         }
         //header("Refresh:0");
         //header('location: productPage.php'); 
