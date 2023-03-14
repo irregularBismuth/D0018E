@@ -80,14 +80,20 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:x";
-        $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));  
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
     
         $dtaap="set foreign_key_checks set :x";
         $sqlHandler->half_genericQuery($dtaap,1,array(0));
-        $qwert="delete from cart_item where cart_id=:x";
+        
+        $dll="delete from cart_item where cart_id=:x";
+            $sqlHandler->half_genericQuery($dll,1,array($yy)); 
+        $xing="delete from cart where id=:x";
+            $sqlHandler->half_genericQuery($xing,1,array($yy));
+        /*$qwert="delete from cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy));
         $qwerty="delete from cart where id=:x";
         $sqlHandler->half_genericQuery($qwerty,1,array($yy))
+        */
         $sqlHandler->half_genericQuery($dtaap,1,array(1));
 
 
