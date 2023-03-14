@@ -106,7 +106,7 @@ class TransactionalHandler{
                                             <br>
                                             <br>
                                             <li>
-                                           <form method="POST">
+                                           <form action='.$this->addButtonClickAction().' method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="hidden" name="price" value='.$output['animal_price'].'>
                                                 <input type="submit" name="addButton" class="button" value="add" />   
