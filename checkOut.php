@@ -6,13 +6,12 @@ if(!(isset($_SESSION['id'])))
     header("Location: login.php?bad=2");
     exit(0);
 }
-$ide=0;
 $id=$_SESSION['id'];
 function check($id)
 {
     require_once "sqlHandler.php";
     try{
-        $id=12; 
+         
         $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
@@ -42,7 +41,7 @@ function check($id)
         */
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
-        global $ide;
+        //global $ide;
         $ide=$dbcc->lastInsertId(); 
 
 
@@ -107,7 +106,7 @@ function check($id)
 
 $val=check($_SESSION['id']);
 if($val==0){
-header("Location: shoppingCart.php?succ=".$ide);
+header("Location: shoppingCart.php?succ=1");
 exit(0);
 }
 if($val==1){
