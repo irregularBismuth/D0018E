@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 $id=$_SESSION['id'];
-function check()
+function check($id)
 {
 require_once "sqlHandler.php";
     try{
@@ -70,7 +70,7 @@ require_once "sqlHandler.php";
        // echo ($e->getMessage());    
     }
 }
-$val=check();
+$val=check($id);
 if($val==0){
 header("Location: shoppingCart.php");
 exit(0);
