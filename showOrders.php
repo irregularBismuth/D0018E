@@ -18,6 +18,7 @@ $rez=$sqlHandler->s->fetchAll();
 
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
 
 <body>
