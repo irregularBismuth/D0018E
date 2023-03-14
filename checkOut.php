@@ -50,6 +50,8 @@ function check($id)
             if($z['quantity'] > $z['animal_quantity']){
                 return 1;
             }
+            $link="update animals set animal_quantity=:x where animal_id=:y";
+            $sqlHandler->half_genericQuery($link,2,array($z['quantity'],$z['animal_id']));
         }
         $serifu="select * from users where id=:x";
         $sqlHandler->half_genericQuery($serifu,1,array($id));
@@ -58,12 +60,14 @@ function check($id)
         foreach($w as $w){
             $bal=$w['balance'];
         } 
-        if($bal > $tot)
+        $cost=$bal - $tot;
+        if($cost > 0)
         {
             return 3;
         }
-        
-
+        $lou="update users set balance=:x";
+        $sqlHandler->half_genericQuery($lou,1,array($cost));  
+    
 
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
