@@ -184,7 +184,7 @@ class TransactionalHandler{
         }
         echo $subtotal;
         // STOCK QUANTITY
-        $this->updateCartDisplay($_POST['product_id_cart']);      
+        //$this->updateCartDisplay($_POST['product_id_cart']);      
     }
      
     function updateCartDisplay($product_id_to_remove){
