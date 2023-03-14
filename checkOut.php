@@ -42,6 +42,7 @@ function check($id)
      
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
+        echo "USER ID ".$id;
         //global $ide;
         $ide=$dbcc->lastInsertId(); 
 
@@ -105,8 +106,8 @@ function check($id)
 
 $val=check($_SESSION['id']);
 if($val==0){
-header("Location: shoppingCart.php?succ=1");
-exit(0);
+//header("Location: shoppingCart.php?succ=1");
+//exit(0);
 }
 if($val==1){
 header("Location: shoppingCart.php?bad=1");
