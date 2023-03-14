@@ -87,7 +87,7 @@ foreach($rez as $rez){
      $milk="select * from users where id=:x";
      $sqlHandler->half_genericQuery($milk,1,array($rez['customer_id']));
      $z=$sqlHandler->s->fetchAll();
-    foreach($z as $z) { echo "User: ".$z['name']; }
+    foreach($z as $z) { echo "User: ".$z['name']."  "; }
     }
     $odeid=$rez['id'];
     $milkert="select * from animals,ode_item where animal_id=product_id and odeid=:x";
