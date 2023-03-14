@@ -87,7 +87,7 @@ function check($id)
         $qwert="delete from cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy));
         $qwerty="delete from cart where id=:x";
-        $sqlHandler->half_genericQuery($qwert,1,array($yy))
+        $sqlHandler->half_genericQuery($qwerty,1,array($yy))
         $sqlHandler->half_genericQuery($dtaap,1,array(1));
 
 
