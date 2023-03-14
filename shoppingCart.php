@@ -107,7 +107,7 @@ function search() {
             echo "<p>".$res['animal_id']."</p>"
        }*/
     }
-    echo "Total: ".$tot."</br><form action='checkOut.php' method='post'><input type='submit' value='Checkout'></form>";
+    echo "Total: ".$tot."</br><form action='checkOut.php' method='post'><input type='hidden' name='uid' value=".$_SESSION['id']."><input type='submit' value='Checkout'></form>";
     
     $quer="select * from animals";
     $sqlHandler->half_genericQuery($quer,0,0);  
