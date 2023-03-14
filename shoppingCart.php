@@ -17,6 +17,7 @@ $succ=$_GET['succ'];
  </head>
     
 <body>
+<div>
 <header>
  
     <a href="site.php"><img src="../images/logo.png" width="400"></a>
@@ -64,7 +65,7 @@ function search() {
 </header>
 </div>
 
-    <div id="livesearch" class="livesearch"></div>
+<div id="livesearch" class="livesearch"></div>
 
 <?php
     if($succ==1){
