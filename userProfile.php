@@ -58,10 +58,10 @@ $userProfile = new UserProfile($sql);
         }
 
         function checkIfUserIdSet(){
-            if ($this->user_id != ""){
-                return true;
+            if (!isset($_SESSION['id'])){
+                return false;
             }
-            else{return false;} 
+            else{return true;} 
         }
 
         function getSessionData(){
@@ -70,8 +70,16 @@ $userProfile = new UserProfile($sql);
             $query = "select name, balance, profileImage from users where id=:x";
             $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
             $output = $this->sqlController->s->fetchAll();                      
-
-            return $output;
+            $this->userData["name"] = $output['name'];
+            $this->userData["balance"] = $output['balance'];
+            if($this->checkIfUserIdSet()){
+                
+                $this->userData["profileImage"] = $output['profileImage'];
+            }
+            else{
+                $this->userData["profileImage"] = "../images/defaultProfileImage.png";
+            }
+            return $this->userData;
             
         }
 
