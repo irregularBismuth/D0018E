@@ -61,7 +61,7 @@ $row_count = count($animals['image']);
                 $.ajax({
                     url: 'productPage.php',
                     success: function(data){
-                        $('#pp').html(data);
+                        $('#cartIcon').html(data);
                     }
                     });
             });
