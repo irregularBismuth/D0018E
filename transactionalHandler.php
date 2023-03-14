@@ -19,7 +19,7 @@ class TransactionalHandler{
  
     function addButtonClickAction(){
         //require_once("sqlHandler.php");
-        //if(isset($_POST['addButton'])){
+        if(isset($_POST['addButton'])){
             //abcdefg
             //$product_id = $_POST['anmid'];
             $product_id = $_POST['product_id'];
@@ -69,7 +69,7 @@ class TransactionalHandler{
 
             //header("Refresh:0");
             //header('location: productPage.php'); 
-        
+        }
         //header("Refresh:0");
         //header('location: productPage.php'); 
     }
@@ -110,9 +110,9 @@ class TransactionalHandler{
                                             <br>
                                             <li>
                                            <form action='.$this->addButtonClickAction().' method="POST">
-                                                <input type="hidden" id="badd" name="product_id" value='.$product_id.'> 
+                                                <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="hidden" name="price" value='.$output['animal_price'].'>
-                                                <input type="submit" name="addButton" class="button" value="add" />   
+                                                <input type="submit" id="badd" name="addButton" class="button" value="add" />   
                                                 <a href=page.php?a='.$output['animal_id'].'>INFO</a>
                                                 </form> 
                                             </li>
