@@ -1,10 +1,17 @@
 <?php
 ob_start();
 session_start();
+
+if(!(isset($_SESSION['id'])))
+{
+    header("Location: login.php?bad=2");
+    exit(0);
+}
+
 $id=$_SESSION['id'];
 function check($id)
 {
-require_once "sqlHandler.php";
+    require_once "sqlHandler.php";
     try{
        
         $query="select * from cart where customer_id=:x";
@@ -20,6 +27,7 @@ require_once "sqlHandler.php";
             return 2;
         }
         
+<<<<<<< HEAD
         $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
     
@@ -39,19 +47,25 @@ require_once "sqlHandler.php";
 
         return 3;
       /*  $quer="select * from animals,cart_item where cart_item=:x";
+=======
+         $dbcc=$sqlHandler->get_db_connector();
+        $dbcc->beginTransaction();    
+         
+        $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
+>>>>>>> 407f1f5cf0f0bb1c20959a195d1155ceb48d5944
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
         foreach($rez as $rez){
-            if($rez['product_id']==$rez['animal_id']){
                 $tot+=$rez['quantity']*$rez['price'];
                 if($rez['quantity'] > $rez['animal_quantity']){
                     return 3;
                 }
-            }
-            
+                else{
+                    return 2;
+                } 
         }
-       */ 
+        
          
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
@@ -93,9 +107,12 @@ if($val==1){
 header("Location: shoppingCart.php?bad=1");
 exit(0);
 }
-
-if($val==3){
+if($val==2){
 header("Location: shoppingCart.php?bad=2");
+exit(0);
+}
+if($val==3){
+header("Location: shoppingCart.php?bad=3");
 exit(0);
 }
 
