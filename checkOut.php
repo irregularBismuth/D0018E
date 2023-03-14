@@ -28,10 +28,9 @@ function check($id)
         }
         
          $dbcc=$sqlHandler->get_db_connector();
-        $dbcc->beginTransaction();
-            
-        
-       $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
+        $dbcc->beginTransaction();    
+         
+        $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
