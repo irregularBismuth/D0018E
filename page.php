@@ -90,12 +90,15 @@ function search() {
                $avg_rating = round($avg_rating_row['avg_rating'], 1);
 */
 
-            
+    
               echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
               echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
 
-             $frog="select * from s";
+             $frog="select MAX(id) as frogz,AVG(rate) as gii from rating";
+             $sqlHandler->half_genericQuery($frog,0,array(0));
+             $f=$sqlHandler->s->fetchAll();
+             foreach($f as $f) { echo "This animal has an average score of ".$f['frogz']." With a total of number of ratings ".$f['gii'];}
          ?>
 
         <div class="rating">
