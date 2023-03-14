@@ -11,6 +11,22 @@ function check($id)
 {
     require_once "sqlHandler.php";
     try{   
+       /* $query="select * from cart where customer_id=:x";
+        $sqlHandler->half_genericQuery($query,1,array($id));
+        $res=$sqlHandler->s->fetchAll(); 
+        $yy=0;
+        if($sqlHandler->s->rowCount() > 0){
+            foreach($res as $res){
+                $yy=$res['id'];
+            }
+        }
+        else{ 
+            return 2;
+        }*/
+        
+        $dbcc=$sqlHandler->get_db_connector();
+        $dbcc->beginTransaction();   
+        
         $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
@@ -23,9 +39,7 @@ function check($id)
         else{ 
             return 2;
         }
-        
-        $dbcc=$sqlHandler->get_db_connector();
-        $dbcc->beginTransaction();    
+     
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
         //global $ide;
