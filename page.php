@@ -88,14 +88,6 @@ function search() {
     <div class="producten">
 <?php
  
-            /*   $product_id = $_GET['id'];
-
-               $res = $sqlHandler->FETCH("SELECT * FROM products WHERE id = ?", [$product_id]);
-       
-               $avg_rating_row = $sqlHandler->FETCH("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?", [$product_id]);
-               $avg_rating = round($avg_rating_row['avg_rating'], 1);
-*/
-
     
               echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
@@ -109,21 +101,6 @@ function search() {
                 echo "This animal is currently out of stock";
             }
             
-
-            //<input type='hidden' name='price' value=".$res['animal_price']."><input value='Add to cart' type='submit'  /></form></div>";
-                
-            
-                //if($res['animal_quantity'] > 0){
-               // echo "<form action='scHandler.php' method='post'>";
-               // echo 
-             /*  "<input type='hidden' name='uid' value=".$_SESSION['id']." >
-                <input type='hidden' name='price' value=".$res['animal_price'].">
-
-                <input type='hidden' name='anmid' value=".$res['animal_id'].">
-                <input type='submit' value='Add'>"; 
-        */
-
-        
              $frog="select COUNT(id) as gii,AVG(rate) as frogz from rating where aid=:x";
              $sqlHandler->half_genericQuery($frog,1,array($who));
              $f=$sqlHandler->s->fetchAll();
