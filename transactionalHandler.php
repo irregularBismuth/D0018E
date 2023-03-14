@@ -91,7 +91,7 @@ class TransactionalHandler{
                     $product_id = $output['animal_id'];
                     //$product_quantity = $output['quantity'];
                     echo '
-                        <div class="boxFrame">
+                        <div class="boxFrame" id="pp">
                                 <div class="section1">
                                         <img class="fit_image" src='.$output['animal_image'].'>
                                 </div>
