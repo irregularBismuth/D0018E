@@ -172,14 +172,15 @@ class TransactionalHandler{
             echo '</li>';
             echo '</form>';
             echo '<li class="submenu_item">';
-            echo '<p>Stock quantity: '.$output['quantity'].'</p>';
+            echo '<p>Quantity in cart: '.$output['quantity'].'</p>';
             echo '</li>';
             echo '<br>';
             echo '</li>';
             echo '</pre>'; 
             }   
         }
-        //$_SESSION['product_total'] = $subtotal;
+        echo $subtotal;
+        // STOCK QUANTITY
         //$this->updateCartDisplay($_POST['product_id_cart']);      
     }
      
