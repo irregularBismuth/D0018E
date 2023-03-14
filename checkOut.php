@@ -11,8 +11,7 @@ $id=$_SESSION['id'];
 function check($id)
 {
     require_once "sqlHandler.php";
-    try{
-       
+    try{ 
         $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
@@ -82,7 +81,7 @@ function check($id)
         $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
        
         $milkers="delete from cart_item where cart_id=:x";    
-            $sqlHandler->half_genericQuery($milkers,1,array($yy));
+        $sqlHandler->half_genericQuery($milkers,1,array($yy));
 
         /* $milker="set foreign_key_checks=:x";
             $sqlHandler->half_genericQuery($milker,1,array(0));
@@ -105,7 +104,7 @@ function check($id)
     }
 }
 
-$val=check($id);
+$val=check($_SESSION['id']);
 if($val==0){
 header("Location: shoppingCart.php?succ=".$ide);
 exit(0);
