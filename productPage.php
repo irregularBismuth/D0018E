@@ -40,15 +40,7 @@ $row_count = count($animals['image']);
             
             require_once("transactionalHandler.php");
             $transactionalHandler->generateBoxFrames();
-            
-            if (isset($_POST['addButton']) or isset($_POST['removeButton'])){
-                        
-                require_once("transactionalHandler.php");
-                $transactionalHandler->addButtonClickAction();
-                header("location: ".$_SERVER['REQUEST_URI']);      
-                        
-            }
-
+             
             if (isset($_POST['checkoutButton'])){
                 require_once("transactionalHandler.php");
                 $transactionalHandler->checkoutOrderPlaced();
