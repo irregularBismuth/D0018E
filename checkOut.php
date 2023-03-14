@@ -29,9 +29,12 @@ function check($id)
         
         $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();    
+<<<<<<< HEAD
          
  //       $quer="select * from animals,cart_item where product_id=animal_id and cart_id=:x";
   //      $sqlHandler->half_genericQuery($query,1,array($yy));
+=======
+>>>>>>> 2c49ba6e859eb391391b772856c1a7618c31e22f
         $quer="select product_id,price,quantity,animal_quantity,animal_id,cart_id from animals,cart_item where animal_id=product_id and cart_id=5";
         //$query="select from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($quer,1,array($yy));
