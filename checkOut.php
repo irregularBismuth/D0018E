@@ -11,7 +11,8 @@ $id=$_SESSION['id'];
 function check($id)
 {
     require_once "sqlHandler.php";
-    try{ 
+    try{
+        $id=12; 
         $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
