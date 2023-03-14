@@ -37,7 +37,7 @@ function check($id)
         foreach($rez as $rez){
                 $tot+=$rez['quantity']*$rez['price'];
                 if($rez['quantity'] > $rez['animal_quantity']){
-                    return 3;
+                    return 3;}
                 }
         }
         */
@@ -48,10 +48,21 @@ function check($id)
         foreach($z as $z){
             $tot+=$z['price']*$z['quantity'];
             if($z['quantity'] > $z['animal_quantity']){
-                return 2;
+                return 1;
             }
         }
-    
+        $serifu="select * from users where id=:x";
+        $sqlHandler->half_genericQuery($serifu,1,array($id));
+        $w=$sqlHandler->s->fetchAll();
+        $bal=0;
+        foreach($w as $w){
+            $bal=$w['balance'];
+        } 
+        if($bal > $tot)
+        {
+            return 3;
+        }
+        
 
 
        // $sqlHandler->half_genericQuery($query,0,0);  
