@@ -67,13 +67,11 @@ $userProfile = new UserProfile($sql);
         function getSessionData(){
                 
                 
-            if ($this->userData['name'] == "" or $this->userData['balance'] == ""){
-                return $this->userData;
-            }
+            $query = "select * from users where id=:x";
+            $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
+            $output = $this->sqlController->s->fetchAll();                      
 
-            else{
-                    return $this->userData; 
-                }
+            return $output;
             
         }
 
