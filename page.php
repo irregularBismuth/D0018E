@@ -95,7 +95,7 @@ function search() {
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
               echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
 
-             $frog="select MAX(id) as frogz,AVG(rate) as gii from rating";
+             $frog="select MAX(id) as gii,AVG(rate) as frogz from rating";
              $sqlHandler->half_genericQuery($frog,0,array(0));
              $f=$sqlHandler->s->fetchAll();
              foreach($f as $f) { echo "This animal has an average score of ".$f['frogz']." With a total of number of ratings ".$f['gii'];}
