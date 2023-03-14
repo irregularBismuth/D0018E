@@ -7,7 +7,7 @@ function check()
 require_once "sqlHandler.php";
     try{
        
-        $query="select * from cart where customer_id=:x";
+    /*   $query="select * from cart where customer_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($id));
         $res=$sqlHandler->s->fetchAll(); 
         $yy=0;
@@ -19,11 +19,12 @@ require_once "sqlHandler.php";
         else{ 
             return 2;
         }
-        
+        */
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();
-
-        $quer="select * from animals,cart_item where cart_item=:x";
+        
+        return 3;
+      /*  $quer="select * from animals,cart_item where cart_item=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
@@ -36,7 +37,7 @@ require_once "sqlHandler.php";
             }
             
         }
-        
+       */ 
          
        // $sqlHandler->half_genericQuery($query,0,0);  
  /*    $query="select * from animals,cart_item where cart_id=:x";
