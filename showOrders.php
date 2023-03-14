@@ -27,7 +27,7 @@ foreach($rez as $rez){
     {
         echo $p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
     }
-    echo "</br>".$rez['total'];
+    echo " ".$rez['total']."</br>";
     
 }
 
