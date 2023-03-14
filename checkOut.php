@@ -79,10 +79,11 @@ function check($id)
         {
             return 3;
         }
-        $lou="update users set balance=:x where id=:x";
+        $lou="update users set balance=:x where id=:y";
+        $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));
         
         
-            $dbcc->commit();
+        $dbcc->commit();
              return 0;  
    //     header("Location: shoppingCart.php");
     //     exit(0);
