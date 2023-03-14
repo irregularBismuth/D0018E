@@ -86,8 +86,7 @@ function check($id)
             $sqlHandler->half_genericQuery($milkers,1,array($yy));
         $milkerz="delete from cart where id=:x";
             $sqlHandler->half_genericQuery($milkerz,1,array($yy)); 
-        $milker="set foreign_key_checks =x";
-            $sqlHandler->half_genericQuery($milker,1,array(1)); 
+        $sqlHandler->half_genericQuery($milker,1,array(1)); 
         $dbcc->commit();
              return 0;  
    //     header("Location: shoppingCart.php");
