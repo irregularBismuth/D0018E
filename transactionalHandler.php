@@ -66,8 +66,10 @@ class TransactionalHandler{
                 $query = "INSERT INTO cart_item(cart_id, product_id, quantity, price) VALUES(:x, :y, 1, :z)";
                 $this->sqlConnector->half_genericQuery($query, 3, array($cartid, $product_id, $_POST['price']));
             } 
+
+            header("Refresh:0");
         }
-        header("Refresh:0");
+        //header("Refresh:0");
         //header('location: productPage.php'); 
     }
 
