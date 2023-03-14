@@ -98,8 +98,8 @@ foreach($rez as $rez){
     {
         echo "  ".$p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
         if($_SESSION['admin']==1){
-            echo "<form action='alterQuantity.php' method='post'><input type='number' name='num' min='0' max='100'><input type='submit' value='alter quantity'></form>";
-            echo "<form action='alterPrice.php' method='post'><input type='number' name='num' min='10' max='100000'><input type='submit' value='atler price'></form>";
+            echo "<form action='alterQuantity.php' method='post'><input type='hidden' value=".$p['id']." name='hid' ><input type='number' name='num' min='0' max='100'><input type='submit' value='alter quantity'></form>";
+            echo "<form action='alterPrice.php' method='post'><input type='hidden' name='hid' value=".$p['id']."><input type='number' name='num' min='10' max='100000'><input type='submit' value='atler price'></form>";
         }
     }
     echo " Total cost of ".$rez['total']."</br>";
