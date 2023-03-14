@@ -2,6 +2,7 @@
 session_start();
 require_once "sqlHandler.php";
 $bad=$_GET['bad'];
+$succ=$_GET['succ'];
 ?>
 
 <html>
@@ -13,6 +14,9 @@ $bad=$_GET['bad'];
 
 
 <?php
+    if($succ==1){
+        echo "Animals were bought successfully";
+    }
     if($bad==1){
         echo "More animals in cart then in stock please remove some to continue";
     }
