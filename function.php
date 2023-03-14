@@ -47,7 +47,7 @@ function login($name,$pass){
         $_SESSION['admin']=$result['adminbool'];
          //  echo $result['email']; 
        // echo $result['id'];
-       header("Location: index.php?success=1");
+       header("Location: shoppingCart.php?success=1");
        exit(0);
     }
     ////echo $_SESSION['user_id'];
