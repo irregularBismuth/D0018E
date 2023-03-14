@@ -68,7 +68,7 @@ class TransactionalHandler{
             } 
         }
 
-        header('location: '.$_SERVER['REQUEST_URI']); 
+        header('location: productPage.php'); 
     }
 
     function getUserCartId(){
