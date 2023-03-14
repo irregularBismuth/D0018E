@@ -27,16 +27,16 @@ function check($id)
             return 2;
         }
         
-         $dbcc=$sqlHandler->get_db_connector();
+        $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();    
          
-        $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
+        $quer="select * from animals,cart_item where product_id=animal_id and cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
         foreach($rez as $rez){
                 $tot+=$rez['quantity']*$rez['price'];
-                if($rez['quantity'] > $rez['animal_quantity']){
+                if($tot > 100)
                     return 3;
                 }
         }
