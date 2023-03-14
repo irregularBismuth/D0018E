@@ -2,7 +2,6 @@
 session_start();
 //peepo
 require_once "sqlHandler.php";
-require_once("cartMenuSwitch.php");
 
 if(!isset($_SESSION['username'])){
     header('Location: login.php');

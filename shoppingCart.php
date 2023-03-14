@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "sqlHandler.php";
+require_once("cartMenuSwitch.php");
 
 if(!isset($_SESSION['username'])){
     header('Location: login.php');
