@@ -67,7 +67,7 @@ $userProfile = new UserProfile($sql);
         function getSessionData(){
                 
                 
-            $query = "select * from users where id=:x";
+            $query = "select name, balance, profileImage from users where id=:x";
             $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
             $output = $this->sqlController->s->fetchAll();                      
 
