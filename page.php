@@ -80,7 +80,8 @@ function search() {
 
     ?>
     <div class="producten">
-        <?php 
+<?php
+ 
             /*   $product_id = $_GET['id'];
 
                $res = $sqlHandler->FETCH("SELECT * FROM products WHERE id = ?", [$product_id]);
@@ -88,15 +89,18 @@ function search() {
                $avg_rating_row = $sqlHandler->FETCH("SELECT AVG(rating) AS avg_rating FROM reviews WHERE product_id = ?", [$product_id]);
                $avg_rating = round($avg_rating_row['avg_rating'], 1);
 */
+
+            
               echo "<h1><span>".$res['animal_name']."</span></h1>";  
               echo "<div class='pageImage'><img src=".$res['animal_image']." /></div>";
               echo "<div class='buyInfo'><p>Description: <span>".$res['animal_category']."</span></p> Price: ".$res['animal_price']."<form><input value='Add to cart' type='button' /></form></div>";
-            
+
+             $frog="select * from s";
          ?>
 
         <div class="rating">
-            <form action = "rating.php" method="POST">
-                <input type="hidden" name="product_id" value="<?php echo $res['product_id']?>">
+            <form action = "rating.php" method="post">
+                <input type="hidden" name="product_id" value='<?php echo $res['product_id']; ?> >
                 <label for="rating">Rate this product:</label>
                 <select id="rating" name="ratingx">
                     <option value="1">1 banana</option>

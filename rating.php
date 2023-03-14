@@ -9,7 +9,7 @@ if(!isset($_SESSION['username'])){
     exit(0);
 }
 
-if(isset($_POST['submit_rating'])){
+//if(isset($_POST['submit_rating'])){
  /*   $rating = $_POST['rating'];
     $user_id = $_SESSION['user_id'];
 
@@ -29,7 +29,7 @@ if(isset($_POST['submit_rating'])){
     $sqlHandler->half_genericQuery($banana,3,array($rating,$aid,$id));
     header("Location: page.php?a=".$aid); 
     exit(0);
-}
+//}
 
 ?>
 
