@@ -35,7 +35,7 @@ if($sqlHandler->s->rowCount() > 0)
     <?php if($_SESSION['admin']==1){ echo "<a href='addnew.php'> Add new animal </a>"; }?>
      <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
-    
+    <?php "<a href='showOrders.php'>Order history</a>";    
 <script>
 function search() {
     
