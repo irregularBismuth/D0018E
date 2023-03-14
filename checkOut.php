@@ -7,7 +7,7 @@ if(!(isset($_SESSION['id'])))
     header("Location: login.php?bad=2");
     exit(0);
 }
-
+$ide=0;
 $id=$_SESSION['id'];
 function check($id)
 {
@@ -43,6 +43,7 @@ function check($id)
         */
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
+        global $ide;
         $ide=$dbcc->lastInsertId(); 
 
 
@@ -104,9 +105,10 @@ function check($id)
        // echo ($e->getMessage());    
     }
 }
+
 $val=check($id);
 if($val==0){
-header("Location: review.php?succ=1");
+header("Location: review.php".$ide);
 exit(0);
 }
 if($val==1){
