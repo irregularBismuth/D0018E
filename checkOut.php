@@ -47,10 +47,11 @@ function check($id)
         $tot=0;
         foreach($z as $z){
             $tot+=$z['price']*$z['quantity'];
+            if($z['quantity'] > $z['animal_quantity']){
+                return 1;
+            }
         }
-        if($tot > 100){
-            return 1;
-        }
+    
 
 
        // $sqlHandler->half_genericQuery($query,0,0);  
