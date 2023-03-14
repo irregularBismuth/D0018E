@@ -29,7 +29,7 @@ function check($id)
         
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();    
-        $quer="select product_id,price,quantity,animal_quantity,animal_id,cart_id from animals,cart_item where animal_id=product_id and cart_id=5";
+        $quer="select product_id,price,quantity,animal_quantity,animal_id,cart_id from animals,cart_item where animal_id=product_id and cart_id=:x";
         //$query="select from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($quer,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
