@@ -76,7 +76,7 @@ $userProfile = new UserProfile($sql);
             $this->userData["balance"] = $output['balance'];
             $this->userData['profileImage'] = $output['profileImage'];
              
-            return $this->userData;
+            return $output;
             
         }
 
