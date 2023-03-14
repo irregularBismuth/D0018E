@@ -44,8 +44,12 @@ function check($id)
         $line="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
         $sqlHandler->half_genericQuery($line,1,array($yy));
         $z=$sqlHandler->s->fetchAll();
+        $tot=0;
         foreach($z as $z){
-            if($z['price'] > 0){ return 1; }
+            $tot+=$z['price']*$z['quantity'];
+        }
+        if($tot > 100){
+            return 1;
         }
 
 
