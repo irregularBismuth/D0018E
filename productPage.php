@@ -35,7 +35,7 @@ $row_count = count($animals['image']);
         </header>
         </div>
        <br> 
-
+        <div id="pageRefresh">
         <?php
             
             require_once("transactionalHandler.php");
@@ -55,16 +55,27 @@ $row_count = count($animals['image']);
             }
           
         ?>
-        
+        </div>
         <script>
-            $('#badd').click(function(){
-                $.ajax({
-                    url: 'productPage.php',
-                    success: function(data){
-                        $('#cartIcon').load("productPage.php");
-                    }
+           $(document).ready(function(){
+                $('.badd').submit(function(event){
+                    event.preventDefault();
+                    var form = $(this);
+                    var formData = form.serialize();
+
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: formData
+
+                    }).done(function(response){
+                        $('#pageRefresh').html(response);
+
+                    }).fail(function(){
+                        alert('error');
                     });
-            });
+                });
+            }); 
         </script> 
     </body>
 
