@@ -27,32 +27,10 @@ function check($id)
             return 2;
         }
         
-<<<<<<< HEAD
-        $dbcc=$sqlHandler->get_db_connector();
-        $dbcc->beginTransaction();
-    
-        $condition_balance_check = false;
-        $condition_check2 = false; 
-        $condition_check3 = false;
-        
-        if ($condition_balance_check){
-
-        }
-
-        // if all transactional conditions evaluate to true then UPDATE-queries 
-        if ($condition_balance_check & $condition_check2 & $condition_check3){
-
-        }
-
-
-        return 3;
-      /*  $quer="select * from animals,cart_item where cart_item=:x";
-=======
          $dbcc=$sqlHandler->get_db_connector();
         $dbcc->beginTransaction();    
          
-        $quer="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
->>>>>>> 407f1f5cf0f0bb1c20959a195d1155ceb48d5944
+        $query="select * from animals,cart_item where animal_id=product_id and where cart_id=:x";
         $sqlHandler->half_genericQuery($query,1,array($yy));
         $rez=$sqlHandler->s->fetchAll();
         $tot=0;
