@@ -124,7 +124,7 @@ function search() {
         */
 
         
-             $frog="select MAX(id) as gii,AVG(rate) as frogz from rating where aid=:x";
+             $frog="select COUNT(id) as gii,AVG(rate) as frogz from rating where aid=:x";
              $sqlHandler->half_genericQuery($frog,1,array($who));
              $f=$sqlHandler->s->fetchAll();
              foreach($f as $f) { echo "This animal has an average score of ".$f['frogz']." With a total of number of ratings ".$f['gii'];}
