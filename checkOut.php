@@ -106,7 +106,7 @@ function check($id)
 }
 $val=check($id);
 if($val==0){
-header("Location: shoppingCart.php?succ=1");
+header("Location: review.php?succ=1");
 exit(0);
 }
 if($val==1){
