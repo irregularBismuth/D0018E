@@ -13,18 +13,18 @@ require_once("userProfile.php"); //
     <body> 
         <ul>
             <li>
-            <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'][0].'" />'; ?>
+            <?php echo '<img class="profileStyle" src="'.$userProfile->getSessionData()['profileImage'].'" />'; ?>
                 <br>
                 Profile
                 <ul>
                     <li class="submenu_item">
                         <span class="menu_icons"></span>
-                        <p> <b>Name:</b> <?php echo $userProfile->getSessionData()['name'][0] ?> </p>
+                        <p> <b>Name:</b> <?php echo $userProfile->getSessionData()['name'] ?> </p>
                     </li>
                     
                     <li class="submenu_item">
                         <span class="menu_icons"> </span>
-                        <p> <b>Balance:</b> <?php echo $userProfile->getSessionData()['balance'][0] ?> </p>
+                        <p> <b>Balance:</b> <?php echo $userProfile->getSessionData()['balance'] ?> </p>
                     </li>
                     <hr>
                     <br>
