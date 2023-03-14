@@ -81,12 +81,12 @@ function check($id)
         }
         $lou="update users set balance=:x where id=:x";
         $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));  
-     /*   
+      
         $qwert="delete from cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy));
         $qwerty="delete from cart where id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy))
-      */  
+        
 
 
        // $sqlHandler->half_genericQuery($query,0,0);  
