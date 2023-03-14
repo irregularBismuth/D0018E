@@ -19,7 +19,7 @@ $rez=$sqlHandler->s->fetchAll();
 foreach($rez as $rez){
 
     $odeid=$rez['id'];
-    $milkert="select * from ode_item where odeid=:x";
+    $milkert="select * from animals,ode_item where animal_id=product_id and odeid=:x";
     $sqlHandler->half_genericQuery($milkert,1,array($odeid));
     $p=$sqlHandler->s->fetchAll();    
         
