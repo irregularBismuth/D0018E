@@ -101,7 +101,7 @@ function check($id)
     catch(PDOException $e)
     {
         $dbcc->rollBack();
-       // echo ($e->getMessage());    
+       echo ($e->getMessage());    
     }
 }
 
