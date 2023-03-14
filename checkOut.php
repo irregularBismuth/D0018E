@@ -42,7 +42,6 @@ function check($id)
      
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
-        echo "USER ID ".$id;
         //global $ide;
         $ide=$dbcc->lastInsertId(); 
 
