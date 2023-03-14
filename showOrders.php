@@ -25,7 +25,7 @@ foreach($rez as $rez){
     echo "order number: ".$rez['id']." Ordertime".$rez['dateTime'];
     foreach($p as $p)
     {
-        echo $p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
+        echo "  ".$p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
     }
     echo " ".$rez['total']."</br>";
     
