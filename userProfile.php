@@ -80,7 +80,7 @@ $userProfile = new UserProfile($sql);
             else{
                 $this->userData["profileImage"] = "../images/defaultProfileImage.png";
             }
-            return $this->userData;
+            return $output;
             
         }
 
