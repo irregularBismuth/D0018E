@@ -19,7 +19,7 @@ class TransactionalHandler{
  
     function addButtonClickAction(){
         //require_once("sqlHandler.php");
-        if(isset($_POST['addButton'])){
+        //if(isset($_POST['addButton'])){
             //abcdefg
             //$product_id = $_POST['anmid'];
             $product_id = $_POST['product_id'];
@@ -69,7 +69,7 @@ class TransactionalHandler{
 
             //header("Refresh:0");
             //header('location: productPage.php'); 
-        }
+        
         //header("Refresh:0");
         //header('location: productPage.php'); 
     }
