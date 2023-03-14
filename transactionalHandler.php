@@ -129,7 +129,10 @@ class TransactionalHandler{
         //require_once("sqlHandler.php");
             //adding some local variable reference:
             
-        $initid = $this->getUserCartId()['id'];
+        $initid =0;
+        foreach($this->getUserCartId() as $output){
+            $initid = $output['id'];
+        }
 
         //$query = "SELECT * FROM cart_item JOIN animals ON cart_item.product_id = animals.animal_id WHERE cart_id=:x";
         $query = "select * from animals,cart_item where cart_id=:x";
