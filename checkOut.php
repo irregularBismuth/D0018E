@@ -48,7 +48,7 @@ function check($id)
         foreach($z as $z){
             $tot+=$z['price']*$z['quantity'];
             if($z['quantity'] > $z['animal_quantity']){
-                return 1;
+                return 3;
             }
         }
     
