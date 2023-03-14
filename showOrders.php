@@ -98,7 +98,7 @@ foreach($rez as $rez){
     {
         echo "  ".$p['animal_name']." x ".$p['quantity']." price: ".$p['price']." ";    
     }
-    echo " ".$rez['total']."</br>";
+    echo " Total cost of ".$rez['total']."</br>";
     
 }
 
