@@ -1,6 +1,15 @@
 <?php
 session_start();
+//peepo
 require_once "sqlHandler.php";
+require_once("cartMenuSwitch.php");
+
+
+if(!isset($_SESSION['username'])){
+    header('Location: login.php');
+    exit(0);
+}
+
 $id=$_SESSION['id'];
 $milkerz="select * from ode where customer_id=:x";
 $sqlHandler->half_genericQuery($milkerz,1,array($id));
