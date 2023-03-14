@@ -1,6 +1,13 @@
 <?php
 ob_start();
 session_start();
+
+if(!(isset($_SESSION['id'])))
+{
+    header("Location: login.php?bad=2");
+    exit(0);
+}
+
 $id=$_SESSION['id'];
 function check($id)
 {
