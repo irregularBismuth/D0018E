@@ -43,7 +43,7 @@ function check($id)
         */
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
-        $ide=$sqlHandler->s->lastInsertId(); 
+        $ide=$dbcc->lastInsertId(); 
 
 
         $line="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
@@ -81,12 +81,12 @@ function check($id)
         }
         $lou="update users set balance=:x where id=:x";
         $sqlHandler->half_genericQuery($lou,2,array($cost,$yy));  
-        
+     /*   
         $qwert="delete from cart_item where cart_id=:x";
         $sqlHandler->half_genericQuery($qwert,1,array($yy));
         $qwerty="delete from cart where id=:x";
-        $sqlHandler->half_genericQuery($qwert,1,array($yy));
-        
+        $sqlHandler->half_genericQuery($qwert,1,array($yy))
+      */  
 
 
        // $sqlHandler->half_genericQuery($query,0,0);  
