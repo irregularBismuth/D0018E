@@ -57,11 +57,11 @@ $row_count = count($animals['image']);
         ?>
         
         <script>
-            $('#badd').on('click',function(){
+            $('#badd').click(function(){
                 $.ajax({
                     url: 'productPage.php',
                     success: function(data){
-                        $('#cartIcon').html(data);
+                        $('#cartIcon').load("productPage.php");
                     }
                     });
             });
