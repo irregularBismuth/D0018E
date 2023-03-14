@@ -82,6 +82,15 @@ function check($id)
         $lou="update users set balance=:x where id=:y";
         $sqlHandler->half_genericQuery($lou,2,array($cost,$id)); 
         
+        $milker="set foreign_key_checks =:x";
+            $sqlHandler->half_genericQuery($milker,1,array(0));
+
+        $milkers="delete from cart_item where cart_id=:x";
+            $sqlHandler->half_genericQuery($milkers,1,array($yy));
+        $milkerz="delete from cart where id=:x";
+            $sqlHandler->half_genericQuery($milkerz,1,array($yy)); 
+        $milker="set foreign_key_checks =x";
+            $sqlHandler->half_genericQuery($milker,1,array(1)); 
         $dbcc->commit();
              return 0;  
    //     header("Location: shoppingCart.php");
