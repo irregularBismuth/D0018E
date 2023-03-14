@@ -1,7 +1,6 @@
 <?php
-ob_start();
 session_start();
-
+ob_start();
 if(!(isset($_SESSION['id'])))
 {
     header("Location: login.php?bad=2");
