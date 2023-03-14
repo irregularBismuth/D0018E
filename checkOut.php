@@ -50,7 +50,7 @@ function check($id)
             if($z['quantity'] > $z['animal_quantity']){
                 return 1;
             }
-            $quant=$z['animal_quantity']-$['quantity'];
+            $quant=$z['animal_quantity']-$z['quantity'];
             $link="update animals set animal_quantity=:x where animal_id=:y";
             $sqlHandler->half_genericQuery($link,2,array($quant,$z['animal_id']));
         }
