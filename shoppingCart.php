@@ -16,6 +16,12 @@ $bad=$_GET['bad'];
     if($bad==1){
         echo "More animals in cart then in stock please remove some to continue";
     }
+    if($bad==2){
+        echo "No animals in cart add some before checking out";
+    }
+    if($bad==3){
+        echo "Not enough balance to buy these animals download more money before continueing";
+    }
     echo "</br>";
     $quer="select * from cart where customer_id=:x";
     $sqlHandler->half_genericQuery($quer,1,array($_SESSION['id'])); 
