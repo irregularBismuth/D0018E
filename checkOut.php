@@ -80,43 +80,10 @@ function check($id)
             return 3;
         }
         $lou="update users set balance=:x where id=:x";
-   /*     $sqlHandler->half_genericQuery($lou,2,array($cost,$id));  
-    
-        $dtaap="set foreign_key_checks =:x";
-        $sqlHandler->half_genericQuery($dtaap,1,array(0)); 
-        $dll="delete from cart_item where cart_id=:x";
-            $sqlHandler->half_genericQuery($dll,1,array($yy)); 
-        $xing="delete from cart where id=:x";
-            $sqlHandler->half_genericQuery($xing,1,array($yy));
-    */  
-      /*$qwert="delete from cart_item where cart_id=:x";
-        $sqlHandler->half_genericQuery($qwert,1,array($yy));
-        $qwerty="delete from cart where id=:x";
-        $sqlHandler->half_genericQuery($qwerty,1,array($yy))
-        */
-
-
-       // $sqlHandler->half_genericQuery($query,0,0);  
- /*    $query="select * from animals,cart_item where cart_id=:x";
-        $sqlHandler->half_genericQuery($query,1,array($yy));
-        $rez=$sqlHandler->s->fetchAll();
-        $tot=0;
-        foreach($rez as $rez){
-            if($rez['product_id']==$rez['animal_id'])
-            {
-                $tot+=$rez['quantity']*$rez['price']; 
-                
-            }
-        }
-
-        if($tot > 100){
-            return false; 
-            header("Location: shoppingCart.php?bad=1");
-            exit(0);
-        }
-        */
-        $dbcc->commit();
-         return 0;  
+        
+        
+            $dbcc->commit();
+             return 0;  
    //     header("Location: shoppingCart.php");
     //     exit(0);
         //return true;
