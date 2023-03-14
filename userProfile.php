@@ -65,21 +65,16 @@ $userProfile = new UserProfile($sql);
         }
 
         function getSessionData(){
-                
+            
+            //require_once("transactionalHandler.php");
+            
                 
             $query = "select name, balance, profileImage from users where id=:x";
-            $this->sqlController->half_genericQuery($query, 1, array($_SESSION['username']));
+            $this->sqlController->half_genericQuery($query, 1, array($_SESSION['id']));
             $output = $this->sqlController->s->fetchAll();                      
             $this->userData["name"] = $output['name'];
             $this->userData["balance"] = $output['balance'];
-            
-            if($this->checkIfUserIdSet()){
-                
-                $this->userData["profileImage"] = $output['profileImage'];
-            }
-            else{
-                $this->userData["profileImage"] = "../images/defaultProfileImage.png";
-            }
+             
             return $output;
             
         }
