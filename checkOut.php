@@ -43,7 +43,7 @@ function check($id)
         */
         $wer="insert into ode(customer_id,total) values(:x,:y)";
         $sqlHandler->half_genericQuery($wer,2,array($id,0));
-        $ide=$dbcc->lastInsertId(); 
+        $ide=1;//$dbcc->lastInsertId(); 
 
 
         $line="select * from animals,cart_item where animal_id=product_id and cart_id=:x";
