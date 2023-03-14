@@ -59,7 +59,7 @@ $row_count = count($animals['image']);
         <script>
             $('#badd').on('click',function(){
                 $.ajax({
-                    url: 'ProductPage.php',
+                    url: 'productPage.php',
                     success: function(data){
                         $('#pp').html(data);
                     }
