@@ -118,6 +118,7 @@ function search() {
                // echo 
              /*  "<input type='hidden' name='uid' value=".$_SESSION['id']." >
                 <input type='hidden' name='price' value=".$res['animal_price'].">
+
                 <input type='hidden' name='anmid' value=".$res['animal_id'].">
                 <input type='submit' value='Add'>"; 
         */
