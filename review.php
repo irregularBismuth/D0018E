@@ -5,7 +5,6 @@ $id=$_SESSION['id'];
 $milkerz="select * from ode where customer_id=:x";
 $sqlHandler->half_genericQuery($milkerz,1,array($id));
 $rez=$sqlHandler->s->fetchAll();
-
 ?>
 
 <html>
@@ -22,7 +21,7 @@ foreach($rez as $rez){
     $odeid=$rez['id'];
     $milkert="select * from ode_item where odeid=:x";
     $sqlHandler->half_genericQuery($milkert,1,array($odeid));
-    $ree=$sqlHandler->s->fetchAll();    
+    $p=$sqlHandler->s->fetchAll();    
         
     echo "order number: ".$rez['id']." Ordertime".$rez['dateTime'];
     foreach($p as $p)
