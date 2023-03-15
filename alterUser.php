@@ -12,7 +12,9 @@ foreach($w as $w){
 
 if($newUsername==$w['name'])
 {    // already exist
-    $s=1;
+    if($_SESSION['username']!=$w['name']){
+        $s=1;
+    }
 }
 }
 
