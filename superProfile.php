@@ -67,9 +67,9 @@ $sqlHandler->half_genericQuery($dll,0,0);
 $w=$sqlHandler->s->fetchAll();
     foreach($w as $w){
      echo "<h2>USER: ".$w['name']."</h2>";
-     echo "Alter username <form type='alterUser.php'><input type='username' name='uname' ><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update username'></form>";
-     echo "Alter balance of user <form method='post' action='alterCurrency.php'><input type='hidden' name='hid' value=".$w['id']."></form>";
-     echo "<form type='deleteUser.php' method='post'><input type='hidden' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
+     echo "Alter username <form type='alterUser.php'><input type='username' name='uname' ><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update username'></form></br>";
+     echo "Alter user balance  <form method='post' action='alterCurrency.php'><input type='number' name='num' min='0' max='999999'><input type='hidden' value=".$w['id']."><input type='submit'></form></br>";
+    echo "<form type='deleteUser.php' method='post'><input type='hidden' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
     }
 }
 else {
@@ -78,7 +78,7 @@ else {
     $w=$sqlHandler->s->fetchAll();
     foreach($w as $w){
      echo "user balance ".$w['balance']." for user: ".$w['name'];
-     echo "Download more money here <form method='post' action='alterCurrency.php'><input type='number' min='0' max='999999'><input type='hidden' value=".$w['id']."><input type='submit'></form>";
+     echo "Download more money here <form method='post' action='alterCurrency.php'><input type='number' name='num' min='0' max='999999'><input type='hidden' value=".$w['id']."><input type='submit'></form>";
     }
 }
 
