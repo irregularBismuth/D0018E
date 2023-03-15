@@ -17,8 +17,10 @@ else {
     $dll="select * from users where id=:x";
     $sqlHandler->half_genericQuery($dll,1,array($_SESSION['id']));
     $w=$sqlHandler->s->fetchAll();
-    
-    echo "<>";  
+    foreach($w as $w){
+     echo "user balance ".$w['balance']." for user: ".$w['name'];
+     echo "Download more money<form method='post' action='alterCurrency.php'><input type='hidden'></form>";
+    }
 }
 
 
