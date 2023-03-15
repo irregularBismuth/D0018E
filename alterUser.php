@@ -1,7 +1,9 @@
 <?php 
 session_start();
 
-$newUsername = $_POST['uname'];
+$newUsername = $_POST['nm'];
+
+echo $newUsername;
 $id = $_POST['hid'];
 
 $dll="select * from users";
