@@ -24,13 +24,18 @@ if($n==0){
 $milcher="select * from ode_item where odeid=:x";
 $sqlHandler->half_genericQuery($milcher,1,array($odeid));
 $ww=$sqlHandler->s->fetchAll();
+if($sqlHandler->s->rowCount() >0){
 $tot=0;
 foreach($ww as $ww){
  $tot+=$ww['price']*$ww['quantity'];
 }
 $bate="update ode set total=:x where id=:y";
 $sqlHandler->half_genericQuery($bate,2,array($tot,$odeid));
-
+}
+else{
+$lik="delete from ode where id=:x";
+$sqlHandler->half_genericQuery($lik,1,array($odeid));
+}
 
 
 
