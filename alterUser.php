@@ -7,22 +7,22 @@ $id = $_POST['hid'];
 $dll="select * from users";
 $sqlHandler->half_genericQuery($dll,0,0);
 $w=$sqlHandler->s->fetchAll();
-$s=0;
+$ss=0;
 foreach($w as $w){
 
 if($newUsername==$w['name'])
 {    // already exist
-        $s=1;
-}
+        $ss=1;
+    }
 }
 
 //om inte finns ändra user name med ny query where id = $id;
 //
 //
-if($s==1){
+if($ss==1){
 
-header("Location: superProfile.php?bad=1");
-exit(0);
+ header("Location: superProfile.php?bad=1");
+ exit(0);
 }
 
 $link="update users set name=:x where id=:y";
