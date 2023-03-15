@@ -61,6 +61,8 @@ function search() {
 if($_GET['succ']==1){
     echo "successfully downloaded some hard earned cashirones</br>";
 }
+
+if($_GET['succ']==2){ echo "deleted user";} 
 if($_GET['bad']==1){
     echo "Can't change username username already exist";
 }
