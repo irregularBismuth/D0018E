@@ -91,7 +91,7 @@ class TransactionalHandler{
                     $product_id = $output['animal_id'];
                     //$product_quantity = $output['quantity'];
                     echo '
-                        <div class="boxFrame" id="pp">
+                        <div class="boxFrame">
                                 <div class="section1">
                                         <img class="fit_image" src='.$output['animal_image'].'>
                                 </div>
@@ -102,7 +102,7 @@ class TransactionalHandler{
                                             <br>                             
                                             <li><b>Animal type:</b> '.$output['animal_name'].'</li>
                                             <br>
-                                            <li><b>Description:</b> '.$output['animal_category'].'</li>
+                                            <li><b>Stock quantity:</b> '.$output['animal_quantity'].'</li>
                                             <br>
                                             <hr>
                                             <li><b>Subtotal:</b> '.$output['animal_price'].'¥ </li>
@@ -112,7 +112,7 @@ class TransactionalHandler{
                                            <form action='.$this->addButtonClickAction().' method="POST">
                                                 <input type="hidden" name="product_id" value='.$product_id.'> 
                                                 <input type="hidden" name="price" value='.$output['animal_price'].'>
-                                                <input type="submit" id="badd" name="addButton" class="button" value="add" />   
+                                                <input type="submit" name="addButton" class="button" value="add" />   
                                                 <a href=page.php?a='.$output['animal_id'].'>INFO</a>
                                                 </form> 
                                             </li>
@@ -152,7 +152,7 @@ class TransactionalHandler{
             $subtotal += $tot;  
 
             echo '<pre>';
-            echo '<li class="submenu_item" id="cartIcon">';
+            echo '<li class="submenu_item" >';
             echo '<img class="submenu_item" src='.$output["animal_image"].'>';
             echo '<p> product: '.$output["animal_name"].'</p>';
             echo '|';
