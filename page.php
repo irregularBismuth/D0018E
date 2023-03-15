@@ -34,7 +34,7 @@ if($sqlHandler->s->rowCount() > 0)
     <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>
     <?php if($_SESSION['admin']==1){ echo "<a href='addnew.php'> Add new animal </a>"; }?>
     <?php echo "<a href='showOrders.php'>Order history</a>"; 
- echo "<a herf='superProfile.php'>Profile page</a>";
+ echo "<a href='superProfile.php'>Profile page</a>";
 
     ?>
     <script>
