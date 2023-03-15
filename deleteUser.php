@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "sqlHandler.php";
 $id=$_POST['hid'];
 
 $link="delete from users where id=:x";
