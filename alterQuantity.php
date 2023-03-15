@@ -21,7 +21,7 @@ $sqlHandler->half_genericQuery($milcher,1,array($odeid));
 $ww=$sqlHandler->s->fetchAll();
 $tot=0;
 foreach($ww as $ww){
- $tot+=$ww['price']*$w['quantity'];
+ $tot+=$ww['price']*$ww['quantity'];
 }
 $bate="update ode set total=:x where id=:y";
 $sqlHandler->half_genericQuery($bate,2,array($tot,$odeid));
