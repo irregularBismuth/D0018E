@@ -27,7 +27,7 @@ if($sqlHandler->s->rowCount() > 0){
      exit(0);
     }
 
-$milker="update users set name=\":x\" where id=:y";
+$milker="update users set name=`:x` where id=:y";
 //$link="update users set name=:x where id=:y";
 $sqlHandler->half_genericQuery($milker,2,array($newUsername,$id));
 header("Location: superProfile.php?succ=3");
