@@ -4,7 +4,7 @@ session_start();
 $newUsername = $_POST['uname'];
 $id = $_POST['hid'];
 
-if(!(isset($_SESSION['username']))){
+if((isset($_SESSION['username']))){
 
 header("Location: superProfile.php");
 exit(0);
