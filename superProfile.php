@@ -74,7 +74,7 @@ $w=$sqlHandler->s->fetchAll();
      echo "<h2>USER: ".$w['name']."</h2>";
      echo "Alter username <form type='alterUser.php'><input type='username' name='uname' ><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update username'></form></br>";
      echo "Alter user balance  <form method='post' action='alterCurrency.php'><input type='number' name='num' min='0' max='999999'><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update money'></form></br>";
-    echo "<form type='deleteUser.php' method='post'><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
+   // echo "<form type='deleteUser.php' method='post'><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
     }
 }
 else {
