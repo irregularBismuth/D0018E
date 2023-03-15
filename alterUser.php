@@ -19,16 +19,11 @@ if($sqlHandler->s->rowCount() > 0){
                 $ss=1;
             }
     }
-
-//om inte finns ändra user name med ny query where id = $id;
-//
-//
-    if($ss==1){
+ if($ss==1){
 
      header("Location: superProfile.php?bad=1");
      exit(0);
-    }
-
+}
 $milker="update users set name=:x where id=:y";
 $sqlHandler->half_genericQuery($milker,2,array($newUsername,$id));
 
