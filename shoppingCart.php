@@ -24,7 +24,7 @@ $succ=$_GET['succ'];
 <header>
  
     <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>            
-    <a href='superProfile.php'></a>
+    <a href='superProfile.php'> User profile</a>
     
 <script>
 function search() {
