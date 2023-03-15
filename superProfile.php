@@ -58,14 +58,17 @@ function search() {
 
     <div id="livesearch" class="livesearch"></div>
 <?php
+if($_GET['bad']==1){
+    echo "Can't change username username already exist";
+}
 if($_SESSION['admin']==1){
 $dll="select * from users";
 $sqlHandler->half_genericQuery($dll,0,0);
 $w=$sqlHandler->s->fetchAll();
     foreach($w as $w){
      echo "<h2>USER: ".$w['name']."</h2>";
-     echo "Alter username <form type='alterUser.php'><input type='hidden' value=".$w['id']."></form>";
-     echo "Alter balance of user <form method='post' action='alterCurrency.php'><input type='hidden'></form>";
+     echo "Alter username <form type='alterUser.php'><input type='username' name='uname' ><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update username'></form>";
+     echo "Alter balance of user <form method='post' action='alterCurrency.php'><input type='hidden' name='hid' value=".$w['id']."></form>";
      echo "<form type='deleteUser.php' method='post'><input type='hidden' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
     }
 }
@@ -75,7 +78,7 @@ else {
     $w=$sqlHandler->s->fetchAll();
     foreach($w as $w){
      echo "user balance ".$w['balance']." for user: ".$w['name'];
-     echo "Download more money<form method='post' action='alterCurrency.php'><input type='hidden'></form>";
+     echo "Download more money here <form method='post' action='alterCurrency.php'><input type='number' min='0' max='999999'><input type='hidden' value=".$w['id']."><input type='submit'></form>";
     }
 }
 
