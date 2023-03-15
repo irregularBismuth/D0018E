@@ -26,7 +26,7 @@ $row_count = count($animals['image']);
                 <img src="../images/logo.png" width="400">
             </a>
             <?php 
-                include("userMenu.php");
+          //      include("userMenu.php");
             ?>
             <p> <?php include("transactionalMenu.php");?> </p>
             <form role="search" id="form">
