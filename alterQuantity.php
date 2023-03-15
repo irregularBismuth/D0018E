@@ -10,9 +10,14 @@ $sqlHandler->half_genericQuery($milker,2,array($n,$id));
 $milch="select * from ode_item where quantity=:x and id=:y";
 $sqlHandler->half_genericQuery($milch,2,array($n,$id));
 $zz=$sqlHandler->s->fetchAll();
+
+foreach($zz as $zz){
+
+}
 $odeid=$zz['odeid'];
-$milch="select * from ode_item where odeid=:x";
-$sqlHandler->half_genericQuery($milch,1,array($odeid));
+
+$milcher="select * from ode_item where odeid=:x";
+$sqlHandler->half_genericQuery($milcher,1,array($odeid));
 $ww=$sqlHandler->s->fetchAll();
 $tot=0;
 foreach($ww as $ww){
