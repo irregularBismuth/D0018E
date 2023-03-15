@@ -35,7 +35,7 @@ $rez=$sqlHandler->s->fetchAll();
  
     <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>
     <?php if($_SESSION['admin']==1){ echo "<a href='addnew.php'> Add new animal </a>"; }?>
-    <?php echo "<a href='showOrders.php'>Order history</a>"; ?> 
+    <?php echo "<a href='shoppingCart.php'>shopping cart</a>"; ?> 
      <?php generateCartButton(); ?>
     <?php require_once("userMenu.php"); ?>    
 <script>
