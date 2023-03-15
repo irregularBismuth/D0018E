@@ -6,7 +6,6 @@ $n=$_POST['num'];
 
 $milker="update ode_item set quantity=:x where id=:y";
 $sqlHandler->half_genericQuery($milker,2,array($n,$id));
-
 $milch="select * from ode_item where quantity=:x and id=:y";
 $sqlHandler->half_genericQuery($milch,2,array($n,$id));
 $zz=$sqlHandler->s->fetchAll();
@@ -14,6 +13,12 @@ $odeid=0;
 foreach($zz as $zz){
 
 $odeid=$zz['odeid'];
+
+}
+
+if($n==0){
+    $lonk="delete from ode_item where quantity=0";
+    $sqlHandler->half_genericQuery($lonk,0,0); 
 }
 
 $milcher="select * from ode_item where odeid=:x";
