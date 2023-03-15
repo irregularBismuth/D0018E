@@ -72,7 +72,7 @@ $sqlHandler->half_genericQuery($dll,0,0);
 $w=$sqlHandler->s->fetchAll();
     foreach($w as $w){
      echo "<h2>USER: ".$w['name']."</h2>";
-     echo "</br> balance: ".$w['balance'];
+     echo "</br> balance: ".$w['balance']."</br>";
      echo "Alter username <form action='alterUser.php' method='post'><input type='text' name='nm' ><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update username'></form></br>";
      echo "Alter user balance  <form method='post' action='alterCurrency.php'><input type='number' name='num' min='0' max='999999'><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='update money'></form></br>";
    // echo "<form type='deleteUser.php' method='post'><input type='hidden' name='hid' value=".$w['id']."><input type='submit' value='deleteAccount'></form></br>";
