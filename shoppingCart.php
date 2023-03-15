@@ -24,9 +24,7 @@ $succ=$_GET['succ'];
 <header>
  
     <a href="shoppingCart.php"><img src="../images/logo.png" width="400"></a>            
-    <?php generateCartButton(); ?>
-    <?php require_once("userMenu.php"); ?>    
-
+    <a href='superProfile.php'></a>
     
 <script>
 function search() {
