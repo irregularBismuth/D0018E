@@ -25,4 +25,9 @@ header("Location: superProfile.php?bad=1");
 exit(0);
 }
 
+$link="update users set name=:x where id=:y";
+$sqlHandler->half_genericQuery($link,2,array($newUsername,$id));
+header("Location: superProfile.php?succ=3");
+exit(0);
+
 ?>
